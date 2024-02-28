@@ -7,5 +7,9 @@ namespace WinFormsApp2
             InitializeComponent();
         }
 
+        private void House1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
