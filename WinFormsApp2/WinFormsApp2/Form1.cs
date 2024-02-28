@@ -1,4 +1,4 @@
-namespace House_Finance_Manager
+namespace WinFormsApp2
 {
     public partial class Form1 : Form
     {
@@ -6,5 +6,6 @@ namespace House_Finance_Manager
         {
             InitializeComponent();
         }
+
     }
 }

@@ -1,4 +1,4 @@
-namespace House_Finance_Manager
+namespace WinFormsApp2
 {
     internal static class Program
     {
