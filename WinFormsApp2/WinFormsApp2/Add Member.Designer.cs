@@ -42,6 +42,7 @@
             radFemale = new RadioButton();
             label7 = new Label();
             panel1 = new Panel();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
@@ -84,10 +85,12 @@
             // 
             // cmbJob
             // 
+            cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             cmbJob.FormattingEnabled = true;
             cmbJob.Location = new Point(522, 12);
             cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(292, 33);
+            cmbJob.Size = new Size(292, 36);
+            cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
             // 
             // label4
@@ -169,12 +172,23 @@
             panel1.Size = new Size(162, 91);
             panel1.TabIndex = 17;
             // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(12, 271);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(824, 58);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "Add member to the house";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // Add_Member
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(831, 291);
+            ClientSize = new Size(848, 350);
+            Controls.Add(btnAdd);
             Controls.Add(panel1);
             Controls.Add(label7);
             Controls.Add(label5);
@@ -214,5 +228,6 @@
         private RadioButton radFemale;
         private Label label7;
         private Panel panel1;
+        private Button btnAdd;
     }
 }

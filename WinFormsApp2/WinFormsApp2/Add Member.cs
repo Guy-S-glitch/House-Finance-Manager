@@ -12,10 +12,24 @@ namespace House_Finance_management
 {
     public partial class Add_Member : Form
     {
+
         public Add_Member()
         {
             InitializeComponent();
+            _setJobsNames();
         }
+        private void _setJobsNames()
+        {
+            cmbJob.Items.Add("--SELECT--");
+            cmbJob.SelectedIndex = 0;
+            foreach (var obj in Enum.GetValues(typeof(Jobs.jobs)))
+            {
+                cmbJob.Items.Add(obj.ToString().Replace("_", " "));
+            }
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
