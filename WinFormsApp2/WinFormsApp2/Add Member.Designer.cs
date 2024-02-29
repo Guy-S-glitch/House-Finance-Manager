@@ -77,7 +77,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(472, 9);
+            label3.Location = new Point(401, 16);
             label3.Name = "label3";
             label3.Size = new Size(44, 25);
             label3.TabIndex = 4;
@@ -87,9 +87,9 @@
             // 
             cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             cmbJob.FormattingEnabled = true;
-            cmbJob.Location = new Point(522, 12);
+            cmbJob.Location = new Point(451, 12);
             cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(292, 36);
+            cmbJob.Size = new Size(385, 36);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
             // 
@@ -105,13 +105,18 @@
             // numAge
             // 
             numAge.Location = new Point(86, 90);
+            numAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numAge.Minimum = new decimal(new int[] { 18, 0, 0, 0 });
             numAge.Name = "numAge";
             numAge.Size = new Size(75, 31);
             numAge.TabIndex = 8;
+            numAge.Value = new decimal(new int[] { 18, 0, 0, 0 });
             // 
             // numMonthlySalary
             // 
+            numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numMonthlySalary.Location = new Point(522, 88);
+            numMonthlySalary.Maximum = new decimal(new int[] { 200000, 0, 0, 0 });
             numMonthlySalary.Name = "numMonthlySalary";
             numMonthlySalary.Size = new Size(154, 31);
             numMonthlySalary.TabIndex = 9;
@@ -187,7 +192,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(848, 350);
+            ClientSize = new Size(968, 350);
             Controls.Add(btnAdd);
             Controls.Add(panel1);
             Controls.Add(label7);
@@ -215,7 +220,6 @@
         #endregion
 
         private Label label1;
-        private TextBox txtName;
         private Label label2;
         private Label label3;
         private ComboBox cmbJob;
@@ -229,5 +233,6 @@
         private Label label7;
         private Panel panel1;
         private Button btnAdd;
+        private TextBox txtName;
     }
 }

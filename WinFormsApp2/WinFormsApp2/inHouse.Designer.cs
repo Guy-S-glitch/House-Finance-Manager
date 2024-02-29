@@ -33,8 +33,10 @@
             memberRemove = new Button();
             memberAdd = new Button();
             label1 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,6 +52,10 @@
             splitContainer1.Panel1.Controls.Add(memberRemove);
             splitContainer1.Panel1.Controls.Add(memberAdd);
             splitContainer1.Panel1.Controls.Add(label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(textBox1);
             splitContainer1.Size = new Size(993, 707);
             splitContainer1.SplitterDistance = 382;
             splitContainer1.TabIndex = 0;
@@ -96,6 +102,13 @@
             label1.Text = "people";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(194, 178);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(239, 31);
+            textBox1.TabIndex = 0;
+            // 
             // inHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -105,6 +118,8 @@
             Name = "inHouse";
             Text = "inHouse";
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
@@ -117,5 +132,6 @@
         private Button memberAdd;
         private Button memberRemove;
         private ListBox lstMembersList;
+        private TextBox textBox1;
     }
 }

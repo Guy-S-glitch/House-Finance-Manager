@@ -11,6 +11,7 @@ namespace House_Finance_management
         
         public enum jobs
         {
+            Unemployed=0,
             Administor = 8850,
             Food_industry = 9711,
             Arts_and_Culture = 9785,
@@ -50,10 +51,6 @@ namespace House_Finance_management
             Transport_Haulage_Logistics = 10367,
             Water_Management_Forestry_Environment=10373,
             Wood_Processing_Industry = 9890
-        }
-        public Jobs()
-        {
-            
         }
         
     }
