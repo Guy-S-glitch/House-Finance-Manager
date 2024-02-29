@@ -89,7 +89,7 @@
             cmbJob.FormattingEnabled = true;
             cmbJob.Location = new Point(451, 12);
             cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(385, 36);
+            cmbJob.Size = new Size(393, 36);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
             // 
@@ -181,7 +181,7 @@
             // 
             btnAdd.Location = new Point(12, 271);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(824, 58);
+            btnAdd.Size = new Size(832, 58);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add member to the house";
             btnAdd.UseVisualStyleBackColor = true;
@@ -191,8 +191,9 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(968, 350);
+            ClientSize = new Size(856, 350);
             Controls.Add(btnAdd);
             Controls.Add(panel1);
             Controls.Add(label7);
@@ -206,7 +207,11 @@
             Controls.Add(label2);
             Controls.Add(txtName);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Add_Member";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Add_Member";
             ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).EndInit();
