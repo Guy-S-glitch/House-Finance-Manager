@@ -31,16 +31,32 @@ namespace House_Finance_management
 
         }
 
-        private void clbExpenses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(clbExpenses.Items[0].ToString());   
-        }
-
         private void lsbExpensesPrices_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
- 
+        private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e) 
+        {
+            switch (e.Index)
+            {
+                case 0:
+                    numTransport.Visible = e.NewValue == CheckState.Checked; break;
+                case 1:
+                    numClothes.Visible = e.NewValue == CheckState.Checked; break;
+                case 2:
+                    numSport.Visible = e.NewValue == CheckState.Checked; break;
+                case 3:
+                    numMarket.Visible = e.NewValue == CheckState.Checked; break;
+                case 4:
+                    numUtilities.Visible = e.NewValue == CheckState.Checked; break;
+                case 5:
+                    numRent.Visible = e.NewValue == CheckState.Checked; break;
+                case 6:
+                    numRestaurant.Visible = e.NewValue == CheckState.Checked; break; 
+            }
+            
+        }  
+        
     }
 }

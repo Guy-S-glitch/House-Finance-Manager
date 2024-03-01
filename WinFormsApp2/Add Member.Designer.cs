@@ -54,14 +54,14 @@
             clbExpenses = new CheckedListBox();
             groupBox4 = new GroupBox();
             splitContainer1 = new SplitContainer();
-            numericUpDown15 = new NumericUpDown();
-            numericUpDown14 = new NumericUpDown();
-            numericUpDown11 = new NumericUpDown();
-            numericUpDown3 = new NumericUpDown();
-            numericUpDown12 = new NumericUpDown();
-            numericUpDown9 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
+            numRestaurant = new NumericUpDown();
+            numRent = new NumericUpDown();
+            numMarket = new NumericUpDown();
+            numUtilities = new NumericUpDown();
+            numSport = new NumericUpDown();
             lsbExpensesPrices = new ListBox();
+            numTransport = new NumericUpDown();
+            numClothes = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             pnlvalidateGender.SuspendLayout();
@@ -74,13 +74,13 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown14).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numRestaurant).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numRent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numMarket).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numUtilities).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numSport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numTransport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numClothes).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -351,17 +351,17 @@
             clbExpenses.Name = "clbExpenses";
             clbExpenses.Size = new Size(256, 228);
             clbExpenses.TabIndex = 21;
-            clbExpenses.SelectedIndexChanged += clbExpenses_SelectedIndexChanged;
+            clbExpenses.ItemCheck += clbExpenses_ItemCheck;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(splitContainer1);
             groupBox4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox4.Location = new Point(825, 304);
+            groupBox4.Location = new Point(801, 271);
             groupBox4.Margin = new Padding(4, 3, 4, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(4, 3, 4, 3);
-            groupBox4.Size = new Size(377, 263);
+            groupBox4.Size = new Size(401, 263);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "Expenses";
@@ -377,80 +377,62 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(numericUpDown15);
-            splitContainer1.Panel2.Controls.Add(numericUpDown14);
-            splitContainer1.Panel2.Controls.Add(numericUpDown11);
-            splitContainer1.Panel2.Controls.Add(numericUpDown3);
-            splitContainer1.Panel2.Controls.Add(numericUpDown12);
-            splitContainer1.Panel2.Controls.Add(numericUpDown9);
-            splitContainer1.Panel2.Controls.Add(numericUpDown2);
+            splitContainer1.Panel2.Controls.Add(numRestaurant);
+            splitContainer1.Panel2.Controls.Add(numRent);
+            splitContainer1.Panel2.Controls.Add(numMarket);
+            splitContainer1.Panel2.Controls.Add(numUtilities);
+            splitContainer1.Panel2.Controls.Add(numTransport);
+            splitContainer1.Panel2.Controls.Add(numSport);
+            splitContainer1.Panel2.Controls.Add(numClothes);
             splitContainer1.Panel2.Controls.Add(lsbExpensesPrices);
             splitContainer1.Size = new Size(389, 227);
             splitContainer1.SplitterDistance = 250;
             splitContainer1.TabIndex = 25;
             // 
-            // numericUpDown15
+            // numRestaurant
             // 
-            numericUpDown15.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown15.Location = new Point(0, 195);
-            numericUpDown15.Name = "numericUpDown15";
-            numericUpDown15.Size = new Size(123, 26);
-            numericUpDown15.TabIndex = 34;
-            numericUpDown15.Visible = false;
+            numRestaurant.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numRestaurant.Location = new Point(0, 195);
+            numRestaurant.Name = "numRestaurant";
+            numRestaurant.Size = new Size(123, 26);
+            numRestaurant.TabIndex = 34;
+            numRestaurant.Visible = false;
             // 
-            // numericUpDown14
+            // numRent
             // 
-            numericUpDown14.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown14.Location = new Point(-1, 163);
-            numericUpDown14.Name = "numericUpDown14";
-            numericUpDown14.Size = new Size(124, 26);
-            numericUpDown14.TabIndex = 33;
-            numericUpDown14.Visible = false;
+            numRent.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numRent.Location = new Point(-1, 163);
+            numRent.Name = "numRent";
+            numRent.Size = new Size(124, 26);
+            numRent.TabIndex = 33;
+            numRent.Visible = false;
             // 
-            // numericUpDown11
+            // numMarket
             // 
-            numericUpDown11.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown11.Location = new Point(0, 99);
-            numericUpDown11.Name = "numericUpDown11";
-            numericUpDown11.Size = new Size(123, 26);
-            numericUpDown11.TabIndex = 30;
-            numericUpDown11.Visible = false;
+            numMarket.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numMarket.Location = new Point(0, 99);
+            numMarket.Name = "numMarket";
+            numMarket.Size = new Size(123, 26);
+            numMarket.TabIndex = 30;
+            numMarket.Visible = false;
             // 
-            // numericUpDown3
+            // numUtilities
             // 
-            numericUpDown3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown3.Location = new Point(-1, 131);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(124, 26);
-            numericUpDown3.TabIndex = 25;
-            numericUpDown3.Visible = false;
+            numUtilities.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numUtilities.Location = new Point(-1, 131);
+            numUtilities.Name = "numUtilities";
+            numUtilities.Size = new Size(124, 26);
+            numUtilities.TabIndex = 25;
+            numUtilities.Visible = false;
             // 
-            // numericUpDown12
+            // numSport
             // 
-            numericUpDown12.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown12.Location = new Point(-1, 67);
-            numericUpDown12.Name = "numericUpDown12";
-            numericUpDown12.Size = new Size(124, 26);
-            numericUpDown12.TabIndex = 31;
-            numericUpDown12.Visible = false;
-            // 
-            // numericUpDown9
-            // 
-            numericUpDown9.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown9.Location = new Point(-1, 3);
-            numericUpDown9.Name = "numericUpDown9";
-            numericUpDown9.Size = new Size(124, 26);
-            numericUpDown9.TabIndex = 27;
-            numericUpDown9.Visible = false;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown2.Location = new Point(0, 35);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(123, 26);
-            numericUpDown2.TabIndex = 26;
-            numericUpDown2.Visible = false;
+            numSport.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numSport.Location = new Point(-1, 67);
+            numSport.Name = "numSport";
+            numSport.Size = new Size(124, 26);
+            numSport.TabIndex = 31;
+            numSport.Visible = false;
             // 
             // lsbExpensesPrices
             // 
@@ -464,6 +446,24 @@
             lsbExpensesPrices.Size = new Size(135, 227);
             lsbExpensesPrices.TabIndex = 0;
             lsbExpensesPrices.SelectedIndexChanged += lsbExpensesPrices_SelectedIndexChanged;
+            // 
+            // numTransport
+            // 
+            numTransport.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numTransport.Location = new Point(0, 3);
+            numTransport.Name = "numTransport";
+            numTransport.Size = new Size(124, 26);
+            numTransport.TabIndex = 27;
+            numTransport.Visible = false;
+            // 
+            // numClothes
+            // 
+            numClothes.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numClothes.Location = new Point(-1, 35);
+            numClothes.Name = "numClothes";
+            numClothes.Size = new Size(123, 26);
+            numClothes.TabIndex = 26;
+            numClothes.Visible = false;
             // 
             // Add_Member
             // 
@@ -499,13 +499,13 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown14).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numRestaurant).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numRent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numMarket).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numUtilities).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numSport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numTransport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numClothes).EndInit();
             ResumeLayout(false);
         }
 
@@ -536,14 +536,14 @@
         private ComboBox cmbJob;
         private CheckedListBox clbExpenses;
         private GroupBox groupBox4;
-        private NumericUpDown numericUpDown3;
+        private NumericUpDown numUtilities;
         private SplitContainer splitContainer1;
         private ListBox lsbExpensesPrices;
-        private NumericUpDown numericUpDown9;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown11;
-        private NumericUpDown numericUpDown15;
-        private NumericUpDown numericUpDown14;
-        private NumericUpDown numericUpDown12;
+        private NumericUpDown numTransport;
+        private NumericUpDown numClothes;
+        private NumericUpDown numMarket;
+        private NumericUpDown numRestaurant;
+        private NumericUpDown numRent;
+        private NumericUpDown numSport;
     }
 }

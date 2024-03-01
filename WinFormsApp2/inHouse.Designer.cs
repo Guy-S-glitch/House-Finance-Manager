@@ -80,7 +80,7 @@
             splitContainer1.Panel2.Controls.Add(label6);
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            splitContainer1.Panel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             splitContainer1.Size = new Size(1271, 556);
             splitContainer1.SplitterDistance = 488;
             splitContainer1.TabIndex = 0;
@@ -88,9 +88,9 @@
             // lstMembersList
             // 
             lstMembersList.Dock = DockStyle.Fill;
-            lstMembersList.Font = new Font("David", 22F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            lstMembersList.Font = new Font("David", 16F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lstMembersList.FormattingEnabled = true;
-            lstMembersList.ItemHeight = 43;
+            lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
             lstMembersList.Size = new Size(488, 397);
@@ -156,7 +156,7 @@
             tableLayoutPanel2.Controls.Add(label9, 3, 1);
             tableLayoutPanel2.Controls.Add(txtMonthlySalary, 4, 1);
             tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Font = new Font("David", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tableLayoutPanel2.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel2.Location = new Point(0, 231);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
@@ -168,9 +168,9 @@
             // txtExperience
             // 
             txtExperience.AutoSize = true;
-            txtExperience.Location = new Point(332, 35);
+            txtExperience.Location = new Point(225, 24);
             txtExperience.Name = "txtExperience";
-            txtExperience.Size = new Size(42, 35);
+            txtExperience.Size = new Size(28, 24);
             txtExperience.TabIndex = 15;
             txtExperience.Text = "...";
             // 
@@ -179,9 +179,9 @@
             txtJobTitle.AutoSize = true;
             tableLayoutPanel2.SetColumnSpan(txtJobTitle, 4);
             txtJobTitle.Dock = DockStyle.Fill;
-            txtJobTitle.Location = new Point(332, 0);
+            txtJobTitle.Location = new Point(225, 0);
             txtJobTitle.Name = "txtJobTitle";
-            txtJobTitle.Size = new Size(444, 35);
+            txtJobTitle.Size = new Size(551, 24);
             txtJobTitle.TabIndex = 14;
             txtJobTitle.Text = "...";
             // 
@@ -189,9 +189,9 @@
             // 
             label8.AutoSize = true;
             label8.Dock = DockStyle.Right;
-            label8.Location = new Point(3, 35);
+            label8.Location = new Point(3, 24);
             label8.Name = "label8";
-            label8.Size = new Size(323, 39);
+            label8.Size = new Size(216, 50);
             label8.TabIndex = 13;
             label8.Text = "Years of experience: ";
             // 
@@ -199,9 +199,9 @@
             // 
             label7.AutoSize = true;
             label7.Dock = DockStyle.Right;
-            label7.Location = new Point(183, 0);
+            label7.Location = new Point(123, 0);
             label7.Name = "label7";
-            label7.Size = new Size(143, 35);
+            label7.Size = new Size(96, 24);
             label7.TabIndex = 13;
             label7.Text = "Job title:";
             // 
@@ -209,18 +209,19 @@
             // 
             label9.AutoSize = true;
             label9.Dock = DockStyle.Right;
-            label9.Location = new Point(400, 35);
+            label9.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(279, 24);
             label9.Name = "label9";
-            label9.Size = new Size(253, 39);
+            label9.Size = new Size(169, 50);
             label9.TabIndex = 16;
             label9.Text = "Monthly Salary:";
             // 
             // txtMonthlySalary
             // 
             txtMonthlySalary.AutoSize = true;
-            txtMonthlySalary.Location = new Point(659, 35);
+            txtMonthlySalary.Location = new Point(454, 24);
             txtMonthlySalary.Name = "txtMonthlySalary";
-            txtMonthlySalary.Size = new Size(42, 35);
+            txtMonthlySalary.Size = new Size(28, 24);
             txtMonthlySalary.TabIndex = 17;
             txtMonthlySalary.Text = "...";
             // 
@@ -239,8 +240,8 @@
             // 
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.6666641F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(iconPictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 1, 0);
             tableLayoutPanel1.Controls.Add(lblUserGender, 2, 2);
@@ -249,7 +250,7 @@
             tableLayoutPanel1.Controls.Add(label5, 1, 2);
             tableLayoutPanel1.Controls.Add(label4, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Font = new Font("David", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tableLayoutPanel1.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel1.Location = new Point(0, 32);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -281,34 +282,34 @@
             label2.Dock = DockStyle.Fill;
             label2.Location = new Point(174, 0);
             label2.Name = "label2";
-            label2.Size = new Size(196, 55);
+            label2.Size = new Size(95, 55);
             label2.TabIndex = 2;
             label2.Text = "Name: ";
             // 
             // lblUserGender
             // 
             lblUserGender.AutoSize = true;
-            lblUserGender.Location = new Point(376, 110);
+            lblUserGender.Location = new Point(275, 110);
             lblUserGender.Name = "lblUserGender";
-            lblUserGender.Size = new Size(42, 35);
+            lblUserGender.Size = new Size(28, 24);
             lblUserGender.TabIndex = 6;
             lblUserGender.Text = "...";
             // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
-            lblUserName.Location = new Point(376, 0);
+            lblUserName.Location = new Point(275, 0);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(42, 35);
+            lblUserName.Size = new Size(28, 24);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "...";
             // 
             // lblUserAge
             // 
             lblUserAge.AutoSize = true;
-            lblUserAge.Location = new Point(376, 55);
+            lblUserAge.Location = new Point(275, 55);
             lblUserAge.Name = "lblUserAge";
-            lblUserAge.Size = new Size(42, 35);
+            lblUserAge.Size = new Size(28, 24);
             lblUserAge.TabIndex = 7;
             lblUserAge.Text = "...";
             // 
@@ -318,7 +319,7 @@
             label5.Dock = DockStyle.Fill;
             label5.Location = new Point(174, 110);
             label5.Name = "label5";
-            label5.Size = new Size(196, 57);
+            label5.Size = new Size(95, 57);
             label5.TabIndex = 8;
             label5.Text = "Gender: ";
             // 
@@ -328,7 +329,7 @@
             label4.Dock = DockStyle.Fill;
             label4.Location = new Point(174, 55);
             label4.Name = "label4";
-            label4.Size = new Size(196, 55);
+            label4.Size = new Size(95, 55);
             label4.TabIndex = 5;
             label4.Text = "Age: ";
             // 

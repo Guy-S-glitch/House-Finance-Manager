@@ -6,13 +6,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Drawing;
+using System.Windows;
 
 namespace House_Finance_management
 {
     public delegate void DataSentHandler(Class_InfoToHouse house);
     public partial class Add_Member
     {
-        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate;
+        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate,_expenseValidate;
         private string _fullName;
         public event DataSentHandler DataSent;
         Class_InfoToHouse sendInfoToHouse;
@@ -22,9 +23,9 @@ namespace House_Finance_management
             _jobValidate = _validateJob();
             _ageValidate = _validateAge();
             _genderValidate = _validateGender();
-            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate)
+            _expenseValidate=_ValidateExpenses();
+            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate)
             {
-                _fullName = txtFName.Text + " " + txtLName.Text + " " + txtMName.Text;
                 sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName);
 
                 this.DataSent(sendInfoToHouse);
@@ -47,8 +48,10 @@ namespace House_Finance_management
             foreach (char inMName in txtMName.Text) if (!char.IsLetter(inMName)) { txtMName.BackColor = Color.Red; mName = false; break; }
             if (mName) txtMName.BackColor = Color.White;
 
+            _fullName = txtFName.Text + " " + txtLName.Text + " " + txtMName.Text;
             return fName && lName && mName;
         }
+
 
         private bool _validateJob()
         {
@@ -67,6 +70,18 @@ namespace House_Finance_management
         {
             if (radFemale.Checked || radMale.Checked) { pnlvalidateGender.BackColor = Color.FromArgb(171, 171, 171); return true; }
             else { pnlvalidateGender.BackColor = Color.Red; return false; }
+        }
+        
+        private bool _ValidateExpenses()
+        {
+            bool expenseFlag=false;
+            NumericUpDown[] _listExpenses ={ numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
+            foreach (NumericUpDown changeColor in _listExpenses)
+            {
+                changeColor.BackColor = changeColor.Visible && changeColor.Value.Equals(0) ? Color.Red : Color.White;
+                expenseFlag |= changeColor.BackColor.Equals(Color.Red);
+            } 
+            return !expenseFlag;   
         }
     }
 }
