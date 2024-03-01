@@ -24,7 +24,7 @@ namespace House_Finance_management
             InitializeComponent();
         }
 
-        private void memberAdd_Click(object sender, EventArgs e)
+        private void btnmemberAdd_Click(object sender, EventArgs e)
         {
             Add_Member addMember = new Add_Member();
             addMember.DataSent += AddMember_DataSent;
@@ -43,14 +43,24 @@ namespace House_Finance_management
 
         }
 
-        private void memberRemove_Click(object sender, EventArgs e)
+        private void btnmemberRemove_Click(object sender, EventArgs e)
         {
             if (lstMembersList.SelectedIndex != -1)
             {
+                lblUserName.Text = null;
+                lblUserAge.Text = null;
+                lblUserGender.Text = null;
                 _members.RemoveAt(lstMembersList.SelectedIndex);
                 lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
             }
             else MessageBox.Show("please select a member first");
+        }
+
+        private void btnInspectMember_Click(object sender, EventArgs e)
+        {
+            lblUserName.Text = _members[lstMembersList.SelectedIndex].GetName();
+            lblUserAge.Text = _members[lstMembersList.SelectedIndex].GetAge().ToString();
+            lblUserGender.Text = _members[lstMembersList.SelectedIndex].GetIsMale() ? "Male" : "Female";
         }
     }
 }

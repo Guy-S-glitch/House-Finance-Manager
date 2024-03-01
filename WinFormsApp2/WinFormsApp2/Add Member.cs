@@ -16,15 +16,14 @@ namespace House_Finance_management
         {
             InitializeComponent();
             _setJobsNames();
-            
+
         }
         private void _setJobsNames()
         {
             cmbJob.Items.Add("--SELECT--");
             cmbJob.SelectedIndex = 0;
             foreach (var obj in Enum.GetValues(typeof(Jobs.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
-            
-        }
 
+        }
     }
 }
