@@ -40,6 +40,7 @@
             btnAdd = new Button();
             groupBox1 = new GroupBox();
             pnlValidateAge = new Panel();
+            dtpAge = new DateTimePicker();
             label10 = new Label();
             txtMName = new TextBox();
             label9 = new Label();
@@ -47,10 +48,9 @@
             label8 = new Label();
             txtFName = new TextBox();
             label6 = new Label();
-            dtpAge = new DateTimePicker();
             groupBox2 = new GroupBox();
-            cmbJob = new ComboBox();
             pnlValidateJob = new Panel();
+            cmbJob = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             pnlvalidateGender.SuspendLayout();
@@ -147,9 +147,9 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(85, 576);
+            btnAdd.Location = new Point(12, 610);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(832, 58);
+            btnAdd.Size = new Size(1066, 58);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add member to the house";
             btnAdd.UseVisualStyleBackColor = true;
@@ -186,6 +186,17 @@
             pnlValidateAge.Name = "pnlValidateAge";
             pnlValidateAge.Size = new Size(183, 37);
             pnlValidateAge.TabIndex = 20;
+            // 
+            // dtpAge
+            // 
+            dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
+            dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
+            dtpAge.Format = DateTimePickerFormat.Short;
+            dtpAge.Location = new Point(0, 4);
+            dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dtpAge.Name = "dtpAge";
+            dtpAge.Size = new Size(173, 31);
+            dtpAge.TabIndex = 9;
             // 
             // label10
             // 
@@ -245,17 +256,6 @@
             label6.TabIndex = 2;
             label6.Text = "First name: ";
             // 
-            // dtpAge
-            // 
-            dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
-            dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
-            dtpAge.Format = DateTimePickerFormat.Short;
-            dtpAge.Location = new Point(0, 4);
-            dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
-            dtpAge.Name = "dtpAge";
-            dtpAge.Size = new Size(173, 31);
-            dtpAge.TabIndex = 9;
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(pnlValidateJob);
@@ -271,16 +271,6 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Job Data";
             // 
-            // cmbJob
-            // 
-            cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbJob.FormattingEnabled = true;
-            cmbJob.Location = new Point(-2, 7);
-            cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(406, 36);
-            cmbJob.Sorted = true;
-            cmbJob.TabIndex = 5;
-            // 
             // pnlValidateJob
             // 
             pnlValidateJob.BackColor = SystemColors.AppWorkspace;
@@ -290,6 +280,16 @@
             pnlValidateJob.Name = "pnlValidateJob";
             pnlValidateJob.Size = new Size(415, 45);
             pnlValidateJob.TabIndex = 13;
+            // 
+            // cmbJob
+            // 
+            cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbJob.FormattingEnabled = true;
+            cmbJob.Location = new Point(-2, 7);
+            cmbJob.Name = "cmbJob";
+            cmbJob.Size = new Size(406, 36);
+            cmbJob.Sorted = true;
+            cmbJob.TabIndex = 5;
             // 
             // Add_Member
             // 

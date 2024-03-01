@@ -47,9 +47,12 @@ namespace House_Finance_management
         {
             if (lstMembersList.SelectedIndex != -1)
             {
-                lblUserName.Text = null;
-                lblUserAge.Text = null;
-                lblUserGender.Text = null;
+                lblUserName.Text = "...";
+                lblUserAge.Text = "...";
+                lblUserGender.Text = "...";
+                txtJobTitle.Text = "...";
+                txtExperience.Text = "...";
+                txtMonthlySalary.Text = "...";
                 _members.RemoveAt(lstMembersList.SelectedIndex);
                 lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
             }
@@ -58,9 +61,17 @@ namespace House_Finance_management
 
         private void btnInspectMember_Click(object sender, EventArgs e)
         {
-            lblUserName.Text = _members[lstMembersList.SelectedIndex].GetName();
-            lblUserAge.Text = _members[lstMembersList.SelectedIndex].GetAge().ToString();
-            lblUserGender.Text = _members[lstMembersList.SelectedIndex].GetIsMale() ? "Male" : "Female";
+            if (lstMembersList.SelectedIndex != -1)
+            {
+                lblUserName.Text = _members[lstMembersList.SelectedIndex].GetName();
+                lblUserAge.Text = _members[lstMembersList.SelectedIndex].GetAge().ToString();
+                lblUserGender.Text = _members[lstMembersList.SelectedIndex].GetIsMale() ? "Male" : "Female";
+                txtJobTitle.Text = _members[lstMembersList.SelectedIndex].GetJob();
+                txtExperience.Text = _members[lstMembersList.SelectedIndex].GetExperience().ToString();
+                txtMonthlySalary.Text = _members[lstMembersList.SelectedIndex].GetMonthlySalary().ToString();
+            }
+            else MessageBox.Show("please select a member first");
         }
+
     }
 }
