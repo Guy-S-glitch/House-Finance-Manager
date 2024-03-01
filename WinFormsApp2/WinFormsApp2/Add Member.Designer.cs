@@ -30,19 +30,16 @@
         {
             label2 = new Label();
             label3 = new Label();
-            cmbJob = new ComboBox();
-            label4 = new Label();
-            numAge = new NumericUpDown();
             numMonthlySalary = new NumericUpDown();
             numExperience = new NumericUpDown();
             label5 = new Label();
             radMale = new RadioButton();
             radFemale = new RadioButton();
             label7 = new Label();
-            panel1 = new Panel();
+            pnlvalidateGender = new Panel();
             btnAdd = new Button();
             groupBox1 = new GroupBox();
-            dtpAge = new DateTimePicker();
+            pnlValidateAge = new Panel();
             label10 = new Label();
             txtMName = new TextBox();
             label9 = new Label();
@@ -50,13 +47,17 @@
             label8 = new Label();
             txtFName = new TextBox();
             label6 = new Label();
+            dtpAge = new DateTimePicker();
             groupBox2 = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
+            cmbJob = new ComboBox();
+            pnlValidateJob = new Panel();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
-            panel1.SuspendLayout();
+            pnlvalidateGender.SuspendLayout();
             groupBox1.SuspendLayout();
+            pnlValidateAge.SuspendLayout();
             groupBox2.SuspendLayout();
+            pnlValidateJob.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -77,34 +78,6 @@
             label3.TabIndex = 4;
             label3.Text = "Job:";
             // 
-            // cmbJob
-            // 
-            cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbJob.FormattingEnabled = true;
-            cmbJob.Location = new Point(72, 30);
-            cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(393, 36);
-            cmbJob.Sorted = true;
-            cmbJob.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(462, 207);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Age:";
-            // 
-            // numAge
-            // 
-            numAge.Location = new Point(516, 205);
-            numAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
-            numAge.Name = "numAge";
-            numAge.Size = new Size(75, 31);
-            numAge.TabIndex = 8;
-            numAge.Value = new decimal(new int[] { 18, 0, 0, 0 });
-            // 
             // numMonthlySalary
             // 
             numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
@@ -116,7 +89,7 @@
             // 
             // numExperience
             // 
-            numExperience.Location = new Point(163, 90);
+            numExperience.Location = new Point(163, 92);
             numExperience.Name = "numExperience";
             numExperience.Size = new Size(75, 31);
             numExperience.TabIndex = 10;
@@ -155,20 +128,22 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(411, 107);
+            label7.Location = new Point(411, 113);
             label7.Name = "label7";
             label7.Size = new Size(73, 25);
             label7.TabIndex = 16;
             label7.Text = "Gender:";
             // 
-            // panel1
+            // pnlvalidateGender
             // 
-            panel1.Controls.Add(radFemale);
-            panel1.Controls.Add(radMale);
-            panel1.Location = new Point(490, 102);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(162, 91);
-            panel1.TabIndex = 17;
+            pnlvalidateGender.BackColor = SystemColors.AppWorkspace;
+            pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
+            pnlvalidateGender.Controls.Add(radFemale);
+            pnlvalidateGender.Controls.Add(radMale);
+            pnlvalidateGender.Location = new Point(490, 108);
+            pnlvalidateGender.Name = "pnlvalidateGender";
+            pnlvalidateGender.Size = new Size(162, 91);
+            pnlvalidateGender.TabIndex = 17;
             // 
             // btnAdd
             // 
@@ -183,13 +158,11 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.AppWorkspace;
-            groupBox1.Controls.Add(dtpAge);
+            groupBox1.Controls.Add(pnlValidateAge);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(panel1);
+            groupBox1.Controls.Add(pnlvalidateGender);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtMName);
-            groupBox1.Controls.Add(numAge);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(txtLName);
             groupBox1.Controls.Add(label8);
@@ -203,13 +176,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Person";
             // 
-            // dtpAge
+            // pnlValidateAge
             // 
-            dtpAge.Format = DateTimePickerFormat.Custom;
-            dtpAge.Location = new Point(490, 49);
-            dtpAge.Name = "dtpAge";
-            dtpAge.Size = new Size(162, 31);
-            dtpAge.TabIndex = 9;
+            pnlValidateAge.BackColor = SystemColors.AppWorkspace;
+            pnlValidateAge.BorderStyle = BorderStyle.Fixed3D;
+            pnlValidateAge.Controls.Add(dtpAge);
+            pnlValidateAge.ForeColor = SystemColors.ActiveCaptionText;
+            pnlValidateAge.Location = new Point(480, 49);
+            pnlValidateAge.Name = "pnlValidateAge";
+            pnlValidateAge.Size = new Size(183, 37);
+            pnlValidateAge.TabIndex = 20;
             // 
             // label10
             // 
@@ -269,13 +245,24 @@
             label6.TabIndex = 2;
             label6.Text = "First name: ";
             // 
+            // dtpAge
+            // 
+            dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
+            dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
+            dtpAge.Format = DateTimePickerFormat.Short;
+            dtpAge.Location = new Point(0, 4);
+            dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dtpAge.Name = "dtpAge";
+            dtpAge.Size = new Size(173, 31);
+            dtpAge.TabIndex = 9;
+            // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(cmbJob);
+            groupBox2.Controls.Add(pnlValidateJob);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(numMonthlySalary);
             groupBox2.Controls.Add(numExperience);
+            groupBox2.Controls.Add(numMonthlySalary);
             groupBox2.Controls.Add(label2);
             groupBox2.Location = new Point(13, 289);
             groupBox2.Name = "groupBox2";
@@ -283,6 +270,26 @@
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job Data";
+            // 
+            // cmbJob
+            // 
+            cmbJob.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbJob.FormattingEnabled = true;
+            cmbJob.Location = new Point(-2, 7);
+            cmbJob.Name = "cmbJob";
+            cmbJob.Size = new Size(406, 36);
+            cmbJob.Sorted = true;
+            cmbJob.TabIndex = 5;
+            // 
+            // pnlValidateJob
+            // 
+            pnlValidateJob.BackColor = SystemColors.AppWorkspace;
+            pnlValidateJob.BorderStyle = BorderStyle.Fixed3D;
+            pnlValidateJob.Controls.Add(cmbJob);
+            pnlValidateJob.Location = new Point(57, 30);
+            pnlValidateJob.Name = "pnlValidateJob";
+            pnlValidateJob.Size = new Size(415, 45);
+            pnlValidateJob.TabIndex = 13;
             // 
             // Add_Member
             // 
@@ -300,31 +307,29 @@
             Name = "Add_Member";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add_Member";
-            ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).EndInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlvalidateGender.ResumeLayout(false);
+            pnlvalidateGender.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            pnlValidateAge.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            pnlValidateJob.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private Label label2;
         private Label label3;
-        private ComboBox cmbJob;
-        private Label label4;
-        private NumericUpDown numAge;
         private NumericUpDown numMonthlySalary;
         private NumericUpDown numExperience;
         private Label label5;
         private RadioButton radMale;
         private RadioButton radFemale;
         private Label label7;
-        private Panel panel1;
+        private Panel pnlvalidateGender;
         private Button btnAdd;
         private GroupBox groupBox1;
         private TextBox txtFName;
@@ -336,5 +341,9 @@
         private DateTimePicker dtpAge;
         private Label label10;
         private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private Panel pnlValidateAge;
+        private Panel pnlValidateJob;
+        private ComboBox cmbJob;
     }
 }

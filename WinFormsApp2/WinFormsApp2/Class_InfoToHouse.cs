@@ -11,11 +11,11 @@ namespace House_Finance_management
         private string _Name {  get; set; }
         private bool _isMale { get; set; }
         private bool _isFemale { get; set; }
-        private short _age { get; set; }
+        private DateTime _age { get; set; }
         private short _monthlySalary { get; set; }
         private short _experience { get; set; }
         private string _job { get; set; }
-        public Class_InfoToHouse(bool isMale, bool isFemale, short age, short monthlySalary, short experience, string job, string name)
+        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience, string job, string name)
         {
             _isMale = isMale;
             _isFemale = isFemale;
@@ -27,7 +27,12 @@ namespace House_Finance_management
         }
         public bool GetIsMale() { return _isMale; }
         public bool GetIsFemale() { return _isFemale; }
-        public short GetAge() { return _age; }
+        public float GetAge()
+        {
+            float fullAge= (float)(((DateTime.Today.Year - _age.Year) + ((DateTime.Today.Month - _age.Month) / 12.0)));
+            int removeAfter2Dig = (int)(fullAge * 10);
+            return (float)(removeAfter2Dig / 10.0);
+        }
         public short GetMonthlySalary() { return _monthlySalary; }
         public short GetExperience() { return _experience; }
         public string GetJob() { return _job; }

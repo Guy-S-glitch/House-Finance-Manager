@@ -25,5 +25,10 @@ namespace House_Finance_management
             foreach (var obj in Enum.GetValues(typeof(Jobs.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
 
         }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
