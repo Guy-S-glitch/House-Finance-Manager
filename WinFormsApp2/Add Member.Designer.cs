@@ -53,11 +53,11 @@
             cmbJob = new ComboBox();
             clbExpenses = new CheckedListBox();
             groupBox4 = new GroupBox();
-            numericUpDown3 = new NumericUpDown();
             splitContainer1 = new SplitContainer();
             numericUpDown15 = new NumericUpDown();
             numericUpDown14 = new NumericUpDown();
             numericUpDown11 = new NumericUpDown();
+            numericUpDown3 = new NumericUpDown();
             numericUpDown12 = new NumericUpDown();
             numericUpDown9 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
@@ -70,7 +70,6 @@
             groupBox2.SuspendLayout();
             pnlValidateJob.SuspendLayout();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -78,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -177,10 +177,11 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(16, 586);
+            btnAdd.Dock = DockStyle.Bottom;
+            btnAdd.Location = new Point(0, 577);
             btnAdd.Margin = new Padding(4, 3, 4, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(1386, 56);
+            btnAdd.Size = new Size(1215, 56);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add member to the house";
             btnAdd.UseVisualStyleBackColor = true;
@@ -246,7 +247,7 @@
             // 
             // txtMName
             // 
-            txtMName.Location = new Point(214, 152);
+            txtMName.Location = new Point(246, 152);
             txtMName.Margin = new Padding(4, 3, 4, 3);
             txtMName.Name = "txtMName";
             txtMName.PlaceholderText = "Optional";
@@ -256,7 +257,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(32, 155);
+            label9.Location = new Point(58, 155);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(159, 29);
@@ -265,7 +266,7 @@
             // 
             // txtLName
             // 
-            txtLName.Location = new Point(214, 108);
+            txtLName.Location = new Point(175, 108);
             txtLName.Margin = new Padding(4, 3, 4, 3);
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(287, 35);
@@ -283,7 +284,7 @@
             // 
             // txtFName
             // 
-            txtFName.Location = new Point(214, 58);
+            txtFName.Location = new Point(175, 57);
             txtFName.Margin = new Padding(4, 3, 4, 3);
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(287, 35);
@@ -342,36 +343,28 @@
             // clbExpenses
             // 
             clbExpenses.BackColor = SystemColors.AppWorkspace;
-            clbExpenses.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            clbExpenses.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             clbExpenses.FormattingEnabled = true;
             clbExpenses.Items.AddRange(new object[] { "Transportation", "Clothing And Shoes", "Sports And Leisure", "Markets", "Utilities", "Rent Per Month", "Restaurants" });
             clbExpenses.Location = new Point(0, 0);
             clbExpenses.Margin = new Padding(4, 3, 4, 3);
             clbExpenses.Name = "clbExpenses";
-            clbExpenses.Size = new Size(290, 298);
+            clbExpenses.Size = new Size(256, 228);
             clbExpenses.TabIndex = 21;
             clbExpenses.SelectedIndexChanged += clbExpenses_SelectedIndexChanged;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(splitContainer1);
-            groupBox4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox4.Location = new Point(1013, 11);
+            groupBox4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox4.Location = new Point(825, 304);
             groupBox4.Margin = new Padding(4, 3, 4, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(4, 3, 4, 3);
-            groupBox4.Size = new Size(400, 333);
+            groupBox4.Size = new Size(377, 263);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "Expenses";
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(0, 177);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(113, 35);
-            numericUpDown3.TabIndex = 25;
-            numericUpDown3.Visible = false;
             // 
             // splitContainer1
             // 
@@ -392,55 +385,70 @@
             splitContainer1.Panel2.Controls.Add(numericUpDown9);
             splitContainer1.Panel2.Controls.Add(numericUpDown2);
             splitContainer1.Panel2.Controls.Add(lsbExpensesPrices);
-            splitContainer1.Size = new Size(400, 293);
-            splitContainer1.SplitterDistance = 283;
+            splitContainer1.Size = new Size(389, 227);
+            splitContainer1.SplitterDistance = 250;
             splitContainer1.TabIndex = 25;
             // 
             // numericUpDown15
             // 
-            numericUpDown15.Location = new Point(0, 259);
+            numericUpDown15.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown15.Location = new Point(0, 195);
             numericUpDown15.Name = "numericUpDown15";
-            numericUpDown15.Size = new Size(113, 35);
+            numericUpDown15.Size = new Size(123, 26);
             numericUpDown15.TabIndex = 34;
             numericUpDown15.Visible = false;
             // 
             // numericUpDown14
             // 
-            numericUpDown14.Location = new Point(0, 218);
+            numericUpDown14.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown14.Location = new Point(-1, 163);
             numericUpDown14.Name = "numericUpDown14";
-            numericUpDown14.Size = new Size(113, 35);
+            numericUpDown14.Size = new Size(124, 26);
             numericUpDown14.TabIndex = 33;
             numericUpDown14.Visible = false;
             // 
             // numericUpDown11
             // 
-            numericUpDown11.Location = new Point(0, 131);
+            numericUpDown11.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown11.Location = new Point(0, 99);
             numericUpDown11.Name = "numericUpDown11";
-            numericUpDown11.Size = new Size(113, 35);
+            numericUpDown11.Size = new Size(123, 26);
             numericUpDown11.TabIndex = 30;
             numericUpDown11.Visible = false;
             // 
+            // numericUpDown3
+            // 
+            numericUpDown3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown3.Location = new Point(-1, 131);
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(124, 26);
+            numericUpDown3.TabIndex = 25;
+            numericUpDown3.Visible = false;
+            // 
             // numericUpDown12
             // 
-            numericUpDown12.Location = new Point(1, 90);
+            numericUpDown12.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown12.Location = new Point(-1, 67);
             numericUpDown12.Name = "numericUpDown12";
-            numericUpDown12.Size = new Size(112, 35);
+            numericUpDown12.Size = new Size(124, 26);
             numericUpDown12.TabIndex = 31;
             numericUpDown12.Visible = false;
             // 
             // numericUpDown9
             // 
-            numericUpDown9.Location = new Point(1, 8);
+            numericUpDown9.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown9.Location = new Point(-1, 3);
             numericUpDown9.Name = "numericUpDown9";
-            numericUpDown9.Size = new Size(112, 35);
+            numericUpDown9.Size = new Size(124, 26);
             numericUpDown9.TabIndex = 27;
             numericUpDown9.Visible = false;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(0, 49);
+            numericUpDown2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown2.Location = new Point(0, 35);
             numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(113, 35);
+            numericUpDown2.Size = new Size(123, 26);
             numericUpDown2.TabIndex = 26;
             numericUpDown2.Visible = false;
             // 
@@ -448,11 +456,12 @@
             // 
             lsbExpensesPrices.BackColor = SystemColors.AppWorkspace;
             lsbExpensesPrices.Dock = DockStyle.Fill;
+            lsbExpensesPrices.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lsbExpensesPrices.FormattingEnabled = true;
-            lsbExpensesPrices.ItemHeight = 29;
+            lsbExpensesPrices.ItemHeight = 20;
             lsbExpensesPrices.Location = new Point(0, 0);
             lsbExpensesPrices.Name = "lsbExpensesPrices";
-            lsbExpensesPrices.Size = new Size(113, 293);
+            lsbExpensesPrices.Size = new Size(135, 227);
             lsbExpensesPrices.TabIndex = 0;
             lsbExpensesPrices.SelectedIndexChanged += lsbExpensesPrices_SelectedIndexChanged;
             // 
@@ -462,7 +471,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(1797, 633);
+            ClientSize = new Size(1215, 633);
             Controls.Add(groupBox4);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -486,7 +495,6 @@
             groupBox2.PerformLayout();
             pnlValidateJob.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -494,6 +502,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown15).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown14).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown12).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();

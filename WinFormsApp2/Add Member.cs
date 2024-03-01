@@ -33,12 +33,14 @@ namespace House_Finance_management
 
         private void clbExpenses_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MessageBox.Show(clbExpenses.Items[0].ToString());   
         }
 
         private void lsbExpensesPrices_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+ 
     }
 }
