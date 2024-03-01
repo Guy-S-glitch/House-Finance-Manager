@@ -30,5 +30,15 @@ namespace House_Finance_management
         {
 
         }
+
+        private void clbExpenses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsbExpensesPrices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
