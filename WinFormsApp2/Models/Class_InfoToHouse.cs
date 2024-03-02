@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace House_Finance_management
 {
     public class Class_InfoToHouse
-    {
+    { 
         private string _Name {  get; set; }
         private bool _isMale { get; set; }
         private bool _isFemale { get; set; }
@@ -15,8 +15,9 @@ namespace House_Finance_management
         private short _monthlySalary { get; set; }
         private short _experience { get; set; }
         private string _job { get; set; }
-        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience, string job, string name)
-        {
+        private NumericUpDown[] _expenses { get; set; }
+        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience, string job, string name, NumericUpDown[] expenses)
+        { 
             _isMale = isMale;
             _isFemale = isFemale;
             _age = age;
@@ -24,6 +25,7 @@ namespace House_Finance_management
             _experience = experience;
             _job = job;
             _Name = name;
+            _expenses = expenses; 
         }
         public bool GetIsMale() { return _isMale; }
         public bool GetIsFemale() { return _isFemale; }
@@ -31,12 +33,12 @@ namespace House_Finance_management
         {
             float fullAge= (float)(((DateTime.Today.Year - _age.Year) + ((DateTime.Today.Month - _age.Month) / 12.0)));
             int removeAfter2Dig = (int)(fullAge * 10);
-            return (float)(removeAfter2Dig / 10.0);
-        }
+            return (float)(removeAfter2Dig / 10.0); }
         public short GetMonthlySalary() { return _monthlySalary; }
         public short GetExperience() { return _experience; }
         public string GetJob() { return _job; }
         public string GetName() { return _Name; }
+        public NumericUpDown[] GetExpenses() { return _expenses; }
 
     }
     

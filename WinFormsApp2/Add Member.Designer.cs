@@ -58,10 +58,10 @@
             numRent = new NumericUpDown();
             numMarket = new NumericUpDown();
             numUtilities = new NumericUpDown();
-            numSport = new NumericUpDown();
-            lsbExpensesPrices = new ListBox();
             numTransport = new NumericUpDown();
+            numSport = new NumericUpDown();
             numClothes = new NumericUpDown();
+            lsbExpensesPrices = new ListBox();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             pnlvalidateGender.SuspendLayout();
@@ -78,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)numRent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numMarket).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numUtilities).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numSport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numTransport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numSport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numClothes).BeginInit();
             SuspendLayout();
             // 
@@ -384,7 +384,7 @@
             splitContainer1.Panel2.Controls.Add(numTransport);
             splitContainer1.Panel2.Controls.Add(numSport);
             splitContainer1.Panel2.Controls.Add(numClothes);
-            splitContainer1.Panel2.Controls.Add(lsbExpensesPrices);
+            splitContainer1.Panel2.Controls.Add(lsbExpensesPrices); 
             splitContainer1.Size = new Size(389, 227);
             splitContainer1.SplitterDistance = 250;
             splitContainer1.TabIndex = 25;
@@ -425,6 +425,15 @@
             numUtilities.TabIndex = 25;
             numUtilities.Visible = false;
             // 
+            // numTransport
+            // 
+            numTransport.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numTransport.Location = new Point(0, 3);
+            numTransport.Name = "numTransport";
+            numTransport.Size = new Size(124, 26);
+            numTransport.TabIndex = 27;
+            numTransport.Visible = false;
+            // 
             // numSport
             // 
             numSport.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -433,6 +442,15 @@
             numSport.Size = new Size(124, 26);
             numSport.TabIndex = 31;
             numSport.Visible = false;
+            // 
+            // numClothes
+            // 
+            numClothes.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numClothes.Location = new Point(-1, 35);
+            numClothes.Name = "numClothes";
+            numClothes.Size = new Size(123, 26);
+            numClothes.TabIndex = 26;
+            numClothes.Visible = false;
             // 
             // lsbExpensesPrices
             // 
@@ -446,24 +464,6 @@
             lsbExpensesPrices.Size = new Size(135, 227);
             lsbExpensesPrices.TabIndex = 0;
             lsbExpensesPrices.SelectedIndexChanged += lsbExpensesPrices_SelectedIndexChanged;
-            // 
-            // numTransport
-            // 
-            numTransport.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numTransport.Location = new Point(0, 3);
-            numTransport.Name = "numTransport";
-            numTransport.Size = new Size(124, 26);
-            numTransport.TabIndex = 27;
-            numTransport.Visible = false;
-            // 
-            // numClothes
-            // 
-            numClothes.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numClothes.Location = new Point(-1, 35);
-            numClothes.Name = "numClothes";
-            numClothes.Size = new Size(123, 26);
-            numClothes.TabIndex = 26;
-            numClothes.Visible = false;
             // 
             // Add_Member
             // 
@@ -503,8 +503,8 @@
             ((System.ComponentModel.ISupportInitialize)numRent).EndInit();
             ((System.ComponentModel.ISupportInitialize)numMarket).EndInit();
             ((System.ComponentModel.ISupportInitialize)numUtilities).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numSport).EndInit();
             ((System.ComponentModel.ISupportInitialize)numTransport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numSport).EndInit();
             ((System.ComponentModel.ISupportInitialize)numClothes).EndInit();
             ResumeLayout(false);
         }

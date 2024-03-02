@@ -18,7 +18,7 @@ namespace House_Finance_management
         public event DataSentHandler DataSent;
         Class_InfoToHouse sendInfoToHouse;
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        { 
             _nameValidate = _validateName();
             _jobValidate = _validateJob();
             _ageValidate = _validateAge();
@@ -26,7 +26,8 @@ namespace House_Finance_management
             _expenseValidate=_ValidateExpenses();
             if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate)
             {
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName);
+                NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -75,8 +76,8 @@ namespace House_Finance_management
         private bool _ValidateExpenses()
         {
             bool expenseFlag=false;
-            NumericUpDown[] _listExpenses ={ numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
-            foreach (NumericUpDown changeColor in _listExpenses)
+            NumericUpDown[] listExpenses ={ numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
+            foreach (NumericUpDown changeColor in listExpenses)
             {
                 changeColor.BackColor = changeColor.Visible && changeColor.Value.Equals(0) ? Color.Red : Color.White;
                 expenseFlag |= changeColor.BackColor.Equals(Color.Red);

@@ -12,17 +12,19 @@ namespace House_Finance_management
 {
     public partial class Add_Member : Form
     {
+
         public Add_Member()
         {
             InitializeComponent();
             _setJobsNames();
-
         }
+       
         private void _setJobsNames()
         {
             cmbJob.Items.Add("--SELECT--");
             cmbJob.SelectedIndex = 0;
             foreach (var obj in Enum.GetValues(typeof(Jobs.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
+
 
         }
 
@@ -37,7 +39,7 @@ namespace House_Finance_management
         }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e) 
-        {
+        { 
             switch (e.Index)
             {
                 case 0:
