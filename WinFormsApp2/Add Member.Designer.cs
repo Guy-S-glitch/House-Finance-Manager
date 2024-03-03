@@ -228,7 +228,7 @@
             pnlValidateAge.Location = new Point(644, 46);
             pnlValidateAge.Margin = new Padding(4, 3, 4, 3);
             pnlValidateAge.Name = "pnlValidateAge";
-            pnlValidateAge.Size = new Size(235, 44);
+            pnlValidateAge.Size = new Size(235, 38);
             pnlValidateAge.TabIndex = 20;
             // 
             // dtpAge
@@ -503,7 +503,7 @@
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "05X-XXX-XXXX";
             txtPhone.Size = new Size(185, 31);
-            txtPhone.TabIndex = 8; 
+            txtPhone.TabIndex = 8;
             txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // label4

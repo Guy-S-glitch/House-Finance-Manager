@@ -13,7 +13,7 @@ namespace House_Finance_management
     public delegate void DataSentHandler(Class_InfoToHouse house);
     public partial class Add_Member
     {
-        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate,_expenseValidate;
+        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate,_expenseValidate,_phoneValidate;
         private string _fullName;
         public event DataSentHandler DataSent;
         Class_InfoToHouse sendInfoToHouse;
@@ -24,10 +24,11 @@ namespace House_Finance_management
             _ageValidate = _validateAge();
             _genderValidate = _validateGender();
             _expenseValidate=_ValidateExpenses();
-            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate)
+            _phoneValidate = _validatePhone();
+            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate && _phoneValidate)
             {
                 NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses);
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -84,5 +85,12 @@ namespace House_Finance_management
             } 
             return !expenseFlag;   
         }
+
+        private bool _validatePhone()
+        {
+            txtPhone.BackColor = txtPhone.TextLength == txtPhone.MaxLength ? Color.White : Color.Red;
+            return txtPhone.TextLength == txtPhone.MaxLength;
+        }
+
     }
 }
