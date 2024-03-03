@@ -17,15 +17,19 @@ namespace House_Finance_management
         {
             InitializeComponent();
             _setJobsNames();
+            _setCitiesNames();
         }
 
         private void _setJobsNames()
         {
-            cmbJob.Items.Add("--SELECT--");
             cmbJob.SelectedIndex = 0;
-            foreach (var obj in Enum.GetValues(typeof(Jobs.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
+            foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
         }
-
+        private void _setCitiesNames()
+        {
+            cmbCity.SelectedIndex = 0;
+            foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " "));
+        }
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 

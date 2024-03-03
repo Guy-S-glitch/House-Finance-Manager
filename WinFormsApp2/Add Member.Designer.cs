@@ -66,7 +66,7 @@
             textBox2 = new TextBox();
             txtPhone = new TextBox();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            cmbCity = new ComboBox();
             Email = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
@@ -334,14 +334,15 @@
             pnlValidateJob.Location = new Point(156, 33);
             pnlValidateJob.Margin = new Padding(4, 3, 4, 3);
             pnlValidateJob.Name = "pnlValidateJob";
-            pnlValidateJob.Size = new Size(578, 43);
+            pnlValidateJob.Size = new Size(569, 43);
             pnlValidateJob.TabIndex = 13;
             // 
             // cmbJob
             // 
             cmbJob.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cmbJob.FormattingEnabled = true;
-            cmbJob.Location = new Point(17, 8);
+            cmbJob.Items.AddRange(new object[] { "--SELECT JOB--" });
+            cmbJob.Location = new Point(-2, 11);
             cmbJob.Margin = new Padding(4, 3, 4, 3);
             cmbJob.Name = "cmbJob";
             cmbJob.Size = new Size(559, 32);
@@ -478,7 +479,7 @@
             groupBox3.Controls.Add(textBox2);
             groupBox3.Controls.Add(txtPhone);
             groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(comboBox1);
+            groupBox3.Controls.Add(cmbCity);
             groupBox3.Controls.Add(Email);
             groupBox3.Controls.Add(label1);
             groupBox3.Location = new Point(13, 375);
@@ -515,16 +516,17 @@
             label4.TabIndex = 7;
             label4.Text = "city:";
             // 
-            // comboBox1
+            // cmbCity
             // 
-            comboBox1.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(471, 34);
-            comboBox1.Margin = new Padding(4, 3, 4, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(297, 32);
-            comboBox1.Sorted = true;
-            comboBox1.TabIndex = 6;
+            cmbCity.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbCity.FormattingEnabled = true;
+            cmbCity.Items.AddRange(new object[] { "--SELECT CITY--" });
+            cmbCity.Location = new Point(471, 34);
+            cmbCity.Margin = new Padding(4, 3, 4, 3);
+            cmbCity.Name = "cmbCity";
+            cmbCity.Size = new Size(297, 32);
+            cmbCity.Sorted = true;
+            cmbCity.TabIndex = 6;
             // 
             // Email
             // 
@@ -631,7 +633,7 @@
         private TextBox textBox2;
         private TextBox txtPhone;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox cmbCity;
         private Label Email;
     }
 }
