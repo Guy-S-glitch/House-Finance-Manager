@@ -72,6 +72,7 @@ namespace House_Finance_management
                     label.Text = remove ? "%" : selectedMember.GetExpenses()[row].Value!=0? percent.ToString()+"%" : "0%";
                     progressBar.Value = remove ? 100 : selectedMember.GetExpenses()[row].Value != 0 ? percent : 0; 
                 }
+                
                 if (remove)
                 {
                     _members.RemoveAt(lstMembersList.SelectedIndex);

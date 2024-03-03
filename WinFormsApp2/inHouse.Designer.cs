@@ -60,7 +60,6 @@
             pcRestaurants = new Label();
             label25 = new Label();
             label26 = new Label();
-            label27 = new Label();
             label28 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             txtExperience = new Label();
@@ -80,6 +79,10 @@
             label4 = new Label();
             label3 = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
+            label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -183,6 +186,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.66533F));
+            tableLayoutPanel3.Controls.Add(label21, 6, 6);
             tableLayoutPanel3.Controls.Add(label17, 0, 7);
             tableLayoutPanel3.Controls.Add(label16, 0, 6);
             tableLayoutPanel3.Controls.Add(label10, 0, 0);
@@ -206,9 +210,11 @@
             tableLayoutPanel3.Controls.Add(pcRent, 1, 6);
             tableLayoutPanel3.Controls.Add(pcRestaurants, 1, 7);
             tableLayoutPanel3.Controls.Add(label25, 4, 0);
-            tableLayoutPanel3.Controls.Add(label26, 4, 1);
-            tableLayoutPanel3.Controls.Add(label27, 5, 1);
-            tableLayoutPanel3.Controls.Add(label28, 6, 1);
+            tableLayoutPanel3.Controls.Add(label26, 4, 2);
+            tableLayoutPanel3.Controls.Add(label28, 4, 4);
+            tableLayoutPanel3.Controls.Add(label18, 4, 6);
+            tableLayoutPanel3.Controls.Add(label19, 6, 2);
+            tableLayoutPanel3.Controls.Add(label20, 6, 4);
             tableLayoutPanel3.Dock = DockStyle.Top;
             tableLayoutPanel3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel3.Location = new Point(0, 305);
@@ -251,7 +257,7 @@
             label10.Font = new Font("David", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(3, 0);
             label10.Name = "label10";
-            label10.Size = new Size(407, 42);
+            label10.Size = new Size(411, 42);
             label10.TabIndex = 13;
             label10.Text = "Total expenses";
             label10.Click += label10_Click;
@@ -306,7 +312,7 @@
             pbTransportation.Dock = DockStyle.Fill;
             pbTransportation.Location = new Point(247, 45);
             pbTransportation.Name = "pbTransportation";
-            pbTransportation.Size = new Size(163, 34);
+            pbTransportation.Size = new Size(167, 34);
             pbTransportation.Step = 1;
             pbTransportation.TabIndex = 14;
             pbTransportation.Value = 100;
@@ -316,7 +322,7 @@
             pbClothes.Dock = DockStyle.Fill;
             pbClothes.Location = new Point(247, 85);
             pbClothes.Name = "pbClothes";
-            pbClothes.Size = new Size(163, 42);
+            pbClothes.Size = new Size(167, 42);
             pbClothes.Step = 1;
             pbClothes.TabIndex = 21;
             pbClothes.Value = 100;
@@ -326,7 +332,7 @@
             pbSports.Dock = DockStyle.Fill;
             pbSports.Location = new Point(247, 133);
             pbSports.Name = "pbSports";
-            pbSports.Size = new Size(163, 34);
+            pbSports.Size = new Size(167, 34);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
             pbSports.Value = 100;
@@ -337,7 +343,7 @@
             pbMarkets.Dock = DockStyle.Fill;
             pbMarkets.Location = new Point(247, 173);
             pbMarkets.Name = "pbMarkets";
-            pbMarkets.Size = new Size(163, 34);
+            pbMarkets.Size = new Size(167, 34);
             pbMarkets.Step = 1;
             pbMarkets.TabIndex = 22;
             pbMarkets.Value = 100;
@@ -347,7 +353,7 @@
             pbUtilities.Dock = DockStyle.Fill;
             pbUtilities.Location = new Point(247, 213);
             pbUtilities.Name = "pbUtilities";
-            pbUtilities.Size = new Size(163, 34);
+            pbUtilities.Size = new Size(167, 34);
             pbUtilities.Step = 1;
             pbUtilities.TabIndex = 23;
             pbUtilities.Value = 100;
@@ -357,7 +363,7 @@
             pbRent.Dock = DockStyle.Fill;
             pbRent.Location = new Point(247, 253);
             pbRent.Name = "pbRent";
-            pbRent.Size = new Size(163, 34);
+            pbRent.Size = new Size(167, 34);
             pbRent.Step = 1;
             pbRent.TabIndex = 24;
             pbRent.Value = 100;
@@ -367,7 +373,7 @@
             pbRestaurants.Dock = DockStyle.Fill;
             pbRestaurants.Location = new Point(247, 293);
             pbRestaurants.Name = "pbRestaurants";
-            pbRestaurants.Size = new Size(163, 37);
+            pbRestaurants.Size = new Size(167, 37);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
             pbRestaurants.Value = 100;
@@ -443,38 +449,33 @@
             tableLayoutPanel3.SetColumnSpan(label25, 3);
             label25.Dock = DockStyle.Fill;
             label25.Font = new Font("David", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(440, 0);
+            label25.Location = new Point(444, 0);
             label25.Name = "label25";
-            label25.Size = new Size(336, 42);
+            label25.Size = new Size(332, 42);
             label25.TabIndex = 33;
-            label25.Text = "label25";
+            label25.Text = "Contacts";
             // 
             // label26
             // 
             label26.AutoSize = true;
-            label26.Location = new Point(440, 42);
+            label26.Dock = DockStyle.Bottom;
+            label26.Location = new Point(444, 106);
             label26.Name = "label26";
-            label26.Size = new Size(80, 24);
+            label26.Size = new Size(158, 24);
             label26.TabIndex = 34;
-            label26.Text = "label26";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(526, 42);
-            label27.Name = "label27";
-            label27.Size = new Size(80, 24);
-            label27.TabIndex = 35;
-            label27.Text = "label27";
+            label26.Text = "Phone number:";
+            label26.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label28
             // 
             label28.AutoSize = true;
-            label28.Location = new Point(612, 42);
+            label28.Dock = DockStyle.Bottom;
+            label28.Location = new Point(444, 186);
             label28.Name = "label28";
-            label28.Size = new Size(80, 24);
+            label28.Size = new Size(158, 24);
             label28.TabIndex = 36;
-            label28.Text = "label28";
+            label28.Text = "Email adress:";
+            label28.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
@@ -683,6 +684,47 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Dock = DockStyle.Bottom;
+            label18.Location = new Point(444, 266);
+            label18.Name = "label18";
+            label18.Size = new Size(158, 24);
+            label18.TabIndex = 37;
+            label18.Text = "city:";
+            label18.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Dock = DockStyle.Bottom;
+            label19.Location = new Point(608, 106);
+            label19.Name = "label19";
+            label19.Size = new Size(168, 24);
+            label19.TabIndex = 38;
+            label19.Text = "...";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Dock = DockStyle.Bottom;
+            label20.Location = new Point(608, 186);
+            label20.Name = "label20";
+            label20.Size = new Size(168, 24);
+            label20.TabIndex = 39;
+            label20.Text = "...";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Dock = DockStyle.Bottom;
+            label21.Location = new Point(608, 266);
+            label21.Name = "label21";
+            label21.Size = new Size(168, 24);
+            label21.TabIndex = 39;
+            label21.Text = "...";
+            // 
             // inHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -756,8 +798,11 @@
         private Label pcRestaurants;
         private Label label25;
         private Label label26;
-        private Label label27;
         private Label label28;
         private BindingSource dataSentHandlerBindingSource;
+        private Label label21;
+        private Label label18;
+        private Label label19;
+        private Label label20;
     }
 }
