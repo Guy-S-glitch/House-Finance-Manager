@@ -62,8 +62,8 @@ namespace House_Finance_management
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         { 
-          //  e.Handled = !((e.KeyChar == (char)Keys.Back) || (txtPhone.TextLength is 0 && e.KeyChar is '0') || (txtPhone.TextLength is 1 && e.KeyChar is '5')
-              //   || (txtPhone.TextLength is 3 or 7 && e.KeyChar is '-') || (char.IsDigit(e.KeyChar) && !(txtPhone.TextLength is 3 or 7 or 0 or 1)));
+            e.Handled = !((e.KeyChar == (char)Keys.Back) || (txtPhone.TextLength is 0 && e.KeyChar is '0') || (txtPhone.TextLength is 1 && e.KeyChar is '5')
+                 || (txtPhone.TextLength is 3 or 7 && e.KeyChar is '-') || (char.IsDigit(e.KeyChar) && !(txtPhone.TextLength is 3 or 7 or 0 or 1)));
 
         }
 
