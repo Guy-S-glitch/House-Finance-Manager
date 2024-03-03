@@ -36,6 +36,7 @@
             btnmemberAdd = new Button();
             label1 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
+            txtCity = new Label();
             label17 = new Label();
             label16 = new Label();
             label10 = new Label();
@@ -61,6 +62,9 @@
             label25 = new Label();
             label26 = new Label();
             label28 = new Label();
+            label18 = new Label();
+            txtPhone = new Label();
+            txtEmail = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             txtExperience = new Label();
             txtJobTitle = new Label();
@@ -79,10 +83,6 @@
             label4 = new Label();
             label3 = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -186,7 +186,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.66533F));
-            tableLayoutPanel3.Controls.Add(label21, 6, 6);
+            tableLayoutPanel3.Controls.Add(txtCity, 6, 6);
             tableLayoutPanel3.Controls.Add(label17, 0, 7);
             tableLayoutPanel3.Controls.Add(label16, 0, 6);
             tableLayoutPanel3.Controls.Add(label10, 0, 0);
@@ -213,8 +213,8 @@
             tableLayoutPanel3.Controls.Add(label26, 4, 2);
             tableLayoutPanel3.Controls.Add(label28, 4, 4);
             tableLayoutPanel3.Controls.Add(label18, 4, 6);
-            tableLayoutPanel3.Controls.Add(label19, 6, 2);
-            tableLayoutPanel3.Controls.Add(label20, 6, 4);
+            tableLayoutPanel3.Controls.Add(txtPhone, 6, 2);
+            tableLayoutPanel3.Controls.Add(txtEmail, 6, 4);
             tableLayoutPanel3.Dock = DockStyle.Top;
             tableLayoutPanel3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel3.Location = new Point(0, 305);
@@ -230,6 +230,16 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.Size = new Size(779, 333);
             tableLayoutPanel3.TabIndex = 14;
+            // 
+            // txtCity
+            // 
+            txtCity.AutoSize = true;
+            txtCity.Dock = DockStyle.Bottom;
+            txtCity.Location = new Point(608, 266);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(168, 24);
+            txtCity.TabIndex = 39;
+            txtCity.Text = "...";
             // 
             // label17
             // 
@@ -477,6 +487,37 @@
             label28.Text = "Email adress:";
             label28.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Dock = DockStyle.Bottom;
+            label18.Location = new Point(444, 266);
+            label18.Name = "label18";
+            label18.Size = new Size(158, 24);
+            label18.TabIndex = 37;
+            label18.Text = "City:";
+            label18.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // txtPhone
+            // 
+            txtPhone.AutoSize = true;
+            txtPhone.Dock = DockStyle.Bottom;
+            txtPhone.Location = new Point(608, 106);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(168, 24);
+            txtPhone.TabIndex = 38;
+            txtPhone.Text = "...";
+            // 
+            // txtEmail
+            // 
+            txtEmail.AutoSize = true;
+            txtEmail.Dock = DockStyle.Bottom;
+            txtEmail.Location = new Point(608, 186);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(168, 24);
+            txtEmail.TabIndex = 39;
+            txtEmail.Text = "...";
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 5;
@@ -684,47 +725,6 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Dock = DockStyle.Bottom;
-            label18.Location = new Point(444, 266);
-            label18.Name = "label18";
-            label18.Size = new Size(158, 24);
-            label18.TabIndex = 37;
-            label18.Text = "city:";
-            label18.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Dock = DockStyle.Bottom;
-            label19.Location = new Point(608, 106);
-            label19.Name = "label19";
-            label19.Size = new Size(168, 24);
-            label19.TabIndex = 38;
-            label19.Text = "...";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Dock = DockStyle.Bottom;
-            label20.Location = new Point(608, 186);
-            label20.Name = "label20";
-            label20.Size = new Size(168, 24);
-            label20.TabIndex = 39;
-            label20.Text = "...";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Dock = DockStyle.Bottom;
-            label21.Location = new Point(608, 266);
-            label21.Name = "label21";
-            label21.Size = new Size(168, 24);
-            label21.TabIndex = 39;
-            label21.Text = "...";
-            // 
             // inHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -800,9 +800,9 @@
         private Label label26;
         private Label label28;
         private BindingSource dataSentHandlerBindingSource;
-        private Label label21;
+        private Label txtCity;
         private Label label18;
-        private Label label19;
-        private Label label20;
+        private Label txtPhone;
+        private Label txtEmail;
     }
 }
