@@ -18,7 +18,7 @@ namespace House_Finance_management
             InitializeComponent();
             _setJobsNames();
         }
-       
+
         private void _setJobsNames()
         {
             cmbJob.Items.Add("--SELECT--");
@@ -38,8 +38,8 @@ namespace House_Finance_management
 
         }
 
-        private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e) 
-        { 
+        private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
             switch (e.Index)
             {
                 case 0:
@@ -55,10 +55,18 @@ namespace House_Finance_management
                 case 5:
                     numRent.Visible = e.NewValue == CheckState.Checked; break;
                 case 6:
-                    numRestaurant.Visible = e.NewValue == CheckState.Checked; break; 
+                    numRestaurant.Visible = e.NewValue == CheckState.Checked; break;
             }
-            
-        }  
+
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        { 
+          //  e.Handled = !((e.KeyChar == (char)Keys.Back) || (txtPhone.TextLength is 0 && e.KeyChar is '0') || (txtPhone.TextLength is 1 && e.KeyChar is '5')
+              //   || (txtPhone.TextLength is 3 or 7 && e.KeyChar is '-') || (char.IsDigit(e.KeyChar) && !(txtPhone.TextLength is 3 or 7 or 0 or 1)));
+
+        }
+
         
     }
 }
