@@ -401,16 +401,16 @@
             // numRestaurant
             // 
             numRestaurant.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numRestaurant.Location = new Point(0, 141);
+            numRestaurant.Location = new Point(0, 174);
             numRestaurant.Name = "numRestaurant";
-            numRestaurant.Size = new Size(135, 23);
+            numRestaurant.Size = new Size(136, 23);
             numRestaurant.TabIndex = 34;
             numRestaurant.Visible = false;
             // 
             // numRent
             // 
             numRent.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numRent.Location = new Point(-1, 86);
+            numRent.Location = new Point(0, 145);
             numRent.Name = "numRent";
             numRent.Size = new Size(136, 23);
             numRent.TabIndex = 33;
@@ -419,16 +419,16 @@
             // numMarket
             // 
             numMarket.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numMarket.Location = new Point(0, 170);
+            numMarket.Location = new Point(0, 87);
             numMarket.Name = "numMarket";
-            numMarket.Size = new Size(135, 23);
+            numMarket.Size = new Size(136, 23);
             numMarket.TabIndex = 30;
             numMarket.Visible = false;
             // 
             // numUtilities
             // 
             numUtilities.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numUtilities.Location = new Point(-1, 115);
+            numUtilities.Location = new Point(0, 116);
             numUtilities.Name = "numUtilities";
             numUtilities.Size = new Size(136, 23);
             numUtilities.TabIndex = 25;
@@ -437,16 +437,16 @@
             // numTransport
             // 
             numTransport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numTransport.Location = new Point(0, -1);
+            numTransport.Location = new Point(0, 0);
             numTransport.Name = "numTransport";
-            numTransport.Size = new Size(135, 23);
+            numTransport.Size = new Size(136, 23);
             numTransport.TabIndex = 27;
             numTransport.Visible = false;
             // 
             // numSport
             // 
             numSport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numSport.Location = new Point(-1, 57);
+            numSport.Location = new Point(0, 59);
             numSport.Name = "numSport";
             numSport.Size = new Size(136, 23);
             numSport.TabIndex = 31;
@@ -455,7 +455,7 @@
             // numClothes
             // 
             numClothes.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            numClothes.Location = new Point(-1, 28);
+            numClothes.Location = new Point(0, 29);
             numClothes.Name = "numClothes";
             numClothes.Size = new Size(136, 23);
             numClothes.TabIndex = 26;
