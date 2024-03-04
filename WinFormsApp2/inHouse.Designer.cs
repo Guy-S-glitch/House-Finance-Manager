@@ -129,8 +129,7 @@
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
             lstMembersList.Size = new Size(488, 547);
-            lstMembersList.TabIndex = 3;
-            lstMembersList.SelectedIndexChanged += memberAdd_Select;
+            lstMembersList.TabIndex = 3; 
             // 
             // btnInspectMember
             // 
@@ -269,8 +268,7 @@
             label10.Name = "label10";
             label10.Size = new Size(411, 42);
             label10.TabIndex = 13;
-            label10.Text = "Total expenses";
-            label10.Click += label10_Click;
+            label10.Text = "Total expenses"; 
             // 
             // label11
             // 
@@ -345,8 +343,7 @@
             pbSports.Size = new Size(167, 34);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
-            pbSports.Value = 100;
-            pbSports.Click += pbSports_Click;
+            pbSports.Value = 100; 
             // 
             // pbMarkets
             // 
@@ -386,8 +383,7 @@
             pbRestaurants.Size = new Size(167, 37);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
-            pbRestaurants.Value = 100;
-            pbRestaurants.Click += pbRestaurants_Click;
+            pbRestaurants.Value = 100; 
             // 
             // pcTransportation
             // 

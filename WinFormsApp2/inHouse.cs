@@ -42,10 +42,6 @@ namespace House_Finance_management
             _members.Add(house);
         }
 
-        private void memberAdd_Select(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnmemberRemove_Click(object sender, EventArgs e) { btnInspectMember_Click(sender, e); }
         private void btnInspectMember_Click(object sender, EventArgs e)
@@ -74,6 +70,7 @@ namespace House_Finance_management
                 }
                 txtPhone.Text = remove ? "..." : selectedMember.GetPhone();
                 txtEmail.Text = remove ? "..." : selectedMember.GetEmail();
+                txtCity.Text = remove ? "..." : selectedMember.GetCity();
                 if (remove)
                 {
                     _members.RemoveAt(lstMembersList.SelectedIndex);
@@ -81,21 +78,6 @@ namespace House_Finance_management
                 }
             }
             else MessageBox.Show("please select a member first");
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbSports_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbRestaurants_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

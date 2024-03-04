@@ -14,7 +14,7 @@ namespace House_Finance_management
     public delegate void DataSentHandler(Class_InfoToHouse house);
     public partial class Add_Member
     {
-        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate,_expenseValidate,_phoneValidate;
+        private static bool _nameValidate, _jobValidate, _ageValidate, _genderValidate,_expenseValidate,_phoneValidate,_emailValidate,_cityValidate;
         private string _fullName;
         public event DataSentHandler DataSent;
         Class_InfoToHouse sendInfoToHouse;
@@ -26,11 +26,12 @@ namespace House_Finance_management
             _genderValidate = _validateGender();
             _expenseValidate=_ValidateExpenses();
             _phoneValidate = _validatePhone();
-            _validateEmail();
-            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate && _phoneValidate)
+            _emailValidate = _validateEmail();
+            _cityValidate = _validateCity(); 
+            if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate && _phoneValidate && _emailValidate && _cityValidate)
             {
                 NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text);
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text,cmbCity.Text);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -38,7 +39,7 @@ namespace House_Finance_management
         private bool _validateName()
         {
             bool fName = true, lName = true, mName = true;
-
+            //use try catch
             foreach (char inFName in txtFName.Text) if (!char.IsLetter(inFName)) {fName = false; break; }
             if (string.IsNullOrEmpty(txtFName.Text)) fName = false;
             txtFName.BackColor =fName? Color.White:Color.Red;
@@ -93,7 +94,7 @@ namespace House_Finance_management
             txtPhone.BackColor = txtPhone.TextLength == txtPhone.MaxLength ? Color.White : Color.Red;
             return txtPhone.TextLength == txtPhone.MaxLength;
         }
-        private void _validateEmail()
+        private bool _validateEmail()
         {
            txtEmail.Text= txtEmail.Text.Replace(" ", "");
             try
@@ -110,11 +111,19 @@ namespace House_Finance_management
                 if (validateLastPortion.Count() < 2) throw new Exception();
                 foreach(char CheckLast in validateLastPortion) if(!char.IsLetter(CheckLast)) throw new Exception(); 
                 txtEmail.BackColor = Color.White;
+                return true;
             }
             catch
             {
                 txtEmail.BackColor = Color.Red;
+                return false;
             }
+        }
+
+        private bool _validateCity()
+        {
+            pnlCity.BackColor = cmbCity.SelectedIndex < 1 ? Color.Red : Color.FromArgb(171, 171, 171);
+            return cmbCity.SelectedIndex > 0;
         }
 
     }

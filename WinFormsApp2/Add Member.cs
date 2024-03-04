@@ -29,16 +29,7 @@ namespace House_Finance_management
         {
             cmbCity.SelectedIndex = 0;
             foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " "));
-        }
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lsbExpensesPrices_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        } 
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
         {

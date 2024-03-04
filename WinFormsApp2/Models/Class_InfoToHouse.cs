@@ -8,6 +8,7 @@ namespace House_Finance_management
 {
     public class Class_InfoToHouse
     { 
+        private string _city { get; set; }
         private string _email {  get; set; }
         private string _phone {  get; set; }
         private string _Name {  get; set; }
@@ -18,18 +19,11 @@ namespace House_Finance_management
         private short _experience { get; set; }
         private string _job { get; set; }
         private NumericUpDown[] _expenses { get; set; }
-        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience, string job, string name, NumericUpDown[] expenses, string phone, string email)
+        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience
+            , string job, string name, NumericUpDown[] expenses, string phone, string email,string city)
         { 
-            _isMale = isMale;
-            _isFemale = isFemale;
-            _age = age;
-            _monthlySalary = monthlySalary;
-            _experience = experience;
-            _job = job;
-            _Name = name;
-            _expenses = expenses;
-            _phone = phone;
-            _email = email;
+            _isMale = isMale;   _isFemale = isFemale;   _age = age;   _monthlySalary = monthlySalary;   _experience = experience;
+            _job = job;   _Name = name;   _expenses = expenses;   _phone = phone;   _email = email;   _city = city;
         }
         public bool GetIsMale() { return _isMale; }
         public bool GetIsFemale() { return _isFemale; }
@@ -45,6 +39,7 @@ namespace House_Finance_management
         public NumericUpDown[] GetExpenses() { return _expenses; }
         public string GetPhone() { return _phone; }
         public string GetEmail() { return _email; }
+        public string GetCity() { return _city;}
 
     }
     

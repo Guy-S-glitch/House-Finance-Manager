@@ -71,6 +71,7 @@
             label1 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             groupBox5 = new GroupBox();
+            pnlCity = new Panel();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             pnlvalidateGender.SuspendLayout();
@@ -93,6 +94,7 @@
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             groupBox5.SuspendLayout();
+            pnlCity.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -476,14 +478,13 @@
             lsbExpensesPrices.Name = "lsbExpensesPrices";
             lsbExpensesPrices.Size = new Size(135, 199);
             lsbExpensesPrices.TabIndex = 0;
-            lsbExpensesPrices.SelectedIndexChanged += lsbExpensesPrices_SelectedIndexChanged;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(pnlCity);
             groupBox3.Controls.Add(txtEmail);
             groupBox3.Controls.Add(txtPhone);
             groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(cmbCity);
             groupBox3.Controls.Add(Email);
             groupBox3.Controls.Add(label1);
             groupBox3.Location = new Point(13, 375);
@@ -514,7 +515,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(408, 40);
+            label4.Location = new Point(386, 37);
             label4.Name = "label4";
             label4.Size = new Size(56, 24);
             label4.TabIndex = 7;
@@ -525,7 +526,7 @@
             cmbCity.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCity.FormattingEnabled = true;
             cmbCity.Items.AddRange(new object[] { "--SELECT CITY--" });
-            cmbCity.Location = new Point(471, 34);
+            cmbCity.Location = new Point(-2, 10);
             cmbCity.Margin = new Padding(4, 3, 4, 3);
             cmbCity.Name = "cmbCity";
             cmbCity.Size = new Size(297, 32);
@@ -575,6 +576,15 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Picture";
             // 
+            // pnlCity
+            // 
+            pnlCity.BorderStyle = BorderStyle.Fixed3D;
+            pnlCity.Controls.Add(cmbCity);
+            pnlCity.Location = new Point(448, 22);
+            pnlCity.Name = "pnlCity";
+            pnlCity.Size = new Size(309, 42);
+            pnlCity.TabIndex = 0;
+            // 
             // Add_Member
             // 
             AutoScaleDimensions = new SizeF(13F, 24F);
@@ -622,6 +632,7 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             groupBox5.ResumeLayout(false);
+            pnlCity.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -669,5 +680,6 @@
         private Label Email;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private GroupBox groupBox5;
+        private Panel pnlCity;
     }
 }
