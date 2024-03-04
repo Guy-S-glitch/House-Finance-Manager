@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Windows;
+using MessageBox = System.Windows.MessageBox;
 
 namespace House_Finance_management
 {
@@ -25,10 +26,11 @@ namespace House_Finance_management
             _genderValidate = _validateGender();
             _expenseValidate=_ValidateExpenses();
             _phoneValidate = _validatePhone();
+            _validateEmail();
             if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate && _phoneValidate)
             {
                 NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text);
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -90,6 +92,29 @@ namespace House_Finance_management
         {
             txtPhone.BackColor = txtPhone.TextLength == txtPhone.MaxLength ? Color.White : Color.Red;
             return txtPhone.TextLength == txtPhone.MaxLength;
+        }
+        private void _validateEmail()
+        {
+           txtEmail.Text= txtEmail.Text.Replace(" ", "");
+            try
+            { 
+                if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count()!=2) throw new Exception(); 
+                string validatePrefix = txtEmail.Text.Split('@')[0];
+                string validateDomain = txtEmail.Text.Split('@')[1].Split('.')[0];
+                string validateLastPortion = txtEmail.Text.Split('@')[1].Split('.')[1];
+
+                for (int CheckPrefix = 0; CheckPrefix < validatePrefix.Length; CheckPrefix++)  if(!( char.IsAsciiLetterOrDigit(validatePrefix[CheckPrefix]) || (validatePrefix[CheckPrefix] is '-' or '.' or '_' or '+' && char.IsAsciiLetterOrDigit(validatePrefix[CheckPrefix - 1]) && char.IsAsciiLetterOrDigit(validatePrefix[CheckPrefix + 1]) ) ) )throw new Exception();
+                
+                for(int CheckDomain = 0; CheckDomain < validateDomain.Length; CheckDomain++)  if(!(char.IsAsciiLetterOrDigit(validateDomain[CheckDomain]) || (validateDomain[CheckDomain] is '-' or '_' && char.IsAsciiLetterOrDigit(validateDomain[CheckDomain - 1]) && char.IsAsciiLetterOrDigit(validateDomain[CheckDomain + 1])))) throw new Exception();
+                
+                if (validateLastPortion.Count() < 2) throw new Exception();
+                foreach(char CheckLast in validateLastPortion) if(!char.IsLetter(CheckLast)) throw new Exception(); 
+                txtEmail.BackColor = Color.White;
+            }
+            catch
+            {
+                txtEmail.BackColor = Color.Red;
+            }
         }
 
     }

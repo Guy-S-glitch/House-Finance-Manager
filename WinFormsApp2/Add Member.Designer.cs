@@ -63,7 +63,7 @@
             numClothes = new NumericUpDown();
             lsbExpensesPrices = new ListBox();
             groupBox3 = new GroupBox();
-            textBox2 = new TextBox();
+            txtEmail = new TextBox();
             txtPhone = new TextBox();
             label4 = new Label();
             cmbCity = new ComboBox();
@@ -476,7 +476,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox2);
+            groupBox3.Controls.Add(txtEmail);
             groupBox3.Controls.Add(txtPhone);
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(cmbCity);
@@ -489,13 +489,13 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
             // 
-            // textBox2
+            // txtEmail
             // 
-            textBox2.Location = new Point(268, 85);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "example123@domain.com";
-            textBox2.Size = new Size(466, 31);
-            textBox2.TabIndex = 9;
+            txtEmail.Location = new Point(268, 85);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "example123@domain.com";
+            txtEmail.Size = new Size(466, 31);
+            txtEmail.TabIndex = 9;
             // 
             // txtPhone
             // 
@@ -630,7 +630,7 @@
         private NumericUpDown numRent;
         private NumericUpDown numSport;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtEmail;
         private TextBox txtPhone;
         private Label label4;
         private ComboBox cmbCity;
