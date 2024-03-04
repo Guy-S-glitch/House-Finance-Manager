@@ -146,6 +146,7 @@
             // radMale
             // 
             radMale.AutoSize = true;
+            radMale.Checked = true;
             radMale.Location = new Point(4, 5);
             radMale.Margin = new Padding(4, 3, 4, 3);
             radMale.Name = "radMale";
@@ -163,7 +164,6 @@
             radFemale.Name = "radFemale";
             radFemale.Size = new Size(126, 28);
             radFemale.TabIndex = 15;
-            radFemale.TabStop = true;
             radFemale.Text = "Not Male";
             radFemale.UseVisualStyleBackColor = true;
             // 
@@ -244,10 +244,12 @@
             dtpAge.Format = DateTimePickerFormat.Short;
             dtpAge.Location = new Point(-3, 5);
             dtpAge.Margin = new Padding(4, 3, 4, 3);
+            dtpAge.MaxDate = new DateTime(2024, 3, 4, 0, 0, 0, 0);
             dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dtpAge.Name = "dtpAge";
             dtpAge.Size = new Size(224, 31);
             dtpAge.TabIndex = 9;
+            dtpAge.Value = new DateTime(2024, 3, 4, 0, 0, 0, 0);
             // 
             // label10
             // 
@@ -267,6 +269,7 @@
             txtMName.PlaceholderText = "Optional";
             txtMName.Size = new Size(287, 31);
             txtMName.TabIndex = 7;
+            txtMName.KeyPress += txtMName_KeyPress;
             // 
             // label9
             // 
@@ -285,6 +288,7 @@
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(287, 31);
             txtLName.TabIndex = 5;
+            txtLName.KeyPress += txtLName_KeyPress;
             // 
             // label8
             // 
@@ -303,6 +307,7 @@
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(287, 31);
             txtFName.TabIndex = 3;
+            txtFName.KeyPress += txtFName_KeyPress;
             // 
             // label6
             // 
@@ -354,6 +359,7 @@
             cmbJob.Size = new Size(559, 32);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
+            cmbJob.SelectedIndex = 0;
             // 
             // clbExpenses
             // 
@@ -514,6 +520,7 @@
             cmbCity.Size = new Size(297, 32);
             cmbCity.Sorted = true;
             cmbCity.TabIndex = 6;
+            cmbCity.SelectedIndex = 0;
             // 
             // txtEmail
             // 

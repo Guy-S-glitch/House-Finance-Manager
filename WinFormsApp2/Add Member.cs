@@ -13,6 +13,7 @@ namespace House_Finance_management
     public partial class Add_Member : Form
     {
 
+
         public Add_Member()
         {
             InitializeComponent();
@@ -20,30 +21,13 @@ namespace House_Finance_management
             _setCitiesNames();
         }
 
-        private void _setJobsNames()
-        {
-            cmbJob.SelectedIndex = 0;
-            foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " "));
-        }
-        private void _setCitiesNames()
-        {
-            cmbCity.SelectedIndex = 0;
-            foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " "));
-        } 
+        private void _setJobsNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); }
+        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            switch (e.Index)
-            {
-                case 0: numTransport.Visible  = e.NewValue == CheckState.Checked; break;
-                case 1: numClothes.Visible    = e.NewValue == CheckState.Checked; break;
-                case 2: numSport.Visible      = e.NewValue == CheckState.Checked; break;
-                case 3: numMarket.Visible     = e.NewValue == CheckState.Checked; break;
-                case 4: numUtilities.Visible  = e.NewValue == CheckState.Checked; break;
-                case 5: numRent.Visible       = e.NewValue == CheckState.Checked; break;
-                case 6: numRestaurant.Visible = e.NewValue == CheckState.Checked; break;
-            }
-
+            NumericUpDown[] isVisible = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
+            isVisible[e.Index].Visible = e.NewValue == CheckState.Checked;
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -57,11 +41,13 @@ namespace House_Finance_management
         {
             OpenFileDialog opnfd = new OpenFileDialog();
             opnfd.Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
-            if (opnfd.ShowDialog() == DialogResult.OK)
-            {
-                iconPictureBox.Image = new Bitmap(opnfd.FileName);
-            }
-
+            if (opnfd.ShowDialog() == DialogResult.OK) iconPictureBox.Image = new Bitmap(opnfd.FileName);
         }
+
+        private void txtFName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar==(char)Keys.Back); }
+
+        private void txtLName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
+
+        private void txtMName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
     }
 }
