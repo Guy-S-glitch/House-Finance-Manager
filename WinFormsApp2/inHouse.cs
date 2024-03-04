@@ -71,8 +71,12 @@ namespace House_Finance_management
                 txtPhone.Text = remove ? "..." : selectedMember.GetPhone();
                 txtEmail.Text = remove ? "..." : selectedMember.GetEmail();
                 txtCity.Text = remove ? "..." : selectedMember.GetCity();
+                iconPictureBox.Image = remove ? null : selectedMember.GetPicture();
                 if (remove)
-                {
+                { 
+                    iconPictureBox.IconChar = IconChar.UserTie;
+                    iconPictureBox.IconColor = Color.Black;
+
                     _members.RemoveAt(lstMembersList.SelectedIndex);
                     lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
                 }

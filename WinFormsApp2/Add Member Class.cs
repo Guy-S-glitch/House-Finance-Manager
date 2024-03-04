@@ -28,10 +28,12 @@ namespace House_Finance_management
             _phoneValidate = _validatePhone();
             _emailValidate = _validateEmail();
             _cityValidate = _validateCity(); 
+
             if (_nameValidate && _jobValidate && _ageValidate && _genderValidate && _expenseValidate && _phoneValidate && _emailValidate && _cityValidate)
+            //if(true)
             {
                 NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text,cmbCity.Text);
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text,cmbCity.Text,iconPictureBox.Image);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -39,7 +41,6 @@ namespace House_Finance_management
         private bool _validateName()
         {
             bool fName = true, lName = true, mName = true;
-            //use try catch
             foreach (char inFName in txtFName.Text) if (!char.IsLetter(inFName)) {fName = false; break; }
             if (string.IsNullOrEmpty(txtFName.Text)) fName = false;
             txtFName.BackColor =fName? Color.White:Color.Red;
@@ -124,7 +125,6 @@ namespace House_Finance_management
         {
             pnlCity.BackColor = cmbCity.SelectedIndex < 1 ? Color.Red : Color.FromArgb(171, 171, 171);
             return cmbCity.SelectedIndex > 0;
-        }
-
+        } 
     }
 }

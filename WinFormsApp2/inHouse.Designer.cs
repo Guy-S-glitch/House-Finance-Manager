@@ -36,7 +36,6 @@
             btnmemberAdd = new Button();
             label1 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
-            txtCity = new Label();
             label17 = new Label();
             label16 = new Label();
             label10 = new Label();
@@ -62,9 +61,10 @@
             label25 = new Label();
             label26 = new Label();
             label28 = new Label();
-            label18 = new Label();
             txtPhone = new Label();
             txtEmail = new Label();
+            label18 = new Label();
+            txtCity = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             txtExperience = new Label();
             txtJobTitle = new Label();
@@ -74,7 +74,7 @@
             txtMonthlySalary = new Label();
             label6 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
             lblUserGender = new Label();
             lblUserName = new Label();
@@ -90,7 +90,7 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -129,7 +129,7 @@
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
             lstMembersList.Size = new Size(488, 547);
-            lstMembersList.TabIndex = 3; 
+            lstMembersList.TabIndex = 3;
             // 
             // btnInspectMember
             // 
@@ -185,7 +185,6 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.66533F));
-            tableLayoutPanel3.Controls.Add(txtCity, 6, 6);
             tableLayoutPanel3.Controls.Add(label17, 0, 7);
             tableLayoutPanel3.Controls.Add(label16, 0, 6);
             tableLayoutPanel3.Controls.Add(label10, 0, 0);
@@ -209,11 +208,12 @@
             tableLayoutPanel3.Controls.Add(pcRent, 1, 6);
             tableLayoutPanel3.Controls.Add(pcRestaurants, 1, 7);
             tableLayoutPanel3.Controls.Add(label25, 4, 0);
-            tableLayoutPanel3.Controls.Add(label26, 4, 2);
-            tableLayoutPanel3.Controls.Add(label28, 4, 4);
-            tableLayoutPanel3.Controls.Add(label18, 4, 6);
-            tableLayoutPanel3.Controls.Add(txtPhone, 6, 2);
-            tableLayoutPanel3.Controls.Add(txtEmail, 6, 4);
+            tableLayoutPanel3.Controls.Add(label26, 4, 1);
+            tableLayoutPanel3.Controls.Add(label28, 4, 2);
+            tableLayoutPanel3.Controls.Add(txtPhone, 6, 1);
+            tableLayoutPanel3.Controls.Add(txtEmail, 6, 2);
+            tableLayoutPanel3.Controls.Add(label18, 4, 3);
+            tableLayoutPanel3.Controls.Add(txtCity, 6, 3);
             tableLayoutPanel3.Dock = DockStyle.Top;
             tableLayoutPanel3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel3.Location = new Point(0, 305);
@@ -229,16 +229,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.Size = new Size(779, 333);
             tableLayoutPanel3.TabIndex = 14;
-            // 
-            // txtCity
-            // 
-            txtCity.AutoSize = true;
-            txtCity.Dock = DockStyle.Bottom;
-            txtCity.Location = new Point(608, 266);
-            txtCity.Name = "txtCity";
-            txtCity.Size = new Size(168, 24);
-            txtCity.TabIndex = 39;
-            txtCity.Text = "...";
             // 
             // label17
             // 
@@ -268,7 +258,7 @@
             label10.Name = "label10";
             label10.Size = new Size(411, 42);
             label10.TabIndex = 13;
-            label10.Text = "Total expenses"; 
+            label10.Text = "Total expenses";
             // 
             // label11
             // 
@@ -343,7 +333,7 @@
             pbSports.Size = new Size(167, 34);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
-            pbSports.Value = 100; 
+            pbSports.Value = 100;
             // 
             // pbMarkets
             // 
@@ -383,7 +373,7 @@
             pbRestaurants.Size = new Size(167, 37);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
-            pbRestaurants.Value = 100; 
+            pbRestaurants.Value = 100;
             // 
             // pcTransportation
             // 
@@ -464,8 +454,7 @@
             // label26
             // 
             label26.AutoSize = true;
-            label26.Dock = DockStyle.Bottom;
-            label26.Location = new Point(444, 106);
+            label26.Location = new Point(444, 42);
             label26.Name = "label26";
             label26.Size = new Size(158, 24);
             label26.TabIndex = 34;
@@ -475,44 +464,49 @@
             // label28
             // 
             label28.AutoSize = true;
-            label28.Dock = DockStyle.Bottom;
-            label28.Location = new Point(444, 186);
+            label28.Location = new Point(444, 82);
             label28.Name = "label28";
-            label28.Size = new Size(158, 24);
+            label28.Size = new Size(143, 24);
             label28.TabIndex = 36;
             label28.Text = "Email adress:";
             label28.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Dock = DockStyle.Bottom;
-            label18.Location = new Point(444, 266);
-            label18.Name = "label18";
-            label18.Size = new Size(158, 24);
-            label18.TabIndex = 37;
-            label18.Text = "City:";
-            label18.TextAlign = ContentAlignment.MiddleRight;
-            // 
             // txtPhone
             // 
             txtPhone.AutoSize = true;
-            txtPhone.Dock = DockStyle.Bottom;
-            txtPhone.Location = new Point(608, 106);
+            txtPhone.Location = new Point(608, 42);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(168, 24);
+            txtPhone.Size = new Size(28, 24);
             txtPhone.TabIndex = 38;
             txtPhone.Text = "...";
             // 
             // txtEmail
             // 
             txtEmail.AutoSize = true;
-            txtEmail.Dock = DockStyle.Bottom;
-            txtEmail.Location = new Point(608, 186);
+            txtEmail.Location = new Point(608, 82);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(168, 24);
+            txtEmail.Size = new Size(28, 24);
             txtEmail.TabIndex = 39;
             txtEmail.Text = "...";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(444, 130);
+            label18.Name = "label18";
+            label18.Size = new Size(61, 24);
+            label18.TabIndex = 37;
+            label18.Text = "City:";
+            label18.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // txtCity
+            // 
+            txtCity.AutoSize = true;
+            txtCity.Location = new Point(608, 130);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(28, 24);
+            txtCity.TabIndex = 39;
+            txtCity.Text = "...";
             // 
             // tableLayoutPanel2
             // 
@@ -615,7 +609,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(iconPictureBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(iconPictureBox, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 1, 0);
             tableLayoutPanel1.Controls.Add(lblUserGender, 2, 2);
             tableLayoutPanel1.Controls.Add(lblUserName, 2, 0);
@@ -634,20 +628,20 @@
             tableLayoutPanel1.Size = new Size(779, 167);
             tableLayoutPanel1.TabIndex = 10;
             // 
-            // iconPictureBox1
+            // iconPictureBox
             // 
-            iconPictureBox1.BackColor = SystemColors.Control;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 161;
-            iconPictureBox1.Location = new Point(3, 3);
-            iconPictureBox1.Name = "iconPictureBox1";
-            tableLayoutPanel1.SetRowSpan(iconPictureBox1, 3);
-            iconPictureBox1.Size = new Size(165, 161);
-            iconPictureBox1.TabIndex = 1;
-            iconPictureBox1.TabStop = false;
+            iconPictureBox.BackColor = SystemColors.Control;
+            iconPictureBox.ForeColor = SystemColors.ControlText;
+            iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            iconPictureBox.IconColor = SystemColors.ControlText;
+            iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox.IconSize = 161;
+            iconPictureBox.Location = new Point(3, 3);
+            iconPictureBox.Name = "iconPictureBox";
+            tableLayoutPanel1.SetRowSpan(iconPictureBox, 3);
+            iconPictureBox.Size = new Size(165, 161);
+            iconPictureBox.TabIndex = 1;
+            iconPictureBox.TabStop = false;
             // 
             // label2
             // 
@@ -739,7 +733,7 @@
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -759,7 +753,7 @@
         private Label lblUserAge;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox;
         private Button btnInspectMember;
         private Label label6;
         private Label label9;

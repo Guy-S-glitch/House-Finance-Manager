@@ -35,20 +35,13 @@ namespace House_Finance_management
         {
             switch (e.Index)
             {
-                case 0:
-                    numTransport.Visible = e.NewValue == CheckState.Checked; break;
-                case 1:
-                    numClothes.Visible = e.NewValue == CheckState.Checked; break;
-                case 2:
-                    numSport.Visible = e.NewValue == CheckState.Checked; break;
-                case 3:
-                    numMarket.Visible = e.NewValue == CheckState.Checked; break;
-                case 4:
-                    numUtilities.Visible = e.NewValue == CheckState.Checked; break;
-                case 5:
-                    numRent.Visible = e.NewValue == CheckState.Checked; break;
-                case 6:
-                    numRestaurant.Visible = e.NewValue == CheckState.Checked; break;
+                case 0: numTransport.Visible  = e.NewValue == CheckState.Checked; break;
+                case 1: numClothes.Visible    = e.NewValue == CheckState.Checked; break;
+                case 2: numSport.Visible      = e.NewValue == CheckState.Checked; break;
+                case 3: numMarket.Visible     = e.NewValue == CheckState.Checked; break;
+                case 4: numUtilities.Visible  = e.NewValue == CheckState.Checked; break;
+                case 5: numRent.Visible       = e.NewValue == CheckState.Checked; break;
+                case 6: numRestaurant.Visible = e.NewValue == CheckState.Checked; break;
             }
 
         }
@@ -66,7 +59,7 @@ namespace House_Finance_management
             opnfd.Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
             if (opnfd.ShowDialog() == DialogResult.OK)
             {
-                iconPictureBox1.Image = new Bitmap(opnfd.FileName);
+                iconPictureBox.Image = new Bitmap(opnfd.FileName);
             }
 
         }

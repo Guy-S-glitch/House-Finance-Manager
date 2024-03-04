@@ -63,15 +63,15 @@
             numClothes = new NumericUpDown();
             lsbExpensesPrices = new ListBox();
             groupBox3 = new GroupBox();
+            pnlCity = new Panel();
+            cmbCity = new ComboBox();
             txtEmail = new TextBox();
             txtPhone = new TextBox();
             label4 = new Label();
-            cmbCity = new ComboBox();
             Email = new Label();
             label1 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             groupBox5 = new GroupBox();
-            pnlCity = new Panel();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             pnlvalidateGender.SuspendLayout();
@@ -92,9 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)numSport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numClothes).BeginInit();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            groupBox5.SuspendLayout();
             pnlCity.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -494,6 +494,27 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
             // 
+            // pnlCity
+            // 
+            pnlCity.BorderStyle = BorderStyle.Fixed3D;
+            pnlCity.Controls.Add(cmbCity);
+            pnlCity.Location = new Point(448, 22);
+            pnlCity.Name = "pnlCity";
+            pnlCity.Size = new Size(309, 42);
+            pnlCity.TabIndex = 0;
+            // 
+            // cmbCity
+            // 
+            cmbCity.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbCity.FormattingEnabled = true;
+            cmbCity.Items.AddRange(new object[] { "--SELECT CITY--" });
+            cmbCity.Location = new Point(-2, 10);
+            cmbCity.Margin = new Padding(4, 3, 4, 3);
+            cmbCity.Name = "cmbCity";
+            cmbCity.Size = new Size(297, 32);
+            cmbCity.Sorted = true;
+            cmbCity.TabIndex = 6;
+            // 
             // txtEmail
             // 
             txtEmail.Location = new Point(246, 84);
@@ -521,18 +542,6 @@
             label4.TabIndex = 7;
             label4.Text = "city:";
             // 
-            // cmbCity
-            // 
-            cmbCity.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbCity.FormattingEnabled = true;
-            cmbCity.Items.AddRange(new object[] { "--SELECT CITY--" });
-            cmbCity.Location = new Point(-2, 10);
-            cmbCity.Margin = new Padding(4, 3, 4, 3);
-            cmbCity.Name = "cmbCity";
-            cmbCity.Size = new Size(297, 32);
-            cmbCity.Sorted = true;
-            cmbCity.TabIndex = 6;
-            // 
             // Email
             // 
             Email.AutoSize = true;
@@ -551,39 +560,31 @@
             label1.TabIndex = 0;
             label1.Text = "Phone:";
             // 
-            // iconPictureBox1
+            // iconPictureBox
             // 
-            iconPictureBox1.BackColor = SystemColors.AppWorkspace;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 239;
-            iconPictureBox1.Location = new Point(6, 25);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(243, 239);
-            iconPictureBox1.TabIndex = 26;
-            iconPictureBox1.TabStop = false;
-            iconPictureBox1.Click += iconPictureBox1_Click;
+            iconPictureBox.BackColor = SystemColors.AppWorkspace;
+            iconPictureBox.Cursor = Cursors.Hand;
+            iconPictureBox.ForeColor = SystemColors.ControlText;
+            iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            iconPictureBox.IconColor = SystemColors.ControlText;
+            iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox.IconSize = 239;
+            iconPictureBox.Location = new Point(6, 25);
+            iconPictureBox.Name = "iconPictureBox";
+            iconPictureBox.Size = new Size(243, 239);
+            iconPictureBox.TabIndex = 26;
+            iconPictureBox.TabStop = false;
+            iconPictureBox.Click += iconPictureBox1_Click;
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(iconPictureBox1);
+            groupBox5.Controls.Add(iconPictureBox);
             groupBox5.Location = new Point(939, 12);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(263, 270);
             groupBox5.TabIndex = 27;
             groupBox5.TabStop = false;
-            groupBox5.Text = "Picture";
-            // 
-            // pnlCity
-            // 
-            pnlCity.BorderStyle = BorderStyle.Fixed3D;
-            pnlCity.Controls.Add(cmbCity);
-            pnlCity.Location = new Point(448, 22);
-            pnlCity.Name = "pnlCity";
-            pnlCity.Size = new Size(309, 42);
-            pnlCity.TabIndex = 0;
+            groupBox5.Text = "Upload picture";
             // 
             // Add_Member
             // 
@@ -630,9 +631,9 @@
             ((System.ComponentModel.ISupportInitialize)numClothes).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            groupBox5.ResumeLayout(false);
             pnlCity.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
+            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -678,7 +679,7 @@
         private Label label4;
         private ComboBox cmbCity;
         private Label Email;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox;
         private GroupBox groupBox5;
         private Panel pnlCity;
     }
