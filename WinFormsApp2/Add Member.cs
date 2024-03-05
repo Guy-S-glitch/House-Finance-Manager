@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,14 +30,14 @@ namespace House_Finance_management
             NumericUpDown[] isVisible = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
             isVisible[e.Index].Visible = e.NewValue == CheckState.Checked;
         }
-
-        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPhone_KeyUp(object sender, KeyEventArgs e)
         {
-            e.Handled = !((e.KeyChar == (char)Keys.Back) || (txtPhone.TextLength is 0 && e.KeyChar is '0') || (txtPhone.TextLength is 1 && e.KeyChar is '5')
-                 || (txtPhone.TextLength is 3 or 7 && e.KeyChar is '-') || (char.IsDigit(e.KeyChar) && !(txtPhone.TextLength is 3 or 7 or 0 or 1)));
-
-        }
-
+            phoneValidationText.Text = Regex.IsMatch(txtPhone.Text, "^(05\\d-?\\d{3}-?\\d{4})$") ? "" :
+                Regex.IsMatch(txtPhone.Text.Replace("-",""), "(\\D)")? "Only numbers please" :
+                (!Regex.IsMatch(txtPhone.Text, "^(05)")) ? "Must start with 05" :
+                Regex.IsMatch(txtPhone.Text.Replace("\\D", ""), "\\d{11,}") ? "Only 10 numbers" :
+                txtPhone.TextLength==txtPhone.MaxLength?"Currect your dashes placement":"the order is 05X-XXX-XXXX";
+        } 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog opnfd = new OpenFileDialog();
@@ -44,10 +45,12 @@ namespace House_Finance_management
             if (opnfd.ShowDialog() == DialogResult.OK) iconPictureBox.Image = new Bitmap(opnfd.FileName);
         }
 
-        private void txtFName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar==(char)Keys.Back); }
+        private void txtFName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
 
         private void txtLName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
 
         private void txtMName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
+
+
     }
 }

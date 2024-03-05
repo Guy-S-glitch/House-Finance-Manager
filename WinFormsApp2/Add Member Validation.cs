@@ -58,9 +58,9 @@ namespace House_Finance_management
         }
 
         private bool _validatePhone()
-        {
-            txtPhone.BackColor = txtPhone.TextLength == txtPhone.MaxLength ? Color.White : Color.Red;
-            return txtPhone.TextLength == txtPhone.MaxLength;
+        { 
+            txtPhone.BackColor = Regex.IsMatch(txtPhone.Text, "05\\d-?\\d{3}-?\\d{4}") ? Color.White : Color.Red;
+            return Regex.IsMatch(txtPhone.Text, "05\\d-?\\d{3}-?\\d{4}");
         }
         private bool _validateEmail()
         {

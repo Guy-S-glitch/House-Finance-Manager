@@ -63,6 +63,7 @@
             numClothes = new NumericUpDown();
             lsbExpensesPrices = new ListBox();
             groupBox3 = new GroupBox();
+            phoneValidationText = new Label();
             pnlCity = new Panel();
             cmbCity = new ComboBox();
             txtEmail = new TextBox();
@@ -486,6 +487,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(phoneValidationText);
             groupBox3.Controls.Add(pnlCity);
             groupBox3.Controls.Add(txtEmail);
             groupBox3.Controls.Add(txtPhone);
@@ -498,6 +500,16 @@
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
+            // 
+            // phoneValidationText
+            // 
+            phoneValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            phoneValidationText.ForeColor = Color.Red;
+            phoneValidationText.Location = new Point(143, 22);
+            phoneValidationText.Name = "phoneValidationText";
+            phoneValidationText.Size = new Size(246, 14);
+            phoneValidationText.TabIndex = 10;
+            phoneValidationText.Text = "...";
             // 
             // pnlCity
             // 
@@ -536,7 +548,7 @@
             txtPhone.PlaceholderText = "05X-XXX-XXXX";
             txtPhone.Size = new Size(185, 31);
             txtPhone.TabIndex = 8;
-            txtPhone.KeyPress += txtPhone_KeyPress;
+            txtPhone.KeyUp += txtPhone_KeyUp;
             // 
             // label4
             // 
@@ -687,5 +699,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox;
         private GroupBox groupBox5;
         private Panel pnlCity;
+        private Label phoneValidationText;
     }
 }
