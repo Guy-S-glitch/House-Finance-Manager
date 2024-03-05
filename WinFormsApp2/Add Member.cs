@@ -35,7 +35,7 @@ namespace House_Finance_management
             phoneValidationText.Text = Regex.IsMatch(txtPhone.Text, "^(05\\d-?\\d{3}-?\\d{4})$") ? "" :
                 Regex.IsMatch(txtPhone.Text.Replace("-",""), "(\\D)")? "Only numbers please" :
                 (!Regex.IsMatch(txtPhone.Text, "^(05)")) ? "Must start with 05" :
-                Regex.IsMatch(txtPhone.Text.Replace("\\D", ""), "\\d{11,}") ? "Only 10 numbers" :
+                Regex.IsMatch(txtPhone.Text.Replace("-", ""), "\\d{11,}") ? "Only 10 numbers" :
                 txtPhone.TextLength==txtPhone.MaxLength?"Currect your dashes placement":"the order is 05X-XXX-XXXX";
         } 
         private void iconPictureBox1_Click(object sender, EventArgs e)
