@@ -392,13 +392,14 @@
             // 
             // JobValidationText
             // 
+            JobValidationText.Dock = DockStyle.Top;
             JobValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
             JobValidationText.ForeColor = Color.Red;
-            JobValidationText.Location = new Point(-2, 0);
+            JobValidationText.Location = new Point(0, 0);
             JobValidationText.Name = "JobValidationText";
-            JobValidationText.Size = new Size(556, 14);
+            JobValidationText.Size = new Size(565, 15);
             JobValidationText.TabIndex = 23;
-            JobValidationText.Text = "...";
+            JobValidationText.Text = "Please select your job";
             // 
             // cmbJob
             // 
@@ -411,6 +412,7 @@
             cmbJob.Size = new Size(559, 32);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
+            cmbJob.SelectedIndexChanged += cmbJob_SelectedIndexChanged;
             // 
             // clbExpenses
             // 
@@ -580,7 +582,7 @@
             CityValidationText.Name = "CityValidationText";
             CityValidationText.Size = new Size(297, 14);
             CityValidationText.TabIndex = 24;
-            CityValidationText.Text = "...";
+            CityValidationText.Text = "Please select your city";
             // 
             // cmbCity
             // 
@@ -593,6 +595,7 @@
             cmbCity.Size = new Size(297, 32);
             cmbCity.Sorted = true;
             cmbCity.TabIndex = 6;
+            cmbCity.SelectedIndexChanged += cmbCity_SelectedIndexChanged;
             // 
             // txtEmail
             // 

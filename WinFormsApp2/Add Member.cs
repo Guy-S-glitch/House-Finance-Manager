@@ -22,8 +22,8 @@ namespace House_Finance_management
             _setCitiesNames();
         }
 
-        private void _setJobsNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); }
-        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); }
+        private void _setJobsNames() {foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
+        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); cmbCity.SelectedIndex = 0; }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -69,8 +69,18 @@ namespace House_Finance_management
 
         private void txtMName_KeyUp(object sender, KeyEventArgs e)
         {
-            MiddleNameValidationText.Text= txtMName.TextLength == txtMName.MaxLength ? "exceed max amount of characters"
+            MiddleNameValidationText.Text = txtMName.TextLength == txtMName.MaxLength ? "exceed max amount of characters"
     : Regex.IsMatch(txtMName.Text, "^([a-zA-Z]+)$") ? "" : "Only letters allowed";
+        }
+
+        private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            JobValidationText.Text = cmbJob.SelectedIndex == 0 ? "Please select your job" : "";
+        }
+
+        private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CityValidationText.Text = cmbCity.SelectedIndex == 0 ? "Please select your job" : "";
         }
     }
 }
