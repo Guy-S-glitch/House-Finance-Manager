@@ -28,6 +28,14 @@ namespace House_Finance_management
             InitializeComponent();
         }
 
+        public Add_Member Add_Member
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btnmemberAdd_Click(object sender, EventArgs e)
         {
             Add_Member addMember = new Add_Member();

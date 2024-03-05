@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace House_Finance_management
 {
-    internal class ComboBoxLIsts
+    internal class ComboBoxLIsts : Add_Member
     {
-        
-        public enum jobs
+
+        public enum Jobs
         {
-            Unemployed=0,
+            Unemployed = 0,
             Administor = 8850,
             Food_industry = 9711,
             Arts_and_Culture = 9785,
@@ -49,10 +49,11 @@ namespace House_Finance_management
             Tourism_Gastronomy_Hotel_Business = 9677,
             Translating_interpreting = 10994,
             Transport_Haulage_Logistics = 10367,
-            Water_Management_Forestry_Environment=10373,
+            Water_Management_Forestry_Environment = 10373,
             Wood_Processing_Industry = 9890
         }
-        public enum cities {
+        public enum Cities
+        {
             Beersheba = 1,
             Ashdod = 2,
             Netanya = 3,

@@ -21,8 +21,8 @@ namespace House_Finance_management
             _setCitiesNames();
         }
 
-        private void _setJobsNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); }
-        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); }
+        private void _setJobsNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); }
+        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
         {

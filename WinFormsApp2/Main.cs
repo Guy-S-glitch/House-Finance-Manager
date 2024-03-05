@@ -7,10 +7,18 @@ namespace WinFormsApp2
         {
             InitializeComponent();
         }
-        
+
+        public House_Finance_management.inHouse inHouse
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void House1_Click(object sender, EventArgs e)
         {
-            house.Show();
+            house.Show(); 
         }
     }
 }

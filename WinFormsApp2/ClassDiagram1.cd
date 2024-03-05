@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WinFormsApp2.Main">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="House2" Hidden="true" />
+      <Field Name="House3" Hidden="true" />
+      <Field Name="House4" Hidden="true" />
+      <Field Name="House5" Hidden="true" />
+      <Field Name="House6" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="splitContainer1" Hidden="true" />
+      <Field Name="splitContainer2" Hidden="true" />
+      <Field Name="splitContainer3" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAQgAAAIAAQACABA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="inHouse" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="House_Finance_management.inHouse">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="_memberID" Hidden="true" />
+      <Method Name="AddMember_DataSent" Hidden="true" />
+      <Method Name="btnInspectMember_Click" Hidden="true" />
+      <Method Name="btnmemberRemove_Click" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="iconPictureBox" Hidden="true" />
+      <Method Name="inHouse" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label25" Hidden="true" />
+      <Field Name="label26" Hidden="true" />
+      <Field Name="label28" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="lblUserAge" Hidden="true" />
+      <Field Name="lblUserGender" Hidden="true" />
+      <Field Name="lblUserName" Hidden="true" />
+      <Field Name="lstMembersList" Hidden="true" />
+      <Field Name="pbClothes" Hidden="true" />
+      <Field Name="pbMarkets" Hidden="true" />
+      <Field Name="pbRent" Hidden="true" />
+      <Field Name="pbRestaurants" Hidden="true" />
+      <Field Name="pbSports" Hidden="true" />
+      <Field Name="pbTransportation" Hidden="true" />
+      <Field Name="pbUtilities" Hidden="true" />
+      <Field Name="pcClothes" Hidden="true" />
+      <Field Name="pcMarkets" Hidden="true" />
+      <Field Name="pcRent" Hidden="true" />
+      <Field Name="pcRestaurants" Hidden="true" />
+      <Field Name="pcSports" Hidden="true" />
+      <Field Name="pcTransportation" Hidden="true" />
+      <Field Name="pcUtilities" Hidden="true" />
+      <Field Name="splitContainer1" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="tableLayoutPanel3" Hidden="true" />
+      <Field Name="txtCity" Hidden="true" />
+      <Field Name="txtEmail" Hidden="true" />
+      <Field Name="txtExperience" Hidden="true" />
+      <Field Name="txtJobTitle" Hidden="true" />
+      <Field Name="txtMonthlySalary" Hidden="true" />
+      <Field Name="txtPhone" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Add_Member" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="6.449" />
+        <Point X="10.875" Y="6.449" />
+        <Point X="10.875" Y="7.566" />
+        <Point X="6.562" Y="7.566" />
+        <Point X="6.562" Y="7.191" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="dataSentHandlerBindingSource" Type="System.Windows.Forms.BindingSource" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="5.562" />
+        <Point X="11.088" Y="5.562" />
+        <Point X="10.25" Y="5.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.936" Y="-0.266" Height="0.182" Width="2.036" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>/6AIQCAQKKACIJBAAFPEAgBCEgEIBZAAhAAEgAAABLA=</HashCode>
+      <FileName>inHouse.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dataSentHandlerBindingSource" />
+      <Property Name="Add_Member" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="House_Finance_management.Add_Member" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <Members>
+      <Field Name="_fullName" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="groupBox2" Hidden="true" />
+      <Field Name="groupBox3" Hidden="true" />
+      <Field Name="groupBox4" Hidden="true" />
+      <Field Name="groupBox5" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="pnlCity" Hidden="true" />
+      <Field Name="pnlValidateAge" Hidden="true" />
+      <Field Name="pnlvalidateGender" Hidden="true" />
+      <Field Name="pnlValidateJob" Hidden="true" />
+      <Field Name="splitContainer1" Hidden="true" />
+      <Field Name="validateDomain" Hidden="true" />
+      <Field Name="validateLastPortion" Hidden="true" />
+      <Field Name="validatePrefix" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAAAAQABDOBGALIgwQCAAEICAQAC15QgJqAIgAAgCAM=</HashCode>
+      <FileName>Add Member Validation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sendInfoToHouse" />
+      <Field Name="_fullName" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="House_Finance_management.ComboBoxLIsts">
+    <Position X="4" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="House_Finance_management.ComboBoxLIsts.Jobs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\ComboBoxLIsts.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="House_Finance_management.ComboBoxLIsts.Cities" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\ComboBoxLIsts.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ComboBoxLIsts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="House_Finance_management.Class_InfoToHouse" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <AssociationLine Name="DataSentHandler" Type="House_Finance_management.DataSentHandler" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.203" />
+        <Point X="8.375" Y="3.203" />
+        <Point X="8.375" Y="4.75" />
+        <Point X="8.75" Y="4.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAASAhACAAKIQAAIAAgAAIBAAggAAAAgAACThM=</HashCode>
+      <FileName>Models\Class_InfoToHouse.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DataSentHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Windows.Forms.BindingSource" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Left" Position="0.221" />
+  </Class>
+  <Delegate Name="House_Finance_management.DataSentHandler" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Add Member Validation.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

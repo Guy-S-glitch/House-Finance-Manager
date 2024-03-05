@@ -16,7 +16,7 @@ namespace House_Finance_management
     { 
         private static string? _fullName,validatePrefix, validateDomain,validateLastPortion;
         public event DataSentHandler DataSent;
-        Class_InfoToHouse sendInfoToHouse;
+        public Class_InfoToHouse sendInfoToHouse;
         private void btnAdd_Click(object sender, EventArgs e)
         { 
             if (_validateAll())
@@ -95,6 +95,6 @@ namespace House_Finance_management
         {
             pnlCity.BackColor = cmbCity.SelectedIndex ==0 ? Color.Red : Color.FromArgb(171, 171, 171);
             return cmbCity.SelectedIndex != 0;
-        } 
+        }
     }
 }

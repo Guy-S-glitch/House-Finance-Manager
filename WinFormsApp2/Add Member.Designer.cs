@@ -359,7 +359,6 @@
             cmbJob.Size = new Size(559, 32);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 5;
-            cmbJob.SelectedIndex = 0;
             // 
             // clbExpenses
             // 
@@ -520,7 +519,6 @@
             cmbCity.Size = new Size(297, 32);
             cmbCity.Sorted = true;
             cmbCity.TabIndex = 6;
-            cmbCity.SelectedIndex = 0;
             // 
             // txtEmail
             // 
