@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Windows;
-using MessageBox = System.Windows.MessageBox;
+using MessageBox = System.Windows.MessageBox; 
 
 namespace House_Finance_management
 {
     public delegate void DataSentHandler(Class_InfoToHouse house);
     public partial class Add_Member
-    { 
+    {
+        private static string phonePattern = "05\\d-?\\d{3}-?\\d{4}";
         private static string? _fullName,validatePrefix, validateDomain,validateLastPortion;
         public event DataSentHandler DataSent;
         public Class_InfoToHouse sendInfoToHouse;
@@ -23,7 +24,7 @@ namespace House_Finance_management
             //if(true)
             {
                 NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, _fullName, listExpenses,txtPhone.Text,txtEmail.Text,cmbCity.Text,iconPictureBox.Image);
+                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, radFemale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text+" "+txtMName.Text+" "+txtLName.Text, listExpenses,txtPhone.Text,txtEmail.Text,cmbCity.Text,iconPictureBox.Image);
 
                 this.DataSent(sendInfoToHouse);
             }
@@ -34,14 +35,11 @@ namespace House_Finance_management
             return _validateName() && _validateJob() && _ValidateExpenses() && _validatePhone() && _validateEmail() && _validateCity(); 
         }
         private bool _validateName()
-        {
-            txtFName.BackColor = string.IsNullOrEmpty(txtFName.Text) ? Color.Red : Color.White; 
-            txtLName.BackColor = string.IsNullOrEmpty(txtLName.Text) ? Color.Red : Color.White; 
-            _fullName = txtFName.Text +  " " + txtMName.Text + " " + txtLName.Text ;
-            return !(string.IsNullOrEmpty(txtFName.Text) || string.IsNullOrEmpty(txtLName.Text)) ;
+        { 
+            return (string.IsNullOrEmpty(FirstNameValidationText.Text+MiddleNameValidationText.Text+LastNameValidationText.Text));
         } 
         private bool _validateJob()
-        {
+        { 
             pnlValidateJob.BackColor = cmbJob.SelectedIndex != 0 ? Color.FromArgb(171, 171, 171) : Color.Red;
             return cmbJob.SelectedIndex != 0;
         } 
@@ -58,12 +56,14 @@ namespace House_Finance_management
         }
 
         private bool _validatePhone()
-        { 
-            txtPhone.BackColor = Regex.IsMatch(txtPhone.Text, "05\\d-?\\d{3}-?\\d{4}") ? Color.White : Color.Red;
-            return Regex.IsMatch(txtPhone.Text, "05\\d-?\\d{3}-?\\d{4}");
+        {
+
+            txtPhone.BackColor = Regex.IsMatch(txtPhone.Text, phonePattern) ? Color.White : Color.Red;
+            return Regex.IsMatch(txtPhone.Text, phonePattern);
         }
         private bool _validateEmail()
         {
+          
            txtEmail.Text= txtEmail.Text.Replace(" ", "");
             try
             { 

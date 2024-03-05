@@ -33,11 +33,11 @@ namespace House_Finance_management
         private void txtPhone_KeyUp(object sender, KeyEventArgs e)
         {
             phoneValidationText.Text = Regex.IsMatch(txtPhone.Text, "^(05\\d-?\\d{3}-?\\d{4})$") ? "" :
-                Regex.IsMatch(txtPhone.Text.Replace("-",""), "(\\D)")? "Only numbers please" :
+                Regex.IsMatch(txtPhone.Text.Replace("-", ""), "(\\D)") ? "Only numbers please" :
                 (!Regex.IsMatch(txtPhone.Text, "^(05)")) ? "Must start with 05" :
                 Regex.IsMatch(txtPhone.Text.Replace("-", ""), "\\d{11,}") ? "Only 10 numbers" :
-                txtPhone.TextLength==txtPhone.MaxLength?"Currect your dashes placement":"the order is 05X-XXX-XXXX";
-        } 
+                txtPhone.TextLength == txtPhone.MaxLength ? "Currect your dashes placement" : "the order is 05X-XXX-XXXX";
+        }
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog opnfd = new OpenFileDialog();
@@ -45,12 +45,32 @@ namespace House_Finance_management
             if (opnfd.ShowDialog() == DialogResult.OK) iconPictureBox.Image = new Bitmap(opnfd.FileName);
         }
 
-        private void txtFName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
 
-        private void txtLName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
+        private void FirstNameValidationText_Click(object sender, EventArgs e)
+        {
 
-        private void txtMName_KeyPress(object sender, KeyPressEventArgs e) { e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back); }
+        }
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
 
+        }
+        private void txtFName_KeyUp(object sender, KeyEventArgs e)
+        {
+            FirstNameValidationText.Text = string.IsNullOrEmpty(txtFName.Text) ? "Can't be empty" : txtFName.TextLength == txtFName.MaxLength ? "exceed max amount of characters"
+                : Regex.IsMatch(txtFName.Text, "^([a-zA-Z]+)$") ? "" : "Only letters allowed";
+        }
+
+        private void txtLName_KeyUp(object sender, KeyEventArgs e)
+        {
+            LastNameValidationText.Text = string.IsNullOrEmpty(txtLName.Text) ? "Can't be empty" : txtLName.TextLength == txtLName.MaxLength ? "exceed max amount of characters"
+    : Regex.IsMatch(txtLName.Text, "^([a-zA-Z]+)$") ? "" : "Only letters allowed";
+        }
+
+        private void txtMName_KeyUp(object sender, KeyEventArgs e)
+        {
+            MiddleNameValidationText.Text= txtMName.TextLength == txtMName.MaxLength ? "exceed max amount of characters"
+    : Regex.IsMatch(txtMName.Text, "^([a-zA-Z]+)$") ? "" : "Only letters allowed";
+        }
     }
 }

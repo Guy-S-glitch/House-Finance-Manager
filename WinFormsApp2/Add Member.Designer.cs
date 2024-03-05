@@ -39,6 +39,9 @@
             pnlvalidateGender = new Panel();
             btnAdd = new Button();
             groupBox1 = new GroupBox();
+            MiddleNameValidationText = new Label();
+            FirstNameValidationText = new Label();
+            LastNameValidationText = new Label();
             pnlValidateAge = new Panel();
             dtpAge = new DateTimePicker();
             label10 = new Label();
@@ -50,6 +53,7 @@
             label6 = new Label();
             groupBox2 = new GroupBox();
             pnlValidateJob = new Panel();
+            JobValidationText = new Label();
             cmbJob = new ComboBox();
             clbExpenses = new CheckedListBox();
             groupBox4 = new GroupBox();
@@ -65,6 +69,7 @@
             groupBox3 = new GroupBox();
             phoneValidationText = new Label();
             pnlCity = new Panel();
+            CityValidationText = new Label();
             cmbCity = new ComboBox();
             txtEmail = new TextBox();
             txtPhone = new TextBox();
@@ -205,6 +210,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.AppWorkspace;
+            groupBox1.Controls.Add(MiddleNameValidationText);
+            groupBox1.Controls.Add(FirstNameValidationText);
+            groupBox1.Controls.Add(LastNameValidationText);
             groupBox1.Controls.Add(pnlValidateAge);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(pnlvalidateGender);
@@ -225,6 +233,35 @@
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Person";
+            // 
+            // MiddleNameValidationText
+            // 
+            MiddleNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            MiddleNameValidationText.ForeColor = Color.Red;
+            MiddleNameValidationText.Location = new Point(246, 151);
+            MiddleNameValidationText.Name = "MiddleNameValidationText";
+            MiddleNameValidationText.Size = new Size(287, 14);
+            MiddleNameValidationText.TabIndex = 24;
+            // 
+            // FirstNameValidationText
+            // 
+            FirstNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            FirstNameValidationText.ForeColor = Color.Red;
+            FirstNameValidationText.Location = new Point(175, 40);
+            FirstNameValidationText.Name = "FirstNameValidationText";
+            FirstNameValidationText.Size = new Size(287, 14);
+            FirstNameValidationText.TabIndex = 23;
+            FirstNameValidationText.Text = "Name can't be empty";
+            // 
+            // LastNameValidationText
+            // 
+            LastNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            LastNameValidationText.ForeColor = Color.Red;
+            LastNameValidationText.Location = new Point(175, 91);
+            LastNameValidationText.Name = "LastNameValidationText";
+            LastNameValidationText.Size = new Size(287, 14);
+            LastNameValidationText.TabIndex = 22;
+            LastNameValidationText.Text = "Name can't be empty";
             // 
             // pnlValidateAge
             // 
@@ -264,18 +301,19 @@
             // 
             // txtMName
             // 
-            txtMName.Location = new Point(246, 152);
+            txtMName.Location = new Point(246, 168);
             txtMName.Margin = new Padding(4, 3, 4, 3);
+            txtMName.MaxLength = 15;
             txtMName.Name = "txtMName";
             txtMName.PlaceholderText = "Optional";
             txtMName.Size = new Size(287, 31);
             txtMName.TabIndex = 7;
-            txtMName.KeyPress += txtMName_KeyPress;
+            txtMName.KeyUp += txtMName_KeyUp;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(58, 155);
+            label9.Location = new Point(58, 171);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(147, 24);
@@ -286,10 +324,11 @@
             // 
             txtLName.Location = new Point(175, 108);
             txtLName.Margin = new Padding(4, 3, 4, 3);
+            txtLName.MaxLength = 15;
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(287, 31);
             txtLName.TabIndex = 5;
-            txtLName.KeyPress += txtLName_KeyPress;
+            txtLName.KeyUp += txtLName_KeyUp;
             // 
             // label8
             // 
@@ -305,10 +344,11 @@
             // 
             txtFName.Location = new Point(175, 57);
             txtFName.Margin = new Padding(4, 3, 4, 3);
+            txtFName.MaxLength = 15;
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(287, 31);
             txtFName.TabIndex = 3;
-            txtFName.KeyPress += txtFName_KeyPress;
+            txtFName.KeyUp += txtFName_KeyUp;
             // 
             // label6
             // 
@@ -342,12 +382,23 @@
             // 
             pnlValidateJob.BackColor = SystemColors.AppWorkspace;
             pnlValidateJob.BorderStyle = BorderStyle.Fixed3D;
+            pnlValidateJob.Controls.Add(JobValidationText);
             pnlValidateJob.Controls.Add(cmbJob);
             pnlValidateJob.Location = new Point(156, 33);
             pnlValidateJob.Margin = new Padding(4, 3, 4, 3);
             pnlValidateJob.Name = "pnlValidateJob";
             pnlValidateJob.Size = new Size(569, 43);
             pnlValidateJob.TabIndex = 13;
+            // 
+            // JobValidationText
+            // 
+            JobValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            JobValidationText.ForeColor = Color.Red;
+            JobValidationText.Location = new Point(-2, 0);
+            JobValidationText.Name = "JobValidationText";
+            JobValidationText.Size = new Size(556, 14);
+            JobValidationText.TabIndex = 23;
+            JobValidationText.Text = "...";
             // 
             // cmbJob
             // 
@@ -500,6 +551,7 @@
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
+            groupBox3.Enter += groupBox3_Enter;
             // 
             // phoneValidationText
             // 
@@ -509,16 +561,26 @@
             phoneValidationText.Name = "phoneValidationText";
             phoneValidationText.Size = new Size(246, 14);
             phoneValidationText.TabIndex = 10;
-            phoneValidationText.Text = "...";
             // 
             // pnlCity
             // 
             pnlCity.BorderStyle = BorderStyle.Fixed3D;
+            pnlCity.Controls.Add(CityValidationText);
             pnlCity.Controls.Add(cmbCity);
             pnlCity.Location = new Point(448, 22);
             pnlCity.Name = "pnlCity";
             pnlCity.Size = new Size(309, 42);
             pnlCity.TabIndex = 0;
+            // 
+            // CityValidationText
+            // 
+            CityValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            CityValidationText.ForeColor = Color.Red;
+            CityValidationText.Location = new Point(-2, -2);
+            CityValidationText.Name = "CityValidationText";
+            CityValidationText.Size = new Size(297, 14);
+            CityValidationText.TabIndex = 24;
+            CityValidationText.Text = "...";
             // 
             // cmbCity
             // 
@@ -548,7 +610,7 @@
             txtPhone.PlaceholderText = "05X-XXX-XXXX";
             txtPhone.Size = new Size(185, 31);
             txtPhone.TabIndex = 8;
-            txtPhone.KeyUp += txtPhone_KeyUp;
+            txtPhone.KeyUp += txtLName_KeyUp;
             // 
             // label4
             // 
@@ -700,5 +762,10 @@
         private GroupBox groupBox5;
         private Panel pnlCity;
         private Label phoneValidationText;
+        private Label LastNameValidationText;
+        private Label JobValidationText;
+        private Label CityValidationText;
+        private Label FirstNameValidationText;
+        private Label MiddleNameValidationText;
     }
 }
