@@ -22,8 +22,8 @@ namespace House_Finance_management
             _setCitiesNames();
         }
 
-        private void _setJobsNames() {foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(obj.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
-        private void _setCitiesNames() { foreach (var obj in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(obj.ToString().Replace("_", " ")); cmbCity.SelectedIndex = 0; }
+        private void _setJobsNames() { foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(job.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
+        private void _setCitiesNames() { foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(city.ToString().Replace("_", " ")); cmbCity.SelectedIndex = 0; }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -80,7 +80,28 @@ namespace House_Finance_management
 
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CityValidationText.Text = cmbCity.SelectedIndex == 0 ? "Please select your job" : "";
+            CityValidationText.Text = cmbCity.SelectedIndex == 0 ? "Please select your city" : "";
+        }
+
+        private void txtEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyValue == (char)Keys.Space) { emailValidationText.Text = "Unable to enter spaces"; txtEmail.Text = txtEmail.Text.Replace(" ", ""); }
+
+            if (Regex.IsMatch(txtEmail.Text, "(.+){1,}@(.+){1,}\\.(.+){2,}"))
+                try
+                {
+                    if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2) throw new Exception();
+                    validatePrefix = txtEmail.Text.Split('@')[0];
+                    validateDomain = txtEmail.Text.Split('@')[1].Split('.')[0];
+                    validateLastPortion = txtEmail.Text.Split('@')[1].Split('.')[1];
+                    if (Regex.IsMatch(validatePrefix, "(^\\W|\\W$)|((\\.|\\+|_|-)\\W)|(\\W(\\.|\\+|_|-))|(\\W{2})") || Regex.IsMatch(Regex.Replace(validatePrefix, ("\\.|\\+|_|-"), ""), "\\W")) throw new Exception();
+                    if (Regex.IsMatch(validateDomain, "(^\\W|\\W$)|(-\\W|\\W-)") || Regex.IsMatch(validateDomain.Replace("-", ""), "\\W")) throw new Exception();
+                    if (!(Regex.IsMatch(validateLastPortion, "^[a-zA-Z]+$"))) throw new Exception();
+                    emailValidationText.Text = "";
+                }
+                catch { emailValidationText.Text = "Invalid email"; }
+            else { emailValidationText.Text = "Invalid email"; }
         }
     }
 }
