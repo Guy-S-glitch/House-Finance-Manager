@@ -16,27 +16,33 @@ using ProgressBar = System.Windows.Forms.ProgressBar;
 
 namespace House_Finance_management
 {
-
+    public delegate void ReturnDataToHouse(List<Class_InfoToHouse> returnMember);
     public partial class inHouse : Form
     {
-
-        public List<Class_InfoToHouse> _members = new List<Class_InfoToHouse>();
+        public event ReturnDataToHouse returnDataToHouse;
+        public List<Class_InfoToHouse> _members=new List<Class_InfoToHouse>();
         private static short _memberID = 0, houndred;
         private static bool remove;
         private static Class_InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-        public inHouse()
+        public inHouse(List<Class_InfoToHouse>? showExistMembers)
         {
+            
+            try { foreach (Class_InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
+            catch { } 
             InitializeComponent();
-        }
-
-        public Add_Member Add_Member
-        {
-            get => default;
-            set
+            _memberID = 0;
+            foreach (Class_InfoToHouse sa in _members)
             {
+                _memberID++;
+                lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}"); 
             }
         }
+        private void inHouse_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.returnDataToHouse(_members);
+        }
+        public Add_Member Add_Member { get => default; set { } }
 
         private void btnmemberAdd_Click(object sender, EventArgs e)
         {
@@ -57,13 +63,13 @@ namespace House_Finance_management
         private void btnInspectMember_Click(object sender, EventArgs e)
         {
             Button CheckIfCalled = sender as Button;
-            remove = CheckIfCalled.Name == btnmemberRemove.Name; 
+            remove = CheckIfCalled.Name == btnmemberRemove.Name;
             if (lstMembersList.SelectedIndex != -1)
-            { 
-                selectedMember = _members[lstMembersList.SelectedIndex]; 
-                _setPersonalInfo(); 
+            {
+                selectedMember = _members[lstMembersList.SelectedIndex];
+                _setPersonalInfo();
                 _setJobInfo();
-                _setExpenses(); 
+                _setExpenses();
                 _setContacts();
                 if (remove) { _removeMember(); }
             }
@@ -74,7 +80,7 @@ namespace House_Finance_management
             iconPictureBox.Image = remove ? null : selectedMember.GetPicture();
             lblUserName.Text = remove ? "..." : selectedMember.GetName();
             lblUserAge.Text = remove ? "..." : selectedMember.GetAge().ToString();
-            lblUserGender.Text = remove ? "..." : selectedMember.GetIsMale() ? "Male" : "Female"; 
+            lblUserGender.Text = remove ? "..." : selectedMember.GetIsMale() ? "Male" : "Female";
         }
         private void _setJobInfo()
         {
@@ -105,9 +111,11 @@ namespace House_Finance_management
         {
             iconPictureBox.IconChar = IconChar.UserTie;
             iconPictureBox.IconColor = Color.Black;
-
+            iconPictureBox.Dock = DockStyle.Fill;
             _members.RemoveAt(lstMembersList.SelectedIndex);
-            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex); 
+            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
         }
+
+
     }
 }

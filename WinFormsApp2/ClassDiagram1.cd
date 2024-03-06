@@ -4,18 +4,10 @@
     <Position X="14.25" Y="3.75" Width="1.5" />
     <Members>
       <Field Name="components" Hidden="true" />
-      <Field Name="House2" Hidden="true" />
-      <Field Name="House3" Hidden="true" />
-      <Field Name="House4" Hidden="true" />
-      <Field Name="House5" Hidden="true" />
-      <Field Name="House6" Hidden="true" />
       <Field Name="panel1" Hidden="true" />
-      <Field Name="splitContainer1" Hidden="true" />
-      <Field Name="splitContainer2" Hidden="true" />
-      <Field Name="splitContainer3" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAQgAAAIAAQACABA=</HashCode>
+      <HashCode>IAAAAAAAACAAAAAAAACAAAACAAAAAAgAAAJAAQACADA=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -104,7 +96,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>/6AIQCAQKKACIJBAAFPEAgBCEgEIBZAAhAAEgAAABLA=</HashCode>
+      <HashCode>/6AISCAQKKECIJBEAFPUAgBSEgEIBZAAhABEgAAABLA=</HashCode>
       <FileName>inHouse.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -115,7 +107,6 @@
   <Class Name="House_Finance_management.Add_Member" Collapsed="true">
     <Position X="5.75" Y="6.5" Width="1.5" />
     <Members>
-      <Field Name="_fullName" Hidden="true" />
       <Field Name="groupBox1" Hidden="true" />
       <Field Name="groupBox2" Hidden="true" />
       <Field Name="groupBox3" Hidden="true" />
@@ -131,22 +122,15 @@
       <Field Name="label7" Hidden="true" />
       <Field Name="label8" Hidden="true" />
       <Field Name="label9" Hidden="true" />
-      <Field Name="pnlCity" Hidden="true" />
-      <Field Name="pnlValidateAge" Hidden="true" />
       <Field Name="pnlvalidateGender" Hidden="true" />
-      <Field Name="pnlValidateJob" Hidden="true" />
       <Field Name="splitContainer1" Hidden="true" />
-      <Field Name="validateDomain" Hidden="true" />
-      <Field Name="validateLastPortion" Hidden="true" />
-      <Field Name="validatePrefix" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>EAAAAQABDOBGALIgwQCAAEICAQAC15QgJqAIgAAgCAM=</HashCode>
-      <FileName>Add Member Validation.cs</FileName>
+      <HashCode>mCABA8ABpDBGAJKgRACRAEASQQAS1ZAgJqIogcAgEAM=</HashCode>
+      <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="sendInfoToHouse" />
-      <Field Name="_fullName" />
     </ShowAsAssociation>
   </Class>
   <Class Name="House_Finance_management.ComboBoxLIsts">
@@ -182,7 +166,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAAAAAAASAhACAAKIQAAIAAgAAIBAAggAAAAgAACThM=</HashCode>
+      <HashCode>CAAAAAAACAhACAAKIQAAIAAgAAIBAAggAAAAgAACThM=</HashCode>
       <FileName>Models\Class_InfoToHouse.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -198,7 +182,7 @@
     <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Add Member Validation.cs</FileName>
+      <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Font Name="Segoe UI" Size="9" />
