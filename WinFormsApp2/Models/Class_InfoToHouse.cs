@@ -13,8 +13,7 @@ namespace House_Finance_management
         private string _email { get; set; }
         private string _phone { get; set; }
         private string _Name { get; set; }
-        private bool _isMale { get; set; }
-        private bool _isFemale { get; set; }
+        private bool _isMale { get; set; } 
         private DateTime _age { get; set; }
         private short _monthlySalary { get; set; }
         private short _experience { get; set; }
@@ -37,14 +36,13 @@ namespace House_Finance_management
             }
         }
 
-        public Class_InfoToHouse(bool isMale, bool isFemale, DateTime age, short monthlySalary, short experience
+        public Class_InfoToHouse(bool isMale, DateTime age, short monthlySalary, short experience
             , string job, string name, NumericUpDown[] expenses, string phone, string email, string city, Image picture)
         {
-            _isMale = isMale; _isFemale = isFemale; _age = age; _monthlySalary = monthlySalary; _experience = experience;
+            _isMale = isMale; _age = age; _monthlySalary = monthlySalary; _experience = experience;
             _job = job; _Name = name; _expenses = expenses; _phone = phone; _email = email; _city = city; _picture = picture;
         }
-        public bool GetIsMale() { return _isMale; }
-        public bool GetIsFemale() { return _isFemale; }
+        public bool GetIsMale() { return _isMale; } 
         public float GetAge()
         {
             float fullAge = (float)(((DateTime.Today.Year - _age.Year) + ((DateTime.Today.Month - _age.Month) / 12.0)));

@@ -507,8 +507,7 @@
             groupBox3.Size = new Size(775, 146);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Contact";
-            groupBox3.Enter += groupBox3_Enter;
+            groupBox3.Text = "Contact"; 
             // 
             // phoneValidationText
             // 
