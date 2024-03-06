@@ -21,8 +21,10 @@ namespace House_Finance_management
     {
 
         public List<Class_InfoToHouse> _members = new List<Class_InfoToHouse>();
-        private static short _memberID = 0;
-
+        private static short _memberID = 0, houndred;
+        private static bool remove;
+        private static Class_InfoToHouse selectedMember;
+        private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
         public inHouse()
         {
             InitializeComponent();
@@ -55,41 +57,57 @@ namespace House_Finance_management
         private void btnInspectMember_Click(object sender, EventArgs e)
         {
             Button CheckIfCalled = sender as Button;
-            bool remove = CheckIfCalled.Name == btnmemberRemove.Name; 
+            remove = CheckIfCalled.Name == btnmemberRemove.Name; 
             if (lstMembersList.SelectedIndex != -1)
-            {
-                Class_InfoToHouse selectedMember = _members[lstMembersList.SelectedIndex];
-                lblUserName.Text =remove?"...": selectedMember.GetName();
-                lblUserAge.Text =remove?"...": selectedMember.GetAge().ToString();
-                lblUserGender.Text =remove?"...": selectedMember.GetIsMale() ? "Male" : "Female";
-                txtJobTitle.Text = remove ? "...": selectedMember.GetJob();
-                txtExperience.Text = remove ? "..." : selectedMember.GetExperience().ToString();
-                txtMonthlySalary.Text = remove ? "..." : selectedMember.GetMonthlySalary().ToString();
-                string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-                short houndred=0;
-                foreach (NumericUpDown addTo100 in selectedMember.GetExpenses()) houndred += (short)addTo100.Value;
-                for (int row = 0; row < 7; row++)
-                {
-                    short percent = ((short)(((float)selectedMember.GetExpenses()[row].Value / houndred * 100)));
-                    Label? label = tableLayoutPanel3.Controls.Find("pc" + expenseNames[row], true).FirstOrDefault() as Label;
-                    ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + expenseNames[row], true).FirstOrDefault() as ProgressBar;
-                    label.Text = remove ? "%" : selectedMember.GetExpenses()[row].Value!=0? percent.ToString()+"%" : "0%";
-                    progressBar.Value = remove ? 100 : selectedMember.GetExpenses()[row].Value != 0 ? percent : 0; 
-                }
-                txtPhone.Text = remove ? "..." : selectedMember.GetPhone();
-                txtEmail.Text = remove ? "..." : selectedMember.GetEmail();
-                txtCity.Text = remove ? "..." : selectedMember.GetCity();
-                iconPictureBox.Image = remove ? null : selectedMember.GetPicture();
-                if (remove)
-                { 
-                    iconPictureBox.IconChar = IconChar.UserTie;
-                    iconPictureBox.IconColor = Color.Black;
-
-                    _members.RemoveAt(lstMembersList.SelectedIndex);
-                    lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
-                }
+            { 
+                selectedMember = _members[lstMembersList.SelectedIndex]; 
+                _setPersonalInfo(); 
+                _setJobInfo();
+                _setExpenses(); 
+                _setContacts();
+                if (remove) { _removeMember(); }
             }
             else MessageBox.Show("please select a member first");
+        }
+        private void _setPersonalInfo()
+        {
+            iconPictureBox.Image = remove ? null : selectedMember.GetPicture();
+            lblUserName.Text = remove ? "..." : selectedMember.GetName();
+            lblUserAge.Text = remove ? "..." : selectedMember.GetAge().ToString();
+            lblUserGender.Text = remove ? "..." : selectedMember.GetIsMale() ? "Male" : "Female"; 
+        }
+        private void _setJobInfo()
+        {
+            txtJobTitle.Text = remove ? "..." : selectedMember.GetJob();
+            txtExperience.Text = remove ? "..." : selectedMember.GetExperience().ToString();
+            txtMonthlySalary.Text = remove ? "..." : selectedMember.GetMonthlySalary().ToString();
+        }
+        private void _setExpenses()
+        {
+            houndred = 0;
+            foreach (NumericUpDown addTo100 in selectedMember.GetExpenses()) houndred += (short)addTo100.Value;
+            for (int row = 0; row < 7; row++)
+            {
+                short percent = ((short)(((float)selectedMember.GetExpenses()[row].Value / houndred * 100)));
+                Label? label = tableLayoutPanel3.Controls.Find("pc" + expenseNames[row], true).FirstOrDefault() as Label;
+                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + expenseNames[row], true).FirstOrDefault() as ProgressBar;
+                label.Text = remove ? "%" : selectedMember.GetExpenses()[row].Value != 0 ? percent.ToString() + "%" : "0%";
+                progressBar.Value = remove ? 100 : selectedMember.GetExpenses()[row].Value != 0 ? percent : 0;
+            }
+        }
+        private void _setContacts()
+        {
+            txtPhone.Text = remove ? "..." : selectedMember.GetPhone();
+            txtEmail.Text = remove ? "..." : selectedMember.GetEmail();
+            txtCity.Text = remove ? "..." : selectedMember.GetCity();
+        }
+        private void _removeMember()
+        {
+            iconPictureBox.IconChar = IconChar.UserTie;
+            iconPictureBox.IconColor = Color.Black;
+
+            _members.RemoveAt(lstMembersList.SelectedIndex);
+            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex); 
         }
     }
 }

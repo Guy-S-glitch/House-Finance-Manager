@@ -38,11 +38,12 @@
             label7 = new Label();
             btnAdd = new Button();
             groupBox1 = new GroupBox();
+            dtpAge = new DateTimePicker();
             MiddleNameValidationText = new Label();
             FirstNameValidationText = new Label();
             LastNameValidationText = new Label();
-            dtpAge = new DateTimePicker();
             label10 = new Label();
+            pnlvalidateGender = new Panel();
             txtMName = new TextBox();
             label9 = new Label();
             txtLName = new TextBox();
@@ -50,6 +51,8 @@
             txtFName = new TextBox();
             label6 = new Label();
             groupBox2 = new GroupBox();
+            JobValidationText = new Label();
+            cmbJob = new ComboBox();
             clbExpenses = new CheckedListBox();
             groupBox4 = new GroupBox();
             splitContainer1 = new SplitContainer();
@@ -62,9 +65,10 @@
             numClothes = new NumericUpDown();
             lsbExpensesPrices = new ListBox();
             groupBox3 = new GroupBox();
-            phoneValidationText = new Label();
-            CityValidationText = new Label();
+            emailValidationText = new Label();
             cmbCity = new ComboBox();
+            CityValidationText = new Label();
+            phoneValidationText = new Label();
             txtEmail = new TextBox();
             txtPhone = new TextBox();
             label4 = new Label();
@@ -72,13 +76,10 @@
             label1 = new Label();
             iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             groupBox5 = new GroupBox();
-            cmbJob = new ComboBox();
-            JobValidationText = new Label();
-            pnlvalidateGender = new Panel();
-            emailValidationText = new Label();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             groupBox1.SuspendLayout();
+            pnlvalidateGender.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -95,7 +96,6 @@
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             groupBox5.SuspendLayout();
-            pnlvalidateGender.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -217,6 +217,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Person";
             // 
+            // dtpAge
+            // 
+            dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
+            dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
+            dtpAge.Format = DateTimePickerFormat.Short;
+            dtpAge.Location = new Point(643, 57);
+            dtpAge.Margin = new Padding(4, 3, 4, 3);
+            dtpAge.MaxDate = new DateTime(2024, 3, 4, 0, 0, 0, 0);
+            dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dtpAge.Name = "dtpAge";
+            dtpAge.Size = new Size(224, 31);
+            dtpAge.TabIndex = 9;
+            dtpAge.Value = new DateTime(2024, 3, 4, 0, 0, 0, 0);
+            // 
             // MiddleNameValidationText
             // 
             MiddleNameValidationText.AutoSize = true;
@@ -249,20 +263,6 @@
             LastNameValidationText.TabIndex = 22;
             LastNameValidationText.Text = "Name can't be empty";
             // 
-            // dtpAge
-            // 
-            dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
-            dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
-            dtpAge.Format = DateTimePickerFormat.Short;
-            dtpAge.Location = new Point(643, 57);
-            dtpAge.Margin = new Padding(4, 3, 4, 3);
-            dtpAge.MaxDate = new DateTime(2024, 3, 4, 0, 0, 0, 0);
-            dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
-            dtpAge.Name = "dtpAge";
-            dtpAge.Size = new Size(224, 31);
-            dtpAge.TabIndex = 9;
-            dtpAge.Value = new DateTime(2024, 3, 4, 0, 0, 0, 0);
-            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -272,6 +272,18 @@
             label10.Size = new Size(104, 24);
             label10.TabIndex = 8;
             label10.Text = "Birthday:";
+            // 
+            // pnlvalidateGender
+            // 
+            pnlvalidateGender.BackColor = SystemColors.AppWorkspace;
+            pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
+            pnlvalidateGender.Controls.Add(radFemale);
+            pnlvalidateGender.Controls.Add(radMale);
+            pnlvalidateGender.Location = new Point(643, 111);
+            pnlvalidateGender.Margin = new Padding(4, 3, 4, 3);
+            pnlvalidateGender.Name = "pnlvalidateGender";
+            pnlvalidateGender.Size = new Size(140, 88);
+            pnlvalidateGender.TabIndex = 17;
             // 
             // txtMName
             // 
@@ -352,6 +364,30 @@
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job Data";
+            // 
+            // JobValidationText
+            // 
+            JobValidationText.AutoSize = true;
+            JobValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            JobValidationText.ForeColor = Color.Red;
+            JobValidationText.Location = new Point(128, 27);
+            JobValidationText.Name = "JobValidationText";
+            JobValidationText.Size = new Size(151, 16);
+            JobValidationText.TabIndex = 23;
+            JobValidationText.Text = "Please select your job";
+            // 
+            // cmbJob
+            // 
+            cmbJob.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbJob.FormattingEnabled = true;
+            cmbJob.Items.AddRange(new object[] { "--SELECT JOB--" });
+            cmbJob.Location = new Point(128, 46);
+            cmbJob.Margin = new Padding(4, 3, 4, 3);
+            cmbJob.Name = "cmbJob";
+            cmbJob.Size = new Size(559, 32);
+            cmbJob.Sorted = true;
+            cmbJob.TabIndex = 5;
+            cmbJob.SelectedIndexChanged += cmbJob_SelectedIndexChanged;
             // 
             // clbExpenses
             // 
@@ -507,27 +543,18 @@
             groupBox3.Size = new Size(775, 146);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Contact"; 
+            groupBox3.Text = "Contact";
             // 
-            // phoneValidationText
+            // emailValidationText
             // 
-            phoneValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            phoneValidationText.ForeColor = Color.Red;
-            phoneValidationText.Location = new Point(143, 22);
-            phoneValidationText.Name = "phoneValidationText";
-            phoneValidationText.Size = new Size(246, 14);
-            phoneValidationText.TabIndex = 10;
-            // 
-            // CityValidationText
-            // 
-            CityValidationText.AutoSize = true;
-            CityValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            CityValidationText.ForeColor = Color.Red;
-            CityValidationText.Location = new Point(449, 20);
-            CityValidationText.Name = "CityValidationText";
-            CityValidationText.Size = new Size(153, 16);
-            CityValidationText.TabIndex = 24;
-            CityValidationText.Text = "Please select your city";
+            emailValidationText.AutoSize = true;
+            emailValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            emailValidationText.ForeColor = Color.Red;
+            emailValidationText.Location = new Point(246, 70);
+            emailValidationText.Name = "emailValidationText";
+            emailValidationText.Size = new Size(95, 16);
+            emailValidationText.TabIndex = 25;
+            emailValidationText.Text = "Invalid email";
             // 
             // cmbCity
             // 
@@ -541,6 +568,27 @@
             cmbCity.Sorted = true;
             cmbCity.TabIndex = 6;
             cmbCity.SelectedIndexChanged += cmbCity_SelectedIndexChanged;
+            // 
+            // CityValidationText
+            // 
+            CityValidationText.AutoSize = true;
+            CityValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            CityValidationText.ForeColor = Color.Red;
+            CityValidationText.Location = new Point(449, 20);
+            CityValidationText.Name = "CityValidationText";
+            CityValidationText.Size = new Size(153, 16);
+            CityValidationText.TabIndex = 24;
+            CityValidationText.Text = "Please select your city";
+            // 
+            // phoneValidationText
+            // 
+            phoneValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            phoneValidationText.ForeColor = Color.Red;
+            phoneValidationText.Location = new Point(143, 22);
+            phoneValidationText.Name = "phoneValidationText";
+            phoneValidationText.Size = new Size(246, 14);
+            phoneValidationText.TabIndex = 10;
+            phoneValidationText.Text = "Must start with 05";
             // 
             // txtEmail
             // 
@@ -614,53 +662,6 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Upload picture";
             // 
-            // cmbJob
-            // 
-            cmbJob.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            cmbJob.FormattingEnabled = true;
-            cmbJob.Items.AddRange(new object[] { "--SELECT JOB--" });
-            cmbJob.Location = new Point(128, 46);
-            cmbJob.Margin = new Padding(4, 3, 4, 3);
-            cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(559, 32);
-            cmbJob.Sorted = true;
-            cmbJob.TabIndex = 5;
-            cmbJob.SelectedIndexChanged += cmbJob_SelectedIndexChanged;
-            // 
-            // JobValidationText
-            // 
-            JobValidationText.AutoSize = true;
-            JobValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            JobValidationText.ForeColor = Color.Red;
-            JobValidationText.Location = new Point(128, 27);
-            JobValidationText.Name = "JobValidationText";
-            JobValidationText.Size = new Size(151, 16);
-            JobValidationText.TabIndex = 23;
-            JobValidationText.Text = "Please select your job";
-            // 
-            // pnlvalidateGender
-            // 
-            pnlvalidateGender.BackColor = SystemColors.AppWorkspace;
-            pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
-            pnlvalidateGender.Controls.Add(radFemale);
-            pnlvalidateGender.Controls.Add(radMale);
-            pnlvalidateGender.Location = new Point(643, 111);
-            pnlvalidateGender.Margin = new Padding(4, 3, 4, 3);
-            pnlvalidateGender.Name = "pnlvalidateGender";
-            pnlvalidateGender.Size = new Size(140, 88);
-            pnlvalidateGender.TabIndex = 17;
-            // 
-            // emailValidationText
-            // 
-            emailValidationText.AutoSize = true;
-            emailValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            emailValidationText.ForeColor = Color.Red;
-            emailValidationText.Location = new Point(246, 70);
-            emailValidationText.Name = "emailValidationText";
-            emailValidationText.Size = new Size(95, 16);
-            emailValidationText.TabIndex = 25;
-            emailValidationText.Text = "Invalid email";
-            // 
             // Add_Member
             // 
             AutoScaleDimensions = new SizeF(13F, 24F);
@@ -686,6 +687,8 @@
             ((System.ComponentModel.ISupportInitialize)numExperience).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            pnlvalidateGender.ResumeLayout(false);
+            pnlvalidateGender.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -704,8 +707,6 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             groupBox5.ResumeLayout(false);
-            pnlvalidateGender.ResumeLayout(false);
-            pnlvalidateGender.PerformLayout();
             ResumeLayout(false);
         }
 
