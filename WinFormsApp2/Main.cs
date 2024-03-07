@@ -4,7 +4,7 @@ namespace WinFormsApp2
 {
     public partial class Main : Form
     { 
-        private List<Class_InfoToHouse>? showHouseMembers; 
+        private List<InfoToHouse>? showHouseMembers; 
         private static short id = 1;
         public Main()
         {
@@ -41,12 +41,12 @@ namespace WinFormsApp2
         {
             
         }
-        private void inHouse_returnDataToHouse(List<Class_InfoToHouse> houseMembers)
+        private void inHouse_returnDataToHouse(List<InfoToHouse> houseMembers)
         {
-            showHouseMembers=new List<Class_InfoToHouse>();
+            showHouseMembers=new List<InfoToHouse>();
             id = 1;
             House1.Text = string.Empty;
-            foreach (Class_InfoToHouse class_Info in houseMembers)
+            foreach (InfoToHouse class_Info in houseMembers)
             {
                 showHouseMembers.Add(class_Info);
                 House1.Text +=id.ToString()+"."+class_Info.GetName()+"\n";

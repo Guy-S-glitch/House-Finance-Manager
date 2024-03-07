@@ -11,7 +11,7 @@ using MessageBox = System.Windows.MessageBox;
 
 namespace House_Finance_management
 {
-    public delegate void DataSentHandler(Class_InfoToHouse house);
+    public delegate void DataSentHandler(InfoToHouse house);
     public partial class Add_Member
     {
         public event DataSentHandler DataSent;
@@ -24,14 +24,14 @@ namespace House_Finance_management
             }
         }
 
-        public Class_InfoToHouse sendInfoToHouse;
+        public InfoToHouse sendInfoToHouse;
         private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (_validateAllData())
             //if(true)
             {
-                sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtMName.Text + " " + txtLName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image);
+                sendInfoToHouse = new InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtMName.Text + " " + txtLName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image);
                 this.DataSent(sendInfoToHouse);
             }
         }

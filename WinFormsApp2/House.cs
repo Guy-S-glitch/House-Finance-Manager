@@ -16,23 +16,23 @@ using ProgressBar = System.Windows.Forms.ProgressBar;
 
 namespace House_Finance_management
 {
-    public delegate void ReturnDataToHouse(List<Class_InfoToHouse> returnMember);
+    public delegate void ReturnDataToHouse(List<InfoToHouse> returnMember);
     public partial class inHouse : Form
     {
         public event ReturnDataToHouse returnDataToHouse;
-        public List<Class_InfoToHouse> _members=new List<Class_InfoToHouse>();
+        public List<InfoToHouse> _members=new List<InfoToHouse>();
         private static short _memberID = 0, hundred;
         private static bool remove;
-        private static Class_InfoToHouse selectedMember;
+        private static InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-        public inHouse(List<Class_InfoToHouse>? showExistMembers)
+        public inHouse(List<InfoToHouse>? showExistMembers)
         {
             
-            try { foreach (Class_InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
+            try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
             catch { } 
             InitializeComponent();
             _memberID = 0;
-            foreach (Class_InfoToHouse sa in _members)
+            foreach (InfoToHouse sa in _members)
             {
                 _memberID++;
                 lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}"); 
@@ -51,7 +51,7 @@ namespace House_Finance_management
             addMember.ShowDialog();
         }
 
-        private void AddMember_DataSent(Class_InfoToHouse house)
+        private void AddMember_DataSent(InfoToHouse house)
         {
             _memberID++;
             lstMembersList.Items.Add($"{_memberID}. {house.GetName()}");

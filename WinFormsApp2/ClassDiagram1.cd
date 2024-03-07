@@ -104,7 +104,7 @@
       <Field Name="components" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
       <Field Name="expenseNames" Hidden="true" />
-      <Field Name="houndred" Hidden="true" />
+      <Field Name="hundred" Hidden="true" />
       <Field Name="iconPictureBox" Hidden="true" />
       <Method Name="inHouse" Hidden="true" />
       <Method Name="InitializeComponent" Hidden="true" />
@@ -161,6 +161,23 @@
       <Field Name="txtMonthlySalary" Hidden="true" />
       <Field Name="txtPhone" Hidden="true" />
     </Members>
+    <AssociationLine Name="_members" Type="System.Collections.Generic.List&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="13.75" Y="5.562" />
+        <Point X="14.125" Y="5.562" />
+        <Point X="14.125" Y="3.375" />
+        <Point X="17.938" Y="3.375" />
+        <Point X="17.938" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Add_Member" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.25" Y="5.562" />
+        <Point X="10.375" Y="5.562" />
+        <Point X="10.375" Y="5.74" />
+        <Point X="8.5" Y="5.74" />
+      </Path>
+    </AssociationLine>
     <AssociationLine Name="dataSentHandlerBindingSource" Type="System.Windows.Forms.BindingSource" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="12.25" Y="4.625" />
@@ -173,25 +190,8 @@
         <Position X="-2.288" Y="0.538" Height="0.182" Width="2.228" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="Add_Member" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="12.25" Y="5.562" />
-        <Point X="10.375" Y="5.562" />
-        <Point X="10.375" Y="5.562" />
-        <Point X="8.5" Y="5.562" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="_members" Type="System.Collections.Generic.List&lt;T&gt;" ManuallyRouted="true">
-      <Path>
-        <Point X="13.75" Y="5.562" />
-        <Point X="14.125" Y="5.562" />
-        <Point X="14.125" Y="3.375" />
-        <Point X="17.938" Y="3.375" />
-        <Point X="17.938" Y="3.75" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>/6AISCAQKKECIJBEAFPUAgBSEgEoBZAAjABEgAAABLA=</HashCode>
+      <HashCode>/6AISCAQKKACIJBEAFPUAgBSEgEoBZAAjAJEgAAABLA=</HashCode>
       <FileName>House.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -296,24 +296,12 @@
     </Members>
     <AssociationLine Name="Add_Member1" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7" Y="6.062" />
-        <Point X="6.625" Y="6.062" />
+        <Point X="7" Y="6.399" />
+        <Point X="6.625" Y="6.399" />
         <Point X="6.625" Y="7.164" />
         <Point X="8.875" Y="7.164" />
-        <Point X="8.875" Y="6.062" />
-        <Point X="8.5" Y="6.062" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="sendInfoToHouse" Type="House_Finance_management.Class_InfoToHouse" ManuallyRouted="true">
-      <Path>
-        <Point X="7" Y="6.25" />
-        <Point X="6.708" Y="6.25" Type="JumpStart" />
-        <Point X="6.542" Y="6.25" Type="JumpEnd" />
-        <Point X="6.252" Y="6.25" />
-        <Point X="6.252" Y="3.988" />
-        <Point X="5.188" Y="3.988" />
-        <Point X="5.188" Y="1.563" />
-        <Point X="5.5" Y="1.563" />
+        <Point X="8.875" Y="6.399" />
+        <Point X="8.5" Y="6.399" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -321,7 +309,6 @@
       <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="sendInfoToHouse" />
       <Property Name="Add_Member1" />
     </ShowAsAssociation>
   </Class>
@@ -347,7 +334,7 @@
       <FileName>Models\ComboBoxLIsts.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="House_Finance_management.Class_InfoToHouse" Collapsed="true">
+  <Class Name="House_Finance_management.InfoToHouse" Collapsed="true">
     <Position X="5.5" Y="1.25" Width="1.5" />
     <Members>
       <Property Name="_age" Hidden="true" />
@@ -361,7 +348,6 @@
       <Property Name="_Name" Hidden="true" />
       <Property Name="_phone" Hidden="true" />
       <Property Name="_picture" Hidden="true" />
-      <Method Name="Class_InfoToHouse" Hidden="true" />
       <Method Name="GetAge" Hidden="true" />
       <Method Name="GetCity" Hidden="true" />
       <Method Name="GetEmail" Hidden="true" />
@@ -373,6 +359,7 @@
       <Method Name="GetName" Hidden="true" />
       <Method Name="GetPhone" Hidden="true" />
       <Method Name="GetPicture" Hidden="true" />
+      <Method Name="InfoToHouse" Hidden="true" />
       <Property Name="List" Hidden="true" />
     </Members>
     <AssociationLine Name="DataSentHandler" Type="House_Finance_management.DataSentHandler" FixedFromPoint="true" FixedToPoint="true">
@@ -393,86 +380,6 @@
   </Class>
   <Class Name="System.Windows.Forms.BindingSource" Collapsed="true">
     <Position X="9" Y="3" Width="1.5" />
-    <Members>
-      <Method Name="Add" Hidden="true" />
-      <Event Name="AddingNew" Hidden="true" />
-      <Method Name="AddNew" Hidden="true" />
-      <Property Name="AllowEdit" Hidden="true" />
-      <Property Name="AllowNew" Hidden="true" />
-      <Property Name="AllowRemove" Hidden="true" />
-      <Method Name="ApplySort" Hidden="true" />
-      <Event Name="BindingComplete" Hidden="true" />
-      <Method Name="BindingSource" Hidden="true" />
-      <Method Name="CancelEdit" Hidden="true" />
-      <Method Name="Clear" Hidden="true" />
-      <Method Name="Contains" Hidden="true" />
-      <Method Name="CopyTo" Hidden="true" />
-      <Property Name="Count" Hidden="true" />
-      <Property Name="CurrencyManager" Hidden="true" />
-      <Property Name="Current" Hidden="true" />
-      <Event Name="CurrentChanged" Hidden="true" />
-      <Event Name="CurrentItemChanged" Hidden="true" />
-      <Event Name="DataError" Hidden="true" />
-      <Property Name="DataMember" Hidden="true" />
-      <Event Name="DataMemberChanged" Hidden="true" />
-      <Property Name="DataSource" Hidden="true" />
-      <Event Name="DataSourceChanged" Hidden="true" />
-      <Method Name="Dispose" Hidden="true" />
-      <Method Name="EndEdit" Hidden="true" />
-      <Property Name="Filter" Hidden="true" />
-      <Method Name="Find" Hidden="true" />
-      <Method Name="GetEnumerator" Hidden="true" />
-      <Method Name="GetItemProperties" Hidden="true" />
-      <Method Name="GetListName" Hidden="true" />
-      <Method Name="GetRelatedCurrencyManager" Hidden="true" />
-      <Method Name="IndexOf" Hidden="true" />
-      <Method Name="Insert" Hidden="true" />
-      <Property Name="IsBindingSuspended" Hidden="true" />
-      <Property Name="IsFixedSize" Hidden="true" />
-      <Property Name="IsReadOnly" Hidden="true" />
-      <Property Name="IsSorted" Hidden="true" />
-      <Property Name="IsSynchronized" Hidden="true" />
-      <Property Name="List" Hidden="true" />
-      <Event Name="ListChanged" Hidden="true" />
-      <Method Name="MoveFirst" Hidden="true" />
-      <Method Name="MoveLast" Hidden="true" />
-      <Method Name="MoveNext" Hidden="true" />
-      <Method Name="MovePrevious" Hidden="true" />
-      <Method Name="OnAddingNew" Hidden="true" />
-      <Method Name="OnBindingComplete" Hidden="true" />
-      <Method Name="OnCurrentChanged" Hidden="true" />
-      <Method Name="OnCurrentItemChanged" Hidden="true" />
-      <Method Name="OnDataError" Hidden="true" />
-      <Method Name="OnDataMemberChanged" Hidden="true" />
-      <Method Name="OnDataSourceChanged" Hidden="true" />
-      <Method Name="OnListChanged" Hidden="true" />
-      <Method Name="OnPositionChanged" Hidden="true" />
-      <Property Name="Position" Hidden="true" />
-      <Event Name="PositionChanged" Hidden="true" />
-      <Property Name="RaiseListChangedEvents" Hidden="true" />
-      <Method Name="Remove" Hidden="true" />
-      <Method Name="RemoveAt" Hidden="true" />
-      <Method Name="RemoveCurrent" Hidden="true" />
-      <Method Name="RemoveFilter" Hidden="true" />
-      <Method Name="RemoveSort" Hidden="true" />
-      <Method Name="ResetAllowNew" Hidden="true" />
-      <Method Name="ResetBindings" Hidden="true" />
-      <Method Name="ResetCurrentItem" Hidden="true" />
-      <Method Name="ResetItem" Hidden="true" />
-      <Method Name="ResumeBinding" Hidden="true" />
-      <Property Name="Sort" Hidden="true" />
-      <Property Name="SortDescriptions" Hidden="true" />
-      <Property Name="SortDirection" Hidden="true" />
-      <Property Name="SortProperty" Hidden="true" />
-      <Property Name="SupportsAdvancedSorting" Hidden="true" />
-      <Property Name="SupportsChangeNotification" Hidden="true" />
-      <Property Name="SupportsFiltering" Hidden="true" />
-      <Property Name="SupportsSearching" Hidden="true" />
-      <Property Name="SupportsSorting" Hidden="true" />
-      <Method Name="SuspendBinding" Hidden="true" />
-      <Property Name="SyncRoot" Hidden="true" />
-      <Property Name="Item" Hidden="true" />
-    </Members>
     <TypeIdentifier />
     <Lollipop Orientation="Right" Position="0.174" />
   </Class>
@@ -482,66 +389,19 @@
   </Class>
   <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
     <Position X="17.25" Y="3.75" Width="1.5" />
-    <Members>
-      <Method Name="Add" Hidden="true" />
-      <Method Name="AddRange" Hidden="true" />
-      <Method Name="AsReadOnly" Hidden="true" />
-      <Method Name="BinarySearch" Hidden="true" />
-      <Property Name="Capacity" Hidden="true" />
-      <Method Name="Clear" Hidden="true" />
-      <Method Name="Contains" Hidden="true" />
-      <Method Name="ConvertAll" Hidden="true" />
-      <Method Name="CopyTo" Hidden="true" />
-      <Property Name="Count" Hidden="true" />
-      <Method Name="EnsureCapacity" Hidden="true" />
-      <Method Name="Exists" Hidden="true" />
-      <Method Name="Find" Hidden="true" />
-      <Method Name="FindAll" Hidden="true" />
-      <Method Name="FindIndex" Hidden="true" />
-      <Method Name="FindLast" Hidden="true" />
-      <Method Name="FindLastIndex" Hidden="true" />
-      <Method Name="ForEach" Hidden="true" />
-      <Method Name="GetEnumerator" Hidden="true" />
-      <Method Name="GetRange" Hidden="true" />
-      <Method Name="IndexOf" Hidden="true" />
-      <Method Name="Insert" Hidden="true" />
-      <Method Name="InsertRange" Hidden="true" />
-      <Method Name="LastIndexOf" Hidden="true" />
-      <Method Name="List" Hidden="true" />
-      <Method Name="Remove" Hidden="true" />
-      <Method Name="RemoveAll" Hidden="true" />
-      <Method Name="RemoveAt" Hidden="true" />
-      <Method Name="RemoveRange" Hidden="true" />
-      <Method Name="Reverse" Hidden="true" />
-      <Method Name="Sort" Hidden="true" />
-      <Property Name="Item" Hidden="true" />
-      <Method Name="ToArray" Hidden="true" />
-      <Method Name="TrimExcess" Hidden="true" />
-      <Method Name="TrueForAll" Hidden="true" />
-    </Members>
-    <NestedTypes>
-      <Class Name="System.Collections.Generic.List&lt;T&gt;.Enumerator">
-        <Members>
-          <Property Name="Current" Hidden="true" />
-          <Method Name="Dispose" Hidden="true" />
-          <Method Name="MoveNext" Hidden="true" />
-        </Members>
-        <TypeIdentifier />
-      </Class>
-    </NestedTypes>
     <TypeIdentifier />
   </Class>
   <Delegate Name="House_Finance_management.DataSentHandler" Collapsed="true">
     <Position X="9" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Delegate Name="House_Finance_management.ReturnDataToHouse" Collapsed="true">
     <Position X="17.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>House.cs</FileName>
     </TypeIdentifier>
   </Delegate>

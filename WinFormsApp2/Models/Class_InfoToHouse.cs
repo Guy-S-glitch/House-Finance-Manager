@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace House_Finance_management
 {
-    public class Class_InfoToHouse
+    public class InfoToHouse
     {
         private Image _picture { get; set; }
         private string _city { get; set; }
@@ -36,7 +36,7 @@ namespace House_Finance_management
             }
         }
 
-        public Class_InfoToHouse(bool isMale, DateTime age, short monthlySalary, short experience
+        public InfoToHouse(bool isMale, DateTime age, short monthlySalary, short experience
             , string job, string name, NumericUpDown[] expenses, string phone, string email, string city, Image picture)
         {
             _isMale = isMale; _age = age; _monthlySalary = monthlySalary; _experience = experience;
