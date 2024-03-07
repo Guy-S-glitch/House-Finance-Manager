@@ -9,9 +9,8 @@ namespace WinFormsApp2
     {
         private List<InfoToHouse>? showHouseMembers;
         private Hashtable? neighberhood = new Hashtable();
-        private static string _selectefHouse;
         private IconButton _clickedHouse;
-        private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2,houseCount;
+        private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2;
         public Main()
         {
             InitializeComponent();
@@ -20,6 +19,22 @@ namespace WinFormsApp2
         public inHouse inHouse { get => default; set { } }
         public ReturnDataToHouse ReturnDataToHouse { get => default; set { } }
         public inHouse inHouse_with_exist_members { get => default; set { } }
+
+        public Main Main1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Main Main2
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         private void House1_Click(object sender, EventArgs e)
         {
