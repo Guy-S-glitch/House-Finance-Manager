@@ -23,11 +23,12 @@ namespace House_Finance_management
         public List<InfoToHouse> _members=new List<InfoToHouse>();
         private static short _memberID = 0, hundred;
         private static bool remove;
+        private static string _currentHouse;
         private static InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-        public inHouse(List<InfoToHouse>? showExistMembers)
+        public inHouse(List<InfoToHouse>? showExistMembers,string houseName)
         {
-            
+            _currentHouse = houseName;
             try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
             catch { } 
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace House_Finance_management
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.returnDataToHouse(_members);
+            this.returnDataToHouse(_members); 
         }
         public Add_Member Add_Member { get => default; set { } }
 
