@@ -21,7 +21,7 @@ namespace House_Finance_management
     {
         public event ReturnDataToHouse returnDataToHouse;
         public List<Class_InfoToHouse> _members=new List<Class_InfoToHouse>();
-        private static short _memberID = 0, houndred;
+        private static short _memberID = 0, hundred;
         private static bool remove;
         private static Class_InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
@@ -90,11 +90,11 @@ namespace House_Finance_management
         }
         private void _setExpenses()
         {
-            houndred = 0;
-            foreach (NumericUpDown addTo100 in selectedMember.GetExpenses()) houndred += (short)addTo100.Value;
+            hundred = 0;
+            foreach (NumericUpDown addTo100 in selectedMember.GetExpenses()) hundred += (short)addTo100.Value;
             for (int row = 0; row < 7; row++)
             {
-                short percent = ((short)(((float)selectedMember.GetExpenses()[row].Value / houndred * 100)));
+                short percent = ((short)(((float)selectedMember.GetExpenses()[row].Value / hundred * 100)));
                 Label? label = tableLayoutPanel3.Controls.Find("pc" + expenseNames[row], true).FirstOrDefault() as Label;
                 ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + expenseNames[row], true).FirstOrDefault() as ProgressBar;
                 label.Text = remove ? "%" : selectedMember.GetExpenses()[row].Value != 0 ? percent.ToString() + "%" : "0%";
