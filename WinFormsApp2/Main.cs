@@ -13,6 +13,22 @@ namespace WinFormsApp2
 
         public inHouse inHouse { get => default; set { } }
 
+        public ReturnDataToHouse ReturnDataToHouse
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public inHouse inHouse_with_exist_members
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void House1_Click(object sender, EventArgs e)
         {
             

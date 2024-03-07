@@ -1,28 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="1. starting the project will call the main form">
+    <Position X="20.611" Y="3.566" Height="0.482" Width="1.733" />
+  </Comment>
+  <Comment CommentText="2. House1_click call the inHouse form">
+    <Position X="14.479" Y="6.928" Height="0.504" Width="1.518" />
+  </Comment>
+  <Comment CommentText="3. btnmemberAdd_Click call the Add_member form">
+    <Position X="9.986" Y="5.315" Height="0.468" Width="1.735" />
+  </Comment>
+  <Comment CommentText="4. relative enum lists added to the comboboxs ">
+    <Position X="4.254" Y="5.151" Height="0.586" Width="1.7" />
+  </Comment>
+  <Comment CommentText="5. before sending the data, it will be validated">
+    <Position X="6.906" Y="6.943" Height="0.444" Width="1.7" />
+  </Comment>
+  <Comment CommentText="6. after validation by clicking the btnAdd_Click the data will turn to a class with relative properties">
+    <Position X="4.323" Y="2.093" Height="0.772" Width="1.723" />
+  </Comment>
+  <Comment CommentText="7. the class's data is sent to delegate DataSentHandler to enable transform data from child to parent">
+    <Position X="6.496" Y="2.354" Height="0.961" Width="1.7" />
+  </Comment>
+  <Comment CommentText="8. parent recieve data from child">
+    <Position X="9.725" Y="2.488" Height="0.291" Width="2.017" />
+  </Comment>
+  <Comment CommentText="9. upon closed the inHouse form will send a list of all the members ">
+    <Position X="14.589" Y="3.064" Height="0.633" Width="1.7" />
+  </Comment>
+  <Comment CommentText="10. parent recieve data from child">
+    <Position X="17.354" Y="5.359" Height="0.541" Width="1.347" />
+  </Comment>
+  <Comment CommentText="11. if Main contain exist members send them with calling the inHouse form">
+    <Position X="14.439" Y="7.755" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="WinFormsApp2.Main">
-    <Position X="14.25" Y="3.75" Width="1.5" />
+    <Position X="20.75" Y="5.25" Width="1.5" />
     <Members>
       <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="House1" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="Main" Hidden="true" />
       <Field Name="panel1" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
     </Members>
+    <AssociationLine Name="inHouse" Type="House_Finance_management.inHouse" ManuallyRouted="true">
+      <Path>
+        <Point X="20.75" Y="7.133" />
+        <Point X="13" Y="7.133" />
+        <Point X="13" Y="5.925" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.565" Y="0.685" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ReturnDataToHouse" Type="House_Finance_management.ReturnDataToHouse" ManuallyRouted="true">
+      <Path>
+        <Point X="20.75" Y="6.506" />
+        <Point X="18" Y="6.506" />
+        <Point X="18" Y="4.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="inHouse_with_exist_members" Type="House_Finance_management.inHouse" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.75" Y="7.133" />
+        <Point X="16.979" Y="7.133" />
+        <Point X="16.979" Y="8.11" />
+        <Point X="14.093" Y="8.11" />
+        <Point X="14.093" Y="7.125" />
+        <Point X="13" Y="7.125" />
+        <Point X="13" Y="5.925" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-3.283" Y="2.82" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAAAAAACAAAAAAAACAAAACAAAAAAgAAAJAAQACADA=</HashCode>
+      <HashCode>IAAAAAAAACAAAAAAAACAAAACACAAAhgAAAJAAQAEAjA=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="inHouse" />
+      <Property Name="ReturnDataToHouse" />
+      <Property Name="inHouse_with_exist_members" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="House_Finance_management.inHouse">
-    <Position X="11.25" Y="4.25" Width="1.5" />
+  <Class Name="House_Finance_management.inHouse" HideInheritanceLine="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
     <Members>
       <Field Name="_memberID" Hidden="true" />
+      <Method Name="_removeMember" Hidden="true" />
+      <Method Name="_setContacts" Hidden="true" />
+      <Method Name="_setExpenses" Hidden="true" />
+      <Method Name="_setJobInfo" Hidden="true" />
+      <Method Name="_setPersonalInfo" Hidden="true" />
       <Method Name="AddMember_DataSent" Hidden="true" />
+      <Field Name="btnInspectMember" Hidden="true" />
       <Method Name="btnInspectMember_Click" Hidden="true" />
+      <Field Name="btnmemberAdd" Hidden="true" />
+      <Field Name="btnmemberRemove" Hidden="true" />
       <Method Name="btnmemberRemove_Click" Hidden="true" />
       <Field Name="components" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
+      <Field Name="expenseNames" Hidden="true" />
+      <Field Name="houndred" Hidden="true" />
       <Field Name="iconPictureBox" Hidden="true" />
       <Method Name="inHouse" Hidden="true" />
       <Method Name="InitializeComponent" Hidden="true" />
@@ -65,6 +147,9 @@
       <Field Name="pcSports" Hidden="true" />
       <Field Name="pcTransportation" Hidden="true" />
       <Field Name="pcUtilities" Hidden="true" />
+      <Field Name="remove" Hidden="true" />
+      <Event Name="returnDataToHouse" Hidden="true" />
+      <Field Name="selectedMember" Hidden="true" />
       <Field Name="splitContainer1" Hidden="true" />
       <Field Name="tableLayoutPanel1" Hidden="true" />
       <Field Name="tableLayoutPanel2" Hidden="true" />
@@ -76,42 +161,101 @@
       <Field Name="txtMonthlySalary" Hidden="true" />
       <Field Name="txtPhone" Hidden="true" />
     </Members>
-    <AssociationLine Name="Add_Member" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.25" Y="6.449" />
-        <Point X="10.875" Y="6.449" />
-        <Point X="10.875" Y="7.566" />
-        <Point X="6.562" Y="7.566" />
-        <Point X="6.562" Y="7.191" />
-      </Path>
-    </AssociationLine>
     <AssociationLine Name="dataSentHandlerBindingSource" Type="System.Windows.Forms.BindingSource" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.25" Y="5.562" />
-        <Point X="11.088" Y="5.562" />
-        <Point X="10.25" Y="5.562" />
+        <Point X="12.25" Y="4.625" />
+        <Point X="11.875" Y="4.625" />
+        <Point X="11.875" Y="2.625" />
+        <Point X="9.625" Y="2.625" />
+        <Point X="9.625" Y="3" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="-0.936" Y="-0.266" Height="0.182" Width="2.036" />
+        <Position X="-2.288" Y="0.538" Height="0.182" Width="2.228" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="Add_Member" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.25" Y="5.562" />
+        <Point X="10.375" Y="5.562" />
+        <Point X="10.375" Y="5.562" />
+        <Point X="8.5" Y="5.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_members" Type="System.Collections.Generic.List&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="13.75" Y="5.562" />
+        <Point X="14.125" Y="5.562" />
+        <Point X="14.125" Y="3.375" />
+        <Point X="17.938" Y="3.375" />
+        <Point X="17.938" Y="3.75" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>/6AISCAQKKECIJBEAFPUAgBSEgEIBZAAhABEgAAABLA=</HashCode>
+      <HashCode>/6AISCAQKKECIJBEAFPUAgBSEgEoBZAAjABEgAAABLA=</HashCode>
       <FileName>inHouse.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="_members" />
       <Field Name="dataSentHandlerBindingSource" />
       <Property Name="Add_Member" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="House_Finance_management.Add_Member" Collapsed="true">
-    <Position X="5.75" Y="6.5" Width="1.5" />
+  <Class Name="House_Finance_management.Add_Member" HideInheritanceLine="true">
+    <Position X="7" Y="5" Width="1.5" />
     <Members>
+      <Method Name="_checkEmail" Hidden="true" />
+      <Field Name="_exceedCharacters" Hidden="true" />
+      <Method Name="_GetExpenses" Hidden="true" />
+      <Field Name="_imageFileAccept" Hidden="true" />
+      <Field Name="_invalidCity" Hidden="true" />
+      <Field Name="_invalidEmail" Hidden="true" />
+      <Field Name="_invalidJob" Hidden="true" />
+      <Field Name="_lettersOnly" Hidden="true" />
+      <Field Name="_notNullable" Hidden="true" />
+      <Field Name="_numbersOnly" Hidden="true" />
+      <Field Name="_phoneFormat" Hidden="true" />
+      <Field Name="_phoneInvalidFormat" Hidden="true" />
+      <Field Name="_phoneMaxNumbers" Hidden="true" />
+      <Field Name="_phonePattern" Hidden="true" />
+      <Field Name="_phoneStart" Hidden="true" />
+      <Method Name="_setCitiesNames" Hidden="true" />
+      <Method Name="_setJobsNames" Hidden="true" />
+      <Field Name="_spaceInEmail" Hidden="true" />
+      <Method Name="_splitEmailToParts" Hidden="true" />
+      <Field Name="_valid" Hidden="true" />
+      <Method Name="_validateCity" Hidden="true" />
+      <Field Name="_validateDomain" Hidden="true" />
+      <Method Name="_validateEmail" Hidden="true" />
+      <Method Name="_validateJob" Hidden="true" />
+      <Field Name="_validateLastPortion" Hidden="true" />
+      <Method Name="_validateName" Hidden="true" />
+      <Method Name="_validatePhone" Hidden="true" />
+      <Field Name="_validatePrefix" Hidden="true" />
+      <Method Name="Add_Member" Hidden="true" />
+      <Field Name="btnAdd" Hidden="true" />
+      <Field Name="CityValidationText" Hidden="true" />
+      <Field Name="clbExpenses" Hidden="true" />
+      <Method Name="clbExpenses_ItemCheck" Hidden="true" />
+      <Field Name="cmbCity" Hidden="true" />
+      <Method Name="cmbCity_SelectedIndexChanged" Hidden="true" />
+      <Field Name="cmbJob" Hidden="true" />
+      <Method Name="cmbJob_SelectedIndexChanged" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Event Name="DataSent" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="dtpAge" Hidden="true" />
+      <Field Name="Email" Hidden="true" />
+      <Field Name="emailValidationText" Hidden="true" />
+      <Field Name="FirstNameValidationText" Hidden="true" />
       <Field Name="groupBox1" Hidden="true" />
       <Field Name="groupBox2" Hidden="true" />
       <Field Name="groupBox3" Hidden="true" />
       <Field Name="groupBox4" Hidden="true" />
       <Field Name="groupBox5" Hidden="true" />
+      <Field Name="iconPictureBox" Hidden="true" />
+      <Method Name="iconPictureBox1_Click" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="JobValidationText" Hidden="true" />
       <Field Name="label1" Hidden="true" />
       <Field Name="label10" Hidden="true" />
       <Field Name="label2" Hidden="true" />
@@ -122,19 +266,67 @@
       <Field Name="label7" Hidden="true" />
       <Field Name="label8" Hidden="true" />
       <Field Name="label9" Hidden="true" />
+      <Field Name="LastNameValidationText" Hidden="true" />
+      <Field Name="lsbExpensesPrices" Hidden="true" />
+      <Field Name="MiddleNameValidationText" Hidden="true" />
+      <Field Name="numClothes" Hidden="true" />
+      <Field Name="numExperience" Hidden="true" />
+      <Field Name="numMarket" Hidden="true" />
+      <Field Name="numMonthlySalary" Hidden="true" />
+      <Field Name="numRent" Hidden="true" />
+      <Field Name="numRestaurant" Hidden="true" />
+      <Field Name="numSport" Hidden="true" />
+      <Field Name="numTransport" Hidden="true" />
+      <Field Name="numUtilities" Hidden="true" />
+      <Field Name="phoneValidationText" Hidden="true" />
       <Field Name="pnlvalidateGender" Hidden="true" />
+      <Field Name="radFemale" Hidden="true" />
+      <Field Name="radMale" Hidden="true" />
       <Field Name="splitContainer1" Hidden="true" />
+      <Field Name="txtEmail" Hidden="true" />
+      <Method Name="txtEmail_KeyUp" Hidden="true" />
+      <Field Name="txtFName" Hidden="true" />
+      <Method Name="txtFName_KeyUp" Hidden="true" />
+      <Field Name="txtLName" Hidden="true" />
+      <Method Name="txtLName_KeyUp" Hidden="true" />
+      <Field Name="txtMName" Hidden="true" />
+      <Method Name="txtMName_KeyUp" Hidden="true" />
+      <Field Name="txtPhone" Hidden="true" />
+      <Method Name="txtPhone_KeyUp" Hidden="true" />
     </Members>
+    <AssociationLine Name="Add_Member1" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="6.062" />
+        <Point X="6.625" Y="6.062" />
+        <Point X="6.625" Y="7.164" />
+        <Point X="8.875" Y="7.164" />
+        <Point X="8.875" Y="6.062" />
+        <Point X="8.5" Y="6.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="sendInfoToHouse" Type="House_Finance_management.Class_InfoToHouse" ManuallyRouted="true">
+      <Path>
+        <Point X="7" Y="6.25" />
+        <Point X="6.708" Y="6.25" Type="JumpStart" />
+        <Point X="6.542" Y="6.25" Type="JumpEnd" />
+        <Point X="6.252" Y="6.25" />
+        <Point X="6.252" Y="3.988" />
+        <Point X="5.188" Y="3.988" />
+        <Point X="5.188" Y="1.563" />
+        <Point X="5.5" Y="1.563" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>mCABA8ABpDBGAJKgRACRAEASQQAS1ZAgJqIogcAgEAM=</HashCode>
+      <HashCode>mCABA8ABpDBGAJKgRACRAEASQYAS1ZAgJqIogcAgEAM=</HashCode>
       <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="sendInfoToHouse" />
+      <Property Name="Add_Member1" />
     </ShowAsAssociation>
   </Class>
   <Class Name="House_Finance_management.ComboBoxLIsts">
-    <Position X="4" Y="3" Width="1.5" />
+    <Position X="2.25" Y="4" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -156,13 +348,39 @@
     </TypeIdentifier>
   </Class>
   <Class Name="House_Finance_management.Class_InfoToHouse" Collapsed="true">
-    <Position X="6.5" Y="2.75" Width="1.5" />
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <Members>
+      <Property Name="_age" Hidden="true" />
+      <Property Name="_city" Hidden="true" />
+      <Property Name="_email" Hidden="true" />
+      <Property Name="_expenses" Hidden="true" />
+      <Property Name="_experience" Hidden="true" />
+      <Property Name="_isMale" Hidden="true" />
+      <Property Name="_job" Hidden="true" />
+      <Property Name="_monthlySalary" Hidden="true" />
+      <Property Name="_Name" Hidden="true" />
+      <Property Name="_phone" Hidden="true" />
+      <Property Name="_picture" Hidden="true" />
+      <Method Name="Class_InfoToHouse" Hidden="true" />
+      <Method Name="GetAge" Hidden="true" />
+      <Method Name="GetCity" Hidden="true" />
+      <Method Name="GetEmail" Hidden="true" />
+      <Method Name="GetExpenses" Hidden="true" />
+      <Method Name="GetExperience" Hidden="true" />
+      <Method Name="GetIsMale" Hidden="true" />
+      <Method Name="GetJob" Hidden="true" />
+      <Method Name="GetMonthlySalary" Hidden="true" />
+      <Method Name="GetName" Hidden="true" />
+      <Method Name="GetPhone" Hidden="true" />
+      <Method Name="GetPicture" Hidden="true" />
+      <Property Name="List" Hidden="true" />
+    </Members>
     <AssociationLine Name="DataSentHandler" Type="House_Finance_management.DataSentHandler" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8" Y="3.203" />
-        <Point X="8.375" Y="3.203" />
-        <Point X="8.375" Y="4.75" />
-        <Point X="8.75" Y="4.75" />
+        <Point X="7" Y="1.5" />
+        <Point X="7.375" Y="1.5" />
+        <Point X="7.375" Y="3.744" />
+        <Point X="9" Y="3.744" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -174,15 +392,157 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="System.Windows.Forms.BindingSource" Collapsed="true">
-    <Position X="8.75" Y="5" Width="1.5" />
+    <Position X="9" Y="3" Width="1.5" />
+    <Members>
+      <Method Name="Add" Hidden="true" />
+      <Event Name="AddingNew" Hidden="true" />
+      <Method Name="AddNew" Hidden="true" />
+      <Property Name="AllowEdit" Hidden="true" />
+      <Property Name="AllowNew" Hidden="true" />
+      <Property Name="AllowRemove" Hidden="true" />
+      <Method Name="ApplySort" Hidden="true" />
+      <Event Name="BindingComplete" Hidden="true" />
+      <Method Name="BindingSource" Hidden="true" />
+      <Method Name="CancelEdit" Hidden="true" />
+      <Method Name="Clear" Hidden="true" />
+      <Method Name="Contains" Hidden="true" />
+      <Method Name="CopyTo" Hidden="true" />
+      <Property Name="Count" Hidden="true" />
+      <Property Name="CurrencyManager" Hidden="true" />
+      <Property Name="Current" Hidden="true" />
+      <Event Name="CurrentChanged" Hidden="true" />
+      <Event Name="CurrentItemChanged" Hidden="true" />
+      <Event Name="DataError" Hidden="true" />
+      <Property Name="DataMember" Hidden="true" />
+      <Event Name="DataMemberChanged" Hidden="true" />
+      <Property Name="DataSource" Hidden="true" />
+      <Event Name="DataSourceChanged" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="EndEdit" Hidden="true" />
+      <Property Name="Filter" Hidden="true" />
+      <Method Name="Find" Hidden="true" />
+      <Method Name="GetEnumerator" Hidden="true" />
+      <Method Name="GetItemProperties" Hidden="true" />
+      <Method Name="GetListName" Hidden="true" />
+      <Method Name="GetRelatedCurrencyManager" Hidden="true" />
+      <Method Name="IndexOf" Hidden="true" />
+      <Method Name="Insert" Hidden="true" />
+      <Property Name="IsBindingSuspended" Hidden="true" />
+      <Property Name="IsFixedSize" Hidden="true" />
+      <Property Name="IsReadOnly" Hidden="true" />
+      <Property Name="IsSorted" Hidden="true" />
+      <Property Name="IsSynchronized" Hidden="true" />
+      <Property Name="List" Hidden="true" />
+      <Event Name="ListChanged" Hidden="true" />
+      <Method Name="MoveFirst" Hidden="true" />
+      <Method Name="MoveLast" Hidden="true" />
+      <Method Name="MoveNext" Hidden="true" />
+      <Method Name="MovePrevious" Hidden="true" />
+      <Method Name="OnAddingNew" Hidden="true" />
+      <Method Name="OnBindingComplete" Hidden="true" />
+      <Method Name="OnCurrentChanged" Hidden="true" />
+      <Method Name="OnCurrentItemChanged" Hidden="true" />
+      <Method Name="OnDataError" Hidden="true" />
+      <Method Name="OnDataMemberChanged" Hidden="true" />
+      <Method Name="OnDataSourceChanged" Hidden="true" />
+      <Method Name="OnListChanged" Hidden="true" />
+      <Method Name="OnPositionChanged" Hidden="true" />
+      <Property Name="Position" Hidden="true" />
+      <Event Name="PositionChanged" Hidden="true" />
+      <Property Name="RaiseListChangedEvents" Hidden="true" />
+      <Method Name="Remove" Hidden="true" />
+      <Method Name="RemoveAt" Hidden="true" />
+      <Method Name="RemoveCurrent" Hidden="true" />
+      <Method Name="RemoveFilter" Hidden="true" />
+      <Method Name="RemoveSort" Hidden="true" />
+      <Method Name="ResetAllowNew" Hidden="true" />
+      <Method Name="ResetBindings" Hidden="true" />
+      <Method Name="ResetCurrentItem" Hidden="true" />
+      <Method Name="ResetItem" Hidden="true" />
+      <Method Name="ResumeBinding" Hidden="true" />
+      <Property Name="Sort" Hidden="true" />
+      <Property Name="SortDescriptions" Hidden="true" />
+      <Property Name="SortDirection" Hidden="true" />
+      <Property Name="SortProperty" Hidden="true" />
+      <Property Name="SupportsAdvancedSorting" Hidden="true" />
+      <Property Name="SupportsChangeNotification" Hidden="true" />
+      <Property Name="SupportsFiltering" Hidden="true" />
+      <Property Name="SupportsSearching" Hidden="true" />
+      <Property Name="SupportsSorting" Hidden="true" />
+      <Method Name="SuspendBinding" Hidden="true" />
+      <Property Name="SyncRoot" Hidden="true" />
+      <Property Name="Item" Hidden="true" />
+    </Members>
     <TypeIdentifier />
-    <Lollipop Orientation="Left" Position="0.221" />
+    <Lollipop Orientation="Right" Position="0.174" />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="20.75" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="17.25" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="Add" Hidden="true" />
+      <Method Name="AddRange" Hidden="true" />
+      <Method Name="AsReadOnly" Hidden="true" />
+      <Method Name="BinarySearch" Hidden="true" />
+      <Property Name="Capacity" Hidden="true" />
+      <Method Name="Clear" Hidden="true" />
+      <Method Name="Contains" Hidden="true" />
+      <Method Name="ConvertAll" Hidden="true" />
+      <Method Name="CopyTo" Hidden="true" />
+      <Property Name="Count" Hidden="true" />
+      <Method Name="EnsureCapacity" Hidden="true" />
+      <Method Name="Exists" Hidden="true" />
+      <Method Name="Find" Hidden="true" />
+      <Method Name="FindAll" Hidden="true" />
+      <Method Name="FindIndex" Hidden="true" />
+      <Method Name="FindLast" Hidden="true" />
+      <Method Name="FindLastIndex" Hidden="true" />
+      <Method Name="ForEach" Hidden="true" />
+      <Method Name="GetEnumerator" Hidden="true" />
+      <Method Name="GetRange" Hidden="true" />
+      <Method Name="IndexOf" Hidden="true" />
+      <Method Name="Insert" Hidden="true" />
+      <Method Name="InsertRange" Hidden="true" />
+      <Method Name="LastIndexOf" Hidden="true" />
+      <Method Name="List" Hidden="true" />
+      <Method Name="Remove" Hidden="true" />
+      <Method Name="RemoveAll" Hidden="true" />
+      <Method Name="RemoveAt" Hidden="true" />
+      <Method Name="RemoveRange" Hidden="true" />
+      <Method Name="Reverse" Hidden="true" />
+      <Method Name="Sort" Hidden="true" />
+      <Property Name="Item" Hidden="true" />
+      <Method Name="ToArray" Hidden="true" />
+      <Method Name="TrimExcess" Hidden="true" />
+      <Method Name="TrueForAll" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="System.Collections.Generic.List&lt;T&gt;.Enumerator">
+        <Members>
+          <Property Name="Current" Hidden="true" />
+          <Method Name="Dispose" Hidden="true" />
+          <Method Name="MoveNext" Hidden="true" />
+        </Members>
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
   </Class>
   <Delegate Name="House_Finance_management.DataSentHandler" Collapsed="true">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="9" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Add Member Send Data.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="House_Finance_management.ReturnDataToHouse" Collapsed="true">
+    <Position X="17.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>inHouse.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Font Name="Segoe UI" Size="9" />

@@ -115,7 +115,5 @@ namespace House_Finance_management
             _members.RemoveAt(lstMembersList.SelectedIndex);
             lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
         }
-
-
     }
 }

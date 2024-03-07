@@ -15,18 +15,27 @@ namespace House_Finance_management
     public partial class Add_Member
     {
         public event DataSentHandler DataSent;
+
+        public Add_Member Add_Member1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public Class_InfoToHouse sendInfoToHouse;
         private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (_validateEmail() && _validateName() && _validateJob() && _validatePhone() && _validateCity())
+            if (_validateAllData())
             //if(true)
             {
-                //NumericUpDown[] listExpenses = { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
                 sendInfoToHouse = new Class_InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtMName.Text + " " + txtLName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image);
                 this.DataSent(sendInfoToHouse);
             }
         }
+        private bool _validateAllData() { return _validateEmail() && _validateName() && _validateJob() && _validatePhone() && _validateCity(); }
         private bool _validateName() { return string.IsNullOrEmpty(FirstNameValidationText.Text + MiddleNameValidationText.Text + LastNameValidationText.Text); }
         
         private bool _validateJob() { return string.IsNullOrEmpty(JobValidationText.Text); } 
