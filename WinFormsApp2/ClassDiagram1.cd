@@ -174,8 +174,8 @@
       <Path>
         <Point X="12.25" Y="5.562" />
         <Point X="10.375" Y="5.562" />
-        <Point X="10.375" Y="5.74" />
-        <Point X="8.5" Y="5.74" />
+        <Point X="10.375" Y="5.562" />
+        <Point X="8.5" Y="5.562" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="dataSentHandlerBindingSource" Type="System.Windows.Forms.BindingSource" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -296,12 +296,21 @@
     </Members>
     <AssociationLine Name="Add_Member1" Type="House_Finance_management.Add_Member" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7" Y="6.399" />
-        <Point X="6.625" Y="6.399" />
+        <Point X="7" Y="6.062" />
+        <Point X="6.625" Y="6.062" />
         <Point X="6.625" Y="7.164" />
         <Point X="8.875" Y="7.164" />
-        <Point X="8.875" Y="6.399" />
-        <Point X="8.5" Y="6.399" />
+        <Point X="8.875" Y="6.062" />
+        <Point X="8.5" Y="6.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="sendInfoToHouse" Type="House_Finance_management.InfoToHouse" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.062" Y="5" />
+        <Point X="7.062" Y="4.471" />
+        <Point X="5.068" Y="4.471" />
+        <Point X="5.068" Y="1.625" />
+        <Point X="5.5" Y="1.625" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -309,6 +318,7 @@
       <FileName>Add Member Send Data.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="sendInfoToHouse" />
       <Property Name="Add_Member1" />
     </ShowAsAssociation>
   </Class>
@@ -372,7 +382,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>CAAAAAAACAhACAAKIQAAIAAgAAIBAAggAAAAgAACThM=</HashCode>
-      <FileName>Models\Class_InfoToHouse.cs</FileName>
+      <FileName>Models\InfoToHouse.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="DataSentHandler" />
