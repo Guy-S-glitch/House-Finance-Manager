@@ -34,7 +34,7 @@
             btnInspectMember = new Button();
             btnmemberRemove = new Button();
             btnmemberAdd = new Button();
-            label1 = new Label();
+            houseNumber = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             label17 = new Label();
             label16 = new Label();
@@ -106,7 +106,7 @@
             splitContainer1.Panel1.Controls.Add(btnInspectMember);
             splitContainer1.Panel1.Controls.Add(btnmemberRemove);
             splitContainer1.Panel1.Controls.Add(btnmemberAdd);
-            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Controls.Add(houseNumber);
             // 
             // splitContainer1.Panel2
             // 
@@ -116,7 +116,7 @@
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            splitContainer1.Size = new Size(1271, 706);
+            splitContainer1.Size = new Size(1271, 862);
             splitContainer1.SplitterDistance = 488;
             splitContainer1.TabIndex = 0;
             // 
@@ -128,13 +128,13 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(488, 547);
+            lstMembersList.Size = new Size(488, 703);
             lstMembersList.TabIndex = 3;
             // 
             // btnInspectMember
             // 
             btnInspectMember.Dock = DockStyle.Bottom;
-            btnInspectMember.Location = new Point(0, 604);
+            btnInspectMember.Location = new Point(0, 760);
             btnInspectMember.Name = "btnInspectMember";
             btnInspectMember.Size = new Size(488, 34);
             btnInspectMember.TabIndex = 3;
@@ -145,7 +145,7 @@
             // btnmemberRemove
             // 
             btnmemberRemove.Dock = DockStyle.Bottom;
-            btnmemberRemove.Location = new Point(0, 638);
+            btnmemberRemove.Location = new Point(0, 794);
             btnmemberRemove.Name = "btnmemberRemove";
             btnmemberRemove.Size = new Size(488, 34);
             btnmemberRemove.TabIndex = 0;
@@ -156,7 +156,7 @@
             // btnmemberAdd
             // 
             btnmemberAdd.Dock = DockStyle.Bottom;
-            btnmemberAdd.Location = new Point(0, 672);
+            btnmemberAdd.Location = new Point(0, 828);
             btnmemberAdd.Name = "btnmemberAdd";
             btnmemberAdd.Size = new Size(488, 34);
             btnmemberAdd.TabIndex = 2;
@@ -164,16 +164,16 @@
             btnmemberAdd.UseVisualStyleBackColor = true;
             btnmemberAdd.Click += btnmemberAdd_Click;
             // 
-            // label1
+            // houseNumber
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(488, 57);
-            label1.TabIndex = 0;
-            label1.Text = "people";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            houseNumber.Dock = DockStyle.Top;
+            houseNumber.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
+            houseNumber.Location = new Point(0, 0);
+            houseNumber.Name = "houseNumber";
+            houseNumber.Size = new Size(488, 57);
+            houseNumber.TabIndex = 0;
+            houseNumber.Text = "people";
+            houseNumber.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -214,11 +214,11 @@
             tableLayoutPanel3.Controls.Add(txtEmail, 6, 2);
             tableLayoutPanel3.Controls.Add(label18, 4, 3);
             tableLayoutPanel3.Controls.Add(txtCity, 6, 3);
-            tableLayoutPanel3.Dock = DockStyle.Top;
+            tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel3.Location = new Point(0, 305);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 8;
+            tableLayoutPanel3.RowCount = 10;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
@@ -227,7 +227,9 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
-            tableLayoutPanel3.Size = new Size(779, 333);
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(779, 557);
             tableLayoutPanel3.TabIndex = 14;
             // 
             // label17
@@ -719,10 +721,14 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1271, 706);
+            ClientSize = new Size(1271, 862);
             Controls.Add(splitContainer1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "inHouse";
             Text = "inHouse";
+            WindowState = FormWindowState.Maximized;
             FormClosed += inHouse_FormClosed;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
@@ -742,7 +748,7 @@
         #endregion
 
         private SplitContainer splitContainer1;
-        private Label label1;
+        private Label houseNumber;
         private Button btnmemberAdd;
         private Button btnmemberRemove;
         private ListBox lstMembersList;

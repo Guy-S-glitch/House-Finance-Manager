@@ -676,7 +676,7 @@
             Controls.Add(groupBox1);
             Controls.Add(btnAdd);
             Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;

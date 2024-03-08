@@ -57,7 +57,7 @@ namespace WinFormsApp2
         {
             showHouseMembers=new List<InfoToHouse>();
             _id = 1;
-            _clickedHouse.Text = string.Empty;
+            _clickedHouse.Text = _clickedHouse.Name+ "\n"; 
             foreach (InfoToHouse class_Info in houseMembers)
             {
                 showHouseMembers.Add(class_Info);

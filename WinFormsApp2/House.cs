@@ -22,17 +22,16 @@ namespace House_Finance_management
         public event ReturnDataToHouse returnDataToHouse;
         public List<InfoToHouse> _members=new List<InfoToHouse>();
         private static short _memberID = 0, hundred;
-        private static bool remove;
-        private static string _currentHouse;
+        private static bool remove;  
         private static InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
         public inHouse(List<InfoToHouse>? showExistMembers,string houseName)
         {
-            _currentHouse = houseName;
             try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
             catch { } 
             InitializeComponent();
             _memberID = 0;
+            houseNumber.Text = houseName+" members";
             foreach (InfoToHouse sa in _members)
             {
                 _memberID++;
