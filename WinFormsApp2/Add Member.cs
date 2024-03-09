@@ -25,6 +25,15 @@ namespace House_Finance_management
             _setJobsNames();
             _setCitiesNames();
         }
+        public Add_Member(InfoToHouse update)
+        {
+            InitializeComponent();
+            _setJobsNames();
+            _setCitiesNames();
+            txtFName.Text=update.GetName().Split(' ')[0];
+            txtLName.Text = update.GetName().Split(' ')[1];
+            txtMName.Text = update.GetName().Split(' ')[2];
+        }
 
         private void _setJobsNames() { foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(job.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
         private void _setCitiesNames() { foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(city.ToString().Replace("_", " ")); cmbCity.SelectedIndex = 0; }

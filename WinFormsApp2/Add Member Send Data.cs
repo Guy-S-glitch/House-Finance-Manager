@@ -31,7 +31,7 @@ namespace House_Finance_management
             if (_validateAllData())
             //if(true)
             {
-                sendInfoToHouse = new InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtMName.Text + " " + txtLName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image);
+                sendInfoToHouse = new InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtLName.Text + " " + txtMName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image);
                 this.DataSent(sendInfoToHouse);
             }
         }

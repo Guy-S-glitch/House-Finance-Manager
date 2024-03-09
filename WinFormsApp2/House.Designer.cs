@@ -83,6 +83,7 @@
             label4 = new Label();
             label3 = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
+            btnUpdateMember = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -103,6 +104,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.Controls.Add(lstMembersList);
+            splitContainer1.Panel1.Controls.Add(btnUpdateMember);
             splitContainer1.Panel1.Controls.Add(btnInspectMember);
             splitContainer1.Panel1.Controls.Add(btnmemberRemove);
             splitContainer1.Panel1.Controls.Add(btnmemberAdd);
@@ -128,7 +130,7 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(488, 703);
+            lstMembersList.Size = new Size(488, 669);
             lstMembersList.TabIndex = 3;
             // 
             // btnInspectMember
@@ -717,6 +719,17 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
+            // btnUpdateMember
+            // 
+            btnUpdateMember.Dock = DockStyle.Bottom;
+            btnUpdateMember.Location = new Point(0, 726);
+            btnUpdateMember.Name = "btnUpdateMember";
+            btnUpdateMember.Size = new Size(488, 34);
+            btnUpdateMember.TabIndex = 4;
+            btnUpdateMember.Text = "Update member";
+            btnUpdateMember.UseVisualStyleBackColor = true;
+            btnUpdateMember.Click += btnUpdateMember_Click;
+            // 
             // inHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -801,5 +814,6 @@
         private Label label18;
         private Label txtPhone;
         private Label txtEmail;
+        private Button btnUpdateMember;
     }
 }

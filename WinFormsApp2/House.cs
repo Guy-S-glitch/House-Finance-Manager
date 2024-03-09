@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 using Label = System.Windows.Forms.Label;
 using ProgressBar = System.Windows.Forms.ProgressBar;
+using System.Windows.Forms.Design.Behavior;
 
 namespace House_Finance_management
 {
@@ -20,27 +21,27 @@ namespace House_Finance_management
     public partial class inHouse : Form
     {
         public event ReturnDataToHouse returnDataToHouse;
-        public List<InfoToHouse> _members=new List<InfoToHouse>();
+        public List<InfoToHouse> _members = new List<InfoToHouse>();
         private static short _memberID = 0, hundred;
-        private static bool remove;  
+        private static bool remove;
         private static InfoToHouse selectedMember;
         private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-        public inHouse(List<InfoToHouse>? showExistMembers,string houseName)
+        public inHouse(List<InfoToHouse>? showExistMembers, string houseName)
         {
             try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
-            catch { } 
+            catch { }
             InitializeComponent();
             _memberID = 0;
-            houseNumber.Text = houseName+" members";
+            houseNumber.Text = houseName + " members";
             foreach (InfoToHouse sa in _members)
             {
                 _memberID++;
-                lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}"); 
+                lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}");
             }
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.returnDataToHouse(_members); 
+            this.returnDataToHouse(_members);
         }
         public Add_Member Add_Member { get => default; set { } }
 
@@ -51,13 +52,17 @@ namespace House_Finance_management
             addMember.ShowDialog();
         }
 
-        private void AddMember_DataSent(InfoToHouse house)
+        private void AddMember_DataSent(InfoToHouse addMember)
         {
             _memberID++;
-            lstMembersList.Items.Add($"{_memberID}. {house.GetName()}");
-            _members.Add(house);
+            lstMembersList.Items.Add($"{_memberID}. {addMember.GetName()}");
+            _members.Add(addMember);
         }
-
+        private void UpdateMember_DataSent(InfoToHouse updateMember)
+        {
+            lstMembersList.Items[lstMembersList.SelectedIndex] = $"{lstMembersList.SelectedIndex+1}. {updateMember.GetName()}";
+            _members[lstMembersList.SelectedIndex] = updateMember;
+        }
 
         private void btnmemberRemove_Click(object sender, EventArgs e) { btnInspectMember_Click(sender, e); }
         private void btnInspectMember_Click(object sender, EventArgs e)
@@ -114,6 +119,16 @@ namespace House_Finance_management
             iconPictureBox.Dock = DockStyle.Fill;
             _members.RemoveAt(lstMembersList.SelectedIndex);
             lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
+        }
+
+        private void btnUpdateMember_Click(object sender, EventArgs e)
+        {
+            if (lstMembersList.SelectedIndex != -1)
+            {
+                Add_Member updateMember = new Add_Member(_members[lstMembersList.SelectedIndex]);
+                updateMember.DataSent += UpdateMember_DataSent;
+                updateMember.ShowDialog();
+            }
         }
     }
 }
