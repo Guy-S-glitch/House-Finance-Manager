@@ -33,6 +33,19 @@ namespace House_Finance_management
             txtFName.Text=update.GetName().Split(' ')[0];
             txtLName.Text = update.GetName().Split(' ')[1];
             txtMName.Text = update.GetName().Split(' ')[2];
+            dtpAge.Value = update.GetDate();
+            radMale.Checked = update.GetIsMale();
+            radFemale.Checked = !radMale.Checked;
+            iconPictureBox.Image = update.GetPicture();
+
+            numExperience.Value = update.GetExperience();
+            numMonthlySalary.Value = update.GetMonthlySalary();
+            cmbJob.Text = update.GetJob();
+
+            txtPhone.Text = update.GetPhone();
+            cmbCity.Text = update.GetCity();
+            txtEmail.Text = update.GetEmail();
+            
         }
 
         private void _setJobsNames() { foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(job.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
@@ -52,7 +65,7 @@ namespace House_Finance_management
 
         private void txtLName_KeyUp(object sender, KeyEventArgs e) { LastNameValidationText.Text = string.IsNullOrEmpty(txtLName.Text) ? _notNullable : txtLName.TextLength == txtLName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtLName.Text, "^([a-zA-Z]+)$") ? _valid : _lettersOnly; }
 
-        private void txtMName_KeyUp(object sender, KeyEventArgs e) { MiddleNameValidationText.Text = txtMName.TextLength == txtMName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtMName.Text, "^([a-zA-Z]+)$") ? _valid : _lettersOnly; }
+        private void txtMName_KeyUp(object sender, KeyEventArgs e) { MiddleNameValidationText.Text = txtMName.TextLength == txtMName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtMName.Text, "^([a-zA-Z]+)$") ? _valid :txtMName.Text==string.Empty?_valid: _lettersOnly; }
 
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e) { JobValidationText.Text = cmbJob.SelectedIndex == 0 ? _invalidJob : _valid; }
 

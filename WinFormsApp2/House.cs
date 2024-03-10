@@ -14,7 +14,7 @@ using Button = System.Windows.Forms.Button;
 using Label = System.Windows.Forms.Label;
 using ProgressBar = System.Windows.Forms.ProgressBar;
 using System.Windows.Forms.Design.Behavior;
-
+using System.Data.SqlClient;
 namespace House_Finance_management
 {
     public delegate void ReturnDataToHouse(List<InfoToHouse> returnMember);
@@ -31,6 +31,7 @@ namespace House_Finance_management
             try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
             catch { }
             InitializeComponent();
+            string connect2SQL = "Data Source=LAPTOP-61JA524F\\HOUSE_SERVER;Initial Catalog=ProjectDB;Integrated Security=True";
             _memberID = 0;
             houseNumber.Text = houseName + " members";
             foreach (InfoToHouse sa in _members)

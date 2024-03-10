@@ -2,11 +2,13 @@ using FontAwesome.Sharp;
 using House_Finance_management;
 using System.Collections;
 using System.DirectoryServices.ActiveDirectory;
-
+using System.Configuration;
+using System.Runtime.CompilerServices;
 namespace WinFormsApp2
 {
     public partial class Main : Form
     {
+        
         private List<InfoToHouse>? showHouseMembers;
         private Hashtable? neighberhood = new Hashtable();
         private IconButton _clickedHouse;

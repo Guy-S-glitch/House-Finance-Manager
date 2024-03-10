@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace House_Finance_management
             _job = job; _Name = name; _expenses = expenses; _phone = phone; _email = email; _city = city; _picture = picture;
         }
         public bool GetIsMale() { return _isMale; } 
+        public DateTime GetDate() { return _age; }
         public float GetAge()
         {
             float fullAge = (float)(((DateTime.Today.Year - _age.Year) + ((DateTime.Today.Month - _age.Month) / 12.0)));
