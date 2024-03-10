@@ -3,7 +3,7 @@ using House_Finance_management;
 using System.Collections;
 using System.DirectoryServices.ActiveDirectory;
 using System.Configuration;
-using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices; 
 namespace WinFormsApp2
 {
     public partial class Main : Form
