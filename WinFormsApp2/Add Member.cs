@@ -29,23 +29,9 @@ namespace House_Finance_management
         {
             InitializeComponent();
             _setJobsNames();
-            _setCitiesNames();
-            txtFName.Text=update.GetName().Split(' ')[0];
-            txtLName.Text = update.GetName().Split(' ')[1];
-            txtMName.Text = update.GetName().Split(' ')[2];
-            dtpAge.Value = update.GetDate();
-            radMale.Checked = update.GetIsMale();
-            radFemale.Checked = !radMale.Checked;
-            iconPictureBox.Image = update.GetPicture();
-
-            numExperience.Value = update.GetExperience();
-            numMonthlySalary.Value = update.GetMonthlySalary();
-            cmbJob.Text = update.GetJob();
-
-            txtPhone.Text = update.GetPhone();
-            cmbCity.Text = update.GetCity();
-            txtEmail.Text = update.GetEmail();
-            
+            _updatePersonalInfo(update);
+            _updateJobInfo(update);
+            _updateContacts(update); 
         }
 
         private void _setJobsNames() { foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(job.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }
@@ -100,6 +86,30 @@ namespace House_Finance_management
             if (!Regex.IsMatch(_validateLastPortion, "^[a-zA-Z]+$")) return true;
             return false;
 
+        }
+        private void _updateContacts(InfoToHouse update)
+        {
+            _setCitiesNames();
+            txtPhone.Text = update.GetPhone();
+            cmbCity.Text = update.GetCity();
+            txtEmail.Text = update.GetEmail();
+        }
+        private void _updateJobInfo(InfoToHouse update)
+        {
+            _setJobsNames();
+            numExperience.Value = update.GetExperience();
+            numMonthlySalary.Value = update.GetMonthlySalary();
+            cmbJob.Text = update.GetJob();
+        }
+        private void _updatePersonalInfo(InfoToHouse update)
+        {
+            txtFName.Text = update.GetName().Split(' ')[0];
+            txtLName.Text = update.GetName().Split(' ')[1];
+            txtMName.Text = update.GetName().Split(' ')[2];
+            dtpAge.Value = update.GetDate();
+            radMale.Checked = update.GetIsMale();
+            radFemale.Checked = !radMale.Checked;
+            iconPictureBox.Image = update.GetPicture();
         }
     }
 }
