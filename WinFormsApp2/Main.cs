@@ -3,12 +3,14 @@ using House_Finance_management;
 using System.Collections;
 using System.DirectoryServices.ActiveDirectory;
 using System.Configuration;
-using System.Runtime.CompilerServices; 
+using System.Runtime.CompilerServices;
+using Microsoft.Data.SqlClient;
+using System.Windows;
 namespace WinFormsApp2
 {
     public partial class Main : Form
     {
-        
+
         private List<InfoToHouse>? showHouseMembers;
         private Hashtable? neighberhood = new Hashtable();
         private IconButton _clickedHouse;
@@ -16,6 +18,8 @@ namespace WinFormsApp2
         public Main()
         {
             InitializeComponent();
+
+
         }
 
         public inHouse inHouse { get => default; set { } }
@@ -40,30 +44,31 @@ namespace WinFormsApp2
 
         private void House1_Click(object sender, EventArgs e)
         {
-            _clickedHouse = sender as IconButton; 
+            _clickedHouse = sender as IconButton;
             inHouse house = new inHouse((List<InfoToHouse>)neighberhood[_clickedHouse], _clickedHouse.Name);
             house.returnDataToHouse += inHouse_returnDataToHouse;
-            house.Show(); 
-        } 
+            house.Show();
+        }
 
         private void AddHouse_Click(object sender, EventArgs e)
         {
-            
+
             tableLayoutPanel1.Controls.Add(AddHouse, (_column + 1) % 5, (_column + 1) % 5 == 0 ? _row + 1 : _row);
             clonePropeties(House1, new IconButton());
-            _column = _column < 4 ? _column+1: 0;
+            _column = _column < 4 ? _column + 1 : 0;
             _row = _column == 0 ? _row + 1 : _row;
             _houseNumber++;
+
         }
         private void inHouse_returnDataToHouse(List<InfoToHouse> houseMembers)
         {
-            showHouseMembers=new List<InfoToHouse>();
+            showHouseMembers = new List<InfoToHouse>();
             _id = 1;
-            _clickedHouse.Text = _clickedHouse.Name+ "\n"; 
+            _clickedHouse.Text = _clickedHouse.Name + "\n";
             foreach (InfoToHouse class_Info in houseMembers)
             {
                 showHouseMembers.Add(class_Info);
-                _clickedHouse.Text +=_id.ToString()+"."+class_Info.GetName()+"\n";
+                _clickedHouse.Text += _id.ToString() + "." + class_Info.GetName() + "\n";
                 _id++;
             }
             try { neighberhood[_clickedHouse] = showHouseMembers; }
@@ -77,15 +82,40 @@ namespace WinFormsApp2
             Target.IconChar = Source.IconChar;
             Target.IconColor = Source.IconColor;
             Target.IconFont = Source.IconFont;
-            Target.ImageAlign = Source.ImageAlign;  
+            Target.ImageAlign = Source.ImageAlign;
             Target.Name = $"house{_houseNumber}";
             tableLayoutPanel1.Controls.Add(Target, _column, _row);
             Target.Size = Source.Size;
-            Target.TabIndex = Source.TabIndex+1;
+            Target.TabIndex = Source.TabIndex + 1;
             Target.Text = Target.Name;
             Target.TextAlign = Source.TextAlign;
             Target.UseVisualStyleBackColor = true;
             Target.Click += House1_Click;
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+            string deleteQuery = "delete from Houses;"; 
+             
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand sc = new SqlCommand(deleteQuery, con); 
+            sc.ExecuteNonQuery();
+
+            foreach (List<InfoToHouse> ss in neighberhood.Values)
+            {
+                foreach (InfoToHouse s in ss)
+                {
+                    //string uploadToSQL = $"insert into Houses Values(1,'gsf','2020-12-12','Male',NULL,'sad',4,5,'sadasasdcity','123123','werg@ssfg',1,1,1,1,1,1,1);";
+                    string uploadToSQL = $"insert into Houses Values(1,'{s.GetName()}','{s.GetDate()}','{s.GetGender}'" +
+                        $",NULL,'{s.GetJob()}',{s.GetExperience()},{s.GetMonthlySalary()},'{s.GetCity()}'" +
+                        $",'{s.GetPhone()}','{s.GetEmail()}',1,1,1,1,1,1,1);";
+                    sc = new SqlCommand(uploadToSQL, con);
+                    sc.ExecuteNonQuery(); 
+                }
+            }
+            con.Close(); 
         }
     }
 }

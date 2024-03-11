@@ -44,6 +44,7 @@ namespace House_Finance_management
             _job = job; _Name = name; _expenses = expenses; _phone = phone; _email = email; _city = city; _picture = picture;
         }
         public bool GetIsMale() { return _isMale; } 
+        public string GetGender() { return _isMale ? "Male" : "Female"; }
         public DateTime GetDate() { return _age; }
         public float GetAge()
         {

@@ -107,6 +107,7 @@
             Name = "Main";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
+            FormClosing += Main_FormClosing;
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
