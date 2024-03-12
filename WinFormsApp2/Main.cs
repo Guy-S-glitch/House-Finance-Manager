@@ -15,12 +15,29 @@ namespace WinFormsApp2
         private Hashtable? neighberhood = new Hashtable();
         private IconButton _clickedHouse;
         private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2;
-        private int _HousesID2SQL;
+        private int _HousesID2SQL,_addFromSQL=2;
         public Main()
         {
             InitializeComponent();
+            string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+            string selectQuery = "select * from Houses;"; 
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(selectQuery, con);
+            con.Open();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    System.Windows.MessageBox.Show(reader.GetString(0) );
+                    while (int.Parse(reader.GetString(0).Split('e')[1]) >= _addFromSQL)
+                    {
 
-
+                        AddHouse_Click(new object(), new EventArgs());
+                        _addFromSQL++;
+                    }
+                }
+            }
+            con.Close();
         }
 
         public inHouse inHouse { get => default; set { } }
@@ -104,15 +121,17 @@ namespace WinFormsApp2
             SqlCommand sc = new SqlCommand(deleteQuery, con); 
             sc.ExecuteNonQuery();
             _HousesID2SQL = 1;
-            foreach (List<InfoToHouse> ss in neighberhood.Values)
+            foreach (DictionaryEntry sss in neighberhood)
             { 
+                List<InfoToHouse> ss = (List<InfoToHouse>)sss.Value;
+
                 foreach (InfoToHouse s in ss)
                 {
                     string uploadToSQL = "INSERT INTO Houses VALUES (@HouseID, @Name, @Date, @Gender, @ImageData, @Job, @Experience, @MonthlySalary, @City, @Phone, @Email, @Expense1, @Expense2, @Expense3, @Expense4, @Expense5, @Expense6, @Expense7)";
 
                     using (SqlCommand cmd = new SqlCommand(uploadToSQL, con))
                     {
-                        cmd.Parameters.AddWithValue("@HouseID", _HousesID2SQL);
+                        cmd.Parameters.AddWithValue("@HouseID", (sss.Key as IconButton).Name);
                         cmd.Parameters.AddWithValue("@Name", s.GetName());
                         cmd.Parameters.AddWithValue("@Date", s.GetDate());
                         cmd.Parameters.AddWithValue("@Gender", s.GetGender());
