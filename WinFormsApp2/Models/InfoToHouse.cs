@@ -62,6 +62,14 @@ namespace House_Finance_management
         public string GetCity() { return _city; }
         public Image GetPicture() { return _picture; }
 
+        public byte[] ImageToByteArray()
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                _picture.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return memoryStream.ToArray();
+            }
+        }
     }
 
 }

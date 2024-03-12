@@ -15,6 +15,7 @@ namespace WinFormsApp2
         private Hashtable? neighberhood = new Hashtable();
         private IconButton _clickedHouse;
         private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2;
+        private int _HousesID2SQL;
         public Main()
         {
             InitializeComponent();
@@ -102,18 +103,39 @@ namespace WinFormsApp2
             con.Open();
             SqlCommand sc = new SqlCommand(deleteQuery, con); 
             sc.ExecuteNonQuery();
-
+            _HousesID2SQL = 1;
             foreach (List<InfoToHouse> ss in neighberhood.Values)
-            {
+            { 
                 foreach (InfoToHouse s in ss)
                 {
-                    //string uploadToSQL = $"insert into Houses Values(1,'gsf','2020-12-12','Male',NULL,'sad',4,5,'sadasasdcity','123123','werg@ssfg',1,1,1,1,1,1,1);";
-                    string uploadToSQL = $"insert into Houses Values(1,'{s.GetName()}','{s.GetDate()}','{s.GetGender}'" +
-                        $",NULL,'{s.GetJob()}',{s.GetExperience()},{s.GetMonthlySalary()},'{s.GetCity()}'" +
-                        $",'{s.GetPhone()}','{s.GetEmail()}',1,1,1,1,1,1,1);";
-                    sc = new SqlCommand(uploadToSQL, con);
-                    sc.ExecuteNonQuery(); 
+                    string uploadToSQL = "INSERT INTO Houses VALUES (@HouseID, @Name, @Date, @Gender, @ImageData, @Job, @Experience, @MonthlySalary, @City, @Phone, @Email, @Expense1, @Expense2, @Expense3, @Expense4, @Expense5, @Expense6, @Expense7)";
+
+                    using (SqlCommand cmd = new SqlCommand(uploadToSQL, con))
+                    {
+                        cmd.Parameters.AddWithValue("@HouseID", _HousesID2SQL);
+                        cmd.Parameters.AddWithValue("@Name", s.GetName());
+                        cmd.Parameters.AddWithValue("@Date", s.GetDate());
+                        cmd.Parameters.AddWithValue("@Gender", s.GetGender());
+                        cmd.Parameters.AddWithValue("@ImageData", s.ImageToByteArray()); 
+                        cmd.Parameters.AddWithValue("@Job", s.GetJob());
+                        cmd.Parameters.AddWithValue("@Experience", s.GetExperience());
+                        cmd.Parameters.AddWithValue("@MonthlySalary", s.GetMonthlySalary());
+                        cmd.Parameters.AddWithValue("@City", s.GetCity());
+                        cmd.Parameters.AddWithValue("@Phone", s.GetPhone());
+                        cmd.Parameters.AddWithValue("@Email", s.GetEmail());
+                        cmd.Parameters.AddWithValue("@Expense1", s.GetExpenses()[0].Value);
+                        cmd.Parameters.AddWithValue("@Expense2", s.GetExpenses()[1].Value);
+                        cmd.Parameters.AddWithValue("@Expense3", s.GetExpenses()[2].Value);
+                        cmd.Parameters.AddWithValue("@Expense4", s.GetExpenses()[3].Value);
+                        cmd.Parameters.AddWithValue("@Expense5", s.GetExpenses()[4].Value);
+                        cmd.Parameters.AddWithValue("@Expense6", s.GetExpenses()[5].Value);
+                        cmd.Parameters.AddWithValue("@Expense7", s.GetExpenses()[6].Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
                 }
+                _HousesID2SQL++;
             }
             con.Close(); 
         }
