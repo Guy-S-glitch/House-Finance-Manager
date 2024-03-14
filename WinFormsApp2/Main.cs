@@ -7,6 +7,9 @@ using System.Runtime.CompilerServices;
 using Microsoft.Data.SqlClient;
 using System.Windows;
 using System.Text.RegularExpressions;
+
+using House_Finance_management.Helpers;
+
 namespace WinFormsApp2
 {
     public partial class Main : Form
@@ -36,9 +39,9 @@ namespace WinFormsApp2
                     while (reader.Read())
                     {
                         
-                        if (_currentSQLHouse == -1) _afterSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        if (_currentSQLHouse == -1) _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
                         
-                        _currentSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
                         if (_currentSQLHouse != _afterSQLHouse)
                         {
                             IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
@@ -199,6 +202,5 @@ namespace WinFormsApp2
             }
             catch (Exception re) { System.Windows.MessageBox.Show(re.Message); }
         }
-            
     }
 }

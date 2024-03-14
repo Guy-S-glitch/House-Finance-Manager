@@ -9,12 +9,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using House_Finance_management.Helpers;
+
 namespace House_Finance_management
 {
     public partial class Add_Member : Form
     {
         private static string _phoneStart = "Must start with 05", _phoneMaxNumbers = "Only 10 numbers", _phoneInvalidFormat = "Currect your dashes placement", 
-            _phoneFormat = "the order is 05X-XXX-XXXX", _phonePattern = "^(05\\d-?\\d{3}-?\\d{4})$", _invalidCity = "Please select your city", 
+            _phoneFormat = "the order is 05X-XXX-XXXX", _invalidCity = "Please select your city", 
             _invalidJob = "Please select your job", _exceedCharacters = "exceed max amount of characters", _lettersOnly = "Only letters allowed",
             _numbersOnly = "Only numbers please", _invalidEmail = "Invalid email", _spaceInEmail = "Unable to enter spaces", _valid = string.Empty, 
             _notNullable = "Can't be empty",_imageFileAccept= "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
@@ -41,7 +43,7 @@ namespace House_Finance_management
         private void _setCitiesNames() { foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities))) cmbCity.Items.Add(city.ToString().Replace("_", " ")); cmbCity.SelectedIndex = 0; }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e) { _GetExpenses()[e.Index].Visible = e.NewValue == CheckState.Checked; }
-        private void txtPhone_KeyUp(object sender, KeyEventArgs e) { phoneValidationText.Text = Regex.IsMatch(txtPhone.Text, _phonePattern) ? _valid : Regex.IsMatch(txtPhone.Text.Replace("-", ""), "(\\D)") ? _numbersOnly : (!Regex.IsMatch(txtPhone.Text, "^(05)")) ? _phoneStart : Regex.IsMatch(txtPhone.Text.Replace("-", ""), "\\d{11,}") ? _phoneMaxNumbers : txtPhone.TextLength == txtPhone.MaxLength ? _phoneInvalidFormat : _phoneFormat; }
+        private void txtPhone_KeyUp(object sender, KeyEventArgs e) { phoneValidationText.Text = RegexPatterns.PhoneNumberFormat().IsMatch(txtPhone.Text) ? _valid : RegexPatterns.NonDigitCharacters().IsMatch(txtPhone.Text.Replace("-", "")) ? _numbersOnly : (!RegexPatterns.StartsWith05().IsMatch(txtPhone.Text)) ? _phoneStart : RegexPatterns.AtLeastElevenDigits().IsMatch(txtPhone.Text.Replace("-", "")) ? _phoneMaxNumbers : txtPhone.TextLength == txtPhone.MaxLength ? _phoneInvalidFormat : _phoneFormat; }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
@@ -50,11 +52,11 @@ namespace House_Finance_management
             if (opnfd.ShowDialog() == DialogResult.OK) iconPictureBox.Image = new Bitmap(opnfd.FileName); 
         }
 
-        private void txtFName_KeyUp(object sender, KeyEventArgs e) { FirstNameValidationText.Text = string.IsNullOrEmpty(txtFName.Text) ? _notNullable : txtFName.TextLength == txtFName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtFName.Text, "^([a-zA-Z]+)$") ? _valid : _lettersOnly; }
+        private void txtFName_KeyUp(object sender, KeyEventArgs e) { FirstNameValidationText.Text = string.IsNullOrEmpty(txtFName.Text) ? _notNullable : txtFName.TextLength == txtFName.MaxLength ? _exceedCharacters : RegexPatterns.OnlyAlphabeticCharacters().IsMatch(txtFName.Text) ? _valid : _lettersOnly; }
 
-        private void txtLName_KeyUp(object sender, KeyEventArgs e) { LastNameValidationText.Text = string.IsNullOrEmpty(txtLName.Text) ? _notNullable : txtLName.TextLength == txtLName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtLName.Text, "^([a-zA-Z]+)$") ? _valid : _lettersOnly; }
+        private void txtLName_KeyUp(object sender, KeyEventArgs e) { LastNameValidationText.Text = string.IsNullOrEmpty(txtLName.Text) ? _notNullable : txtLName.TextLength == txtLName.MaxLength ? _exceedCharacters : RegexPatterns.OnlyAlphabeticCharacters().IsMatch(txtLName.Text) ? _valid : _lettersOnly; }
 
-        private void txtMName_KeyUp(object sender, KeyEventArgs e) { MiddleNameValidationText.Text = txtMName.TextLength == txtMName.MaxLength ? _exceedCharacters : Regex.IsMatch(txtMName.Text, "^([a-zA-Z]+)$") ? _valid :txtMName.Text==string.Empty?_valid: _lettersOnly; }
+        private void txtMName_KeyUp(object sender, KeyEventArgs e) { MiddleNameValidationText.Text = txtMName.TextLength == txtMName.MaxLength ? _exceedCharacters : RegexPatterns.OnlyAlphabeticCharacters().IsMatch(txtMName.Text) ? _valid :txtMName.Text==string.Empty?_valid: _lettersOnly; }
 
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e) { JobValidationText.Text = cmbJob.SelectedIndex == 0 ? _invalidJob : _valid; }
 
@@ -65,7 +67,7 @@ namespace House_Finance_management
 
             if (e.KeyValue == (char)Keys.Space) { emailValidationText.Text = _spaceInEmail ; txtEmail.Text = txtEmail.Text.Replace(" ", ""); }
 
-            if (Regex.IsMatch(txtEmail.Text, "(.+){1,}@(.+){1,}\\.(.+){2,}"))
+            if (RegexPatterns.ValidEmailFormat().IsMatch(txtEmail.Text))
                 try
                 {
                     if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2) throw new Exception();
@@ -84,9 +86,9 @@ namespace House_Finance_management
         }
         private bool _checkEmail()
         {
-            if (Regex.IsMatch(_validatePrefix, "(^\\W|\\W$)|((\\.|\\+|_|-)\\W)|(\\W(\\.|\\+|_|-))|(\\W{2})") || Regex.IsMatch(Regex.Replace(_validatePrefix, ("\\.|\\+|_|-"), ""), "\\W")) return true;
-            if (Regex.IsMatch(_validateDomain, "(^\\W|\\W$)|(-\\W|\\W-)") || Regex.IsMatch(_validateDomain.Replace("-", ""), "\\W")) return true;
-            if (!Regex.IsMatch(_validateLastPortion, "^[a-zA-Z]+$")) return true;
+            if (RegexPatterns.ValidEmailPrefix().IsMatch(_validatePrefix) || RegexPatterns.NonWordCharacters().IsMatch(RegexPatterns.SpecialCharacters().Replace(_validatePrefix, ""))) return true;
+            if (RegexPatterns.ValidEmailDomain().IsMatch(_validateDomain) || RegexPatterns.NonWordCharacters().IsMatch(_validateDomain.Replace("-", ""))) return true;
+            if (!RegexPatterns.OnlyAlphabeticCharacters().IsMatch(_validateLastPortion)) return true;
             return false;
 
         }
