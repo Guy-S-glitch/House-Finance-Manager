@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace House_Finance_management
 {
-    internal class ComboBoxLIsts : Add_Member
+    internal class ComboBoxLIsts
     {
 
         public enum Jobs

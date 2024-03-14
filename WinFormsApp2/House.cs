@@ -33,7 +33,7 @@ namespace House_Finance_management
             InitializeComponent();
             string connect2SQL = "Data Source=LAPTOP-61JA524F\\HOUSE_SERVER;Initial Catalog=ProjectDB;Integrated Security=True";
             _memberID = 0;
-            houseNumber.Text = houseName + " members";
+            houseNumber.Text = houseName;
             foreach (InfoToHouse sa in _members)
             {
                 _memberID++;
@@ -48,7 +48,7 @@ namespace House_Finance_management
 
         private void btnmemberAdd_Click(object sender, EventArgs e)
         {
-            Add_Member addMember = new Add_Member();
+            Add_Member addMember = new Add_Member(houseNumber.Text);
             addMember.DataSent += AddMember_DataSent;
             addMember.ShowDialog();
         }
@@ -126,7 +126,7 @@ namespace House_Finance_management
         {
             if (lstMembersList.SelectedIndex != -1)
             {
-                Add_Member updateMember = new Add_Member(_members[lstMembersList.SelectedIndex]);
+                Add_Member updateMember = new Add_Member(_members[lstMembersList.SelectedIndex],houseNumber.Text);
                 updateMember.DataSent += UpdateMember_DataSent;
                 updateMember.ShowDialog();
             }

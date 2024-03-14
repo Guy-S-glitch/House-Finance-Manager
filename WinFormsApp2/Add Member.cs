@@ -18,20 +18,23 @@ namespace House_Finance_management
             _invalidJob = "Please select your job", _exceedCharacters = "exceed max amount of characters", _lettersOnly = "Only letters allowed",
             _numbersOnly = "Only numbers please", _invalidEmail = "Invalid email", _spaceInEmail = "Unable to enter spaces", _valid = string.Empty, 
             _notNullable = "Can't be empty",_imageFileAccept= "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
-        private static string? _validatePrefix, _validateDomain, _validateLastPortion;
-        public Add_Member()
+        private static string? _validatePrefix, _validateDomain, _validateLastPortion; 
+        private string houseNumber;
+        public Add_Member(string houseNum)
         {
             InitializeComponent();
             _setJobsNames();
             _setCitiesNames();
+            houseNumber =houseNum; 
         }
-        public Add_Member(InfoToHouse update)
+        public Add_Member(InfoToHouse update, string houseNum)
         {
             InitializeComponent();
             _setJobsNames();
             _updatePersonalInfo(update);
             _updateJobInfo(update);
             _updateContacts(update); 
+            houseNumber = houseNum;
         }
 
         private void _setJobsNames() { foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs))) cmbJob.Items.Add(job.ToString().Replace("_", " ")); cmbJob.SelectedIndex = 0; }

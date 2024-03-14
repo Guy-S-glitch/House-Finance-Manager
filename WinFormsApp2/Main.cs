@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Runtime.CompilerServices;
 using Microsoft.Data.SqlClient;
 using System.Windows;
+using System.Text.RegularExpressions;
 namespace WinFormsApp2
 {
     public partial class Main : Form
@@ -15,31 +16,71 @@ namespace WinFormsApp2
         private Hashtable? neighberhood = new Hashtable();
         private IconButton _clickedHouse;
         private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2;
-        private int _HousesID2SQL,_addFromSQL=2;
+        private int _HousesID2SQL,_addFromSQL=2,_currentSQLHouse=-1,_afterSQLHouse;
+        private string _lastHouseNumber="House1";
         public Main()
         {
             InitializeComponent();
-            string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
-            string selectQuery = "select * from Houses;"; 
-            SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(selectQuery, con);
-            con.Open();
-            using (SqlDataReader reader = command.ExecuteReader())
+            
+            try
             {
-                while (reader.Read())
+                string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+                string selectQuery = "select * from Houses;";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(selectQuery, con);
+                con.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    System.Windows.MessageBox.Show(reader.GetString(0) );
-                    while (int.Parse(reader.GetString(0).Split('e')[1]) >= _addFromSQL)
+                    List<InfoToHouse> SqlHousesMember = new List<InfoToHouse>();
+
+                    while (reader.Read())
                     {
+                        
+                        if (_currentSQLHouse == -1) _afterSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        
+                        _currentSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        if (_currentSQLHouse != _afterSQLHouse)
+                        {
+                            IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
+                            SqlBut.Text = _lastHouseNumber + "\n";
+                            foreach (InfoToHouse writeNames in SqlHousesMember) { SqlBut.Text += writeNames.GetName() + "\n"; }
+                            //neighberhood.Add(_lastHouseNumber, SqlHousesMember);
 
-                        AddHouse_Click(new object(), new EventArgs());
-                        _addFromSQL++;
+                            try { neighberhood[_lastHouseNumber] = SqlHousesMember; }
+                            catch { neighberhood.Add(_lastHouseNumber, SqlHousesMember); }
+                            SqlHousesMember = new List<InfoToHouse>();
+                        }
+                        while (_currentSQLHouse >= _addFromSQL)  //add the amount of houses were at the last login 
+                        {
+
+                            AddHouse_Click(new object(), new EventArgs());
+                            _addFromSQL++;
+                        }
+
+
+                        NumericUpDown[] SqlNumeric = new NumericUpDown[7];
+                        for (int expenseOrder = 11; expenseOrder < 18; expenseOrder++) { SqlNumeric[expenseOrder - 11] = new NumericUpDown(); SqlNumeric[expenseOrder - 11].Value = reader.GetInt32(expenseOrder); }
+                        SqlHousesMember.Add(new InfoToHouse(reader.GetString(3) == "Male", reader.GetDateTime(2), (short)reader.GetInt32(7), (short)reader.GetInt32(6), reader.GetString(5), reader.GetString(1), SqlNumeric, reader.GetString(9), reader.GetString(10), reader.GetString(8), ByteArrayToImage((byte[])reader.GetValue(4)), reader.GetString(0)));
+                        _afterSQLHouse = _currentSQLHouse;
+                        _lastHouseNumber = reader.GetString(0);
                     }
+                    IconButton AfterSqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
+                    AfterSqlBut.Text = _lastHouseNumber + "\n";
+                    foreach (InfoToHouse writeNames in SqlHousesMember) { AfterSqlBut.Text += writeNames.GetName() + "\n"; }
+                    try { neighberhood[_lastHouseNumber] = SqlHousesMember; }
+                    catch { neighberhood.Add(_lastHouseNumber, SqlHousesMember); }
                 }
-            }
-            con.Close();
+                con.Close();
+            }catch(Exception er) { System.Windows.MessageBox.Show(er.Message); }
         }
-
+        public Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream memoryStream = new MemoryStream(byteArray))
+            {
+                Image image = Image.FromStream(memoryStream);
+                return image;
+            }
+        }
         public inHouse inHouse { get => default; set { } }
         public ReturnDataToHouse ReturnDataToHouse { get => default; set { } }
         public inHouse inHouse_with_exist_members { get => default; set { } }
@@ -63,7 +104,7 @@ namespace WinFormsApp2
         private void House1_Click(object sender, EventArgs e)
         {
             _clickedHouse = sender as IconButton;
-            inHouse house = new inHouse((List<InfoToHouse>)neighberhood[_clickedHouse], _clickedHouse.Name);
+            inHouse house = new inHouse((List<InfoToHouse>)neighberhood[_clickedHouse.Name], _clickedHouse.Name);
             house.returnDataToHouse += inHouse_returnDataToHouse;
             house.Show();
         }
@@ -113,50 +154,51 @@ namespace WinFormsApp2
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
-            string deleteQuery = "delete from Houses;"; 
-             
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            SqlCommand sc = new SqlCommand(deleteQuery, con); 
-            sc.ExecuteNonQuery();
-            _HousesID2SQL = 1;
-            foreach (DictionaryEntry sss in neighberhood)
-            { 
-                List<InfoToHouse> ss = (List<InfoToHouse>)sss.Value;
+            try
+            {
+                string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+                string deleteQuery = "delete from Houses;";
 
-                foreach (InfoToHouse s in ss)
-                {
-                    string uploadToSQL = "INSERT INTO Houses VALUES (@HouseID, @Name, @Date, @Gender, @ImageData, @Job, @Experience, @MonthlySalary, @City, @Phone, @Email, @Expense1, @Expense2, @Expense3, @Expense4, @Expense5, @Expense6, @Expense7)";
-
-                    using (SqlCommand cmd = new SqlCommand(uploadToSQL, con))
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                SqlCommand sc = new SqlCommand(deleteQuery, con);
+                sc.ExecuteNonQuery();
+                
+                foreach (List<InfoToHouse> sss in neighberhood.Values)
+                { 
+                    foreach (InfoToHouse s in sss)
                     {
-                        cmd.Parameters.AddWithValue("@HouseID", (sss.Key as IconButton).Name);
-                        cmd.Parameters.AddWithValue("@Name", s.GetName());
-                        cmd.Parameters.AddWithValue("@Date", s.GetDate());
-                        cmd.Parameters.AddWithValue("@Gender", s.GetGender());
-                        cmd.Parameters.AddWithValue("@ImageData", s.ImageToByteArray()); 
-                        cmd.Parameters.AddWithValue("@Job", s.GetJob());
-                        cmd.Parameters.AddWithValue("@Experience", s.GetExperience());
-                        cmd.Parameters.AddWithValue("@MonthlySalary", s.GetMonthlySalary());
-                        cmd.Parameters.AddWithValue("@City", s.GetCity());
-                        cmd.Parameters.AddWithValue("@Phone", s.GetPhone());
-                        cmd.Parameters.AddWithValue("@Email", s.GetEmail());
-                        cmd.Parameters.AddWithValue("@Expense1", s.GetExpenses()[0].Value);
-                        cmd.Parameters.AddWithValue("@Expense2", s.GetExpenses()[1].Value);
-                        cmd.Parameters.AddWithValue("@Expense3", s.GetExpenses()[2].Value);
-                        cmd.Parameters.AddWithValue("@Expense4", s.GetExpenses()[3].Value);
-                        cmd.Parameters.AddWithValue("@Expense5", s.GetExpenses()[4].Value);
-                        cmd.Parameters.AddWithValue("@Expense6", s.GetExpenses()[5].Value);
-                        cmd.Parameters.AddWithValue("@Expense7", s.GetExpenses()[6].Value);
+                        string uploadToSQL = "INSERT INTO Houses VALUES (@HouseID, @Name, @Date, @Gender, @ImageData, @Job, @Experience, @MonthlySalary, @City, @Phone, @Email, @Expense1, @Expense2, @Expense3, @Expense4, @Expense5, @Expense6, @Expense7)";
 
-                        cmd.ExecuteNonQuery();
+                        using (SqlCommand cmd = new SqlCommand(uploadToSQL, con))
+                        { 
+                            cmd.Parameters.AddWithValue("@HouseID", s.GetHouseNumber());
+                            cmd.Parameters.AddWithValue("@Name", s?.GetName() ?? "");
+                            cmd.Parameters.AddWithValue("@Date", s?.GetDate() ?? DateTime.MaxValue);
+                            cmd.Parameters.AddWithValue("@Gender", s?.GetGender() ?? "");
+                            cmd.Parameters.AddWithValue("@ImageData", File.ReadAllBytes(@"C:\Users\guyso\Downloads\car.jpg"));
+                            cmd.Parameters.AddWithValue("@Job", s?.GetJob() ?? "");
+                            cmd.Parameters.AddWithValue("@Experience", s?.GetExperience() ?? 0);
+                            cmd.Parameters.AddWithValue("@MonthlySalary", s?.GetMonthlySalary() ?? 0);
+                            cmd.Parameters.AddWithValue("@City", s?.GetCity() ?? "");
+                            cmd.Parameters.AddWithValue("@Phone", s?.GetPhone() ?? "");
+                            cmd.Parameters.AddWithValue("@Email", s?.GetEmail() ?? "");
+                            cmd.Parameters.AddWithValue("@Expense1", s?.GetExpenses()[0].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense2", s?.GetExpenses()[1].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense3", s?.GetExpenses()[2].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense4", s?.GetExpenses()[3].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense5", s?.GetExpenses()[4].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense6", s?.GetExpenses()[5].Value ?? 1);
+                            cmd.Parameters.AddWithValue("@Expense7", s?.GetExpenses()[6].Value ?? 1);
+                            cmd.ExecuteNonQuery();
+                        }
+
                     }
-
                 }
-                _HousesID2SQL++;
+                con.Close();
             }
-            con.Close(); 
+            catch (Exception re) { System.Windows.MessageBox.Show(re.Message); }
         }
+            
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace House_Finance_management
 {
     public class InfoToHouse
     {
+        public string _houseNumber { get; set; }
         private Image _picture { get; set; }
         private string _city { get; set; }
         private string _email { get; set; }
@@ -20,6 +22,7 @@ namespace House_Finance_management
         private short _experience { get; set; }
         private string _job { get; set; }
         private NumericUpDown[] _expenses { get; set; }
+        
 
         public DataSentHandler DataSentHandler
         {
@@ -38,10 +41,11 @@ namespace House_Finance_management
         }
 
         public InfoToHouse(bool isMale, DateTime age, short monthlySalary, short experience
-            , string job, string name, NumericUpDown[] expenses, string phone, string email, string city, Image picture)
+            , string job, string name, NumericUpDown[] expenses, string phone, string email, string city, Image picture, string houseNumber)
         {
             _isMale = isMale; _age = age; _monthlySalary = monthlySalary; _experience = experience;
             _job = job; _Name = name; _expenses = expenses; _phone = phone; _email = email; _city = city; _picture = picture;
+            _houseNumber = houseNumber;
         }
         public bool GetIsMale() { return _isMale; } 
         public string GetGender() { return _isMale ? "Male" : "Female"; }
@@ -61,6 +65,7 @@ namespace House_Finance_management
         public string GetEmail() { return _email; }
         public string GetCity() { return _city; }
         public Image GetPicture() { return _picture; }
+        public string GetHouseNumber() { return _houseNumber; }
 
         public byte[] ImageToByteArray()
         {
@@ -70,6 +75,8 @@ namespace House_Finance_management
                 return memoryStream.ToArray();
             }
         }
+
+
     }
 
 }
