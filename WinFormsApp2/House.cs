@@ -18,23 +18,23 @@ using System.Data.SqlClient;
 namespace House_Finance_management
 {
     public delegate void ReturnDataToHouse(List<InfoToHouse> returnMember);
-    public partial class inHouse : Form
+    public partial class InHouse : Form
     {
         public event ReturnDataToHouse returnDataToHouse;
-        public List<InfoToHouse> _members = new List<InfoToHouse>();
-        private static short _memberID = 0, hundred;
-        private static bool remove;
-        private static InfoToHouse selectedMember;
-        private static string[] expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
-        public inHouse(List<InfoToHouse>? showExistMembers, string houseName)
+        public List<InfoToHouse> members = new List<InfoToHouse>();
+        private static short _memberID = 0, _hundred;
+        private static bool _remove;
+        private static InfoToHouse _selectedMember;
+        private static string[] _expenseNames = { "Transportation", "Clothes", "Sports", "Markets", "Utilities", "Rent", "Restaurants" };
+        public InHouse(List<InfoToHouse>? showExistMembers, string houseName)
         {
-            try { foreach (InfoToHouse addExistMember in showExistMembers) { _members.Add(addExistMember); } }
+            try { foreach (InfoToHouse addExistMember in showExistMembers) { members.Add(addExistMember); } }
             catch { }
             InitializeComponent();
             string connect2SQL = "Data Source=LAPTOP-61JA524F\\HOUSE_SERVER;Initial Catalog=ProjectDB;Integrated Security=True";
             _memberID = 0;
             houseNumber.Text = houseName;
-            foreach (InfoToHouse sa in _members)
+            foreach (InfoToHouse sa in members)
             {
                 _memberID++;
                 lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}");
@@ -42,7 +42,7 @@ namespace House_Finance_management
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.returnDataToHouse(_members);
+            this.returnDataToHouse(members);
         }
         public Add_Member Add_Member { get => default; set { } }
 
@@ -57,68 +57,68 @@ namespace House_Finance_management
         {
             _memberID++;
             lstMembersList.Items.Add($"{_memberID}. {addMember.GetName()}");
-            _members.Add(addMember);
+            members.Add(addMember);
         }
         private void UpdateMember_DataSent(InfoToHouse updateMember)
         {
             lstMembersList.Items[lstMembersList.SelectedIndex] = $"{lstMembersList.SelectedIndex+1}. {updateMember.GetName()}";
-            _members[lstMembersList.SelectedIndex] = updateMember;
+            members[lstMembersList.SelectedIndex] = updateMember;
         }
 
         private void btnmemberRemove_Click(object sender, EventArgs e) { btnInspectMember_Click(sender, e); }
         private void btnInspectMember_Click(object sender, EventArgs e)
         {
             Button CheckIfCalled = sender as Button;
-            remove = CheckIfCalled.Name == btnmemberRemove.Name;
+            _remove = CheckIfCalled.Name == btnmemberRemove.Name;
             if (lstMembersList.SelectedIndex != -1)
             {
-                selectedMember = _members[lstMembersList.SelectedIndex];
-                _setPersonalInfo();
-                _setJobInfo();
-                _setExpenses();
-                _setContacts();
-                if (remove) { _removeMember(); }
+                _selectedMember = members[lstMembersList.SelectedIndex];
+                SetPersonalInfo();
+                SetJobInfo();
+                SetExpenses();
+                SetContacts();
+                if (_remove) { RemoveMember(); }
             }
             else MessageBox.Show("please select a member first");
         }
-        private void _setPersonalInfo()
+        private void SetPersonalInfo()
         {
-            iconPictureBox.Image = remove ? null : selectedMember.GetPicture();
-            lblUserName.Text = remove ? "..." : selectedMember.GetName();
-            lblUserAge.Text = remove ? "..." : selectedMember.GetAge().ToString();
-            lblUserGender.Text = remove ? "..." : selectedMember.GetIsMale() ? "Male" : "Female";
+            iconPictureBox.Image = _remove ? null : _selectedMember.GetPicture();
+            lblUserName.Text = _remove ? "..." : _selectedMember.GetName();
+            lblUserAge.Text = _remove ? "..." : _selectedMember.GetAge().ToString();
+            lblUserGender.Text = _remove ? "..." : _selectedMember.GetIsMale() ? "Male" : "Female";
         }
-        private void _setJobInfo()
+        private void SetJobInfo()
         {
-            txtJobTitle.Text = remove ? "..." : selectedMember.GetJob();
-            txtExperience.Text = remove ? "..." : selectedMember.GetExperience().ToString();
-            txtMonthlySalary.Text = remove ? "..." : selectedMember.GetMonthlySalary().ToString();
+            txtJobTitle.Text = _remove ? "..." : _selectedMember.GetJob();
+            txtExperience.Text = _remove ? "..." : _selectedMember.GetExperience().ToString();
+            txtMonthlySalary.Text = _remove ? "..." : _selectedMember.GetMonthlySalary().ToString();
         }
-        private void _setExpenses()
+        private void SetExpenses()
         {
-            hundred = 0;
-            foreach (NumericUpDown addTo100 in selectedMember.GetExpenses()) hundred += (short)addTo100.Value;
+            _hundred = 0;
+            foreach (NumericUpDown addTo100 in _selectedMember.GetExpenses()) _hundred += (short)addTo100.Value;
             for (int row = 0; row < 7; row++)
             {
-                short percent = ((short)(((float)selectedMember.GetExpenses()[row].Value / hundred * 100)));
-                Label? label = tableLayoutPanel3.Controls.Find("pc" + expenseNames[row], true).FirstOrDefault() as Label;
-                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + expenseNames[row], true).FirstOrDefault() as ProgressBar;
-                label.Text = remove ? "%" : selectedMember.GetExpenses()[row].Value != 0 ? percent.ToString() + "%" : "0%";
-                progressBar.Value = remove ? 100 : selectedMember.GetExpenses()[row].Value != 0 ? percent : 0;
+                short percent = ((short)(((float)_selectedMember.GetExpenses()[row].Value / _hundred * 100)));
+                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;
+                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;
+                label.Text = _remove ? "%" : _selectedMember.GetExpenses()[row].Value != 0 ? percent.ToString() + "%" : "0%";
+                progressBar.Value = _remove ? 100 : _selectedMember.GetExpenses()[row].Value != 0 ? percent : 0;
             }
         }
-        private void _setContacts()
+        private void SetContacts()
         {
-            txtPhone.Text = remove ? "..." : selectedMember.GetPhone();
-            txtEmail.Text = remove ? "..." : selectedMember.GetEmail();
-            txtCity.Text = remove ? "..." : selectedMember.GetCity();
+            txtPhone.Text = _remove ? "..." : _selectedMember.GetPhone();
+            txtEmail.Text = _remove ? "..." : _selectedMember.GetEmail();
+            txtCity.Text = _remove ? "..." : _selectedMember.GetCity();
         }
-        private void _removeMember()
+        private void RemoveMember()
         {
             iconPictureBox.IconChar = IconChar.UserTie;
             iconPictureBox.IconColor = Color.Black;
             iconPictureBox.Dock = DockStyle.Fill;
-            _members.RemoveAt(lstMembersList.SelectedIndex);
+            members.RemoveAt(lstMembersList.SelectedIndex);
             lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
         }
 
@@ -126,7 +126,7 @@ namespace House_Finance_management
         {
             if (lstMembersList.SelectedIndex != -1)
             {
-                Add_Member updateMember = new Add_Member(_members[lstMembersList.SelectedIndex],houseNumber.Text);
+                Add_Member updateMember = new Add_Member(members[lstMembersList.SelectedIndex],houseNumber.Text);
                 updateMember.DataSent += UpdateMember_DataSent;
                 updateMember.ShowDialog();
             }
