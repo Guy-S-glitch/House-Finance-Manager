@@ -246,7 +246,7 @@ namespace House_Finance_management
                 return _inputErrors.ExceedCharacters;
             }
 
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
+            if (RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input))
             {
                 return _inputErrors.LettersOnly;
             }
@@ -268,7 +268,7 @@ namespace House_Finance_management
                 return _inputErrors.ExceedCharacters;
             }
 
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
+            if (RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input))
             {
                 return _inputErrors.LettersOnly;
             }
@@ -280,9 +280,9 @@ namespace House_Finance_management
         {
             string input = txtMName.Text;
 
-            if (string.IsNullOrEmpty(input))
+            if (string.IsNullOrWhiteSpace(input))
             {
-                return _validInput;
+                return _inputErrors.NotNullable;
             }
 
             if (input.Length >= txtMName.MaxLength)
@@ -290,7 +290,7 @@ namespace House_Finance_management
                 return _inputErrors.ExceedCharacters;
             }
 
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
+            if (RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input))
             {
                 return _inputErrors.LettersOnly;
             }
@@ -320,9 +320,14 @@ namespace House_Finance_management
             if (RegexPatterns.AtLeastElevenDigits().IsMatch(input.Replace("-", "")))
             {
                 return _inputErrors.PhoneMaxNumbers;
-            } 
+            }
 
-            return _inputErrors.PhoneFormat;
+            if (input.Length >= txtPhone.MaxLength)
+            {
+                return _inputErrors.PhoneFormat;
+            }
+
+            return _validInput;
         }
     }
 }

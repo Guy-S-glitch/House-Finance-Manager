@@ -46,9 +46,8 @@ namespace WinFormsApp2
             if (_currentSQLHouse == -1)
             {
                 _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value); //needed to be excecuted only once
+                _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
             }
-            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
-            
         }
 
         public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember)
