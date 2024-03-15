@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Drawing.Imaging;
+
+
+
+
 
 namespace House_Finance_management
 {
@@ -40,22 +38,46 @@ namespace House_Finance_management
             }
         }
 
-        public InfoToHouse(bool isMale, DateTime age, short monthlySalary, short experience
-            , string job, string name, NumericUpDown[] expenses, string phone, string email, string city, Image picture, string houseNumber)
+        public InfoToHouse(Member.MemberInformation memberInformation)
         {
-            _isMale = isMale; _age = age; _monthlySalary = monthlySalary; _experience = experience;
-            _job = job; _Name = name; _expenses = expenses; _phone = phone; _email = email; _city = city; _picture = picture;
-            _houseNumber = houseNumber;
+            _isMale = memberInformation.IsMale;
+            _age = memberInformation.Age;
+            _monthlySalary = memberInformation.MonthlySalary;
+            _experience = memberInformation.Experience;
+            _job = memberInformation.Job;
+            _Name = memberInformation.Name;
+            _expenses = memberInformation.Expenses;
+            _phone = memberInformation.Phone;
+            _email = memberInformation.Email;
+            _city = memberInformation.City;
+            _picture = memberInformation.Picture;
+            _houseNumber = memberInformation.HouseNumber;
         }
-        public bool GetIsMale() { return _isMale; } 
-        public string GetGender() { return _isMale ? "Male" : "Female"; }
-        public DateTime GetDate() { return _age; }
+
+        public bool GetIsMale()
+        {
+            return _isMale;
+        } 
+
+        public string GetGender()
+        {
+            return _isMale ? "Male" : "Female";
+        }
+
+        public DateTime GetDate()
+        {
+            return _age;
+        }
+
         public float GetAge()
         {
-            float fullAge = (float)(((DateTime.Today.Year - _age.Year) + ((DateTime.Today.Month - _age.Month) / 12.0)));
+            float fullAge = (float)(DateTime.Today.Year - _age.Year + ((DateTime.Today.Month - _age.Month) / 12.0));
+
             int removeAfter2Dig = (int)(fullAge * 10);
+
             return (float)(removeAfter2Dig / 10.0);
         }
+
         public short GetMonthlySalary() { return _monthlySalary; }
         public short GetExperience() { return _experience; }
         public string GetJob() { return _job; }
@@ -71,12 +93,28 @@ namespace House_Finance_management
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
-                _picture.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                _picture.Save(memoryStream, ImageFormat.Jpeg);
                 return memoryStream.ToArray();
             }
         }
-
-
     }
 
+    public class Member
+    {
+        public struct MemberInformation
+        {
+            public string HouseNumber { get; set; }
+            public Image Picture { get; set; }
+            public string City { get; set; }
+            public string Email { get; set; }
+            public string Phone { get; set; }
+            public string Name { get; set; }
+            public bool IsMale { get; set; }
+            public DateTime Age { get; set; }
+            public short MonthlySalary { get; set; }
+            public short Experience { get; set; }
+            public string Job { get; set; }
+            public NumericUpDown[] Expenses { get; set; }
+        }
+    }
 }
