@@ -1,6 +1,6 @@
 ﻿namespace House_Finance_management
 {
-    partial class inHouse
+    partial class InHouse
     {
         /// <summary>
         /// Required designer variable.

@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Drawing;
-using System.Windows;
-using MessageBox = System.Windows.MessageBox;
+﻿
+
+using static House_Finance_management.Member;
 
 namespace House_Finance_management
 {
     public delegate void DataSentHandler(InfoToHouse house);
+
+
+
+
+
     public partial class Add_Member
     {
         public event DataSentHandler DataSent;
+
+
+
+
 
         public Add_Member Add_Member1
         {
@@ -29,9 +31,31 @@ namespace House_Finance_management
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (_validateAllData())
-           // if(true)
             {
-                sendInfoToHouse = new InfoToHouse(radMale.Checked, dtpAge.Value, (short)numMonthlySalary.Value, (short)numExperience.Value, cmbJob.Text, txtFName.Text + " " + txtLName.Text + " " + txtMName.Text, _GetExpenses(), txtPhone.Text, txtEmail.Text, cmbCity.Text, iconPictureBox.Image,houseNumber);
+                string firstName = txtFName.Text;
+                string lastName = txtLName.Text;
+                string middleName = txtMName.Text;
+
+                string fullName = $"{firstName} {lastName} {middleName}";
+
+                MemberInformation memberInformation = new MemberInformation()
+                {
+                    IsMale = radMale.Checked,
+                    Age = dtpAge.Value,
+                    MonthlySalary = (short)numMonthlySalary.Value,
+                    Experience = (short)numExperience.Value,
+                    Job = cmbJob.Text,
+                    Name = fullName,
+                    Expenses = _GetExpenses(),
+                    Phone = txtPhone.Text,
+                    Email = txtEmail.Text,
+                    City = cmbCity.Text,
+                    Picture = iconPictureBox.Image,
+                    HouseNumber = houseNumber
+                };
+
+                sendInfoToHouse = new InfoToHouse(memberInformation);
+
                 this.DataSent(sendInfoToHouse);
             }
         }
