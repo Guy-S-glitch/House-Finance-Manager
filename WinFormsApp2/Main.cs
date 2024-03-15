@@ -7,6 +7,9 @@ using System.Runtime.CompilerServices;
 using Microsoft.Data.SqlClient;
 using System.Windows;
 using System.Text.RegularExpressions;
+
+using House_Finance_management.Helpers;
+
 namespace WinFormsApp2
 {
     public partial class Main : Form
@@ -18,13 +21,14 @@ namespace WinFormsApp2
         private static int _id = 1, _row = 0, _column = 1, _houseNumber = 2;
         private int _HousesID2SQL,_addFromSQL=2,_currentSQLHouse=-1,_afterSQLHouse;
         private string _lastHouseNumber="House1";
+        private string connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
         public Main()
         {
             InitializeComponent();
             
             try
             {
-                string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+                
                 string selectQuery = "select * from Houses;";
                 SqlConnection con = new SqlConnection(connectionString);
                 SqlCommand command = new SqlCommand(selectQuery, con);
@@ -36,9 +40,9 @@ namespace WinFormsApp2
                     while (reader.Read())
                     {
                         
-                        if (_currentSQLHouse == -1) _afterSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        if (_currentSQLHouse == -1) _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
                         
-                        _currentSQLHouse = int.Parse(Regex.Match(reader.GetString(0), "(\\d)+").Value);
+                        _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
                         if (_currentSQLHouse != _afterSQLHouse)
                         {
                             IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
@@ -156,7 +160,7 @@ namespace WinFormsApp2
         {
             try
             {
-                string connectionString = "Data Source=LAPTOP-61JA524F\\SOLOMONSQL;Initial Catalog=HouseDB;Persist Security Info=True;User ID=sa;Password=GuyHamagniv123;Pooling=False;Encrypt=True;Trust Server Certificate=True";
+                
                 string deleteQuery = "delete from Houses;";
 
                 SqlConnection con = new SqlConnection(connectionString);
@@ -199,6 +203,5 @@ namespace WinFormsApp2
             }
             catch (Exception re) { System.Windows.MessageBox.Show(re.Message); }
         }
-            
     }
 }
