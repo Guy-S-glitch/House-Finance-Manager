@@ -3,9 +3,9 @@ using System.Configuration;
 
 using House_Finance_management;
 using House_Finance_management.Helpers;
-using House_Finance_management.Buisness_Logic; 
+using House_Finance_management.Buisness_Layer; 
 using static House_Finance_management.Member;
-using static House_Finance_management.Buisness_Logic.MainViewBL;
+using static House_Finance_management.Buisness_Layer.MainViewBL;
 
 using FontAwesome.Sharp;
 using Microsoft.Data.SqlClient;

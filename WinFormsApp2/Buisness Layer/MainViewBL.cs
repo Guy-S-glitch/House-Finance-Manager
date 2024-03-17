@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using WinFormsApp2;
  
 
-namespace House_Finance_management.Buisness_Logic
+namespace House_Finance_management.Buisness_Layer
 {
     internal class MainViewBL
     {

@@ -14,7 +14,7 @@ namespace House_Finance_management.Data_Access_Layer
 {
     internal class MainReadSqlTableDAL
     {
-        private static string _selectQuery = "select * from Houses;";
+        private static readonly string _selectQuery = "select * from Houses;";
         private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
         public MainReadSqlTableDAL() { }
         public void GetTableValues(ref SqlConnection initialConnection, ref SqlCommand Select)

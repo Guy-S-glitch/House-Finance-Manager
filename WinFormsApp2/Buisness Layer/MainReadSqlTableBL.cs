@@ -14,7 +14,7 @@ using static House_Finance_management.Member;
 using static House_Finance_management.Data_Access_Layer.MainReadSqlTableDAL;
 using House_Finance_management.Data_Access_Layer;
 
-namespace House_Finance_management.Buisness_Logic
+namespace House_Finance_management.Buisness_Layer
 {
     internal class MainReadSqlTableBL
     {
