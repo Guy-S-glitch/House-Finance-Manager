@@ -3,7 +3,9 @@ using System.Configuration;
 
 using House_Finance_management;
 using House_Finance_management.Helpers;
+using House_Finance_management.Buisness_Logic; 
 using static House_Finance_management.Member;
+
 
 using FontAwesome.Sharp;
 using Microsoft.Data.SqlClient;
@@ -16,6 +18,11 @@ namespace WinFormsApp2
 {
     public partial class Main : Form
     {
+        internal MainBuisnessLogic buisnessLogic = new MainBuisnessLogic();
+
+        internal SqlConnection initialConnection = new SqlConnection();
+        internal SqlCommand Select = new SqlCommand(); 
+
         private List<InfoToHouse>? _showHouseMembers; 
         private Hashtable? _neighberhood = new Hashtable();
         private IconButton _clickedHouse;
@@ -38,101 +45,25 @@ namespace WinFormsApp2
         private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
 
 
-
-
-
-        public void CurrentReadVariables(SqlDataReader reader)
-        {
-            if (_currentSQLHouse == -1)
-            {
-                _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value); //needed to be excecuted only once
-            }
-            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
-            
-        }
-
-        public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember)
-        {
-            IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
-            SqlBut.Text = _lastHouseNumber + "\n";
-
-            foreach (InfoToHouse writeNames in SqlHousesMember)
-            {
-                SqlBut.Text += writeNames.GetName() + "\n";
-            }
-
-            AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember);
-
-            SqlHousesMember = new List<InfoToHouse>();
-        }
-
         public void AddHouseButton()
         { 
             AddHouse_Click(new object(), new EventArgs());
             _addFromSQL++;
         }
-
-        public void ConvertSql2Class(List<InfoToHouse> SqlHousesMember, SqlDataReader reader)
+        public void GetSqlTable(SqlCommand Select)
         {
-            NumericUpDown[] SqlNumeric = new NumericUpDown[7];
-
-            for (int expenseOrder = 11; expenseOrder < 18; expenseOrder++)
-            {
-                SqlNumeric[expenseOrder - 11] = new NumericUpDown();
-                SqlNumeric[expenseOrder - 11].Value = reader.GetInt32(expenseOrder);
-            }
-
-
-
-            MemberInformation memberInformation = new MemberInformation()
-            {
-                IsMale = reader.GetString(3) == "Male",
-                Age = reader.GetDateTime(2),
-                MonthlySalary = (short)reader.GetInt32(7),
-                Experience = (short)reader.GetInt32(6),
-                Job = reader.GetString(5),
-                Name = reader.GetString(1),
-                Expenses = SqlNumeric,
-                Phone = reader.GetString(9),
-                Email = reader.GetString(10),
-                City = reader.GetString(8),
-                Picture = ByteArrayToImage((byte[])reader.GetValue(4)),
-                HouseNumber = reader.GetString(0)
-            };
-
-
-
-            SqlHousesMember.Add(new InfoToHouse(memberInformation));
-        }
-
-        public void LastReadVariables(SqlDataReader reader)
-        {
-            _afterSQLHouse = _currentSQLHouse;
-            _lastHouseNumber = reader.GetString(0);
-        }
-
-        public void ReadSqlTable(SqlCommand command)
-        {
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (SqlDataReader reader = Select.ExecuteReader())
             {
                 List<InfoToHouse> SqlHousesMember = new List<InfoToHouse>(); //list that will store our data on a house and once we done it'll reset for the next house 
                 while (reader.Read())  //read every house from the sql table
                 {
-                    CurrentReadVariables(reader);  //get the variables for the current read
-                    if (_currentSQLHouse != _afterSQLHouse)
-                    {
-                        UpdateMembers2House(ref SqlHousesMember);
-                    } //after finishing reading members from house x we can update that house and move on to the next house
-
-                    while (_currentSQLHouse >= _addFromSQL)
-                    {
-                        AddHouseButton();
-                    }  //add the amount of houses were at the last login 
-
-                    ConvertSql2Class(SqlHousesMember, reader);  //convert the data from the sql to our used class
-                    LastReadVariables(reader);  //save the variables to compere with the next read
+                    buisnessLogic.CurrentReadVariables(reader,ref _currentSQLHouse,ref _afterSQLHouse);  //get the variables for the current read
+                    if (_currentSQLHouse != _afterSQLHouse) { buisnessLogic.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood); }//after finishing reading members from house x we can update that house and move on to the next house
+                    while (_currentSQLHouse >= _addFromSQL) { AddHouseButton(); }  //add the amount of houses were at the last login 
+                    buisnessLogic.ConvertSql2Class(ref SqlHousesMember, reader);  //convert the data from the sql to our used class
+                    buisnessLogic.LastReadVariables(reader,ref _afterSQLHouse,ref _lastHouseNumber,_currentSQLHouse);  //save the variables to compere with the next read
                 }
-                UpdateMembers2House(ref SqlHousesMember); 
+                buisnessLogic.UpdateMembers2House(ref SqlHousesMember,ref tableLayoutPanel1,_lastHouseNumber,ref _neighberhood); 
             }
         }
 
@@ -142,62 +73,22 @@ namespace WinFormsApp2
 
             try
             { 
-                SqlConnection con = new SqlConnection(_connectionString);
-                SqlCommand command = new SqlCommand(_selectQuery, con);
-                con.Open();
-                ReadSqlTable(command);
-                con.Close();
+                buisnessLogic.SetConnection(_connectionString, _selectQuery, ref initialConnection, ref Select);
+                initialConnection.Open();
+                GetSqlTable(Select);
+                initialConnection.Close();
             }
             catch(Exception er)
             {
                 System.Windows.MessageBox.Show(er.Message);
             }
-        }
-
-        public Image ByteArrayToImage(byte[] byteArray)
-        {
-            using (MemoryStream memoryStream = new MemoryStream(byteArray))
-            {
-                Image image = Image.FromStream(memoryStream);
-                return image;
-            }
-        }
-
-        public InHouse inHouse
-        {
-            get => default;
-            set { }
-        }
-
-        public ReturnDataToHouse ReturnDataToHouse
-        {
-            get => default;
-            set { }
-        }
-
-        public InHouse inHouse_with_exist_members
-        {
-            get => default;
-            set { }
-        }
-
-        public Main Main1
-        {
-            get => default;
-            set { }
-        }
-
-        public Main Main2
-        {
-            get => default;
-            set { }
-        }
-
+        } 
         private void House1_Click(object sender, EventArgs e)
         {
             _clickedHouse = sender as IconButton;
             InHouse house = new InHouse((List<InfoToHouse>)_neighberhood[_clickedHouse.Name], _clickedHouse.Name);
             house.returnDataToHouse += InHouse_returnDataToHouse;
+            
             house.Show();
         }
 
@@ -309,6 +200,32 @@ namespace WinFormsApp2
                     }
                 }
             }
+        }
+
+        public InHouse inHouse
+        {
+            get => default;
+            set { }
+        }
+        public ReturnDataToHouse ReturnDataToHouse
+        {
+            get => default;
+            set { }
+        }
+        public InHouse inHouse_with_exist_members
+        {
+            get => default;
+            set { }
+        }
+        public Main Main1
+        {
+            get => default;
+            set { }
+        }
+        public Main Main2
+        {
+            get => default;
+            set { }
         }
     }
 }

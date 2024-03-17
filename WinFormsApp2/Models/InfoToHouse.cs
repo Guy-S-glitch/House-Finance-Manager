@@ -20,24 +20,7 @@ namespace House_Finance_management
         private short _experience { get; set; }
         private string _job { get; set; }
         private NumericUpDown[] _expenses { get; set; }
-        
-
-        public DataSentHandler DataSentHandler
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public List<object> List
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
+         
         public InfoToHouse(Member.MemberInformation memberInformation)
         {
             _isMale = memberInformation.IsMale;
@@ -54,20 +37,11 @@ namespace House_Finance_management
             _houseNumber = memberInformation.HouseNumber;
         }
 
-        public bool GetIsMale()
-        {
-            return _isMale;
-        } 
+        public bool GetIsMale() { return _isMale; }
 
-        public string GetGender()
-        {
-            return _isMale ? "Male" : "Female";
-        }
+        public string GetGender() { return _isMale ? "Male" : "Female"; }
 
-        public DateTime GetDate()
-        {
-            return _age;
-        }
+        public DateTime GetDate() { return _age; }
 
         public float GetAge()
         {
@@ -115,6 +89,20 @@ namespace House_Finance_management
             public short Experience { get; set; }
             public string Job { get; set; }
             public NumericUpDown[] Expenses { get; set; }
+        }
+        public DataSentHandler DataSentHandler
+        {
+            get => default;
+            set
+            {
+            }
+        }
+        public List<object> List
+        {
+            get => default;
+            set
+            {
+            }
         }
     }
 }

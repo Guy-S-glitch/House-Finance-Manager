@@ -11,19 +11,19 @@ using FontAwesome.Sharp;
 namespace House_Finance_management
 {
     public delegate void ReturnDataToHouse(List<InfoToHouse> returnMember);
-
-
-
-
-
+     
     public partial class InHouse : Form
     {
         public event ReturnDataToHouse returnDataToHouse;
         public List<InfoToHouse> members = new List<InfoToHouse>();
+
         private static short _memberID;
-        private static short _hundred;
+        private static short _hundred; 
 
         private static bool _remove;
+
+        private static string _unselected = "please select a member first";
+        private static string _removeString = "...";
 
         private static InfoToHouse _selectedMember;
 
@@ -38,23 +38,11 @@ namespace House_Finance_management
             "Restaurants"
         };
 
-
-
-
-
+         
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)
         {
-            try
-            {
-                foreach (InfoToHouse addExistMember in showExistMembers)
-                {
-                    members.Add(addExistMember);
-                }
-            }
-            catch
-            {
-
-            }
+            try { foreach (InfoToHouse addExistMember in showExistMembers) members.Add(addExistMember); }
+            catch { }
 
             InitializeComponent();
 
@@ -85,8 +73,10 @@ namespace House_Finance_management
         {
             Add_Member addMember = new Add_Member(houseNumber.Text);
             addMember.DataSent += AddMember_DataSent;
-            addMember.ShowDialog();
+            addMember.ShowDialog(); 
+           
         }
+
 
         private void AddMember_DataSent(InfoToHouse addMember)
         {
@@ -121,30 +111,24 @@ namespace House_Finance_management
                 SetExpenses();
                 SetContacts();
 
-                if (_remove == true)
-                {
-                    RemoveMember();
-                }
+                if (_remove == true)  RemoveMember(); 
             }
-            else
-            {
-                MessageBox.Show("please select a member first");
-            }
+            else  MessageBox.Show(_unselected); 
         }
 
         private void SetPersonalInfo()
         {
             iconPictureBox.Image = _remove ? null : _selectedMember.GetPicture();
-            lblUserName.Text = _remove ? "..." : _selectedMember.GetName();
-            lblUserAge.Text = _remove ? "..." : _selectedMember.GetAge().ToString();
-            lblUserGender.Text = _remove ? "..." : _selectedMember.GetIsMale() ? "Male" : "Female";
+            lblUserName.Text = _remove ? _removeString : _selectedMember.GetName();
+            lblUserAge.Text = _remove ? _removeString : _selectedMember.GetAge().ToString();
+            lblUserGender.Text = _remove ? _removeString : _selectedMember.GetIsMale() ? "Male" : "Female";
         }
 
         private void SetJobInfo()
         {
-            txtJobTitle.Text = _remove ? "..." : _selectedMember.GetJob();
-            txtExperience.Text = _remove ? "..." : _selectedMember.GetExperience().ToString();
-            txtMonthlySalary.Text = _remove ? "..." : _selectedMember.GetMonthlySalary().ToString();
+            txtJobTitle.Text = _remove ? _removeString : _selectedMember.GetJob();
+            txtExperience.Text = _remove ? _removeString : _selectedMember.GetExperience().ToString();
+            txtMonthlySalary.Text = _remove ? _removeString : _selectedMember.GetMonthlySalary().ToString();
         }
 
         private void SetExpenses()
@@ -156,16 +140,16 @@ namespace House_Finance_management
                 short percent = ((short)(((float)_selectedMember.GetExpenses()[row].Value / _hundred * 100)));
                 Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;
                 ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;
-                label.Text = _remove ? "%" : _selectedMember.GetExpenses()[row].Value != 0 ? percent.ToString() + "%" : "0%";
+                label.Text = _remove ? "%" : percent.ToString() + "%";
                 progressBar.Value = _remove ? 100 : _selectedMember.GetExpenses()[row].Value != 0 ? percent : 0;
             }
         }
 
         private void SetContacts()
         {
-            txtPhone.Text = _remove ? "..." : _selectedMember.GetPhone();
-            txtEmail.Text = _remove ? "..." : _selectedMember.GetEmail();
-            txtCity.Text = _remove ? "..." : _selectedMember.GetCity();
+            txtPhone.Text = _remove ? _removeString : _selectedMember.GetPhone();
+            txtEmail.Text = _remove ? _removeString : _selectedMember.GetEmail();
+            txtCity.Text = _remove ? _removeString : _selectedMember.GetCity();
         }
 
         private void RemoveMember()

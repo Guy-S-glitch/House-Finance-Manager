@@ -48,7 +48,7 @@ namespace House_Finance_management
         private static string? _validateDomain; 
         private static string? _validateLastPortion; 
 
-        private string houseNumber;
+        private string _houseNumber;
 
         private readonly InputErrors inputErrors = new InputErrors();
         private MemberInputValidation memberInputValidation = new MemberInputValidation();
@@ -58,7 +58,7 @@ namespace House_Finance_management
             InitializeComponent();
             SetJobsNames();
             SetCitiesNames();
-            houseNumber =houseNum; 
+            _houseNumber =houseNum; 
         }
         public Add_Member(InfoToHouse update, string houseNum)
         {
@@ -67,7 +67,7 @@ namespace House_Finance_management
             UpdatePersonalInfo(update);
             UpdateJobInfo(update);
             UpdateContacts(update); 
-            houseNumber = houseNum;
+            _houseNumber = houseNum;
         }
 
         private void SetJobsNames()
@@ -146,24 +146,12 @@ namespace House_Finance_management
             {
                 try
                 {
-                    if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2)
-                    {
-                        throw new Exception();
-                    }
-
+                    if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2) { throw new Exception(); }
                     SplitEmailToParts();
-
-                    if (CheckEmail())
-                    {
-                        throw new Exception();
-                    }
-                        
+                    if (CheckEmail()) { throw new Exception(); }
                     emailValidationText.Text = validInput;
                 }
-                catch
-                {
-                    emailValidationText.Text = inputErrors.InvalidEmail;
-                }
+                catch { emailValidationText.Text = inputErrors.InvalidEmail; }
 
                 return;
             }

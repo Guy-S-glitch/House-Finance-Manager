@@ -15,17 +15,6 @@ namespace House_Finance_management
         public event DataSentHandler DataSent;
 
 
-
-
-
-        public Add_Member Add_Member1
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public InfoToHouse sendInfoToHouse;
         private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private void btnAdd_Click(object sender, EventArgs e)
@@ -51,7 +40,7 @@ namespace House_Finance_management
                     Email = txtEmail.Text,
                     City = cmbCity.Text,
                     Picture = iconPictureBox.Image,
-                    HouseNumber = houseNumber
+                    HouseNumber = _houseNumber
                 };
 
                 sendInfoToHouse = new InfoToHouse(memberInformation);
@@ -61,11 +50,18 @@ namespace House_Finance_management
         }
         private bool _validateAllData() { return _validateEmail() && _validateName() && _validateJob() && _validatePhone() && _validateCity(); }
         private bool _validateName() { return string.IsNullOrEmpty(FirstNameValidationText.Text + MiddleNameValidationText.Text + LastNameValidationText.Text); }
-        
         private bool _validateJob() { return string.IsNullOrEmpty(JobValidationText.Text); } 
         private bool _validatePhone() { return string.IsNullOrEmpty(phoneValidationText.Text); }
         private bool _validateEmail() { return string.IsNullOrEmpty(emailValidationText.Text); }
         private bool _validateCity() { return string.IsNullOrEmpty(CityValidationText.Text); }
-        
+
+
+        public Add_Member Add_Member1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
