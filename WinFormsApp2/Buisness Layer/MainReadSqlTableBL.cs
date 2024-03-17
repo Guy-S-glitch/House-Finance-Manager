@@ -11,24 +11,24 @@ using System.Windows.Forms;
 using WinFormsApp2;
 
 using static House_Finance_management.Member; 
-using static House_Finance_management.Data_Access_Layer.mainDataLogic;
+using static House_Finance_management.Data_Access_Layer.MainReadSqlTableDAL;
 using House_Finance_management.Data_Access_Layer;
 
 namespace House_Finance_management.Buisness_Logic
 {
-    internal class MainBuisnessLogic
+    internal class MainReadSqlTableBL
     {
-        mainDataLogic dataLogic = new mainDataLogic();
-        public MainBuisnessLogic() { }
- 
-        public void CurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse, ref int _afterSQLHouse)
+        MainReadSqlTableDAL dataLogic = new MainReadSqlTableDAL();
+        public MainReadSqlTableBL() { }
+        public void requestConnection(ref SqlConnection initialConnection, ref SqlCommand Select)
         {
-            if (_currentSQLHouse == -1)
-            {
-                _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(dataLogic.GetHouseNumber(reader)).Value); //needed to be excecuted only once
-            }
-            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(dataLogic.GetHouseNumber(reader)).Value);
+            dataLogic.GetTableValues(ref initialConnection, ref Select);
         }
+        public void requestCurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse,ref int _afterSQLHouse)
+        {
+            dataLogic.CurrentReadVariables(reader, ref _currentSQLHouse, ref _afterSQLHouse);
+        }
+
 
         public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember,ref TableLayoutPanel tableLayoutPanel1,string _lastHouseNumber,ref Hashtable _neighberhood)
         {
@@ -62,15 +62,11 @@ namespace House_Finance_management.Buisness_Logic
              
             SqlHousesMember.Add(new InfoToHouse( dataLogic.GetMemberInformation (reader,SqlNumeric)));
         }
-        public void LastReadVariables(SqlDataReader reader,ref int _afterSQLHouse,ref string _lastHouseNumber,int _currentSQLHouse)
+        public void requestLastReadVariables(SqlDataReader reader,ref int _afterSQLHouse,ref string _lastHouseNumber,int _currentSQLHouse)
         {
-            _afterSQLHouse = _currentSQLHouse;
-            _lastHouseNumber = dataLogic.GetHouseNumber(reader);
+            dataLogic.LastReadVariables(reader, ref _afterSQLHouse, ref _lastHouseNumber, _currentSQLHouse);
         }
 
-        public void SetConnection(string _connectionString,string _selectQuery,ref SqlConnection initialConnection, ref SqlCommand Select)
-        {
-            dataLogic.GetTableValues(_connectionString, _selectQuery, ref initialConnection, ref Select);
-        }
+         
     }
 }

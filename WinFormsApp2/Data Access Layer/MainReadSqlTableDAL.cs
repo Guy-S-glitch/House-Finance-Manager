@@ -1,7 +1,10 @@
-﻿using House_Finance_management.Helpers;
+﻿using FontAwesome.Sharp;
+using House_Finance_management.Helpers;
 using Microsoft.Data.SqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +12,25 @@ using static House_Finance_management.Member;
 
 namespace House_Finance_management.Data_Access_Layer
 {
-    internal class mainDataLogic
+    internal class MainReadSqlTableDAL
     {
-        public mainDataLogic() { }
-        public void GetTableValues(string _connectionString, string _selectQuery, ref SqlConnection initialConnection, ref SqlCommand Select)
+        private static string _selectQuery = "select * from Houses;";
+        private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
+        public MainReadSqlTableDAL() { }
+        public void GetTableValues(ref SqlConnection initialConnection, ref SqlCommand Select)
         {
             initialConnection = new SqlConnection(_connectionString);
             Select = new SqlCommand(_selectQuery, initialConnection);
         }
-        public string GetHouseNumber(SqlDataReader reader) { return reader.GetString(0); }
+        public void CurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse, ref int _afterSQLHouse)
+        {
+            if (_currentSQLHouse == -1)
+            {
+                _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value); //needed to be excecuted only once
+            }
+            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
+        }
+
         public MemberInformation GetMemberInformation(SqlDataReader reader, NumericUpDown[] SqlNumeric)
         {
             return new MemberInformation()
@@ -36,9 +49,16 @@ namespace House_Finance_management.Data_Access_Layer
                 HouseNumber = reader.GetString(0)
             };
         }
+
         public Image ByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream memoryStream = new MemoryStream(byteArray)) return Image.FromStream(memoryStream);
-        } 
+        }
+
+        public void LastReadVariables(SqlDataReader reader, ref int _afterSQLHouse, ref string _lastHouseNumber, int _currentSQLHouse)
+        {
+            _afterSQLHouse = _currentSQLHouse;
+            _lastHouseNumber = reader.GetString(0);
+        }
     }
 }
