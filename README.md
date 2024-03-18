@@ -42,4 +42,5 @@ CREATE TABLE [dbo].[Houses](
 	[Rent] [int] NOT NULL,
 	[Restaurant] [int] NOT NULL
 )
+<br><br>
 "INSERT INTO [dbo].[Houses] ([HouseNumber], [memberName], [Birth], [Gender], [Picture], [Job], [Experience], [Salary], [City], [Phone], [Email], [Transport], [Clothes], [Sport], [Market], [Utilities], [Rent], [Restaurant])VALUES ('House1', 'Yossi Bar Moshe', '2000-03-03', 'Male', File.ReadAllBytes(@"path of photo"), 'Unemployed', 0, 0, 'Ashdod', '0505550000', 'asdd@asdq.qwd', 1, 1, 1, 1, 1, 1, 1)"
