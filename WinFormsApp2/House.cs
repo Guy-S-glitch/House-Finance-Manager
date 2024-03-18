@@ -9,7 +9,7 @@ namespace House_Finance_management
     {
         private House_BL houseBL = new House_BL();
 
-        public event ReturnDataToHouse returnDataToHouse;
+        public event ReturnDataToHouse returnDataToHouse;  //inherit a function from parent
         public List<InfoToHouse> members = new List<InfoToHouse>();
 
         private static short _memberID;
@@ -23,9 +23,9 @@ namespace House_Finance_management
             houseBL.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
         }
 
-        private void inHouse_FormClosed(object sender, FormClosedEventArgs e)
+        private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
         {
-            this.returnDataToHouse(members);
+            this.returnDataToHouse(members);  //send data to parent
         }
 
         public Add_Member Add_Member
