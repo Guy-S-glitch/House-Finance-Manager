@@ -12,11 +12,11 @@ using static House_Finance_management.Member;
 
 namespace House_Finance_management.Data_Access_Layer
 {
-    internal class MainReadSqlTableDAL
+    internal partial class Main_DAL
     {
         private static readonly string _selectQuery = "select * from Houses;";
         private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
-        public MainReadSqlTableDAL() { }
+        public Main_DAL() { }
         public void GetTableValues(ref SqlConnection initialConnection, ref SqlCommand Select)
         {
             initialConnection = new SqlConnection(_connectionString);

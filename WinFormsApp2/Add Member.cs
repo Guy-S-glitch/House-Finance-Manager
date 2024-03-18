@@ -1,5 +1,6 @@
-﻿using House_Finance_management.Helpers;
-using static House_Finance_management.Add_Member;
+﻿using House_Finance_management.Buisness_Layer;
+using House_Finance_management.Helpers;
+using static House_Finance_management.Member;
 
 
 
@@ -7,85 +8,31 @@ using static House_Finance_management.Add_Member;
 
 namespace House_Finance_management
 {
+    public delegate void DataSentHandler(InfoToHouse house);
     public partial class Add_Member : Form
     {
-        public readonly struct InputErrors
-        {
-            public readonly string PhoneStart { get; }
-            public readonly string PhoneMaxNumbers { get; }
-            public readonly string PhoneInvalidFormat { get; }
-            public readonly string PhoneFormat { get; }
-            public readonly string InvalidCity { get; }
-            public readonly string InvalidJob { get; }
-            public readonly string ExceedCharacters { get; }
-            public readonly string LettersOnly { get; }
-            public readonly string NumbersOnly { get; }
-            public readonly string InvalidEmail { get; }
-            public readonly string SpaceInEmail { get; }
-            public readonly string NotNullable { get; }
+        public event DataSentHandler DataSent;
+        private AddMember_BL addMember_BL = new AddMember_BL();
+        private readonly errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
+        private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
 
-            public InputErrors()
-            {
-                PhoneStart = "Must start with 05";
-                PhoneMaxNumbers = "Only 10 numbers";
-                PhoneInvalidFormat = "Correct your dashes placement";
-                PhoneFormat = "The format is 05X-XXX-XXXX";
-                InvalidCity = "Please select your city";
-                InvalidJob = "Please select your job";
-                ExceedCharacters = "Exceeded max amount of characters";
-                LettersOnly = "Only letters allowed";
-                NumbersOnly = "Only numbers please";
-                InvalidEmail = "Invalid email";
-                SpaceInEmail = "Unable to enter spaces";
-                NotNullable = "Can't be empty";
-            }
-        }
-
-        public static string validInput = string.Empty;
-        private static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
-
-        private static string? _validatePrefix; 
-        private static string? _validateDomain; 
-        private static string? _validateLastPortion; 
+        private static string[] _validateEmail = new string[3];
 
         private string _houseNumber;
-
-        private readonly InputErrors inputErrors = new InputErrors();
-        private MemberInputValidation memberInputValidation = new MemberInputValidation();
 
         public Add_Member(string houseNum)
         {
             InitializeComponent();
-            SetJobsNames();
-            SetCitiesNames();
-            _houseNumber =houseNum; 
+            addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
+            _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)
         {
             InitializeComponent();
-            SetJobsNames();
-            UpdatePersonalInfo(update);
-            UpdateJobInfo(update);
-            UpdateContacts(update); 
+            addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
+            addMember_BL.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary,
+            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);
             _houseNumber = houseNum;
-        }
-
-        private void SetJobsNames()
-        {
-            foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs)))
-            {
-                cmbJob.Items.Add(job.ToString().Replace("_", " "));
-                cmbJob.SelectedIndex = 0;
-            }
-        }
-
-        private void SetCitiesNames()
-        {
-            foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities)))
-            {
-                cmbCity.Items.Add(city.ToString().Replace("_", " "));
-                cmbCity.SelectedIndex = 0;
-            }
         }
 
         private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -93,224 +40,73 @@ namespace House_Finance_management
             _GetExpenses()[e.Index].Visible = e.NewValue == CheckState.Checked;
         }
 
-        private void txtPhone_KeyUp(object sender, KeyEventArgs e)
-        {
-            phoneValidationText.Text = memberInputValidation.ValidatePhoneNumber(txtPhone);
-        }
-
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opnfd = new OpenFileDialog();
-            opnfd.Filter = _imageFileAccept;
-
-            if (opnfd.ShowDialog() == DialogResult.OK)
-            {
-                iconPictureBox.Image = new Bitmap(opnfd.FileName);
-            }
+            addMember_BL.selectPhoto(iconPictureBox);
         }
-
+        private void txtPhone_KeyUp(object sender, KeyEventArgs e)
+        {
+            phoneValidationText.Text = addMember_BL.ValidatePhoneNumber(txtPhone);
+        }
         private void txtFName_KeyUp(object sender, KeyEventArgs e)
         {
-            FirstNameValidationText.Text = memberInputValidation.ValidateFirstName(txtFName);
+            FirstNameValidationText.Text = addMember_BL.ValidateFirstName(txtFName);
         }
-
         private void txtLName_KeyUp(object sender, KeyEventArgs e)
         {
-            LastNameValidationText.Text = memberInputValidation.ValidateLastName(txtLName);
+            LastNameValidationText.Text = addMember_BL.ValidateLastName(txtLName);
         }
-
         private void txtMName_KeyUp(object sender, KeyEventArgs e)
         {
-            MiddleNameValidationText.Text = memberInputValidation.ValidateMiddleName(txtMName);
+            MiddleNameValidationText.Text = addMember_BL.ValidateMiddleName(txtMName);
         }
-
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)
         {
-            JobValidationText.Text = cmbJob.SelectedIndex == 0 ? inputErrors.InvalidJob : validInput;
+            JobValidationText.Text = addMember_BL.ValidateJob(cmbJob);
         }
-
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CityValidationText.Text = cmbCity.SelectedIndex == 0 ? inputErrors.InvalidCity : validInput;
+            CityValidationText.Text = addMember_BL.ValidateCity(cmbCity);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (addMember_BL.validateAllData(FirstNameValidationText, LastNameValidationText, MiddleNameValidationText,
+                                                JobValidationText, phoneValidationText, emailValidationText, CityValidationText))
+            {
+                MemberInformation memberInformation = addMember_BL.createMember(txtFName, txtLName, txtMName, radMale, dtpAge,
+                     numMonthlySalary, numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _houseNumber);
+
+                this.DataSent(new InfoToHouse(memberInformation));
+            }
         }
 
         private void txtEmail_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Space)
-            {
-                emailValidationText.Text = inputErrors.SpaceInEmail ;
-                txtEmail.Text = txtEmail.Text.Replace(" ", "");
-            }
+            if (e.KeyValue == (char)Keys.Space) { addMember_BL.ignoreWhiteSpace(ref emailValidationText, ref txtEmail); }
 
             if (RegexPatterns.ValidEmailFormat().IsMatch(txtEmail.Text))
             {
                 try
                 {
                     if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2) { throw new Exception(); }
-                    SplitEmailToParts();
-                    if (CheckEmail()) { throw new Exception(); }
-                    emailValidationText.Text = validInput;
+                    addMember_BL.SplitEmailToParts(ref _validateEmail, txtEmail);
+                    if (addMember_BL.CheckEmail(_validateEmail)) { throw new Exception(); }
+                    emailValidationText.Text = inputErrors.Valid;
                 }
                 catch { emailValidationText.Text = inputErrors.InvalidEmail; }
 
                 return;
             }
-
-            emailValidationText.Text = inputErrors.InvalidEmail;
         }
-        private void SplitEmailToParts()
+        public Add_Member Add_Member1
         {
-            _validatePrefix = txtEmail.Text.Split('@')[0];
-            _validateDomain = txtEmail.Text.Split('@')[1].Split('.')[0];
-            _validateLastPortion = txtEmail.Text.Split('@')[1].Split('.')[1];
-        }
-        private bool CheckEmail()
-        {
-            if (RegexPatterns.ValidEmailPrefix().IsMatch(_validatePrefix) || RegexPatterns.NonWordCharacters().IsMatch(RegexPatterns.SpecialCharacters().Replace(_validatePrefix, "")))
-            { 
-                return true;
-            }
-
-            if (RegexPatterns.ValidEmailDomain().IsMatch(_validateDomain) || RegexPatterns.NonWordCharacters().IsMatch(_validateDomain.Replace("-", "")))
+            get => default;
+            set
             {
-                return true;
             }
-
-            if (!RegexPatterns.OnlyAlphabeticCharacters().IsMatch(_validateLastPortion))
-            {
-                return true;
-            }
-
-            return false;
-
-        }
-        private void UpdateContacts(InfoToHouse update)
-        {
-            SetCitiesNames();
-            txtPhone.Text = update.GetPhone();
-            cmbCity.Text = update.GetCity();
-            txtEmail.Text = update.GetEmail();
-        }
-        private void UpdateJobInfo(InfoToHouse update)
-        {
-            SetJobsNames();
-            numExperience.Value = update.GetExperience();
-            numMonthlySalary.Value = update.GetMonthlySalary();
-            cmbJob.Text = update.GetJob();
-        }
-        private void UpdatePersonalInfo(InfoToHouse update)
-        {
-            txtFName.Text = update.GetName().Split(' ')[0];
-            txtLName.Text = update.GetName().Split(' ')[1];
-            txtMName.Text = update.GetName().Split(' ')[2];
-            dtpAge.Value = update.GetDate();
-            radMale.Checked = update.GetIsMale();
-            radFemale.Checked = !radMale.Checked;
-            iconPictureBox.Image = update.GetPicture();
         }
     }
 
-    internal class MemberInputValidation
-    {
-        private string _validInput = Add_Member.validInput;
 
-        private readonly InputErrors _inputErrors = new InputErrors();
-
-
-
-
-
-        internal string ValidateFirstName(TextBox txtFName)
-        {
-            string input = txtFName.Text;
-
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return _inputErrors.NotNullable;
-            }
-
-            if (input.Length >= txtFName.MaxLength)
-            {
-                return _inputErrors.ExceedCharacters;
-            }
-
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
-            {
-                return _inputErrors.LettersOnly;
-            }
-
-            return _validInput;
-        }
-
-        internal string ValidateLastName(TextBox txtLName)
-        {
-            string input = txtLName.Text;
-
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return _inputErrors.NotNullable;
-            }
-
-            if (input.Length >= txtLName.MaxLength)
-            {
-                return _inputErrors.ExceedCharacters;
-            }
-
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
-            {
-                return _inputErrors.LettersOnly;
-            }
-
-            return _validInput;
-        }
-
-        internal string ValidateMiddleName(TextBox txtMName)
-        {
-            string input = txtMName.Text;
-
-            if (string.IsNullOrEmpty(input))
-            {
-                return _validInput;
-            }
-
-            if (input.Length >= txtMName.MaxLength)
-            {
-                return _inputErrors.ExceedCharacters;
-            }
-
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input)))
-            {
-                return _inputErrors.LettersOnly;
-            }
-
-            return _validInput;
-        }
-
-        internal string ValidatePhoneNumber(TextBox txtPhone)
-        {
-            string input = txtPhone.Text;
-
-            if (RegexPatterns.PhoneNumberFormat().IsMatch(input))
-            {
-                return _validInput;
-            }
-
-            if (RegexPatterns.NonDigitCharacters().IsMatch(input.Replace("-", "")))
-            {
-                return _inputErrors.NumbersOnly;
-            }
-
-            if (RegexPatterns.StartsWith05().IsMatch(input) == false)
-            {
-                return _inputErrors.PhoneStart;
-            }
-
-            if (RegexPatterns.AtLeastElevenDigits().IsMatch(input.Replace("-", "")))
-            {
-                return _inputErrors.PhoneMaxNumbers;
-            } 
-
-            return _inputErrors.PhoneFormat;
-        }
-    }
 }

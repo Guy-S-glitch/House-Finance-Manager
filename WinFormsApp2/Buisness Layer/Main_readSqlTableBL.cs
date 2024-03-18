@@ -1,36 +1,25 @@
 ﻿using FontAwesome.Sharp;
-using House_Finance_management.Helpers;
-using Microsoft.Data.SqlClient;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WinFormsApp2;
-
-using static House_Finance_management.Member; 
-using static House_Finance_management.Data_Access_Layer.MainReadSqlTableDAL;
 using House_Finance_management.Data_Access_Layer;
+using Microsoft.Data.SqlClient;
+using System.Collections;
 
 namespace House_Finance_management.Buisness_Layer
 {
-    internal class MainReadSqlTableBL
+    internal partial class Main_BL
     {
-        MainReadSqlTableDAL dataLogic = new MainReadSqlTableDAL();
-        public MainReadSqlTableBL() { }
+        Main_DAL dataLogic = new Main_DAL();
+        public Main_BL() { }
         public void requestConnection(ref SqlConnection initialConnection, ref SqlCommand Select)
         {
             dataLogic.GetTableValues(ref initialConnection, ref Select);
         }
-        public void requestCurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse,ref int _afterSQLHouse)
+        public void requestCurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse, ref int _afterSQLHouse)
         {
             dataLogic.CurrentReadVariables(reader, ref _currentSQLHouse, ref _afterSQLHouse);
         }
 
 
-        public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember,ref TableLayoutPanel tableLayoutPanel1,string _lastHouseNumber,ref Hashtable _neighberhood)
+        public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember, ref TableLayoutPanel tableLayoutPanel1, string _lastHouseNumber, ref Hashtable _neighberhood)
         {
             IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
             SqlBut.Text = _lastHouseNumber + "\n";
@@ -40,16 +29,16 @@ namespace House_Finance_management.Buisness_Layer
                 SqlBut.Text += writeNames.GetName() + "\n";
             }
 
-            AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember,ref _neighberhood);
+            AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember, ref _neighberhood);
 
             SqlHousesMember = new List<InfoToHouse>();
         }
-        public void AddHouse2Hashtable(string chosenHouse, List<InfoToHouse> addMembers,ref Hashtable _neighberhood)
+        public void AddHouse2Hashtable(string chosenHouse, List<InfoToHouse> addMembers, ref Hashtable _neighberhood)
         {
             try { _neighberhood[chosenHouse] = addMembers; }
             catch { _neighberhood.Add(chosenHouse, addMembers); }
         }
- 
+
         public void ConvertSql2Class(ref List<InfoToHouse> SqlHousesMember, SqlDataReader reader)
         {
             NumericUpDown[] SqlNumeric = new NumericUpDown[7];
@@ -59,14 +48,14 @@ namespace House_Finance_management.Buisness_Layer
                 SqlNumeric[expenseOrder - 11] = new NumericUpDown();
                 SqlNumeric[expenseOrder - 11].Value = reader.GetInt32(expenseOrder);
             }
-             
-            SqlHousesMember.Add(new InfoToHouse( dataLogic.GetMemberInformation (reader,SqlNumeric)));
+
+            SqlHousesMember.Add(new InfoToHouse(dataLogic.GetMemberInformation(reader, SqlNumeric)));
         }
-        public void requestLastReadVariables(SqlDataReader reader,ref int _afterSQLHouse,ref string _lastHouseNumber,int _currentSQLHouse)
+        public void requestLastReadVariables(SqlDataReader reader, ref int _afterSQLHouse, ref string _lastHouseNumber, int _currentSQLHouse)
         {
             dataLogic.LastReadVariables(reader, ref _afterSQLHouse, ref _lastHouseNumber, _currentSQLHouse);
         }
 
-         
+
     }
 }

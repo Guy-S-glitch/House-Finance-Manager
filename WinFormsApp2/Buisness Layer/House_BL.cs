@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace House_Finance_management.Buisness_Layer
+﻿namespace House_Finance_management.Buisness_Layer
 {
-    internal partial class HouseBL
+    internal partial class House_BL
     {
-        public HouseBL() { }
+        public House_BL() { }
         private static readonly string _unselected = "please select a member first";
         public void SetValuesFromParent(List<InfoToHouse> showExistMembers, string houseName, ref List<InfoToHouse> members, ref short _memberID, ref Label houseNumber, ref ListBox lstMembersList)
         {
@@ -24,7 +18,7 @@ namespace House_Finance_management.Buisness_Layer
                 lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}");
             }
         }
-        public void addDataSent(InfoToHouse addMember,ref short _memberID,ref ListBox lstMembersList, ref List<InfoToHouse> members)
+        public void addDataSent(InfoToHouse addMember, ref short _memberID, ref ListBox lstMembersList, ref List<InfoToHouse> members)
         {
             _memberID++;
             lstMembersList.Items.Add($"{_memberID}. {addMember.GetName()}");

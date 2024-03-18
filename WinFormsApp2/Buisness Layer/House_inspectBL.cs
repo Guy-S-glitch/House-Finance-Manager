@@ -1,14 +1,8 @@
 ﻿using FontAwesome.Sharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace House_Finance_management.Buisness_Layer
 {
-    internal partial class HouseBL
+    internal partial class House_BL
     {
         private static readonly string _removeString = "...";
         private static bool _removeRead;
@@ -37,8 +31,8 @@ namespace House_Finance_management.Buisness_Layer
             {
                 _selectedMember = members[lstMembersList.SelectedIndex];
                 _selectedMemberRead = _selectedMember;
-                SetPersonalInfo(ref iconPictureBox,ref lblUserName,ref lblUserAge,ref lblUserGender);
-                SetJobInfo(ref txtJobTitle,ref txtExperience,ref txtMonthlySalary);
+                SetPersonalInfo(ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender);
+                SetJobInfo(ref txtJobTitle, ref txtExperience, ref txtMonthlySalary);
                 SetExpenses(ref tableLayoutPanel3);
                 SetContacts(ref txtPhone, ref txtEmail, ref txtCity);
 
@@ -46,19 +40,19 @@ namespace House_Finance_management.Buisness_Layer
             }
             else MessageBox.Show(_unselected);
         }
-        public void SetPersonalInfo(ref IconPictureBox iconPictureBox,ref Label lblUserName,ref Label lblUserAge,ref Label lblUserGender)
+        public void SetPersonalInfo(ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender)
         {
             iconPictureBox.Image = _removeRead ? null : _selectedMemberRead.GetPicture();
             lblUserName.Text = _removeRead ? _removeString : _selectedMemberRead.GetName();
-            lblUserAge.Text = _removeRead? _removeString : _selectedMemberRead.GetAge().ToString();
-            lblUserGender.Text = _removeRead? _removeString : _selectedMemberRead.GetIsMale() ? "Male" : "Female";
+            lblUserAge.Text = _removeRead ? _removeString : _selectedMemberRead.GetAge().ToString();
+            lblUserGender.Text = _removeRead ? _removeString : _selectedMemberRead.GetIsMale() ? "Male" : "Female";
         }
 
-        public void SetJobInfo(ref Label txtJobTitle,ref Label txtExperience,ref Label txtMonthlySalary)
+        public void SetJobInfo(ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary)
         {
-            txtJobTitle.Text = _removeRead? _removeString : _selectedMemberRead.GetJob();
-            txtExperience.Text = _removeRead? _removeString : _selectedMemberRead.GetExperience().ToString();
-            txtMonthlySalary.Text = _removeRead? _removeString : _selectedMemberRead.GetMonthlySalary().ToString();
+            txtJobTitle.Text = _removeRead ? _removeString : _selectedMemberRead.GetJob();
+            txtExperience.Text = _removeRead ? _removeString : _selectedMemberRead.GetExperience().ToString();
+            txtMonthlySalary.Text = _removeRead ? _removeString : _selectedMemberRead.GetMonthlySalary().ToString();
         }
 
         public void SetExpenses(ref TableLayoutPanel tableLayoutPanel3)
@@ -70,19 +64,19 @@ namespace House_Finance_management.Buisness_Layer
                 short percent = ((short)(((float)_selectedMemberRead.GetExpenses()[row].Value / _hundred * 100)));
                 Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;
                 ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;
-                label.Text = _removeRead? "%" : percent.ToString() + "%";
-                progressBar.Value = _removeRead? 100 : _selectedMemberRead.GetExpenses()[row].Value != 0 ? percent : 0;
+                label.Text = _removeRead ? "%" : percent.ToString() + "%";
+                progressBar.Value = _removeRead ? 100 : _selectedMemberRead.GetExpenses()[row].Value != 0 ? percent : 0;
             }
         }
 
-        public void SetContacts(ref Label txtPhone,ref Label txtEmail,ref Label txtCity)
+        public void SetContacts(ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
         {
-            txtPhone.Text = _removeRead? _removeString : _selectedMemberRead.GetPhone();
-            txtEmail.Text = _removeRead? _removeString : _selectedMemberRead.GetEmail();
-            txtCity.Text = _removeRead? _removeString : _selectedMemberRead.GetCity();
+            txtPhone.Text = _removeRead ? _removeString : _selectedMemberRead.GetPhone();
+            txtEmail.Text = _removeRead ? _removeString : _selectedMemberRead.GetEmail();
+            txtCity.Text = _removeRead ? _removeString : _selectedMemberRead.GetCity();
         }
 
-        public void RemoveMember(ref IconPictureBox iconPictureBox, ref List<InfoToHouse> members,ref ListBox lstMembersList)
+        public void RemoveMember(ref IconPictureBox iconPictureBox, ref List<InfoToHouse> members, ref ListBox lstMembersList)
         {
             iconPictureBox.IconChar = IconChar.UserTie;
             iconPictureBox.IconColor = Color.Black;

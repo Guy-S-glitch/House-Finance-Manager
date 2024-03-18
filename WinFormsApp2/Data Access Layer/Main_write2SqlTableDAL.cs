@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace House_Finance_management.Data_Access_Layer
 {
-    internal class MainWrite2SqlTableDAL
+    internal partial class Main_DAL
     {
         private static readonly string _deleteQuery = "delete from Houses;";
         private static readonly string _uploadToSQL = @"INSERT INTO [dbo].[Houses] ([HouseNumber], [memberName], [Birth], [Gender], [Picture], [Job], [Experience], [Salary], [City], [Phone], [Email], [Transport], [Clothes], [Sport], [Market], [Utilities], [Rent], [Restaurant])VALUES (@HouseID, @Name, @Date, @Gender, @ImageData, @Job, @Experience, @MonthlySalary, @City, @Phone, @Email, @Expense0, @Expense1, @Expense2, @Expense3, @Expense4, @Expense5, @Expense6)";
-
-        public MainWrite2SqlTableDAL() { }
+         
         public void CleanSqlTable(SqlConnection con)
         {
             SqlCommand excecuteDelete = new SqlCommand(_deleteQuery, con);
