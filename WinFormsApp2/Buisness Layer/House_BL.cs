@@ -4,11 +4,13 @@
     {
         public House_BL() { }
         private static readonly string _unselected = "please select a member first";
-        public void SetValuesFromParent(List<InfoToHouse> showExistMembers, string houseName, ref List<InfoToHouse> members, ref short _memberID, ref Label houseNumber, ref ListBox lstMembersList)
+        public void SetValuesFromParent(List<InfoToHouse>? showExistMembers, string houseName, ref List<InfoToHouse> members, ref short _memberID, ref Label houseNumber, ref ListBox lstMembersList)
         {
-            try { foreach (InfoToHouse addExistMember in showExistMembers) members.Add(addExistMember); }
-            catch { }
-
+            if (showExistMembers!=null)
+            {
+                foreach (InfoToHouse addExistMember in showExistMembers) members.Add(addExistMember);
+            }
+             
             _memberID = 0;
             houseNumber.Text = houseName;
 
