@@ -20,3 +20,29 @@ the project's work is based mainly on the user's input
   <li> the flow start over from step 1 but now there will be exist members at the house</li>
 </ol>
 
+# MSSQL
+## Execute the next query scripts in your new created database:
+create database HouseDB;<br>
+go<br>
+use [HouseDB];<br>
+<br>
+CREATE TABLE [dbo].[Houses](<br>
+	[HouseNumber] [nvarchar](50) NOT NULL,<br>
+	[memberName] [nvarchar](50) NOT NULL,<br>
+	[Birth] [datetime] NOT NULL,<br>
+	[Gender] [nvarchar](50) NOT NULL,<br>
+	[Picture] [varbinary](max) NOT NULL,<br>
+	[Job] [nvarchar](50) NOT NULL,<br>
+	[Experience] [int] NOT NULL,<br>
+	[Salary] [int] NOT NULL,<br>
+	[City] [nvarchar](50) NOT NULL,<br>
+	[Phone] [nvarchar](50) NOT NULL,<br>
+	[Email] [nvarchar](50) NOT NULL,<br>
+	[Transport] [int] NOT NULL,<br>
+	[Clothes] [int] NOT NULL,<br>
+	[Sport] [int] NOT NULL,<br>
+	[Market] [int] NOT NULL,<br>
+	[Utilities] [int] NOT NULL,<br>
+	[Rent] [int] NOT NULL,<br>
+	[Restaurant] [int] NOT NULL<br>
+);
