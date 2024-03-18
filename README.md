@@ -22,25 +22,27 @@ the project's work is based mainly on the user's input
 
 # MSSQL
 ## Execute the next query scripts in your new created database:
-CREATE TABLE [dbo].[Houses](
-	[HouseNumber] [nvarchar](50) NOT NULL,
-	[memberName] [nvarchar](50) NOT NULL,
-	[Birth] [datetime] NOT NULL,
-	[Gender] [nvarchar](50) NOT NULL,
-	[Picture] [varbinary](max) NOT NULL,
-	[Job] [nvarchar](50) NOT NULL,
-	[Experience] [int] NOT NULL,
-	[Salary] [int] NOT NULL,
-	[City] [nvarchar](50) NOT NULL,
-	[Phone] [nvarchar](50) NOT NULL,
-	[Email] [nvarchar](50) NOT NULL,
-	[Transport] [int] NOT NULL,
-	[Clothes] [int] NOT NULL,
-	[Sport] [int] NOT NULL,
-	[Market] [int] NOT NULL,
-	[Utilities] [int] NOT NULL,
-	[Rent] [int] NOT NULL,
-	[Restaurant] [int] NOT NULL
-)
-<br><br>
-"INSERT INTO [dbo].[Houses] ([HouseNumber], [memberName], [Birth], [Gender], [Picture], [Job], [Experience], [Salary], [City], [Phone], [Email], [Transport], [Clothes], [Sport], [Market], [Utilities], [Rent], [Restaurant])VALUES ('House1', 'Yossi Bar Moshe', '2000-03-03', 'Male', File.ReadAllBytes(@"path of photo"), 'Unemployed', 0, 0, 'Ashdod', '0505550000', 'asdd@asdq.qwd', 1, 1, 1, 1, 1, 1, 1)"
+create database HouseDB;<br>
+go<br>
+use [HouseDB];<br>
+<br>
+CREATE TABLE [dbo].[Houses](<br>
+	[HouseNumber] [nvarchar](50) NOT NULL,<br>
+	[memberName] [nvarchar](50) NOT NULL,<br>
+	[Birth] [datetime] NOT NULL,<br>
+	[Gender] [nvarchar](50) NOT NULL,<br>
+	[Picture] [varbinary](max) NOT NULL,<br>
+	[Job] [nvarchar](50) NOT NULL,<br>
+	[Experience] [int] NOT NULL,<br>
+	[Salary] [int] NOT NULL,<br>
+	[City] [nvarchar](50) NOT NULL,<br>
+	[Phone] [nvarchar](50) NOT NULL,<br>
+	[Email] [nvarchar](50) NOT NULL,<br>
+	[Transport] [int] NOT NULL,<br>
+	[Clothes] [int] NOT NULL,<br>
+	[Sport] [int] NOT NULL,<br>
+	[Market] [int] NOT NULL,<br>
+	[Utilities] [int] NOT NULL,<br>
+	[Rent] [int] NOT NULL,<br>
+	[Restaurant] [int] NOT NULL<br>
+);
