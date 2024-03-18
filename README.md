@@ -22,4 +22,24 @@ the project's work is based mainly on the user's input
 
 # MSSQL
 ## Execute the next query scripts in your new created database:
+CREATE TABLE [dbo].[Houses](
+	[HouseNumber] [nvarchar](50) NOT NULL,
+	[memberName] [nvarchar](50) NOT NULL,
+	[Birth] [datetime] NOT NULL,
+	[Gender] [nvarchar](50) NOT NULL,
+	[Picture] [varbinary](max) NOT NULL,
+	[Job] [nvarchar](50) NOT NULL,
+	[Experience] [int] NOT NULL,
+	[Salary] [int] NOT NULL,
+	[City] [nvarchar](50) NOT NULL,
+	[Phone] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[Transport] [int] NOT NULL,
+	[Clothes] [int] NOT NULL,
+	[Sport] [int] NOT NULL,
+	[Market] [int] NOT NULL,
+	[Utilities] [int] NOT NULL,
+	[Rent] [int] NOT NULL,
+	[Restaurant] [int] NOT NULL
+)
 "INSERT INTO [dbo].[Houses] ([HouseNumber], [memberName], [Birth], [Gender], [Picture], [Job], [Experience], [Salary], [City], [Phone], [Email], [Transport], [Clothes], [Sport], [Market], [Utilities], [Rent], [Restaurant])VALUES ('House1', 'Yossi Bar Moshe', '2000-03-03', 'Male', File.ReadAllBytes(@"path of photo"), 'Unemployed', 0, 0, 'Ashdod', '0505550000', 'asdd@asdq.qwd', 1, 1, 1, 1, 1, 1, 1)"
