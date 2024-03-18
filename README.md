@@ -20,3 +20,6 @@ the project's work is based mainly on the user's input
   <li> the flow start over from step 1 but now there will be exist members at the house</li>
 </ol>
 
+# MSSQL
+## Execute the next query scripts in your new created database:
+"INSERT INTO [dbo].[Houses] ([HouseNumber], [memberName], [Birth], [Gender], [Picture], [Job], [Experience], [Salary], [City], [Phone], [Email], [Transport], [Clothes], [Sport], [Market], [Utilities], [Rent], [Restaurant])VALUES ('House1', 'Yossi Bar Moshe', '2000-03-03', 'Male', File.ReadAllBytes(@"path of photo"), 'Unemployed', 0, 0, 'Ashdod', '0505550000', 'asdd@asdq.qwd', 1, 1, 1, 1, 1, 1, 1)"
