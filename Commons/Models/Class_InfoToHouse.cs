@@ -57,15 +57,7 @@ namespace Common
         public string GetCity() { return _city; }
         public Image GetPicture() { return _picture; }
         public string GetHouseNumber() { return _houseNumber; }
-
-        public byte[] ImageToByteArray()
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                _picture.Save(memoryStream, ImageFormat.Jpeg);
-                return memoryStream.ToArray();
-            }
-        }
+ 
     }
 
     public class Member
