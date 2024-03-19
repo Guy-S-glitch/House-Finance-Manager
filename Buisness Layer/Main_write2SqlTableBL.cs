@@ -1,7 +1,7 @@
 ﻿using House_Finance_management.Data_Access_Layer;
 using Microsoft.Data.SqlClient;
 using System.Collections;
-namespace House_Finance_management.Buisness_Layer
+namespace BL
 {
     internal partial class Main_BL
     {

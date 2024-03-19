@@ -1,8 +1,8 @@
-﻿using FontAwesome.Sharp;
-using House_Finance_management.Helpers;
-namespace House_Finance_management.Buisness_Layer
+﻿using Common;
+using FontAwesome.Sharp;
+namespace BL
 {
-    internal partial class AddMember_BL
+    public partial class AddMember_BL
     {
         private errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
         private readonly static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";

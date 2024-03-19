@@ -1,6 +1,6 @@
-﻿namespace House_Finance_management
+﻿namespace Common
 {
-    internal class ComboBoxLIsts
+    public class ComboBoxLIsts
     {
         public enum Jobs
         {

@@ -1,10 +1,5 @@
 ﻿using System.Drawing.Imaging;
-
-
-
-
-
-namespace House_Finance_management
+namespace Common
 {
     public class InfoToHouse
     {
@@ -89,20 +84,6 @@ namespace House_Finance_management
             public short Experience { get; set; }
             public string Job { get; set; }
             public NumericUpDown[] Expenses { get; set; }
-        }
-        public DataSentHandler DataSentHandler
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        public List<object> List
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        } 
     }
 }

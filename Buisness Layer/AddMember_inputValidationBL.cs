@@ -1,6 +1,6 @@
 ﻿using House_Finance_management.Helpers;
 
-namespace House_Finance_management.Buisness_Layer
+namespace BL
 {
     internal partial class AddMember_BL
     {

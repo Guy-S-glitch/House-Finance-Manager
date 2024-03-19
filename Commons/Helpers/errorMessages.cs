@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace House_Finance_management.Helpers
+﻿namespace Common
 {
-    internal class errorMessages
+    public class errorMessages
     {
         public readonly struct InputErrors
         {

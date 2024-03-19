@@ -1,6 +1,6 @@
-﻿using House_Finance_management.Buisness_Layer;
-using House_Finance_management.Helpers;
-using static House_Finance_management.Member;
+﻿using Common;
+using BL;
+using static Common.Member;
 
 
 

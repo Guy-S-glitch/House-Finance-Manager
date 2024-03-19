@@ -1,9 +1,9 @@
-﻿using FontAwesome.Sharp;
-using static House_Finance_management.Member;
+﻿using FontAwesome.Sharp; 
+using static Common.Member;
 
-namespace House_Finance_management.Buisness_Layer
+namespace BL
 {
-    internal partial class AddMember_BL
+    public partial class AddMember_BL
     {
         public MemberInformation createMember(TextBox txtFName, TextBox txtLName, TextBox txtMName, RadioButton radMale,
             DateTimePicker dtpAge, NumericUpDown numMonthlySalary, NumericUpDown numExperience, ComboBox cmbJob, NumericUpDown[] expenses,
@@ -31,7 +31,7 @@ namespace House_Finance_management.Buisness_Layer
                 HouseNumber = _houseNumber
             };
         }
-        internal bool validateAllData(Label FirstName, Label LastName, Label MiddleName, Label Job, Label Phone, Label Email, Label City)
+        public bool validateAllData(Label FirstName, Label LastName, Label MiddleName, Label Job, Label Phone, Label Email, Label City)
         {
             return _validateEmail(Email.Text)
                 && _validateName(FirstName.Text + LastName.Text + MiddleName.Text)
@@ -39,10 +39,10 @@ namespace House_Finance_management.Buisness_Layer
                 && _validatePhone(Phone.Text)
                 && _validateCity(City.Text);
         }
-        protected internal bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
-        protected internal bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
-        protected internal bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
-        protected internal bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
-        protected internal bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
+        protected bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
+        protected bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
+        protected bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
+        protected bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
+        protected bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
     }
 }

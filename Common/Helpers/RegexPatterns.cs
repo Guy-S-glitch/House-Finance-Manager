@@ -1,10 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+ 
 
-
-
-
-
-namespace House_Finance_management.Helpers
+namespace Common_Helpers
 {
     internal partial class RegexPatterns
     {

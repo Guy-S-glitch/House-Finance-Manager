@@ -1,5 +1,5 @@
-﻿using House_Finance_management.Buisness_Layer;
- 
+﻿using BL;
+using Common;
 
 namespace House_Finance_management
 {

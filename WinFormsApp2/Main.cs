@@ -1,8 +1,10 @@
 using FontAwesome.Sharp;
 using House_Finance_management;
-using House_Finance_management.Buisness_Layer;
+using BL;
+using Common;
 using Microsoft.Data.SqlClient;
 using System.Collections;
+using System.Configuration;
 
 
 namespace WinFormsApp2
@@ -20,8 +22,9 @@ namespace WinFormsApp2
     /// </summary>
     public partial class Main : Form
     {
+         
         private Main_BL GetMain_BL = new Main_BL();  //get access to the buisness layer
-
+        private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString; 
         private SqlConnection Connection = new SqlConnection();
         private SqlCommand Select = new SqlCommand();
 
@@ -58,7 +61,7 @@ namespace WinFormsApp2
             InitializeComponent();
             try
             {
-                GetMain_BL.requestConnection(ref Connection, ref Select);
+                GetMain_BL.requestConnection(ref Connection, ref Select, _connectionString);
                 Connection.Open();
                 GetSqlTable(Select);
                 Connection.Close();
