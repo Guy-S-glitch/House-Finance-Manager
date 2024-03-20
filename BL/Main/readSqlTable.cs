@@ -24,10 +24,11 @@ namespace BL
         {
             IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
             SqlBut.Text = _lastHouseNumber + "\n";
-
+            short _memberID = 1;
             foreach (InfoToHouse writeNames in SqlHousesMember)
             {
-                SqlBut.Text += writeNames.GetName() + "\n";
+                SqlBut.Text +=_memberID.ToString()+". "+ writeNames.GetName() + "\n";
+                _memberID++;
             }
 
             AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember, ref _neighberhood);

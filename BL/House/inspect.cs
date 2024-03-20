@@ -18,10 +18,10 @@ namespace BL
             "Rent",
             "Restaurants"
         };
-        public void inspectMember(object sender, ref bool _remove, Button btnmemberRemove, ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members
+        public void inspectMember(object sender, ref bool _remove, Button btnmemberRemove, ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members, ref TableLayoutPanel tableLayoutPanel3
             , ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary
-            , ref TableLayoutPanel tableLayoutPanel3, ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
+            , ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
         {
             Button CheckIfCalled = sender as Button;
 

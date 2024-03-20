@@ -14,7 +14,10 @@ namespace House_Finance_management
         public event DataSentHandler DataSent;
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
         private readonly errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
-        private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
+        private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
+        { 
+            return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
+        }
 
         private static string[] _validateEmail = new string[3];
 
@@ -100,13 +103,8 @@ namespace House_Finance_management
                 return;
             }
         }
-        public Add_Member Add_Member1
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        // the code below isn't relevant to the project but to the diagram  
+        public Add_Member Add_Member1 { get => default; set { } }
     }
 
 
