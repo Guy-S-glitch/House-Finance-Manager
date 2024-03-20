@@ -5,6 +5,7 @@ namespace Common
     {
         public string _houseNumber { get; set; }
         private Image _picture { get; set; }
+        private string _picturePath { get; set; }
         private string _city { get; set; }
         private string _email { get; set; }
         private string _phone { get; set; }
@@ -29,6 +30,7 @@ namespace Common
             _email = memberInformation.Email;
             _city = memberInformation.City;
             _picture = memberInformation.Picture;
+            _picturePath = memberInformation.PicturePath;
             _houseNumber = memberInformation.HouseNumber;
         }
 
@@ -56,6 +58,7 @@ namespace Common
         public string GetEmail() { return _email; }
         public string GetCity() { return _city; }
         public Image GetPicture() { return _picture; }
+        public string GetPicturePath() { return _picturePath; }
         public string GetHouseNumber() { return _houseNumber; }
  
     }
@@ -66,6 +69,7 @@ namespace Common
         {
             public string HouseNumber { get; set; }
             public Image Picture { get; set; }
+            public string PicturePath { get; set; }
             public string City { get; set; }
             public string Email { get; set; }
             public string Phone { get; set; }

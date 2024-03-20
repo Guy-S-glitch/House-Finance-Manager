@@ -31,13 +31,14 @@ namespace DAL
                 }
             }
         }
+        
         public void addParameters(SqlCommand excecuteInsert, InfoToHouse SpecipicHouse)
         {
             excecuteInsert.Parameters.AddWithValue("@HouseID", SpecipicHouse.GetHouseNumber());
             excecuteInsert.Parameters.AddWithValue("@Name", SpecipicHouse?.GetName() ?? "");
             excecuteInsert.Parameters.AddWithValue("@Date", SpecipicHouse?.GetDate() ?? DateTime.MaxValue);
             excecuteInsert.Parameters.AddWithValue("@Gender", SpecipicHouse?.GetGender() ?? "");
-            excecuteInsert.Parameters.AddWithValue("@ImageData", File.ReadAllBytes(@"C:\Users\guyso\Downloads\car.jpg"));
+            excecuteInsert.Parameters.AddWithValue("@ImageData", SpecipicHouse?.GetPicturePath() ?? "");
             excecuteInsert.Parameters.AddWithValue("@Job", SpecipicHouse?.GetJob() ?? "");
             excecuteInsert.Parameters.AddWithValue("@Experience", SpecipicHouse?.GetExperience() ?? 0);
             excecuteInsert.Parameters.AddWithValue("@MonthlySalary", SpecipicHouse?.GetMonthlySalary() ?? 0);

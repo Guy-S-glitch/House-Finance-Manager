@@ -40,14 +40,15 @@ namespace DAL
                 Phone = reader.GetString(9),
                 Email = reader.GetString(10),
                 City = reader.GetString(8),
-                Picture = ByteArrayToImage((byte[])reader.GetValue(4)),
+                Picture = PathToImage(reader.GetString(4)),
                 HouseNumber = reader.GetString(0)
             };
         }
 
-        public Image ByteArrayToImage(byte[] byteArray)
+        public Image PathToImage(string PicturePath)
         {
-            using (MemoryStream memoryStream = new MemoryStream(byteArray)) return Image.FromStream(memoryStream);
+            if(PicturePath == "") { return null; }
+            return Image.FromFile(PicturePath);
         }
 
         public void LastReadVariables(SqlDataReader reader, ref int _afterSQLHouse, ref string _lastHouseNumber, int _currentSQLHouse)

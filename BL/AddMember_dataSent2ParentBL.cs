@@ -7,7 +7,7 @@ namespace BL
     {
         public MemberInformation createMember(TextBox txtFName, TextBox txtLName, TextBox txtMName, RadioButton radMale,
             DateTimePicker dtpAge, NumericUpDown numMonthlySalary, NumericUpDown numExperience, ComboBox cmbJob, NumericUpDown[] expenses,
-            TextBox txtPhone, TextBox txtEmail, ComboBox cmbCity, IconPictureBox iconPictureBox, string _houseNumber)
+            TextBox txtPhone, TextBox txtEmail, ComboBox cmbCity, IconPictureBox iconPictureBox,string picturePath, string _houseNumber)
         {
             string firstName = txtFName.Text;
             string lastName = txtLName.Text;
@@ -28,6 +28,7 @@ namespace BL
                 Email = txtEmail.Text,
                 City = cmbCity.Text,
                 Picture = iconPictureBox.Image,
+                PicturePath = picturePath,
                 HouseNumber = _houseNumber
             };
         }

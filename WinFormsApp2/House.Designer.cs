@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             splitContainer1 = new SplitContainer();
             lstMembersList = new ListBox();
+            btnUpdateMember = new Button();
             btnInspectMember = new Button();
             btnmemberRemove = new Button();
             btnmemberAdd = new Button();
@@ -83,7 +84,6 @@
             label4 = new Label();
             label3 = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
-            btnUpdateMember = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -132,6 +132,17 @@
             lstMembersList.Name = "lstMembersList";
             lstMembersList.Size = new Size(488, 669);
             lstMembersList.TabIndex = 3;
+            // 
+            // btnUpdateMember
+            // 
+            btnUpdateMember.Dock = DockStyle.Bottom;
+            btnUpdateMember.Location = new Point(0, 726);
+            btnUpdateMember.Name = "btnUpdateMember";
+            btnUpdateMember.Size = new Size(488, 34);
+            btnUpdateMember.TabIndex = 4;
+            btnUpdateMember.Text = "Update member";
+            btnUpdateMember.UseVisualStyleBackColor = true;
+            btnUpdateMember.Click += btnUpdateMember_Click;
             // 
             // btnInspectMember
             // 
@@ -635,6 +646,7 @@
             // iconPictureBox
             // 
             iconPictureBox.BackColor = SystemColors.Control;
+            iconPictureBox.Dock = DockStyle.Fill;
             iconPictureBox.ForeColor = SystemColors.ControlText;
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             iconPictureBox.IconColor = SystemColors.ControlText;
@@ -644,6 +656,7 @@
             iconPictureBox.Name = "iconPictureBox";
             tableLayoutPanel1.SetRowSpan(iconPictureBox, 3);
             iconPictureBox.Size = new Size(165, 161);
+            iconPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             iconPictureBox.TabIndex = 1;
             iconPictureBox.TabStop = false;
             // 
@@ -719,18 +732,7 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
-            // btnUpdateMember
-            // 
-            btnUpdateMember.Dock = DockStyle.Bottom;
-            btnUpdateMember.Location = new Point(0, 726);
-            btnUpdateMember.Name = "btnUpdateMember";
-            btnUpdateMember.Size = new Size(488, 34);
-            btnUpdateMember.TabIndex = 4;
-            btnUpdateMember.Text = "Update member";
-            btnUpdateMember.UseVisualStyleBackColor = true;
-            btnUpdateMember.Click += btnUpdateMember_Click;
-            // 
-            // inHouse
+            // InHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -739,7 +741,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "inHouse";
+            Name = "InHouse";
             Text = "inHouse";
             WindowState = FormWindowState.Maximized;
             FormClosed += inHouse_FormClosed;

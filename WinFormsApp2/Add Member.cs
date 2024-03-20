@@ -18,17 +18,18 @@ namespace House_Finance_management
 
         private static string[] _validateEmail = new string[3];
 
+        private string _picturePath;
         private string _houseNumber;
 
         public Add_Member(string houseNum)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
             addMember_BL.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary,
             ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);
@@ -42,7 +43,7 @@ namespace House_Finance_management
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            addMember_BL.selectPhoto(iconPictureBox);
+            addMember_BL.selectPhoto(ref iconPictureBox,ref _picturePath);
         }
         private void txtPhone_KeyUp(object sender, KeyEventArgs e)
         {
@@ -75,7 +76,7 @@ namespace House_Finance_management
                                                 JobValidationText, phoneValidationText, emailValidationText, CityValidationText))
             {
                 MemberInformation memberInformation = addMember_BL.createMember(txtFName, txtLName, txtMName, radMale, dtpAge,
-                     numMonthlySalary, numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _houseNumber);
+                     numMonthlySalary, numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);
 
                 this.DataSent(new InfoToHouse(memberInformation));
             }

@@ -640,14 +640,16 @@
             // 
             iconPictureBox.BackColor = SystemColors.AppWorkspace;
             iconPictureBox.Cursor = Cursors.Hand;
+            iconPictureBox.Dock = DockStyle.Fill;
             iconPictureBox.ForeColor = SystemColors.ControlText;
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             iconPictureBox.IconColor = SystemColors.ControlText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox.IconSize = 239;
-            iconPictureBox.Location = new Point(6, 25);
+            iconPictureBox.IconSize = 240;
+            iconPictureBox.ImageLocation = "";
+            iconPictureBox.Location = new Point(3, 27);
             iconPictureBox.Name = "iconPictureBox";
-            iconPictureBox.Size = new Size(243, 239);
+            iconPictureBox.Size = new Size(257, 240);
             iconPictureBox.TabIndex = 26;
             iconPictureBox.TabStop = false;
             iconPictureBox.Click += iconPictureBox1_Click;

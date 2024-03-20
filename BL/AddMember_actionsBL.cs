@@ -6,13 +6,14 @@ namespace BL
     {
         private errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
         private readonly static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
-        public void selectPhoto(IconPictureBox iconPictureBox)
+        public void selectPhoto(ref IconPictureBox iconPictureBox,ref string picturePath)
         {
             OpenFileDialog opnfd = new OpenFileDialog();
             opnfd.Filter = _imageFileAccept;
 
             if (opnfd.ShowDialog() == DialogResult.OK)
             {
+                picturePath=opnfd.FileName;
                 iconPictureBox.Image = new Bitmap(opnfd.FileName);
             }
         }
