@@ -2,7 +2,7 @@
 using Common;
 namespace BL
 {
-    public partial class House_BL
+    public partial class BL_House
     {
         private static readonly string _unselected = "please select a member first"; 
         private static readonly string _removeString = "...";

@@ -1,9 +1,9 @@
 ﻿using Common;
 namespace BL
 {
-    public partial class House_BL
+    public partial class BL_House
     {
-        public House_BL() { }
+        public BL_House() { }
         public void SetValuesFromParent(List<InfoToHouse>? showExistMembers, string houseName, ref List<InfoToHouse> members, ref short _memberID, ref Label houseNumber, ref ListBox lstMembersList)
         {
             if (showExistMembers!=null)

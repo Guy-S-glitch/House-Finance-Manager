@@ -10,9 +10,9 @@ namespace House_Finance_management
 {
     public delegate void DataSentHandler(InfoToHouse house);
     public partial class Add_Member : Form
-    {
+    { 
         public event DataSentHandler DataSent;
-        private AddMember_BL addMember_BL = new AddMember_BL();
+        private BL_AddMember GetBL_AddMember = new BL_AddMember();
         private readonly errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
         private NumericUpDown[] _GetExpenses() { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
 
@@ -23,15 +23,15 @@ namespace House_Finance_management
 
         public Add_Member(string houseNum)
         {
-            InitializeComponent(); 
-            addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
+            InitializeComponent();
+            GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)
         {
-            InitializeComponent(); 
-            addMember_BL.GetEnums(ref cmbJob, ref cmbCity);
-            addMember_BL.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary,
+            InitializeComponent();
+            GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);
+            GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary,
             ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);
             _houseNumber = houseNum;
         }
@@ -43,39 +43,39 @@ namespace House_Finance_management
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
-            addMember_BL.selectPhoto(ref iconPictureBox,ref _picturePath);
+            GetBL_AddMember.selectPhoto(ref iconPictureBox,ref _picturePath);
         }
         private void txtPhone_KeyUp(object sender, KeyEventArgs e)
         {
-            phoneValidationText.Text = addMember_BL.ValidatePhoneNumber(txtPhone);
+            phoneValidationText.Text = GetBL_AddMember.ValidatePhoneNumber(txtPhone);
         }
         private void txtFName_KeyUp(object sender, KeyEventArgs e)
         {
-            FirstNameValidationText.Text = addMember_BL.ValidateFirstName(txtFName);
+            FirstNameValidationText.Text = GetBL_AddMember.ValidateFirstName(txtFName);
         }
         private void txtLName_KeyUp(object sender, KeyEventArgs e)
         {
-            LastNameValidationText.Text = addMember_BL.ValidateLastName(txtLName);
+            LastNameValidationText.Text = GetBL_AddMember.ValidateLastName(txtLName);
         }
         private void txtMName_KeyUp(object sender, KeyEventArgs e)
         {
-            MiddleNameValidationText.Text = addMember_BL.ValidateMiddleName(txtMName);
+            MiddleNameValidationText.Text = GetBL_AddMember.ValidateMiddleName(txtMName);
         }
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)
         {
-            JobValidationText.Text = addMember_BL.ValidateJob(cmbJob);
+            JobValidationText.Text = GetBL_AddMember.ValidateJob(cmbJob);
         }
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CityValidationText.Text = addMember_BL.ValidateCity(cmbCity);
+            CityValidationText.Text = GetBL_AddMember.ValidateCity(cmbCity);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (addMember_BL.validateAllData(FirstNameValidationText, LastNameValidationText, MiddleNameValidationText,
+            if (GetBL_AddMember.validateAllData(FirstNameValidationText, LastNameValidationText, MiddleNameValidationText,
                                                 JobValidationText, phoneValidationText, emailValidationText, CityValidationText))
             {
-                MemberInformation memberInformation = addMember_BL.createMember(txtFName, txtLName, txtMName, radMale, dtpAge,
+                MemberInformation memberInformation = GetBL_AddMember.createMember(txtFName, txtLName, txtMName, radMale, dtpAge,
                      numMonthlySalary, numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);
 
                 this.DataSent(new InfoToHouse(memberInformation));
@@ -84,15 +84,15 @@ namespace House_Finance_management
 
         private void txtEmail_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Space) { addMember_BL.ignoreWhiteSpace(ref emailValidationText, ref txtEmail); }
+            if (e.KeyValue == (char)Keys.Space) { GetBL_AddMember.ignoreWhiteSpace(ref emailValidationText, ref txtEmail); }
 
             if (RegexPatterns.ValidEmailFormat().IsMatch(txtEmail.Text))
             {
                 try
                 {
                     if (txtEmail.Text.Split('@').Count() != 2 || txtEmail.Text.Split('@')[1].Split('.').Count() != 2) { throw new Exception(); }
-                    addMember_BL.SplitEmailToParts(ref _validateEmail, txtEmail);
-                    if (addMember_BL.CheckEmail(_validateEmail)) { throw new Exception(); }
+                    GetBL_AddMember.SplitEmailToParts(ref _validateEmail, txtEmail);
+                    if (GetBL_AddMember.CheckEmail(_validateEmail)) { throw new Exception(); }
                     emailValidationText.Text = inputErrors.Valid;
                 }
                 catch { emailValidationText.Text = inputErrors.InvalidEmail; }

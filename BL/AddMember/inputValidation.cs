@@ -2,7 +2,7 @@
 
 namespace BL
 {
-    public partial class AddMember_BL
+    public partial class BL_AddMember
     {
         private readonly errorMessages.InputErrors _inputErrors = new errorMessages.InputErrors();
 

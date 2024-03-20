@@ -3,7 +3,7 @@ using static Common.Member;
 
 namespace BL
 {
-    public partial class AddMember_BL
+    public partial class BL_AddMember
     {
         public MemberInformation createMember(TextBox txtFName, TextBox txtLName, TextBox txtMName, RadioButton radMale,
             DateTimePicker dtpAge, NumericUpDown numMonthlySalary, NumericUpDown numExperience, ComboBox cmbJob, NumericUpDown[] expenses,

@@ -23,7 +23,7 @@ namespace WinFormsApp2
     public partial class Main : Form
     {
          
-        private Main_BL GetMain_BL = new Main_BL();  //get access to the buisness layer
+        private BL_Main GetBL_Main = new BL_Main();  //get access to the buisness layer
         private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString; 
         private SqlConnection Connection = new SqlConnection();
         private SqlCommand Select = new SqlCommand();
@@ -46,13 +46,13 @@ namespace WinFormsApp2
                 List<InfoToHouse> SqlHousesMember = new List<InfoToHouse>(); //list that will store our data on a house and once we done it'll reset for the next house 
                 while (reader.Read())  //read every house from the sql table
                 {
-                    GetMain_BL.requestCurrentReadVariables(reader, ref _currentSQLHouse, ref _afterSQLHouse);  //get the variables for the current read
-                    if (_currentSQLHouse != _afterSQLHouse) { GetMain_BL.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood); }//after finishing reading members from house x we can update that house and move on to the next house
+                    GetBL_Main.requestCurrentReadVariables(reader, ref _currentSQLHouse, ref _afterSQLHouse);  //get the variables for the current read
+                    if (_currentSQLHouse != _afterSQLHouse) { GetBL_Main.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood); }//after finishing reading members from house x we can update that house and move on to the next house
                     while (_currentSQLHouse >= _addFromSQL) { AddHouse_Click(new object(), new EventArgs()); _addFromSQL++; }  //add the amount of houses were at the last login 
-                    GetMain_BL.ConvertSql2Class(ref SqlHousesMember, reader);  //convert the data from the sql to our used class
-                    GetMain_BL.requestLastReadVariables(reader, ref _afterSQLHouse, ref _lastHouseNumber, _currentSQLHouse);  //save the variables to compere with the next read
+                    GetBL_Main.ConvertSql2Class(ref SqlHousesMember, reader);  //convert the data from the sql to our used class
+                    GetBL_Main.requestLastReadVariables(reader, ref _afterSQLHouse, ref _lastHouseNumber, _currentSQLHouse);  //save the variables to compere with the next read
                 }
-                GetMain_BL.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood);
+                GetBL_Main.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood);
             }
         }
 
@@ -61,7 +61,7 @@ namespace WinFormsApp2
             InitializeComponent();
             try
             {
-                GetMain_BL.requestConnection(ref Connection, ref Select, _connectionString);
+                GetBL_Main.requestConnection(ref Connection, ref Select, _connectionString);
                 Connection.Open();
                 GetSqlTable(Select);
                 Connection.Close();
@@ -78,15 +78,15 @@ namespace WinFormsApp2
 
         private void AddHouse_Click(object sender, EventArgs e)
         {
-            GetMain_BL.ReplaceAddButtonWithHouse(ref tableLayoutPanel1, AddHouse, _column, _row); 
-            IconButton AddedHouse = GetMain_BL.ClonePropeties(House1, _column, _row, _houseNumber, ref tableLayoutPanel1);
+            GetBL_Main.ReplaceAddButtonWithHouse(ref tableLayoutPanel1, AddHouse, _column, _row); 
+            IconButton AddedHouse = GetBL_Main.ClonePropeties(House1, _column, _row, _houseNumber, ref tableLayoutPanel1);
             AddedHouse.Click += House1_Click;
-            GetMain_BL.ValuesForNextReplace(ref _column, ref _row, ref _houseNumber);
+            GetBL_Main.ValuesForNextReplace(ref _column, ref _row, ref _houseNumber);
         } //clicking on the add house will move that button and will add an house button in the place where the add house button was with the same properties of every house button
 
         private void InHouse_returnDataToHouse(List<InfoToHouse> houseMembers)
         {
-            GetMain_BL.GetData2House(ref _clickedHouse, ref _neighberhood, houseMembers);
+            GetBL_Main.GetData2House(ref _clickedHouse, ref _neighberhood, houseMembers);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -94,8 +94,8 @@ namespace WinFormsApp2
             try
             {
                 Connection.Open();
-                GetMain_BL.requestCleanSqlTable(Connection);
-                GetMain_BL.requestUploadLatestValues(Connection, _neighberhood);
+                GetBL_Main.requestCleanSqlTable(Connection);
+                GetBL_Main.requestUploadLatestValues(Connection, _neighberhood);
                 Connection.Close();
             }
             catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); }

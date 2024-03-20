@@ -3,7 +3,7 @@ using Common;
 
 namespace BL
 {
-    public partial class AddMember_BL
+    public partial class BL_AddMember
     {
 
         public void GetEnums(ref ComboBox cmbJob, ref ComboBox cmbCity)

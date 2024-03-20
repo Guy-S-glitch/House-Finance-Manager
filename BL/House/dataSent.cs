@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
-namespace BL.House
+namespace BL
 {
-    public partial class House_BL
+    public partial class BL_House
     {
         public void addDataSent(InfoToHouse addMember, ref short _memberID, ref ListBox lstMembersList, ref List<InfoToHouse> members)
         {

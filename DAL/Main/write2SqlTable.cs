@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace DAL
 {
-    public partial class Main_DAL
+    public partial class DAL_Main
     {
 
         private static readonly string _deleteQuery = "delete from Houses;";

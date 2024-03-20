@@ -5,11 +5,11 @@ using static Common.Member;
 
 namespace DAL
 {
-    public partial class Main_DAL
+    public partial class DAL_Main
     {
         private static readonly string _selectQuery = "select * from Houses;";
 
-        public Main_DAL() { }
+        public DAL_Main() { }
 
         public void GetTableValues(ref SqlConnection initialConnection, ref SqlCommand Select,string _connectionString)
         {

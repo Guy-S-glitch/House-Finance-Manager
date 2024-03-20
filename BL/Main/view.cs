@@ -4,7 +4,7 @@ using Common;
 
 namespace BL
 {
-    public partial class Main_BL
+    public partial class BL_Main
     { 
         public IconButton ClonePropeties(IconButton Source, int _column, int _row, int _houseNumber, ref TableLayoutPanel tableLayoutPanel1)
         {

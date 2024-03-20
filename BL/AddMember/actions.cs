@@ -2,7 +2,7 @@
 using FontAwesome.Sharp;
 namespace BL
 {
-    public partial class AddMember_BL
+    public partial class BL_AddMember
     {
         private errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
         private readonly static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";

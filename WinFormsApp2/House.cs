@@ -7,7 +7,7 @@ namespace House_Finance_management
 
     public partial class InHouse : Form
     {
-        private House_BL houseBL = new House_BL();
+        private BL_House GetBL_House = new BL_House();
 
         public event ReturnDataToHouse returnDataToHouse;  //inherit a function from parent
         public List<InfoToHouse> members = new List<InfoToHouse>();
@@ -20,7 +20,7 @@ namespace House_Finance_management
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)
         {
             InitializeComponent();
-            houseBL.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
+            GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
         }
 
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
@@ -44,12 +44,12 @@ namespace House_Finance_management
 
         public void AddMember_DataSent(InfoToHouse addMember)
         {
-            houseBL.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members);
+            GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members);
         }
 
         public void UpdateMember_DataSent(InfoToHouse updateMember)
         {
-            houseBL.updateDataSent(updateMember, ref lstMembersList, ref members);
+            GetBL_House.updateDataSent(updateMember, ref lstMembersList, ref members);
         }
 
         public void btnmemberRemove_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace House_Finance_management
 
         public void btnInspectMember_Click(object sender, EventArgs e)
         {
-            houseBL.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members, ref iconPictureBox
+            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members, ref iconPictureBox
                 , ref lblUserName, ref lblUserAge, ref lblUserGender, ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,
                 ref tableLayoutPanel3, ref txtPhone, ref txtEmail, ref txtCity);
         }

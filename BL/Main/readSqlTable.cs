@@ -6,10 +6,10 @@ using System.Collections;
 
 namespace BL
 {
-    public partial class Main_BL
+    public partial class BL_Main
     {
-        Main_DAL dataLogic = new Main_DAL();
-        public Main_BL() { }
+        DAL_Main dataLogic = new DAL_Main();
+        public BL_Main() { }
         public void requestConnection(ref SqlConnection initialConnection, ref SqlCommand Select,string _connectionString)
         {
             dataLogic.GetTableValues(ref initialConnection, ref Select,_connectionString);
