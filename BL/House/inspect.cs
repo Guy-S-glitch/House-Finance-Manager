@@ -4,6 +4,7 @@ namespace BL
 {
     public partial class House_BL
     {
+        private static readonly string _unselected = "please select a member first"; 
         private static readonly string _removeString = "...";
         private static bool _removeRead;
         private static InfoToHouse _selectedMemberRead;
