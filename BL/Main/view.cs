@@ -5,23 +5,25 @@ using Common;
 namespace BL
 {
     public partial class BL_Main
-    { 
+    {
         public IconButton ClonePropeties(IconButton Source, int _column, int _row, int _houseNumber, ref TableLayoutPanel tableLayoutPanel1)
         {
-            IconButton Target = new IconButton();
-            Target.Dock = Source.Dock;
-            Target.Font = Source.Font;
-            Target.IconChar = Source.IconChar;
-            Target.IconColor = Source.IconColor;
-            Target.IconFont = Source.IconFont;
-            Target.ImageAlign = Source.ImageAlign;
-            Target.Name = $"house{_houseNumber}";
-            tableLayoutPanel1.Controls.Add(Target, _column, _row);
-            Target.Size = Source.Size;
-            Target.TabIndex = Source.TabIndex + 1;
-            Target.Text = Target.Name;
-            Target.TextAlign = Source.TextAlign;
-            Target.UseVisualStyleBackColor = true;
+            IconButton Target = new IconButton()
+            {
+                Dock = Source.Dock,
+                Font = Source.Font,
+                IconChar = Source.IconChar,
+                IconColor = Source.IconColor,
+                IconFont = Source.IconFont,
+                ImageAlign = Source.ImageAlign,
+                Name = $"house{_houseNumber}",
+                Size = Source.Size,
+                TabIndex = Source.TabIndex + 1,
+                Text =$"house{_houseNumber}",
+                TextAlign = Source.TextAlign,
+                UseVisualStyleBackColor = true
+            }; 
+        tableLayoutPanel1.Controls.Add(Target, _column, _row);
             return Target;
         }
 

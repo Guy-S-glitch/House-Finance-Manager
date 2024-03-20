@@ -47,8 +47,9 @@ namespace DAL
 
         public Image PathToImage(string PicturePath)
         {
-            if(PicturePath == "") { return null; }
-            return Image.FromFile(PicturePath);
+            if (string.IsNullOrEmpty(PicturePath)) { return null; }
+            try { return Image.FromFile(PicturePath); }
+            catch { MessageBox.Show("image was deleted"); return null; }
         }
 
         public void LastReadVariables(SqlDataReader reader, ref int _afterSQLHouse, ref string _lastHouseNumber, int _currentSQLHouse)

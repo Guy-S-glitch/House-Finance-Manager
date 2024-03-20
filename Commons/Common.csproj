@@ -13,4 +13,8 @@
     <None Remove="Pictures\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Models\enums_ComboBoxLIsts.cs~RFe8fb47b.TMP" />
+  </ItemGroup>
+
 </Project>

@@ -40,10 +40,10 @@ namespace BL
                 && _validatePhone(Phone.Text)
                 && _validateCity(City.Text);
         }
-        protected bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
-        protected bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
-        protected bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
-        protected bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
-        protected bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
+        private bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
+        private bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
+        private bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
+        private bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
+        private bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
     }
 }

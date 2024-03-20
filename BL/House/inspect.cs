@@ -9,7 +9,7 @@ namespace BL
         private static bool _removeRead;
         private static InfoToHouse _selectedMemberRead;
         private static readonly string[] _expenseNames = new string[]
-{
+        {
             "Transportation",
             "Clothes",
             "Sports",
@@ -17,7 +17,7 @@ namespace BL
             "Utilities",
             "Rent",
             "Restaurants"
-};
+        };
         public void inspectMember(object sender, ref bool _remove, Button btnmemberRemove, ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members
             , ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary

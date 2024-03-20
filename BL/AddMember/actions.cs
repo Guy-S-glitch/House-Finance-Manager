@@ -3,7 +3,7 @@ using FontAwesome.Sharp;
 namespace BL
 {
     public partial class BL_AddMember
-    {
+    { 
         private errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
         private readonly static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
         public void selectPhoto(ref IconPictureBox iconPictureBox,ref string picturePath)
@@ -18,8 +18,8 @@ namespace BL
             }
         }
         public void ignoreWhiteSpace(ref Label emailValidationText, ref TextBox txtEmail)
-        {
-            emailValidationText.Text = inputErrors.SpaceInEmail;
+        { 
+            emailValidationText.Text = inputErrors.SpaceInEmail; 
             txtEmail.Text = txtEmail.Text.Replace(" ", "");
         }
         public void SplitEmailToParts(ref string[] _validateEmail, TextBox txtEmail)

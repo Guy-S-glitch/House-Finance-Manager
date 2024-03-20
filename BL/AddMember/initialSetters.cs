@@ -37,19 +37,19 @@ namespace BL
             UpdateJobInfo(update, ref numExperience, ref numMonthlySalary, ref cmbJob);
             UpdatePersonalInfo(update, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);
         }
-        public void UpdateContacts(InfoToHouse update, ref TextBox txtPhone, ref ComboBox cmbCity, ref TextBox txtEmail)
+        private void UpdateContacts(InfoToHouse update, ref TextBox txtPhone, ref ComboBox cmbCity, ref TextBox txtEmail)
         {
             txtPhone.Text = update.GetPhone();
             cmbCity.Text = update.GetCity();
             txtEmail.Text = update.GetEmail();
         }
-        public void UpdateJobInfo(InfoToHouse update, ref NumericUpDown numExperience, ref NumericUpDown numMonthlySalary, ref ComboBox cmbJob)
+        private void UpdateJobInfo(InfoToHouse update, ref NumericUpDown numExperience, ref NumericUpDown numMonthlySalary, ref ComboBox cmbJob)
         {
             numExperience.Value = update.GetExperience();
             numMonthlySalary.Value = update.GetMonthlySalary();
             cmbJob.Text = update.GetJob();
         }
-        public void UpdatePersonalInfo(InfoToHouse update, ref TextBox txtFName, ref TextBox txtLName, ref TextBox txtMName, ref DateTimePicker dtpAge,
+        private void UpdatePersonalInfo(InfoToHouse update, ref TextBox txtFName, ref TextBox txtLName, ref TextBox txtMName, ref DateTimePicker dtpAge,
            ref RadioButton radMale, ref RadioButton radFemale, ref IconPictureBox iconPictureBox)
         {
             txtFName.Text = update.GetName().Split(' ')[0];

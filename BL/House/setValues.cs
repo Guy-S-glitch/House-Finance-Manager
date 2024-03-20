@@ -19,9 +19,6 @@ namespace BL
                 _memberID++;
                 lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}");
             }
-        }
-
-
-
+        } 
     }
 }
