@@ -7,7 +7,7 @@ CREATE TABLE [dbo].[Houses](
 [memberName] nvarchar NOT NULL,
 [Birth] [datetime] NOT NULL,
 [Gender] nvarchar NOT NULL,
-[Picture] varbinary NOT NULL,
+[Picture] nvarchar NOT NULL,
 [Job] nvarchar NOT NULL,
 [Experience] [int] NOT NULL,
 [Salary] [int] NOT NULL,

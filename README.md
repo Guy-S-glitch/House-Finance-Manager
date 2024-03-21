@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[Houses](<br>
 	[memberName] [nvarchar](50) NOT NULL,<br>
 	[Birth] [datetime] NOT NULL,<br>
 	[Gender] [nvarchar](50) NOT NULL,<br>
-	[Picture] [varbinary](max) NOT NULL,<br>
+	[Picture] [nvarchar](255) NOT NULL,<br>
 	[Job] [nvarchar](50) NOT NULL,<br>
 	[Experience] [int] NOT NULL,<br>
 	[Salary] [int] NOT NULL,<br>
