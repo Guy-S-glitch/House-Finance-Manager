@@ -58,7 +58,19 @@ namespace BL
             dtpAge.Value = update.GetDate();
             radMale.Checked = update.GetIsMale();
             radFemale.Checked = !radMale.Checked;
-            iconPictureBox.Image = update.GetPicture();
+            UpdateImage(ref iconPictureBox, update);
+        }
+
+        private void UpdateImage(ref IconPictureBox iconPictureBox,InfoToHouse update)
+        {
+
+            if(update.GetPicture() is null) 
+            {
+                iconPictureBox.IconChar = IconChar.UserTie;
+                iconPictureBox.IconColor = Color.Black;
+                iconPictureBox.Dock = DockStyle.Fill;
+            }
+            else { iconPictureBox.Image = update.GetPicture(); }
         }
 
     }

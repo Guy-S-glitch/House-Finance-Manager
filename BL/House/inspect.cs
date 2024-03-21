@@ -6,8 +6,8 @@ namespace BL
     {
         private static readonly string _unselected = "please select a member first"; 
         private static readonly string _removeString = "...";
-        private static bool _removeRead;
-        private static InfoToHouse _selectedMemberRead;
+        private static bool _removeRead;  //save the value of _remove instead of sending it every time
+        private static InfoToHouse _selectedMemberRead;  //save the value of _selectedMember instead of sending it every time
         private static readonly string[] _expenseNames = new string[]
         {
             "Transportation",
@@ -43,7 +43,9 @@ namespace BL
         }
         public void SetPersonalInfo(ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender)
         {
-            iconPictureBox.Image = _removeRead ? null : _selectedMemberRead.GetPicture();
+            if (_removeRead || _selectedMemberRead.GetPicture() is null) { nonPicture(ref iconPictureBox); }
+            else iconPictureBox.Image= _selectedMemberRead.GetPicture();
+
             lblUserName.Text = _removeRead ? _removeString : _selectedMemberRead.GetName();
             lblUserAge.Text = _removeRead ? _removeString : _selectedMemberRead.GetAge().ToString();
             lblUserGender.Text = _removeRead ? _removeString : _selectedMemberRead.GetIsMale() ? "Male" : "Female";
@@ -59,13 +61,16 @@ namespace BL
         public void SetExpenses(ref TableLayoutPanel tableLayoutPanel3)
         {
             short _hundred = 0;
-            foreach (NumericUpDown addTo100 in _selectedMemberRead.GetExpenses()) _hundred += (short)addTo100.Value;
+            foreach (NumericUpDown addTo100 in _selectedMemberRead.GetExpenses()) _hundred += (short)addTo100.Value;  //take the sum of the total expenses to make it the 100% and give each value it's percent from the 100%
             for (int row = 0; row < 7; row++)
             {
-                short percent = ((short)(((float)_selectedMemberRead.GetExpenses()[row].Value / _hundred * 100)));
-                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;
-                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;
-                label.Text = _removeRead ? "%" : percent.ToString() + "%";
+                short percent = ((short)(((float)_selectedMemberRead.GetExpenses()[row].Value / _hundred * 100)));  //save the value of one expense
+                //find the lable/progressBar of the current expense 
+                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;  
+                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;  
+             
+                //if the function was called from the remove button reset the lable/progressBar, else enter the value we calculated
+                label.Text = _removeRead ? "%" : percent.ToString() + "%";  
                 progressBar.Value = _removeRead ? 100 : _selectedMemberRead.GetExpenses()[row].Value != 0 ? percent : 0;
             }
         }
@@ -79,11 +84,15 @@ namespace BL
 
         public void RemoveMember(ref IconPictureBox iconPictureBox, ref List<InfoToHouse> members, ref ListBox lstMembersList)
         {
+            nonPicture(ref iconPictureBox);
+            members.RemoveAt(lstMembersList.SelectedIndex);
+            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
+        }
+        private void nonPicture(ref IconPictureBox iconPictureBox)
+        {
             iconPictureBox.IconChar = IconChar.UserTie;
             iconPictureBox.IconColor = Color.Black;
             iconPictureBox.Dock = DockStyle.Fill;
-            members.RemoveAt(lstMembersList.SelectedIndex);
-            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
         }
     }
 }

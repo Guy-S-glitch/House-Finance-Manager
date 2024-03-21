@@ -11,13 +11,13 @@ namespace BL
                 foreach (InfoToHouse addExistMember in showExistMembers) members.Add(addExistMember);
             }
              
-            _memberID = 1;
+            _memberID = 0;
             houseNumber.Text = houseName;
 
             foreach (InfoToHouse sa in members)
-            { 
-                lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}");
+            {
                 _memberID++;
+                lstMembersList.Items.Add($"{_memberID}. {sa.GetName()}"); 
             }
         } 
     }
