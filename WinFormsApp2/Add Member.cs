@@ -8,7 +8,12 @@ using static Common.Member;
 
 namespace House_Finance_management
 {
-    public delegate void DataSentHandler(InfoToHouse house);  
+    public delegate void DataSentHandler(InfoToHouse house);
+    /// <summary>
+    /// this form is called by the House form 
+    /// if this form called by the add member button, the user able to add data to the house 
+    /// if this form called by the add update button, the user may only change data from chosen member
+    /// </summary>
     public partial class Add_Member : Form
     { 
         public event DataSentHandler DataSent;
@@ -48,8 +53,8 @@ namespace House_Finance_management
         {
             GetBL_AddMember.selectPhoto(ref iconPictureBox,ref _picturePath);
         }
-
-        //every KeyUp function validate the textbox for every key entered
+         
+        /////////////////////////////every KeyUp function validate the textbox for every key entered///////////////////////////////// 
         private void txtPhone_KeyUp(object sender, KeyEventArgs e)  
         {
             phoneValidationText.Text = GetBL_AddMember.ValidatePhoneNumber(txtPhone);
@@ -84,8 +89,7 @@ namespace House_Finance_management
                 return;
             }
         }
-
-        //every SelectedIndexChanged function validate if the user select a valid option
+        /////////////////////every SelectedIndexChanged function validate if the user select a valid option////////////////////////// 
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)  
         {
             JobValidationText.Text = GetBL_AddMember.ValidateJob(cmbJob);

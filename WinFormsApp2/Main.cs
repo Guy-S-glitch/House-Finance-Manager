@@ -33,14 +33,13 @@ namespace WinFormsApp2
        
         private static int _row = 0, _column = 1; //keep track of where to place the buttons. if it's should start at different values, the program will loop until we get to the currect value
         private static int _addHouseNumber = 2;  //keep track of the number of the house that will be added. if it's should start at different values, the program will loop until we get to the currect value
-         
 
-        private int _addFromSQL = 1;  //at the start we only have 1 button "house1" and if there should be more the program will loop and add house button until we'll the currect amount of house buttons.
+        private int _addButtonsFromSQL = 1;  //at the start we only have 1 button "house1" and if there should be more the program will loop and add house button until we'll the currect amount of house buttons.
         private int _currentSQLHouseNumber = -1, _LastSQLHouseNumber;  //we have 2 parameters for the house number, _current will take the current house number and _last will take the last house we read. having difference values meaning we changed house.
         //we cant read the last read of the first read, thus we'll use fixed value that will be used only for the first read and make the two equal
       
         private string _lastHouseNumber = "House1";  //keeps track with the name of the last house we read. every button's name has the same format:("House"+number), so we'll use it to find the button we want.
-        //if the first read isn't on House1 we can relay on _addFromSQL that will check which house we are reading 
+        //if the first read isn't on House1 we can relay on _addButtonsFromSQL that will check which house we are reading 
 
         public void GetSqlTable(SqlCommand Select)
         {
@@ -51,7 +50,7 @@ namespace WinFormsApp2
                 {
                     GetBL_Main.requestCurrentReadVariables(reader, ref _currentSQLHouseNumber, ref _LastSQLHouseNumber);  //get the variables for the current read
                     if (_currentSQLHouseNumber != _LastSQLHouseNumber) { GetBL_Main.UpdateMembers2House(ref SqlHousesMember, ref tableLayoutPanel1, _lastHouseNumber, ref _neighberhood); }//after finishing reading members from house x we can update that house and move on to the next house
-                    while (_currentSQLHouseNumber > _addFromSQL) { AddHouse_Click(new object(), new EventArgs()); _addFromSQL++; }  //add the amount of houses were at the last login 
+                    while (_currentSQLHouseNumber > _addButtonsFromSQL) { AddHouse_Click(new object(), new EventArgs()); _addButtonsFromSQL++; }  //add the amount of houses were at the last login 
                     GetBL_Main.ConvertSql2Class(ref SqlHousesMember, reader);  //convert the data from the sql to our used class
                     GetBL_Main.requestLastReadVariables(reader, ref _LastSQLHouseNumber, ref _lastHouseNumber, _currentSQLHouseNumber);  //save the variables to compere with the next read
                 }

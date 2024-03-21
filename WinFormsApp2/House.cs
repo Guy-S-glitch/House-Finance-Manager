@@ -2,15 +2,24 @@
 using Common;
 
 namespace House_Finance_management
-{
+{ 
     public delegate void ReturnDataToHouse(List<InfoToHouse> returnMember);
-
+    /// <summary>
+    /// this form is called by the main form and every different house will call his own form .
+    /// if that house contain exist members the they'll be shown in the house.
+    ///
+    ///in every house there is 4 options:
+    ///add member - call the AddMember form and let the user add his wanted member
+    ///update member - also call the AddMember form but instead of adding members, the user able to change data on a chosed member
+    ///inspect member - show the data of a chosen member on the house
+    ///remove member - remove member from the house
+    /// </summary>
     public partial class InHouse : Form
     {
         private BL_House GetBL_House = new BL_House();
 
         public event ReturnDataToHouse returnDataToHouse;  //inherit a function from parent
-        public List<InfoToHouse> members = new List<InfoToHouse>();
+        public List<InfoToHouse> members = new List<InfoToHouse>();  //contain the members of the current house
 
         private static short _memberID;  //used to write the members in order: 1. memberX, 2. memberY, 3. memberZ
 
