@@ -28,5 +28,9 @@ namespace BL
             _validateEmail[1] = txtEmail.Text.Split('@')[1].Split('.')[0];
             _validateEmail[2] = txtEmail.Text.Split('@')[1].Split('.')[1];
         }
+        public void ignoreValidationText(ref Label[] ValidationTexts)
+        {
+            foreach(Label ValidateText in ValidationTexts) { ValidateText.Text = inputErrors.Valid; }
+        }
     }
 }

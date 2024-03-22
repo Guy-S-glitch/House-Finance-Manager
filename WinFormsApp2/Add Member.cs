@@ -24,6 +24,11 @@ namespace House_Finance_management
         { 
             return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
         }
+        private Label[] _GetValidationTexts()
+        {
+            return new Label[] { FirstNameValidationText, LastNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText };
+        }
+
 
         private static string[] _validateEmail = new string[3];  //used to store 3 parts of an email: prefix,domain before the dot and the domain after the dot
 
@@ -40,9 +45,13 @@ namespace House_Finance_management
         {
             InitializeComponent();
             GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
+            
             NumericUpDown[] UpdateExpense =_GetExpenses(); 
             GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary, //we recieved meember data to show to the user
-            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox,ref UpdateExpense, ref clbExpenses); 
+            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox,ref UpdateExpense, ref clbExpenses);
+            
+            Label[] ignoreInitialValidations = _GetValidationTexts();  
+            GetBL_AddMember.ignoreValidationText(ref ignoreInitialValidations);  //since the data is from exist member there is no need to show the validation text at the start
             _houseNumber = houseNum;
         }
 
