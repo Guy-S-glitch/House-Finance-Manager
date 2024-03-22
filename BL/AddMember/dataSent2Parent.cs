@@ -5,17 +5,33 @@ namespace BL
 {
     public partial class BL_AddMember
     {
+        public bool validateAllData(Label FirstName, Label LastName, Label MiddleName, Label Job, Label Phone, Label Email, Label City) 
+        {  //validate all the recieve data before creating a member from it
+            return _validateEmail(Email.Text)
+                && _validateName(FirstName.Text + LastName.Text + MiddleName.Text)
+                && _validateJob(Job.Text)
+                && _validatePhone(Phone.Text)
+                && _validateCity(City.Text);
+        }
+        private bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
+        private bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
+        private bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
+        private bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
+        private bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
+
+        //after the data was validated we can create a member
         public MemberInformation createMember(TextBox txtFName, TextBox txtLName, TextBox txtMName, RadioButton radMale,
             DateTimePicker dtpAge, NumericUpDown numMonthlySalary, NumericUpDown numExperience, ComboBox cmbJob, NumericUpDown[] expenses,
             TextBox txtPhone, TextBox txtEmail, ComboBox cmbCity, IconPictureBox iconPictureBox,string picturePath, string _houseNumber)
-        {
+        {  //recieve all the needed data to create member
+
             string firstName = txtFName.Text;
             string lastName = txtLName.Text;
             string middleName = txtMName.Text;
 
             string fullName = $"{firstName} {lastName} {middleName}";
 
-            return new MemberInformation()
+            return new MemberInformation()  //filling every data in his relative spot
             {
                 IsMale = radMale.Checked,
                 Age = dtpAge.Value,
@@ -32,18 +48,6 @@ namespace BL
                 HouseNumber = _houseNumber
             };
         }
-        public bool validateAllData(Label FirstName, Label LastName, Label MiddleName, Label Job, Label Phone, Label Email, Label City)
-        {
-            return _validateEmail(Email.Text)
-                && _validateName(FirstName.Text + LastName.Text + MiddleName.Text)
-                && _validateJob(Job.Text)
-                && _validatePhone(Phone.Text)
-                && _validateCity(City.Text);
-        }
-        private bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
-        private bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
-        private bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
-        private bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
-        private bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
+        
     }
 }

@@ -12,7 +12,7 @@ namespace BL
         public BL_Main() { }
         public void requestConnection(ref SqlConnection initialConnection, ref SqlCommand Select,string _connectionString)
         {
-            dataLogic.GetTableValues(ref initialConnection, ref Select,_connectionString);
+            dataLogic.GetTableValues(ref initialConnection, ref Select,_connectionString);  
         }
         public void requestCurrentReadVariables(SqlDataReader reader, ref int _currentSQLHouse, ref int _afterSQLHouse)
         {
@@ -22,26 +22,26 @@ namespace BL
 
         public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember, ref TableLayoutPanel tableLayoutPanel1, string _lastHouseNumber, ref Hashtable _neighberhood)
         {
-            IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;
+            IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;  //find the button with the name of the current house checked 
             SqlBut.Text = _lastHouseNumber + "\n";
             short _memberID = 1;
-            foreach (InfoToHouse writeNames in SqlHousesMember)
+            foreach (InfoToHouse writeNames in SqlHousesMember)  //add the members one by one to the house button 
             {
                 SqlBut.Text +=_memberID.ToString()+". "+ writeNames.GetName() + "\n";
                 _memberID++;
             }
 
-            AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember, ref _neighberhood);
+            AddHouse2Hashtable(_lastHouseNumber, SqlHousesMember, ref _neighberhood);  //update the house on the hashtable
 
             SqlHousesMember = new List<InfoToHouse>();
         }
         public void AddHouse2Hashtable(string chosenHouse, List<InfoToHouse> addMembers, ref Hashtable _neighberhood)
         {
-            try { _neighberhood[chosenHouse] = addMembers; }
-            catch { _neighberhood.Add(chosenHouse, addMembers); }
+            try { _neighberhood[chosenHouse] = addMembers; }  //if the house of the list is exist update the list
+            catch { _neighberhood.Add(chosenHouse, addMembers); }  //if it doesn't add the list to the hashtable
         }
 
-        public void ConvertSql2Class(ref List<InfoToHouse> SqlHousesMember, SqlDataReader reader)
+        public void ConvertSql2Class(ref List<InfoToHouse> SqlHousesMember, SqlDataReader reader)  //once we have the data from the sql we can convert it to our use which is the InfoToHouse class 
         {
             NumericUpDown[] SqlNumeric = new NumericUpDown[7];
 

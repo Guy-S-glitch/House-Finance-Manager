@@ -8,7 +8,7 @@ namespace BL
         private static readonly string _removeString = "...";
         private static bool _removeRead;  //save the value of _remove instead of sending it every time
         private static InfoToHouse _selectedMemberRead;  //save the value of _selectedMember instead of sending it every time
-        private static readonly string[] _expenseNames = new string[]
+        private static readonly string[] _expenseNames = new string[]  
         {
             "Transportation",
             "Clothes",
@@ -23,9 +23,9 @@ namespace BL
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary
             , ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
         {
-            Button CheckIfCalled = sender as Button;
+            Button CheckIfCalled = sender as Button; 
 
-            _remove = CheckIfCalled.Name == btnmemberRemove.Name;
+            _remove = CheckIfCalled.Name == btnmemberRemove.Name;  //check if called by the remove member button
             _removeRead = _remove;
 
             if (lstMembersList.SelectedIndex != -1)
@@ -41,7 +41,10 @@ namespace BL
             }
             else MessageBox.Show(_unselected);
         }
-        public void SetPersonalInfo(ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender)
+
+        //the setting format is similar: data is (the remove value) if the remove member clicked, else the data is the selected member's data
+        
+        private void SetPersonalInfo(ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender)
         {
             if (_removeRead || _selectedMemberRead.GetPicture() is null) { nonPicture(ref iconPictureBox); }
             else iconPictureBox.Image= _selectedMemberRead.GetPicture();
@@ -51,14 +54,14 @@ namespace BL
             lblUserGender.Text = _removeRead ? _removeString : _selectedMemberRead.GetIsMale() ? "Male" : "Female";
         }
 
-        public void SetJobInfo(ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary)
+        private void SetJobInfo(ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary)
         {
             txtJobTitle.Text = _removeRead ? _removeString : _selectedMemberRead.GetJob();
             txtExperience.Text = _removeRead ? _removeString : _selectedMemberRead.GetExperience().ToString();
             txtMonthlySalary.Text = _removeRead ? _removeString : _selectedMemberRead.GetMonthlySalary().ToString();
         }
 
-        public void SetExpenses(ref TableLayoutPanel tableLayoutPanel3)
+        private void SetExpenses(ref TableLayoutPanel tableLayoutPanel3)
         {
             short _hundred = 0;
             foreach (NumericUpDown addTo100 in _selectedMemberRead.GetExpenses()) _hundred += (short)addTo100.Value;  //take the sum of the total expenses to make it the 100% and give each value it's percent from the 100%
@@ -75,14 +78,14 @@ namespace BL
             }
         }
 
-        public void SetContacts(ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
+        private void SetContacts(ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
         {
             txtPhone.Text = _removeRead ? _removeString : _selectedMemberRead.GetPhone();
             txtEmail.Text = _removeRead ? _removeString : _selectedMemberRead.GetEmail();
             txtCity.Text = _removeRead ? _removeString : _selectedMemberRead.GetCity();
         }
 
-        public void RemoveMember(ref IconPictureBox iconPictureBox, ref List<InfoToHouse> members, ref ListBox lstMembersList)
+        private void RemoveMember(ref IconPictureBox iconPictureBox, ref List<InfoToHouse> members, ref ListBox lstMembersList)
         {
             nonPicture(ref iconPictureBox);
             members.RemoveAt(lstMembersList.SelectedIndex);

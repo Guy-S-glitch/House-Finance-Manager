@@ -7,7 +7,7 @@ namespace BL
     public partial class BL_Main
     {
         public IconButton ClonePropeties(IconButton Source, int _column, int _row, int _houseNumber, ref TableLayoutPanel tableLayoutPanel1)
-        {
+        {   //all of the house buttons will have the same propeties but different names and text
             IconButton Target = new IconButton()
             {
                 Dock = Source.Dock,
@@ -39,11 +39,11 @@ namespace BL
         }
 
         public void GetData2House(ref IconButton _clickedHouse, ref Hashtable _neighberhood, List<InfoToHouse> houseMembers)
-        {
+        {  //retrieve the data from the House form to the Main form
             List<InfoToHouse> _showHouseMembers = new List<InfoToHouse>();
             int _id = 1;
             _clickedHouse.Text = _clickedHouse.Name + "\n";
-            foreach (InfoToHouse class_Info in houseMembers)
+            foreach (InfoToHouse class_Info in houseMembers)  
             {
                 _showHouseMembers.Add(class_Info);
                 _clickedHouse.Text += _id.ToString() + "." + class_Info.GetName() + "\n";

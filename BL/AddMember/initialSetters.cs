@@ -5,13 +5,13 @@ namespace BL
 {
     public partial class BL_AddMember
     {
-
-        public void GetEnums(ref ComboBox cmbJob, ref ComboBox cmbCity)
+         
+        public void GetEnums(ref ComboBox cmbJob, ref ComboBox cmbCity)  
         {
             SetJobsNames(ref cmbJob);
             SetCitiesNames(ref cmbCity);
         }
-        public void SetJobsNames(ref ComboBox cmbJob)
+        private void SetJobsNames(ref ComboBox cmbJob)//fill the comboboxes with data from our enums
         {
             foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs)))
             {
@@ -20,7 +20,7 @@ namespace BL
             }
         }
 
-        public void SetCitiesNames(ref ComboBox cmbCity)
+        private void SetCitiesNames(ref ComboBox cmbCity)
         {
             foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities)))
             {
@@ -32,7 +32,7 @@ namespace BL
             , ref NumericUpDown numExperience, ref NumericUpDown numMonthlySalary, ref ComboBox cmbJob
             , ref TextBox txtFName, ref TextBox txtLName, ref TextBox txtMName, ref DateTimePicker dtpAge,
            ref RadioButton radMale, ref RadioButton radFemale, ref IconPictureBox iconPictureBox)
-        {
+        {  //fill the data with the data of the chosen member we want to update
             UpdateContacts(update, ref txtPhone, ref cmbCity, ref txtEmail);
             UpdateJobInfo(update, ref numExperience, ref numMonthlySalary, ref cmbJob);
             UpdatePersonalInfo(update, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);

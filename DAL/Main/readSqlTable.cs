@@ -23,11 +23,11 @@ namespace DAL
             {
                 _afterSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value); //needed to be excecuted only once
             }
-            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);
+            _currentSQLHouse = int.Parse(RegexPatterns.OnlyDigits().Match(reader.GetString(0)).Value);  //store the current house number we reading
         }
 
         public MemberInformation GetMemberInformation(SqlDataReader reader, NumericUpDown[] SqlNumeric)
-        {
+        {  //convert the data we recieved from the sql to our class
             return new MemberInformation()
             {
                 IsMale = reader.GetString(3) == "Male",
@@ -54,8 +54,8 @@ namespace DAL
 
         public void LastReadVariables(SqlDataReader reader, ref int _afterSQLHouse, ref string _lastHouseNumber, int _currentSQLHouse)
         {
-            _afterSQLHouse = _currentSQLHouse;
-            _lastHouseNumber = reader.GetString(0);
+            _afterSQLHouse = _currentSQLHouse;  //store the house number of the last read
+            _lastHouseNumber = reader.GetString(0);  //store the house name of the last read
         }
     }
 }

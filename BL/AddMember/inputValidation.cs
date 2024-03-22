@@ -10,8 +10,8 @@ namespace BL
         {
             string input = txtFName.Text;
 
-            if (string.IsNullOrWhiteSpace(input)) { return _inputErrors.NotNullable; } 
-            if (input.Length >= txtFName.MaxLength) { return _inputErrors.ExceedCharacters; } 
+            if (string.IsNullOrWhiteSpace(input)) { return _inputErrors.NotNullable; }  
+            if (input.Length >= txtFName.MaxLength) { return _inputErrors.ExceedCharacters; }   
             if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input))) { return _inputErrors.LettersOnly; }
 
             return _inputErrors.Valid;
