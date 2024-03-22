@@ -37,5 +37,7 @@ namespace Common
 
         [GeneratedRegex("(^\\W|\\W$)|(-\\W|\\W-)")]
         public static partial Regex ValidEmailDomain();
+        [GeneratedRegex("(^[a-zA-Z]+(( [a-zA-Z]+)?)+)$")]
+        public static partial Regex MiddleNameWithSpaces();
     }
 }

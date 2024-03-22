@@ -33,7 +33,7 @@ namespace BL
 
             if (string.IsNullOrEmpty(input)) { return _inputErrors.Valid; }
             if (input.Length >= txtMName.MaxLength) { return _inputErrors.ExceedCharacters; }
-            if (!(RegexPatterns.OnlyAlphabeticCharacters().IsMatch(input))) { return _inputErrors.LettersOnly; }
+            if (!(RegexPatterns.MiddleNameWithSpaces().IsMatch(input))) { return _inputErrors.NotNameWithSpace; }
             return _inputErrors.Valid;
         }
         public string ValidatePhoneNumber(TextBox txtPhone)

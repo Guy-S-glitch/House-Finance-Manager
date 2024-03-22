@@ -54,7 +54,7 @@ namespace BL
         {
             txtFName.Text = update.GetName().Split(' ')[0];
             txtLName.Text = update.GetName().Split(' ')[1];
-            txtMName.Text = update.GetName().Split(' ')[2];
+            txtMName.Text = update.GetName().Split(txtLName.Text)[1];
             dtpAge.Value = update.GetDate();
             radMale.Checked = update.GetIsMale();
             radFemale.Checked = !radMale.Checked;
