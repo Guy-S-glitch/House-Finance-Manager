@@ -84,6 +84,8 @@
             label4 = new Label();
             label3 = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
+            splitContainer2 = new SplitContainer();
+            close = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -93,12 +95,15 @@
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Location = new Point(0, 49);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -118,7 +123,7 @@
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            splitContainer1.Size = new Size(1271, 862);
+            splitContainer1.Size = new Size(1271, 813);
             splitContainer1.SplitterDistance = 488;
             splitContainer1.TabIndex = 0;
             // 
@@ -130,13 +135,13 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 57);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(488, 669);
+            lstMembersList.Size = new Size(488, 620);
             lstMembersList.TabIndex = 3;
             // 
             // btnUpdateMember
             // 
             btnUpdateMember.Dock = DockStyle.Bottom;
-            btnUpdateMember.Location = new Point(0, 726);
+            btnUpdateMember.Location = new Point(0, 677);
             btnUpdateMember.Name = "btnUpdateMember";
             btnUpdateMember.Size = new Size(488, 34);
             btnUpdateMember.TabIndex = 4;
@@ -147,7 +152,7 @@
             // btnInspectMember
             // 
             btnInspectMember.Dock = DockStyle.Bottom;
-            btnInspectMember.Location = new Point(0, 760);
+            btnInspectMember.Location = new Point(0, 711);
             btnInspectMember.Name = "btnInspectMember";
             btnInspectMember.Size = new Size(488, 34);
             btnInspectMember.TabIndex = 3;
@@ -158,7 +163,7 @@
             // btnmemberRemove
             // 
             btnmemberRemove.Dock = DockStyle.Bottom;
-            btnmemberRemove.Location = new Point(0, 794);
+            btnmemberRemove.Location = new Point(0, 745);
             btnmemberRemove.Name = "btnmemberRemove";
             btnmemberRemove.Size = new Size(488, 34);
             btnmemberRemove.TabIndex = 0;
@@ -169,7 +174,7 @@
             // btnmemberAdd
             // 
             btnmemberAdd.Dock = DockStyle.Bottom;
-            btnmemberAdd.Location = new Point(0, 828);
+            btnmemberAdd.Location = new Point(0, 779);
             btnmemberAdd.Name = "btnmemberAdd";
             btnmemberAdd.Size = new Size(488, 34);
             btnmemberAdd.TabIndex = 2;
@@ -242,7 +247,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(779, 557);
+            tableLayoutPanel3.Size = new Size(779, 508);
             tableLayoutPanel3.TabIndex = 14;
             // 
             // label17
@@ -732,13 +737,43 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
+            // splitContainer2
+            // 
+            splitContainer2.BackColor = SystemColors.MenuHighlight;
+            splitContainer2.Dock = DockStyle.Top;
+            splitContainer2.FixedPanel = FixedPanel.Panel2;
+            splitContainer2.Location = new Point(0, 0);
+            splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel2
+            // 
+            splitContainer2.Panel2.Controls.Add(close);
+            splitContainer2.Size = new Size(1271, 49);
+            splitContainer2.SplitterDistance = 1174;
+            splitContainer2.TabIndex = 1;
+            // 
+            // close
+            // 
+            close.BackColor = Color.IndianRed;
+            close.Dock = DockStyle.Fill;
+            close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            close.IconColor = Color.WhiteSmoke;
+            close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            close.Location = new Point(0, 0);
+            close.Name = "close";
+            close.Size = new Size(93, 49);
+            close.TabIndex = 0;
+            close.UseVisualStyleBackColor = false;
+            close.Click += close_Click;
+            // 
             // InHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1271, 862);
             Controls.Add(splitContainer1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Controls.Add(splitContainer2);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "InHouse";
@@ -757,6 +792,9 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).EndInit();
+            splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -817,5 +855,7 @@
         private Label txtPhone;
         private Label txtEmail;
         private Button btnUpdateMember;
+        private SplitContainer splitContainer2;
+        private FontAwesome.Sharp.IconButton close;
     }
 }

@@ -22,22 +22,22 @@ namespace WinFormsApp2
     /// </summary>
     public partial class Main : Form
     {
-         
+
         private BL_Main GetBL_Main = new BL_Main();  //get access to the buisness layer
-        private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString; 
+        private string _connectionString = ConfigurationManager.ConnectionStrings["MyServer"].ConnectionString;
         private SqlConnection Connection = new SqlConnection();
         private SqlCommand Select = new SqlCommand();
 
         private Hashtable? _neighberhood = new Hashtable();  //format: (string,List<InfoToHouse>). in our case, the string will be the name of the house and the list will contain members we can use by calling the name of the house  
         private IconButton _clickedHouse;  //adapt the values of the clicked house
-       
+
         private static int _row = 0, _column = 1; //keep track of where to place the buttons. if it's should start at different values, the program will loop until we get to the currect value
         private static int _addHouseNumber = 2;  //keep track of the number of the house that will be added. if it's should start at different values, the program will loop until we get to the currect value
 
         private int _addButtonsFromSQL = 1;  //at the start we only have 1 button "house1" and if there should be more the program will loop and add house button until we'll the currect amount of house buttons.
         private int _currentSQLHouseNumber = -1, _LastSQLHouseNumber;  //we have 2 parameters for the house number, _current will take the current house number and _last will take the last house we read. having difference values meaning we changed house.
-        //we cant read the last read of the first read, thus we'll use fixed value that will be used only for the first read and make the two equal
-      
+                                                                       //we cant read the last read of the first read, thus we'll use fixed value that will be used only for the first read and make the two equal
+
         private string _lastHouseNumber = "House1";  //keeps track with the name of the last house we read. every button's name has the same format:("House"+number), so we'll use it to find the button we want.
         //if the first read isn't on House1 we can relay on _addButtonsFromSQL that will check which house we are reading 
 
@@ -84,7 +84,7 @@ namespace WinFormsApp2
             IconButton AddedHouse = GetBL_Main.ClonePropeties(House1, _column, _row, _addHouseNumber, ref tableLayoutPanel1);  //giving the added house the same properties of the first house
             AddedHouse.Click += House1_Click;  //giving the added house the ability to call the House form like the first house
             GetBL_Main.ValuesForNextReplace(ref _column, ref _row, ref _addHouseNumber);// moving the add house button
-        } 
+        }
 
         private void InHouse_returnDataToHouse(List<InfoToHouse> houseMembers)  //after user closes the House Form, we'll inherit the data from the child to the parent. 
         {
@@ -100,9 +100,15 @@ namespace WinFormsApp2
                 GetBL_Main.requestUploadLatestValues(Connection, _neighberhood);  //add updated version of the data
                 Connection.Close();
             }
-            catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); }
+            catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); } 
         }
-         
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            close.Enabled = false;
+            this.Close();
+        }
+
         // the code below isn't relevant to the project but to the diagram 
         public InHouse inHouse { get => default; set { } }
         public ReturnDataToHouse ReturnDataToHouse { get => default; set { } }

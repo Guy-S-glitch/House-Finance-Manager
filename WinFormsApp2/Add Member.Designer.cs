@@ -650,6 +650,7 @@
             iconPictureBox.Location = new Point(3, 27);
             iconPictureBox.Name = "iconPictureBox";
             iconPictureBox.Size = new Size(257, 240);
+            iconPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBox.TabIndex = 26;
             iconPictureBox.TabStop = false;
             iconPictureBox.Click += iconPictureBox1_Click;

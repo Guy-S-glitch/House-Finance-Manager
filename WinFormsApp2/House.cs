@@ -35,7 +35,7 @@ namespace House_Finance_management
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
         {
             this.returnDataToHouse(members);  //send data to parent
-        } 
+        }
 
         private void btnmemberAdd_Click(object sender, EventArgs e)  //called by clicking the add member button
         {
@@ -43,7 +43,7 @@ namespace House_Finance_management
             addMember.DataSent += AddMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
             addMember.ShowDialog();
         }
-         
+
         public void AddMember_DataSent(InfoToHouse addMember)  //after clicking the add member button data from child will be sent to this function
         {
             GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members);  //after geting the data about the added member, add him to a list and when the user close this form, the list will be sent to the main form
@@ -74,8 +74,14 @@ namespace House_Finance_management
                 ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                 ref txtPhone, ref txtEmail, ref txtCity  //contact info
 
-                );  
-        } 
+                );
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            close.Enabled = false;
+            this.Close();
+        }
 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
