@@ -19,6 +19,7 @@ namespace House_Finance_management
         public event DataSentHandler DataSent;
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
         private readonly errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
+        
         private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
         { 
             return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; 
@@ -39,8 +40,9 @@ namespace House_Finance_management
         {
             InitializeComponent();
             GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
+            NumericUpDown[] UpdateExpense =_GetExpenses(); 
             GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary, //we recieved meember data to show to the user
-            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox); 
+            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox,ref UpdateExpense, ref clbExpenses); 
             _houseNumber = houseNum;
         }
 
