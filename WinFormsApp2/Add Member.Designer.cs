@@ -441,7 +441,9 @@
             // numRestaurant
             // 
             numRestaurant.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numRestaurant.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numRestaurant.Location = new Point(0, 174);
+            numRestaurant.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRestaurant.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRestaurant.Name = "numRestaurant";
             numRestaurant.Size = new Size(136, 23);
@@ -452,7 +454,9 @@
             // numRent
             // 
             numRent.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numRent.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numRent.Location = new Point(0, 145);
+            numRent.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRent.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRent.Name = "numRent";
             numRent.Size = new Size(136, 23);
@@ -463,7 +467,9 @@
             // numMarket
             // 
             numMarket.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numMarket.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numMarket.Location = new Point(0, 87);
+            numMarket.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numMarket.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numMarket.Name = "numMarket";
             numMarket.Size = new Size(136, 23);
@@ -474,7 +480,9 @@
             // numUtilities
             // 
             numUtilities.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numUtilities.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numUtilities.Location = new Point(0, 116);
+            numUtilities.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numUtilities.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numUtilities.Name = "numUtilities";
             numUtilities.Size = new Size(136, 23);
@@ -485,7 +493,9 @@
             // numTransport
             // 
             numTransport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numTransport.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numTransport.Location = new Point(0, 0);
+            numTransport.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numTransport.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numTransport.Name = "numTransport";
             numTransport.Size = new Size(136, 23);
@@ -496,7 +506,9 @@
             // numSport
             // 
             numSport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numSport.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numSport.Location = new Point(0, 59);
+            numSport.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numSport.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numSport.Name = "numSport";
             numSport.Size = new Size(136, 23);
@@ -507,7 +519,9 @@
             // numClothes
             // 
             numClothes.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            numClothes.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numClothes.Location = new Point(0, 29);
+            numClothes.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numClothes.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numClothes.Name = "numClothes";
             numClothes.Size = new Size(136, 23);
