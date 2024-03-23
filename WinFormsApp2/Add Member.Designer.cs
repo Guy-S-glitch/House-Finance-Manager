@@ -607,6 +607,7 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(246, 89);
+            txtEmail.MaxLength = 50;
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example123@domain.com";
             txtEmail.Size = new Size(466, 31);
