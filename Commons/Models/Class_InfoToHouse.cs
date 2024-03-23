@@ -1,6 +1,7 @@
 ﻿using System.Drawing.Imaging;
+using static Common.Structs.Gender;
 namespace Common
-{
+{ 
     public class InfoToHouse
     {
         public string _houseNumber { get; set; }
@@ -35,8 +36,8 @@ namespace Common
         }
 
         public bool GetIsMale() { return _isMale; }
-
-        public string GetGender() { return _isMale ? "Male" : "Female"; }
+        private Structs.Gender gender = new Structs.Gender();
+        public string GetGender() { return _isMale ? gender.Male : gender.Female; }
 
         public DateTime GetDate() { return _age; }
 

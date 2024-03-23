@@ -13,7 +13,7 @@ namespace BL
         }
         private void SetJobsNames(ref ComboBox cmbJob)//fill the comboboxes with data from our enums
         {
-            foreach (var job in Enum.GetValues(typeof(ComboBoxLIsts.Jobs)))
+            foreach (var job in Enum.GetValues(typeof(Enums.Jobs)))
             {
                 cmbJob.Items.Add(job.ToString().Replace("_", " "));
                 cmbJob.SelectedIndex = 0;
@@ -22,7 +22,7 @@ namespace BL
 
         private void SetCitiesNames(ref ComboBox cmbCity)
         {
-            foreach (var city in Enum.GetValues(typeof(ComboBoxLIsts.Cities)))
+            foreach (var city in Enum.GetValues(typeof(Enums.Cities)))
             {
                 cmbCity.Items.Add(city.ToString().Replace("_", " "));
                 cmbCity.SelectedIndex = 0;

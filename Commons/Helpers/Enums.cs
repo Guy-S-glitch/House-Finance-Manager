@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    public class ComboBoxLIsts
+    public class Enums
     {
         public enum Jobs
         {
@@ -97,6 +97,6 @@
             Tel_Aviv = 48,
             Haifa = 49,
             Herzliya = 50
-        }
+        } 
     }
 }

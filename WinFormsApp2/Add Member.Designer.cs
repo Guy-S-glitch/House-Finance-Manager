@@ -165,7 +165,7 @@
             radFemale.Name = "radFemale";
             radFemale.Size = new Size(126, 28);
             radFemale.TabIndex = 15;
-            radFemale.Text = "Not Male";
+            radFemale.Text = "Female";
             radFemale.UseVisualStyleBackColor = true;
             // 
             // label7

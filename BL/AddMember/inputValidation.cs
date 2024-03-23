@@ -4,7 +4,7 @@ namespace BL
 {
     public partial class BL_AddMember
     {
-        private readonly errorMessages.InputErrors _inputErrors = new errorMessages.InputErrors();
+        private readonly Structs.InputErrors _inputErrors = new Structs.InputErrors();
  
         public string ValidateFirstName(TextBox txtFName)
         {

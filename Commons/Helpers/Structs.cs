@@ -1,9 +1,10 @@
 ﻿namespace Common
 {
-    public class errorMessages
+    public class Structs
     {
         public readonly struct InputErrors
         {
+            public InputErrors() { }
             public readonly string PhoneStart { get; } = "Must start with 05";
             public readonly string PhoneMaxNumbers { get; } = "Only 10 numbers";
             public readonly string PhoneInvalidFormat { get; } = "Correct your dashes placement";
@@ -18,8 +19,13 @@
             public readonly string NotNullable { get; } = "Can't be empty";
             public readonly string Valid { get; } = string.Empty;
             public readonly string NotNameWithSpace { get; } = "Middle name allow letters only with optional one space";
+        }
 
-            public InputErrors() { }
+        public readonly struct Gender
+        {
+            public Gender() { }
+            public readonly string Male { get; } = "Male";
+            public readonly string Female { get; } = "Female";
         }
     }
 }

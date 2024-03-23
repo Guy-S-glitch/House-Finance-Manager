@@ -4,7 +4,7 @@ namespace BL
 {
     public partial class BL_AddMember
     { 
-        private errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
+        private Structs.InputErrors inputErrors = new Structs.InputErrors();
         private readonly static string _imageFileAccept = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
         public void selectPhoto(ref IconPictureBox iconPictureBox,ref string picturePath)  //opens user's files so he could choose a photo
         {

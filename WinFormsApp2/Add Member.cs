@@ -18,7 +18,7 @@ namespace House_Finance_management
     { 
         public event DataSentHandler DataSent;
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
-        private readonly errorMessages.InputErrors inputErrors = new errorMessages.InputErrors();
+        private readonly Structs.InputErrors inputErrors = new Structs.InputErrors();
         
         private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
         { 
