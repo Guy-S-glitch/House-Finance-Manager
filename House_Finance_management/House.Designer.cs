@@ -459,7 +459,7 @@
             pcTransportation.AutoSize = true;
             pcTransportation.BackColor = Color.Transparent;
             pcTransportation.Dock = DockStyle.Fill;
-            pcTransportation.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pcTransportation.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcTransportation.ForeColor = Color.White;
             pcTransportation.ImageAlign = ContentAlignment.TopLeft;
             pcTransportation.Location = new Point(235, 42);
@@ -475,7 +475,7 @@
             pcClothes.BackColor = Color.Transparent;
             pcClothes.Dock = DockStyle.Fill;
             pcClothes.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pcClothes.ForeColor = Color.White;
+            pcClothes.ForeColor = Color.WhiteSmoke;
             pcClothes.Location = new Point(235, 82);
             pcClothes.Name = "pcClothes";
             pcClothes.Size = new Size(33, 40);
