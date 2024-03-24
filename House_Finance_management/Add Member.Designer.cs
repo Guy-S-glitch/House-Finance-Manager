@@ -120,6 +120,7 @@
             // 
             // numMonthlySalary
             // 
+            numMonthlySalary.Cursor = Cursors.IBeam;
             numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numMonthlySalary.Location = new Point(643, 85);
             numMonthlySalary.Maximum = new decimal(new int[] { 200000, 0, 0, 0 });
@@ -129,6 +130,7 @@
             // 
             // numExperience
             // 
+            numExperience.Cursor = Cursors.IBeam;
             numExperience.Location = new Point(246, 90);
             numExperience.Name = "numExperience";
             numExperience.Size = new Size(75, 31);
@@ -163,7 +165,7 @@
             radFemale.Location = new Point(4, 38);
             radFemale.Margin = new Padding(4, 3, 4, 3);
             radFemale.Name = "radFemale";
-            radFemale.Size = new Size(126, 28);
+            radFemale.Size = new Size(107, 28);
             radFemale.TabIndex = 15;
             radFemale.Text = "Female";
             radFemale.UseVisualStyleBackColor = true;
@@ -287,6 +289,7 @@
             // 
             // txtMName
             // 
+            txtMName.Cursor = Cursors.IBeam;
             txtMName.Location = new Point(246, 168);
             txtMName.Margin = new Padding(4, 3, 4, 3);
             txtMName.MaxLength = 15;
@@ -308,6 +311,7 @@
             // 
             // txtLName
             // 
+            txtLName.Cursor = Cursors.IBeam;
             txtLName.Location = new Point(175, 108);
             txtLName.Margin = new Padding(4, 3, 4, 3);
             txtLName.MaxLength = 15;
@@ -328,6 +332,7 @@
             // 
             // txtFName
             // 
+            txtFName.Cursor = Cursors.IBeam;
             txtFName.Location = new Point(175, 57);
             txtFName.Margin = new Padding(4, 3, 4, 3);
             txtFName.MaxLength = 15;
@@ -440,6 +445,7 @@
             // 
             // numRestaurant
             // 
+            numRestaurant.Cursor = Cursors.IBeam;
             numRestaurant.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numRestaurant.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numRestaurant.Location = new Point(0, 174);
@@ -453,6 +459,7 @@
             // 
             // numRent
             // 
+            numRent.Cursor = Cursors.IBeam;
             numRent.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numRent.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numRent.Location = new Point(0, 145);
@@ -466,6 +473,7 @@
             // 
             // numMarket
             // 
+            numMarket.Cursor = Cursors.IBeam;
             numMarket.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numMarket.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numMarket.Location = new Point(0, 87);
@@ -479,6 +487,7 @@
             // 
             // numUtilities
             // 
+            numUtilities.Cursor = Cursors.IBeam;
             numUtilities.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numUtilities.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numUtilities.Location = new Point(0, 116);
@@ -492,6 +501,7 @@
             // 
             // numTransport
             // 
+            numTransport.Cursor = Cursors.IBeam;
             numTransport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numTransport.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numTransport.Location = new Point(0, 0);
@@ -505,6 +515,7 @@
             // 
             // numSport
             // 
+            numSport.Cursor = Cursors.IBeam;
             numSport.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numSport.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numSport.Location = new Point(0, 59);
@@ -518,6 +529,7 @@
             // 
             // numClothes
             // 
+            numClothes.Cursor = Cursors.IBeam;
             numClothes.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             numClothes.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numClothes.Location = new Point(0, 29);
@@ -606,6 +618,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.Cursor = Cursors.IBeam;
             txtEmail.Location = new Point(246, 89);
             txtEmail.MaxLength = 50;
             txtEmail.Name = "txtEmail";
@@ -616,6 +629,7 @@
             // 
             // txtPhone
             // 
+            txtPhone.Cursor = Cursors.IBeam;
             txtPhone.Location = new Point(143, 37);
             txtPhone.MaxLength = 12;
             txtPhone.Name = "txtPhone";

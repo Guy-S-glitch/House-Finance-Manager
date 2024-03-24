@@ -75,6 +75,7 @@
             // 
             // House1
             // 
+            House1.Cursor = Cursors.Hand;
             House1.Dock = DockStyle.Fill;
             House1.Font = new Font("David", 8F, FontStyle.Regular, GraphicsUnit.Point);
             House1.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyUser;
@@ -92,6 +93,7 @@
             // 
             // AddHouse
             // 
+            AddHouse.Cursor = Cursors.Hand;
             AddHouse.Dock = DockStyle.Fill;
             AddHouse.Location = new Point(228, 3);
             AddHouse.Name = "AddHouse";
@@ -123,6 +125,7 @@
             // close
             // 
             close.BackColor = Color.IndianRed;
+            close.Cursor = Cursors.Hand;
             close.Dock = DockStyle.Fill;
             close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             close.IconColor = Color.WhiteSmoke;

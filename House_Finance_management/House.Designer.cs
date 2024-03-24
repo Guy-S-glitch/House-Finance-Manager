@@ -140,6 +140,7 @@
             // 
             // btnUpdateMember
             // 
+            btnUpdateMember.Cursor = Cursors.Hand;
             btnUpdateMember.Dock = DockStyle.Bottom;
             btnUpdateMember.Location = new Point(0, 677);
             btnUpdateMember.Name = "btnUpdateMember";
@@ -151,6 +152,7 @@
             // 
             // btnInspectMember
             // 
+            btnInspectMember.Cursor = Cursors.Hand;
             btnInspectMember.Dock = DockStyle.Bottom;
             btnInspectMember.Location = new Point(0, 711);
             btnInspectMember.Name = "btnInspectMember";
@@ -162,6 +164,7 @@
             // 
             // btnmemberRemove
             // 
+            btnmemberRemove.Cursor = Cursors.Hand;
             btnmemberRemove.Dock = DockStyle.Bottom;
             btnmemberRemove.Location = new Point(0, 745);
             btnmemberRemove.Name = "btnmemberRemove";
@@ -173,6 +176,7 @@
             // 
             // btnmemberAdd
             // 
+            btnmemberAdd.Cursor = Cursors.Hand;
             btnmemberAdd.Dock = DockStyle.Bottom;
             btnmemberAdd.Location = new Point(0, 779);
             btnmemberAdd.Name = "btnmemberAdd";
@@ -755,6 +759,7 @@
             // close
             // 
             close.BackColor = Color.IndianRed;
+            close.Cursor = Cursors.Hand;
             close.Dock = DockStyle.Fill;
             close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             close.IconColor = Color.WhiteSmoke;

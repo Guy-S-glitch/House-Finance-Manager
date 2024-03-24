@@ -21,6 +21,7 @@ namespace BL
                 TabIndex = Source.TabIndex + 1,
                 Text =$"house{_houseNumber}",
                 TextAlign = Source.TextAlign,
+                Cursor = Cursors.Hand,
                 UseVisualStyleBackColor = true
             }; 
         tableLayoutPanel1.Controls.Add(Target, _column, _row);
