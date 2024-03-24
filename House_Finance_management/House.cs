@@ -27,34 +27,11 @@ namespace House_Finance_management
         private static bool _remove;  //if true meaning the remove member was clicked 
 
         private static InfoToHouse _selectedMember;
-
-        // Method to create rounded corners for a control
-        public static GraphicsPath CreateRoundRect(int x, int y, int width, int height, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(x, y, radius * 2, radius * 2, 180, 90);
-            path.AddLine(x + radius, y, x + width - radius * 2, y);
-            path.AddArc(x + width - radius * 2, y, radius * 2, radius * 2, 270, 90);
-            path.AddLine(x + width, y + radius, x + width, y + height - radius * 2);
-            path.AddArc(x + width - radius * 2, y + height - radius * 2, radius * 2, radius * 2, 0, 90);
-            path.AddLine(x + width - radius * 2, y + height, x + radius, y + height);
-            path.AddArc(x, y + height - radius * 2, radius * 2, radius * 2, 90, 90);
-            path.CloseFigure();
-            return path;
-        }
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)  //if there is already exist members in that house, add them. otherwise it'll start normally
         {
-            InitializeComponent(); 
-            // Set rounded corners for progress bars
-            pbTransportation.Region = new Region(CreateRoundRect(0, 0, pbTransportation.Width, pbTransportation.Height, 20));
-            pbClothes.Region = new Region(CreateRoundRect(0, 0, pbClothes.Width, pbClothes.Height, 20));
-            pbSports.Region = new Region(CreateRoundRect(0, 0, pbSports.Width, pbSports.Height, 20));
-            pbMarkets.Region = new Region(CreateRoundRect(0, 0, pbMarkets.Width, pbMarkets.Height, 20));
-            pbUtilities.Region = new Region(CreateRoundRect(0, 0, pbUtilities.Width, pbUtilities.Height, 20));
-            pbRent.Region = new Region(CreateRoundRect(0, 0, pbRent.Width, pbRent.Height, 20));
-            pbRestaurants.Region = new Region(CreateRoundRect(0, 0, pbRestaurants.Width, pbRestaurants.Height, 20));
- 
+            InitializeComponent();
+            ProgressBar[] progressBars = { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
+            GetBL_House.roundProgressBars(ref progressBars);
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
         }
 
