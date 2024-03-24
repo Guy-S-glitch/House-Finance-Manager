@@ -199,6 +199,10 @@
             // 
             // tableLayoutPanel3
             // 
+            tableLayoutPanel3.BackColor = Color.FromArgb(240, 240, 240);
+            tableLayoutPanel3.BackgroundImage = Properties.Resources.sunset;
+            tableLayoutPanel3.BackgroundImageLayout = ImageLayout.Stretch;
+            tableLayoutPanel3.BorderStyle = BorderStyle.FixedSingle;
             tableLayoutPanel3.ColumnCount = 7;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
@@ -222,7 +226,6 @@
             tableLayoutPanel3.Controls.Add(pbUtilities, 2, 5);
             tableLayoutPanel3.Controls.Add(pbRent, 2, 6);
             tableLayoutPanel3.Controls.Add(pbRestaurants, 2, 7);
-            tableLayoutPanel3.Controls.Add(pcTransportation, 1, 1);
             tableLayoutPanel3.Controls.Add(pcClothes, 1, 2);
             tableLayoutPanel3.Controls.Add(pcSports, 1, 3);
             tableLayoutPanel3.Controls.Add(pcMarkets, 1, 4);
@@ -236,6 +239,7 @@
             tableLayoutPanel3.Controls.Add(txtEmail, 6, 2);
             tableLayoutPanel3.Controls.Add(label18, 4, 3);
             tableLayoutPanel3.Controls.Add(txtCity, 6, 3);
+            tableLayoutPanel3.Controls.Add(pcTransportation, 1, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tableLayoutPanel3.Location = new Point(0, 305);
@@ -257,144 +261,195 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(3, 290);
+            label17.BackColor = Color.Transparent;
+            label17.Dock = DockStyle.Fill;
+            label17.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(3, 282);
             label17.Name = "label17";
-            label17.Size = new Size(123, 24);
+            label17.Size = new Size(226, 40);
             label17.TabIndex = 21;
             label17.Text = "Restaurants";
+            label17.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(3, 250);
+            label16.BackColor = Color.Transparent;
+            label16.Dock = DockStyle.Fill;
+            label16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(3, 242);
             label16.Name = "label16";
-            label16.Size = new Size(162, 24);
+            label16.Size = new Size(226, 40);
             label16.TabIndex = 20;
             label16.Text = "Rent Per Month";
+            label16.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
-            label10.BackColor = Color.FromArgb(152, 179, 207);
+            label10.BackColor = Color.Transparent;
             tableLayoutPanel3.SetColumnSpan(label10, 3);
             label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("David", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.Firebrick;
             label10.Location = new Point(3, 0);
             label10.Name = "label10";
-            label10.Size = new Size(411, 42);
+            label10.Size = new Size(414, 42);
             label10.TabIndex = 13;
             label10.Text = "Total expenses";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
             label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Dock = DockStyle.Fill;
+            label11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
             label11.Location = new Point(3, 42);
             label11.Name = "label11";
-            label11.Size = new Size(153, 24);
+            label11.Size = new Size(226, 40);
             label11.TabIndex = 15;
             label11.Text = "Transportation";
+            label11.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
             label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Dock = DockStyle.Fill;
+            label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
             label12.Location = new Point(3, 82);
             label12.Name = "label12";
-            label12.Size = new Size(203, 48);
+            label12.Size = new Size(226, 40);
             label12.TabIndex = 16;
-            label12.Text = "Clothing And Shoes\r\n ";
+            label12.Text = "Clothing And Shoes";
+            label12.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(3, 130);
+            label13.BackColor = Color.Transparent;
+            label13.Dock = DockStyle.Fill;
+            label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(3, 122);
             label13.Name = "label13";
-            label13.Size = new Size(200, 24);
+            label13.Size = new Size(226, 40);
             label13.TabIndex = 17;
             label13.Text = "Sports And Leisure ";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(3, 170);
+            label14.BackColor = Color.Transparent;
+            label14.Dock = DockStyle.Fill;
+            label14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(3, 162);
             label14.Name = "label14";
-            label14.Size = new Size(89, 24);
+            label14.Size = new Size(226, 40);
             label14.TabIndex = 18;
             label14.Text = "Markets";
+            label14.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(3, 210);
+            label15.BackColor = Color.Transparent;
+            label15.Dock = DockStyle.Fill;
+            label15.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(3, 202);
             label15.Name = "label15";
-            label15.Size = new Size(89, 24);
+            label15.Size = new Size(226, 40);
             label15.TabIndex = 19;
             label15.Text = "Utilities";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pbTransportation
             // 
+            pbTransportation.BackColor = Color.FromArgb(255, 192, 128);
             pbTransportation.Dock = DockStyle.Fill;
-            pbTransportation.Location = new Point(247, 45);
+            pbTransportation.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbTransportation.Location = new Point(274, 45);
             pbTransportation.Name = "pbTransportation";
-            pbTransportation.Size = new Size(167, 34);
+            pbTransportation.Size = new Size(143, 34);
             pbTransportation.Step = 1;
             pbTransportation.TabIndex = 14;
             pbTransportation.Value = 100;
             // 
             // pbClothes
             // 
+            pbClothes.BackColor = Color.FromArgb(255, 192, 128);
             pbClothes.Dock = DockStyle.Fill;
-            pbClothes.Location = new Point(247, 85);
+            pbClothes.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbClothes.Location = new Point(274, 85);
             pbClothes.Name = "pbClothes";
-            pbClothes.Size = new Size(167, 42);
+            pbClothes.Size = new Size(143, 34);
             pbClothes.Step = 1;
             pbClothes.TabIndex = 21;
             pbClothes.Value = 100;
             // 
             // pbSports
             // 
+            pbSports.BackColor = Color.FromArgb(255, 192, 128);
             pbSports.Dock = DockStyle.Fill;
-            pbSports.Location = new Point(247, 133);
+            pbSports.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbSports.Location = new Point(274, 125);
             pbSports.Name = "pbSports";
-            pbSports.Size = new Size(167, 34);
+            pbSports.Size = new Size(143, 34);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
             pbSports.Value = 100;
             // 
             // pbMarkets
             // 
+            pbMarkets.BackColor = Color.FromArgb(255, 192, 128);
             pbMarkets.Dock = DockStyle.Fill;
-            pbMarkets.Location = new Point(247, 173);
+            pbMarkets.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbMarkets.Location = new Point(274, 165);
             pbMarkets.Name = "pbMarkets";
-            pbMarkets.Size = new Size(167, 34);
+            pbMarkets.Size = new Size(143, 34);
             pbMarkets.Step = 1;
             pbMarkets.TabIndex = 22;
             pbMarkets.Value = 100;
             // 
             // pbUtilities
             // 
+            pbUtilities.BackColor = Color.FromArgb(255, 192, 128);
             pbUtilities.Dock = DockStyle.Fill;
-            pbUtilities.Location = new Point(247, 213);
+            pbUtilities.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbUtilities.Location = new Point(274, 205);
             pbUtilities.Name = "pbUtilities";
-            pbUtilities.Size = new Size(167, 34);
+            pbUtilities.Size = new Size(143, 34);
             pbUtilities.Step = 1;
             pbUtilities.TabIndex = 23;
             pbUtilities.Value = 100;
             // 
             // pbRent
             // 
+            pbRent.BackColor = Color.FromArgb(255, 192, 128);
             pbRent.Dock = DockStyle.Fill;
-            pbRent.Location = new Point(247, 253);
+            pbRent.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbRent.Location = new Point(274, 245);
             pbRent.Name = "pbRent";
-            pbRent.Size = new Size(167, 34);
+            pbRent.Size = new Size(143, 34);
             pbRent.Step = 1;
             pbRent.TabIndex = 24;
             pbRent.Value = 100;
             // 
             // pbRestaurants
             // 
+            pbRestaurants.BackColor = Color.FromArgb(255, 192, 128);
             pbRestaurants.Dock = DockStyle.Fill;
-            pbRestaurants.Location = new Point(247, 293);
+            pbRestaurants.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pbRestaurants.Location = new Point(274, 285);
             pbRestaurants.Name = "pbRestaurants";
-            pbRestaurants.Size = new Size(167, 37);
+            pbRestaurants.Size = new Size(143, 34);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
             pbRestaurants.Value = 100;
@@ -402,85 +457,126 @@
             // pcTransportation
             // 
             pcTransportation.AutoSize = true;
-            pcTransportation.Location = new Point(212, 42);
+            pcTransportation.BackColor = Color.Transparent;
+            pcTransportation.Dock = DockStyle.Fill;
+            pcTransportation.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pcTransportation.ForeColor = Color.White;
+            pcTransportation.ImageAlign = ContentAlignment.TopLeft;
+            pcTransportation.Location = new Point(235, 42);
             pcTransportation.Name = "pcTransportation";
-            pcTransportation.Size = new Size(29, 24);
+            pcTransportation.Size = new Size(33, 40);
             pcTransportation.TabIndex = 26;
             pcTransportation.Text = "%";
+            pcTransportation.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcClothes
             // 
             pcClothes.AutoSize = true;
-            pcClothes.Location = new Point(212, 82);
+            pcClothes.BackColor = Color.Transparent;
+            pcClothes.Dock = DockStyle.Fill;
+            pcClothes.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcClothes.ForeColor = Color.White;
+            pcClothes.Location = new Point(235, 82);
             pcClothes.Name = "pcClothes";
-            pcClothes.Size = new Size(29, 24);
+            pcClothes.Size = new Size(33, 40);
             pcClothes.TabIndex = 27;
             pcClothes.Text = "%";
+            pcClothes.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcSports
             // 
             pcSports.AutoSize = true;
-            pcSports.Location = new Point(212, 130);
+            pcSports.BackColor = Color.Transparent;
+            pcSports.Dock = DockStyle.Fill;
+            pcSports.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcSports.ForeColor = Color.White;
+            pcSports.Location = new Point(235, 122);
             pcSports.Name = "pcSports";
-            pcSports.Size = new Size(29, 24);
+            pcSports.Size = new Size(33, 40);
             pcSports.TabIndex = 28;
             pcSports.Text = "%";
+            pcSports.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcMarkets
             // 
             pcMarkets.AutoSize = true;
-            pcMarkets.Location = new Point(212, 170);
+            pcMarkets.BackColor = Color.Transparent;
+            pcMarkets.Dock = DockStyle.Fill;
+            pcMarkets.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcMarkets.ForeColor = Color.White;
+            pcMarkets.Location = new Point(235, 162);
             pcMarkets.Name = "pcMarkets";
-            pcMarkets.Size = new Size(29, 24);
+            pcMarkets.Size = new Size(33, 40);
             pcMarkets.TabIndex = 29;
             pcMarkets.Text = "%";
+            pcMarkets.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcUtilities
             // 
             pcUtilities.AutoSize = true;
-            pcUtilities.Location = new Point(212, 210);
+            pcUtilities.BackColor = Color.Transparent;
+            pcUtilities.Dock = DockStyle.Fill;
+            pcUtilities.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcUtilities.ForeColor = Color.White;
+            pcUtilities.Location = new Point(235, 202);
             pcUtilities.Name = "pcUtilities";
-            pcUtilities.Size = new Size(29, 24);
+            pcUtilities.Size = new Size(33, 40);
             pcUtilities.TabIndex = 30;
             pcUtilities.Text = "%";
+            pcUtilities.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcRent
             // 
             pcRent.AutoSize = true;
-            pcRent.Location = new Point(212, 250);
+            pcRent.BackColor = Color.Transparent;
+            pcRent.Dock = DockStyle.Fill;
+            pcRent.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcRent.ForeColor = Color.White;
+            pcRent.Location = new Point(235, 242);
             pcRent.Name = "pcRent";
-            pcRent.Size = new Size(29, 24);
+            pcRent.Size = new Size(33, 40);
             pcRent.TabIndex = 31;
             pcRent.Text = "%";
+            pcRent.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pcRestaurants
             // 
             pcRestaurants.AutoSize = true;
-            pcRestaurants.Location = new Point(212, 290);
+            pcRestaurants.BackColor = Color.Transparent;
+            pcRestaurants.Dock = DockStyle.Fill;
+            pcRestaurants.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pcRestaurants.ForeColor = Color.White;
+            pcRestaurants.Location = new Point(235, 282);
             pcRestaurants.Name = "pcRestaurants";
-            pcRestaurants.Size = new Size(29, 24);
+            pcRestaurants.Size = new Size(33, 40);
             pcRestaurants.TabIndex = 32;
             pcRestaurants.Text = "%";
+            pcRestaurants.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.BackColor = Color.FromArgb(152, 179, 207);
+            label25.BackColor = Color.Transparent;
             tableLayoutPanel3.SetColumnSpan(label25, 3);
             label25.Dock = DockStyle.Fill;
-            label25.Font = new Font("David", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label25.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label25.ForeColor = Color.Firebrick;
             label25.Location = new Point(444, 0);
             label25.Name = "label25";
-            label25.Size = new Size(332, 42);
+            label25.Size = new Size(330, 42);
             label25.TabIndex = 33;
             label25.Text = "Contacts";
+            label25.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
             label26.AutoSize = true;
+            label26.BackColor = Color.Transparent;
+            label26.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.ForeColor = Color.White;
             label26.Location = new Point(444, 42);
             label26.Name = "label26";
-            label26.Size = new Size(158, 24);
+            label26.Size = new Size(179, 27);
             label26.TabIndex = 34;
             label26.Text = "Phone number:";
             label26.TextAlign = ContentAlignment.MiddleRight;
@@ -488,9 +584,12 @@
             // label28
             // 
             label28.AutoSize = true;
+            label28.BackColor = Color.Transparent;
+            label28.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.ForeColor = Color.White;
             label28.Location = new Point(444, 82);
             label28.Name = "label28";
-            label28.Size = new Size(143, 24);
+            label28.Size = new Size(158, 27);
             label28.TabIndex = 36;
             label28.Text = "Email adress:";
             label28.TextAlign = ContentAlignment.MiddleRight;
@@ -498,27 +597,38 @@
             // txtPhone
             // 
             txtPhone.AutoSize = true;
-            txtPhone.Location = new Point(608, 42);
+            txtPhone.BackColor = Color.Transparent;
+            txtPhone.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhone.ForeColor = Color.White;
+            txtPhone.Location = new Point(626, 42);
+            txtPhone.Margin = new Padding(0);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(28, 24);
+            txtPhone.Size = new Size(33, 27);
             txtPhone.TabIndex = 38;
             txtPhone.Text = "...";
             // 
             // txtEmail
             // 
             txtEmail.AutoSize = true;
-            txtEmail.Location = new Point(608, 82);
+            txtEmail.BackColor = Color.Transparent;
+            txtEmail.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.ForeColor = Color.White;
+            txtEmail.Location = new Point(626, 82);
+            txtEmail.Margin = new Padding(0);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(28, 24);
+            txtEmail.Size = new Size(33, 27);
             txtEmail.TabIndex = 39;
             txtEmail.Text = "...";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(444, 130);
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(444, 122);
             label18.Name = "label18";
-            label18.Size = new Size(61, 24);
+            label18.Size = new Size(60, 27);
             label18.TabIndex = 37;
             label18.Text = "City:";
             label18.TextAlign = ContentAlignment.MiddleRight;
@@ -526,9 +636,13 @@
             // txtCity
             // 
             txtCity.AutoSize = true;
-            txtCity.Location = new Point(608, 130);
+            txtCity.BackColor = Color.Transparent;
+            txtCity.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCity.ForeColor = Color.White;
+            txtCity.Location = new Point(626, 122);
+            txtCity.Margin = new Padding(0);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(28, 24);
+            txtCity.Size = new Size(33, 27);
             txtCity.TabIndex = 39;
             txtCity.Text = "...";
             // 
