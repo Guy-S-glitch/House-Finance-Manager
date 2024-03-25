@@ -72,7 +72,7 @@ namespace House_Finance_management
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
         {
-            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members, ref tableLayoutPanel3,
+            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members, ref tableLayoutPanel4,
                 ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                 ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                 ref txtPhone, ref txtEmail, ref txtCity  //contact info
@@ -84,7 +84,8 @@ namespace House_Finance_management
         {
             close.Enabled = false;
             this.Close();
-        }
+        } 
+
 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
