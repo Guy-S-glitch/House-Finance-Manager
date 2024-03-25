@@ -33,12 +33,11 @@ namespace House_Finance_management
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)  //if there is already exist members in that house, add them. otherwise it'll start normally
         {
             InitializeComponent();
-            progressBars =new ProgressBar[] { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
-            percentLabels =new Label[] { pcTransportation, pcClothes, pcSports, pcMarkets, pcUtilities, pcRent, pcRestaurants };
+            progressBars = new ProgressBar[] { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
+            percentLabels = new Label[] { pcTransportation, pcClothes, pcSports, pcMarkets, pcUtilities, pcRent, pcRestaurants };
             GetBL_House.roundProgressBars(ref progressBars);
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
         }
-
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
         {
             this.returnDataToHouse(members);  //send data to parent
@@ -80,7 +79,7 @@ namespace House_Finance_management
                 ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                 ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                 ref txtPhone, ref txtEmail, ref txtCity  //contact info
-                ,ref percentLabels, ref progressBars  //expense info
+                , ref percentLabels, ref progressBars  //expense info
                 );
         }
 
@@ -88,9 +87,14 @@ namespace House_Finance_management
         {
             close.Enabled = false;
             this.Close();
-        } 
+        }
 
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
 
+            lstMembersList.TopIndex = e.NewValue;
+        }
+         
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
     }
