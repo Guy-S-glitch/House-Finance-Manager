@@ -69,8 +69,8 @@ namespace BL
             {
                 short percent = ((short)(((float)_selectedMemberRead.GetExpenses()[row].Value / _hundred * 100)));  //save the value of one expense
                 //find the lable/progressBar of the current expense 
-                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).FirstOrDefault() as Label;  
-                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).FirstOrDefault() as ProgressBar;  
+                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).First() as Label;  
+                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).First() as ProgressBar;  
              
                 //if the function was called from the remove button reset the lable/progressBar, else enter the value we calculated
                 label.Text = _removeRead ? "%" : percent.ToString() + "%";  
