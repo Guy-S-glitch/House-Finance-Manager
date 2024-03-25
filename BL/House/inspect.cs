@@ -18,10 +18,11 @@ namespace BL
             "Rent",
             "Restaurants"
         };
-        public void inspectMember(object sender, ref bool _remove, Button btnmemberRemove, ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members, ref TableLayoutPanel tableLayoutPanel3
+        public void inspectMember(object sender, ref bool _remove, Button btnmemberRemove, ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members
             , ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary
-            , ref Label txtPhone, ref Label txtEmail, ref Label txtCity)
+            , ref Label txtPhone, ref Label txtEmail, ref Label txtCity
+            , ref Label[] pclabels, ref ProgressBar[] progressBars)
         {
             Button CheckIfCalled = sender as Button; 
 
@@ -34,7 +35,7 @@ namespace BL
                 _selectedMemberRead = _selectedMember;
                 SetPersonalInfo(ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender);
                 SetJobInfo(ref txtJobTitle, ref txtExperience, ref txtMonthlySalary);
-                SetExpenses(ref tableLayoutPanel3);
+                SetExpenses(ref pclabels, ref progressBars);
                 SetContacts(ref txtPhone, ref txtEmail, ref txtCity);
 
                 if (_remove == true) RemoveMember(ref iconPictureBox, ref members, ref lstMembersList);
@@ -61,20 +62,16 @@ namespace BL
             txtMonthlySalary.Text = _removeRead ? _removeString : _selectedMemberRead.GetMonthlySalary().ToString();
         }
 
-        private void SetExpenses(ref TableLayoutPanel tableLayoutPanel3)
+        private void SetExpenses(ref Label[] pclabels,ref ProgressBar[] progressBars)
         {
             short _hundred = 0;
             foreach (NumericUpDown addTo100 in _selectedMemberRead.GetExpenses()) _hundred += (short)addTo100.Value;  //take the sum of the total expenses to make it the 100% and give each value it's percent from the 100%
             for (int row = 0; row < 7; row++)
             {
                 short percent = ((short)(((float)_selectedMemberRead.GetExpenses()[row].Value / _hundred * 100)));  //save the value of one expense
-                //find the lable/progressBar of the current expense 
-                Label? label = tableLayoutPanel3.Controls.Find("pc" + _expenseNames[row], true).First() as Label;  
-                ProgressBar? progressBar = tableLayoutPanel3.Controls.Find("pb" + _expenseNames[row], true).First() as ProgressBar;  
-             
                 //if the function was called from the remove button reset the lable/progressBar, else enter the value we calculated
-                label.Text = _removeRead ? "%" : percent.ToString() + "%";  
-                progressBar.Value = _removeRead ? 100 : _selectedMemberRead.GetExpenses()[row].Value != 0 ? percent : 0;
+                pclabels[row].Text = _removeRead ? "%" : percent.ToString() + "%";
+                progressBars[row].Value = _removeRead ? 100 : _selectedMemberRead.GetExpenses()[row].Value != 0 ? percent : 0;
             }
         }
 

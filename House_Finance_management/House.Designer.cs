@@ -103,7 +103,7 @@
             label17.Size = new Size(298, 47);
             label17.TabIndex = 21;
             label17.Text = "Restaurants";
-            label17.TextAlign = ContentAlignment.MiddleLeft;
+            label17.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -117,7 +117,7 @@
             label16.Size = new Size(298, 44);
             label16.TabIndex = 20;
             label16.Text = "Rent Per Month";
-            label16.TextAlign = ContentAlignment.MiddleLeft;
+            label16.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label10
             // 
@@ -145,7 +145,7 @@
             label11.Size = new Size(298, 44);
             label11.TabIndex = 15;
             label11.Text = "Transportation";
-            label11.TextAlign = ContentAlignment.MiddleLeft;
+            label11.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -159,7 +159,7 @@
             label12.Size = new Size(298, 44);
             label12.TabIndex = 16;
             label12.Text = "Clothing And Shoes";
-            label12.TextAlign = ContentAlignment.MiddleLeft;
+            label12.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label13
             // 
@@ -173,7 +173,7 @@
             label13.Size = new Size(298, 44);
             label13.TabIndex = 17;
             label13.Text = "Sports And Leisure ";
-            label13.TextAlign = ContentAlignment.MiddleLeft;
+            label13.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label14
             // 
@@ -187,7 +187,7 @@
             label14.Size = new Size(298, 44);
             label14.TabIndex = 18;
             label14.Text = "Markets";
-            label14.TextAlign = ContentAlignment.MiddleLeft;
+            label14.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -201,7 +201,7 @@
             label15.Size = new Size(298, 44);
             label15.TabIndex = 19;
             label15.Text = "Utilities";
-            label15.TextAlign = ContentAlignment.MiddleLeft;
+            label15.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pbTransportation
             // 
@@ -375,16 +375,15 @@
             // 
             label25.AutoSize = true;
             label25.BackColor = Color.Transparent;
-            tableLayoutPanel4.SetColumnSpan(label25, 2);
             label25.Dock = DockStyle.Fill;
             label25.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label25.ForeColor = Color.FromArgb(253, 222, 9);
-            label25.Location = new Point(920, 408);
+            label25.Location = new Point(1032, 408);
             label25.Name = "label25";
-            label25.Size = new Size(348, 94);
+            label25.Size = new Size(236, 94);
             label25.TabIndex = 33;
             label25.Text = "Contacts";
-            label25.TextAlign = ContentAlignment.MiddleCenter;
+            label25.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label26
             // 
@@ -427,19 +426,22 @@
             txtPhone.Size = new Size(242, 44);
             txtPhone.TabIndex = 38;
             txtPhone.Text = "...";
+            txtPhone.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtEmail
             // 
             txtEmail.AutoSize = true;
             txtEmail.BackColor = Color.Transparent;
+            txtEmail.Dock = DockStyle.Fill;
             txtEmail.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = Color.White;
             txtEmail.Location = new Point(1029, 590);
             txtEmail.Margin = new Padding(0);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(33, 27);
+            txtEmail.Size = new Size(242, 44);
             txtEmail.TabIndex = 39;
             txtEmail.Text = "...";
+            txtEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
@@ -468,6 +470,7 @@
             txtCity.Size = new Size(242, 44);
             txtCity.TabIndex = 39;
             txtCity.Text = "...";
+            txtCity.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pcTransportation
             // 
@@ -559,6 +562,7 @@
             label6.Size = new Size(978, 94);
             label6.TabIndex = 11;
             label6.Text = "Job Information";
+            label6.TextAlign = ContentAlignment.BottomLeft;
             // 
             // label2
             // 
@@ -651,6 +655,7 @@
             label3.Size = new Size(978, 94);
             label3.TabIndex = 9;
             label3.Text = "Personal Info";
+            label3.TextAlign = ContentAlignment.BottomLeft;
             // 
             // lstMembersList
             // 
@@ -660,8 +665,8 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(3, 97);
             lstMembersList.Name = "lstMembersList";
-            tableLayoutPanel4.SetRowSpan(lstMembersList, 8);
-            lstMembersList.Size = new Size(276, 446);
+            tableLayoutPanel4.SetRowSpan(lstMembersList, 9);
+            lstMembersList.Size = new Size(276, 490);
             lstMembersList.TabIndex = 3;
             // 
             // btnUpdateMember
@@ -814,7 +819,7 @@
             tableLayoutPanel4.Controls.Add(label4, 3, 2);
             tableLayoutPanel4.Controls.Add(lstMembersList, 0, 1);
             tableLayoutPanel4.Controls.Add(label3, 2, 0);
-            tableLayoutPanel4.Controls.Add(label25, 6, 7);
+            tableLayoutPanel4.Controls.Add(label25, 7, 7);
             tableLayoutPanel4.Controls.Add(houseNumber, 0, 0);
             tableLayoutPanel4.Controls.Add(btnmemberAdd, 0, 14);
             tableLayoutPanel4.Controls.Add(btnInspectMember, 0, 13);

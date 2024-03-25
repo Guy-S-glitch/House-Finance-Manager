@@ -27,10 +27,14 @@ namespace House_Finance_management
         private static bool _remove;  //if true meaning the remove member was clicked 
 
         private static InfoToHouse _selectedMember;
+
+        private ProgressBar[] progressBars;
+        private Label[] percentLabels;
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)  //if there is already exist members in that house, add them. otherwise it'll start normally
         {
             InitializeComponent();
-            ProgressBar[] progressBars = { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
+            progressBars =new ProgressBar[] { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
+            percentLabels =new Label[] { pcTransportation, pcClothes, pcSports, pcMarkets, pcUtilities, pcRent, pcRestaurants };
             GetBL_House.roundProgressBars(ref progressBars);
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList);
         }
@@ -72,11 +76,11 @@ namespace House_Finance_management
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
         {
-            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members, ref tableLayoutPanel4,
+            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members,
                 ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                 ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                 ref txtPhone, ref txtEmail, ref txtCity  //contact info
-
+                ,ref percentLabels, ref progressBars  //expense info
                 );
         }
 
