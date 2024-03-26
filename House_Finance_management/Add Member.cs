@@ -1,6 +1,7 @@
 ﻿using Common;
 using BL;
 using static Common.Member;
+using Microsoft.IdentityModel.Tokens;
 
 
 
@@ -16,19 +17,17 @@ namespace House_Finance_management
     /// </summary>
     public partial class Add_Member : Form
     {
+
         public event DataSentHandler DataSent;
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
         private readonly Structs.InputErrors inputErrors = new Structs.InputErrors();
-
         private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
-        {
-            return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant };
-        }
+        { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private Label[] _GetValidationTexts()
-        {
-            return new Label[] { FirstNameValidationText, LastNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText };
-        }
-
+        { return new Label[] { FirstNameValidationText, LastNameValidationText,MiddleNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText }; }
+        private void addTextChangeValidation()
+        { foreach (Label textValidate in _GetValidationTexts()) { textValidate.TextChanged += (sender, e) => addAvailable(sender, e); } }
+        private void addAvailable(object sender, EventArgs e) { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts()); }
 
         private static string[] _validateEmail = new string[3];  //used to store 3 parts of an email: prefix,domain before the dot and the domain after the dot
 
@@ -38,12 +37,14 @@ namespace House_Finance_management
         public Add_Member(string houseNum)  //the form called by the add member button
         {
             InitializeComponent();
+            addTextChangeValidation();
             GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)  //the form called by the update member button 
         {
             InitializeComponent();
+            addTextChangeValidation(); 
             GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
 
             NumericUpDown[] UpdateExpense = _GetExpenses();
@@ -121,10 +122,19 @@ namespace House_Finance_management
                 this.DataSent(new InfoToHouse(memberInformation));  //send the member to the house
             }
         }
-         
+
 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member1 { get => default; set { } }
+
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            close.Enabled = false;
+            this.Close();
+        }  
+
+
     }
 
 

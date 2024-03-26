@@ -29,8 +29,22 @@ namespace BL
             _validateEmail[2] = txtEmail.Text.Split('@')[1].Split('.')[1];
         }
         public void ignoreValidationText(ref Label[] ValidationTexts)
+        { foreach (Label ValidateText in ValidationTexts) { ValidateText.Text = inputErrors.Valid; } }
+
+        public void changeAddButton(ref Button btnAdd, Label[] validateText)
         {
-            foreach(Label ValidateText in ValidationTexts) { ValidateText.Text = inputErrors.Valid; }
+            btnAdd.Enabled = validateAllData(validateText[0], validateText[1], validateText[2],
+                 validateText[3], validateText[4], validateText[5], validateText[6]);
+            if (btnAdd.Enabled is true)
+            {
+                btnAdd.Text = "Data is good to go";
+                btnAdd.BackColor = Color.Green;
+            }
+            else
+            {
+                btnAdd.Text = "Please follow the validations";
+                btnAdd.BackColor = Color.Red;
+            }
         }
     }
 }

@@ -87,14 +87,7 @@ namespace House_Finance_management
         {
             close.Enabled = false;
             this.Close();
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-            lstMembersList.TopIndex = e.NewValue;
-        }
-         
+        } 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
     }

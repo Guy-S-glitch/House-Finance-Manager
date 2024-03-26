@@ -43,13 +43,13 @@
             FirstNameValidationText = new Label();
             LastNameValidationText = new Label();
             label10 = new Label();
-            pnlvalidateGender = new Panel();
             txtMName = new TextBox();
             label9 = new Label();
             txtLName = new TextBox();
             label8 = new Label();
             txtFName = new TextBox();
             label6 = new Label();
+            pnlvalidateGender = new Panel();
             groupBox2 = new GroupBox();
             JobValidationText = new Label();
             cmbJob = new ComboBox();
@@ -76,6 +76,9 @@
             label1 = new Label();
             iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             groupBox5 = new GroupBox();
+            pictureBox1 = new PictureBox();
+            splitContainer2 = new SplitContainer();
+            close = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             groupBox1.SuspendLayout();
@@ -96,30 +99,35 @@
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
             SuspendLayout();
             // 
             // label2
             // 
-            label2.BackColor = Color.FromArgb(183, 229, 244);
-            label2.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkBlue;
-            label2.Location = new Point(450, 88);
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Gold;
+            label2.Location = new Point(362, 97);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(195, 30);
+            label2.Size = new Size(223, 29);
             label2.TabIndex = 2;
             label2.Text = "💵 Monthly salary:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(76, 191, 235);
-            label3.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.DarkBlue;
-            label3.Location = new Point(43, 50);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Gold;
+            label3.Location = new Point(5, 45);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(80, 24);
+            label3.Size = new Size(97, 29);
             label3.TabIndex = 4;
             label3.Text = "💼 Job:";
             // 
@@ -127,36 +135,36 @@
             // 
             numMonthlySalary.BackColor = Color.White;
             numMonthlySalary.Cursor = Cursors.IBeam;
-            numMonthlySalary.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            numMonthlySalary.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             numMonthlySalary.ForeColor = Color.DarkBlue;
             numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numMonthlySalary.Location = new Point(643, 85);
+            numMonthlySalary.Location = new Point(592, 95);
             numMonthlySalary.Maximum = new decimal(new int[] { 200000, 0, 0, 0 });
             numMonthlySalary.Name = "numMonthlySalary";
-            numMonthlySalary.Size = new Size(125, 34);
+            numMonthlySalary.Size = new Size(125, 39);
             numMonthlySalary.TabIndex = 9;
             // 
             // numExperience
             // 
             numExperience.BackColor = Color.White;
             numExperience.Cursor = Cursors.IBeam;
-            numExperience.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            numExperience.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             numExperience.ForeColor = Color.DarkBlue;
-            numExperience.Location = new Point(246, 90);
+            numExperience.Location = new Point(257, 97);
             numExperience.Name = "numExperience";
-            numExperience.Size = new Size(75, 34);
+            numExperience.Size = new Size(75, 39);
             numExperience.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(105, 203, 238);
-            label5.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.DarkBlue;
-            label5.Location = new Point(26, 93);
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.Gold;
+            label5.Location = new Point(7, 102);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(204, 24);
+            label5.Size = new Size(245, 29);
             label5.TabIndex = 12;
             label5.Text = "🌟 Work experience:";
             // 
@@ -164,6 +172,7 @@
             // 
             radMale.AutoSize = true;
             radMale.Checked = true;
+            radMale.ForeColor = SystemColors.ActiveCaptionText;
             radMale.Location = new Point(4, 5);
             radMale.Margin = new Padding(4, 3, 4, 3);
             radMale.Name = "radMale";
@@ -176,7 +185,8 @@
             // radFemale
             // 
             radFemale.AutoSize = true;
-            radFemale.BackColor = Color.FromArgb(181, 228, 246);
+            radFemale.BackColor = Color.Transparent;
+            radFemale.ForeColor = SystemColors.ActiveCaptionText;
             radFemale.Location = new Point(4, 38);
             radFemale.Margin = new Padding(4, 3, 4, 3);
             radFemale.Name = "radFemale";
@@ -188,8 +198,9 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(151, 217, 241);
-            label7.Location = new Point(513, 117);
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(45, 250);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(129, 29);
@@ -198,27 +209,28 @@
             // 
             // btnAdd
             // 
-            btnAdd.Dock = DockStyle.Bottom;
-            btnAdd.Location = new Point(0, 527);
+            btnAdd.BackColor = Color.Red;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.Enabled = false;
+            btnAdd.Location = new Point(471, 839);
             btnAdd.Margin = new Padding(4, 3, 4, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(1215, 56);
+            btnAdd.Size = new Size(180, 175);
             btnAdd.TabIndex = 18;
-            btnAdd.Text = "Add member to the house";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Text = "Please follow the validations";
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.AppWorkspace;
-            groupBox1.BackgroundImage = Properties.Resources.ocean;
+            groupBox1.BackColor = SystemColors.GrayText;
+            groupBox1.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050227;
             groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox1.Controls.Add(dtpAge);
             groupBox1.Controls.Add(MiddleNameValidationText);
             groupBox1.Controls.Add(FirstNameValidationText);
             groupBox1.Controls.Add(LastNameValidationText);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(pnlvalidateGender);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtMName);
             groupBox1.Controls.Add(label9);
@@ -226,13 +238,14 @@
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(txtFName);
             groupBox1.Controls.Add(label6);
-            groupBox1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.ForeColor = Color.DarkBlue;
-            groupBox1.Location = new Point(13, 12);
+            groupBox1.Controls.Add(pnlvalidateGender);
+            groupBox1.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.ForeColor = Color.Gold;
+            groupBox1.Location = new Point(12, 70);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(904, 216);
+            groupBox1.Size = new Size(545, 352);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Person";
@@ -242,8 +255,9 @@
             dtpAge.BackColor = Color.White;
             dtpAge.CalendarTitleBackColor = SystemColors.ActiveCaptionText;
             dtpAge.CalendarTitleForeColor = SystemColors.ActiveCaption;
+            dtpAge.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dtpAge.Format = DateTimePickerFormat.Short;
-            dtpAge.Location = new Point(643, 57);
+            dtpAge.Location = new Point(179, 188);
             dtpAge.Margin = new Padding(4, 3, 4, 3);
             dtpAge.MaxDate = new DateTime(2024, 3, 4, 0, 0, 0, 0);
             dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
@@ -255,67 +269,57 @@
             // MiddleNameValidationText
             // 
             MiddleNameValidationText.AutoSize = true;
-            MiddleNameValidationText.BackColor = Color.FromArgb(125, 208, 241);
-            MiddleNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            MiddleNameValidationText.BackColor = Color.Transparent;
+            MiddleNameValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             MiddleNameValidationText.ForeColor = Color.Red;
-            MiddleNameValidationText.Location = new Point(175, 148);
+            MiddleNameValidationText.Location = new Point(185, 119);
             MiddleNameValidationText.Name = "MiddleNameValidationText";
-            MiddleNameValidationText.Size = new Size(0, 16);
+            MiddleNameValidationText.Size = new Size(0, 15);
             MiddleNameValidationText.TabIndex = 24;
             // 
             // FirstNameValidationText
             // 
             FirstNameValidationText.AutoSize = true;
-            FirstNameValidationText.BackColor = Color.FromArgb(86, 195, 238);
-            FirstNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            FirstNameValidationText.BackColor = Color.Transparent;
+            FirstNameValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             FirstNameValidationText.ForeColor = Color.Red;
-            FirstNameValidationText.Location = new Point(175, 40);
+            FirstNameValidationText.Location = new Point(184, 17);
             FirstNameValidationText.Name = "FirstNameValidationText";
-            FirstNameValidationText.Size = new Size(150, 16);
+            FirstNameValidationText.Size = new Size(128, 15);
             FirstNameValidationText.TabIndex = 23;
             FirstNameValidationText.Text = "Name can't be empty";
             // 
             // LastNameValidationText
             // 
             LastNameValidationText.AutoSize = true;
-            LastNameValidationText.BackColor = Color.FromArgb(115, 205, 242);
-            LastNameValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            LastNameValidationText.BackColor = Color.Transparent;
+            LastNameValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             LastNameValidationText.ForeColor = Color.Red;
-            LastNameValidationText.Location = new Point(174, 95);
+            LastNameValidationText.Location = new Point(184, 67);
             LastNameValidationText.Name = "LastNameValidationText";
-            LastNameValidationText.Size = new Size(150, 16);
+            LastNameValidationText.Size = new Size(128, 15);
             LastNameValidationText.TabIndex = 22;
             LastNameValidationText.Text = "Name can't be empty";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(129, 209, 242);
-            label10.ForeColor = Color.DarkBlue;
-            label10.Location = new Point(491, 60);
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.Gold;
+            label10.Location = new Point(25, 190);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(151, 29);
             label10.TabIndex = 8;
             label10.Text = "🎂 Birthday:";
             // 
-            // pnlvalidateGender
-            // 
-            pnlvalidateGender.BackColor = Color.FromArgb(184, 230, 245);
-            pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
-            pnlvalidateGender.Controls.Add(radFemale);
-            pnlvalidateGender.Controls.Add(radMale);
-            pnlvalidateGender.Location = new Point(643, 111);
-            pnlvalidateGender.Margin = new Padding(4, 3, 4, 3);
-            pnlvalidateGender.Name = "pnlvalidateGender";
-            pnlvalidateGender.Size = new Size(140, 88);
-            pnlvalidateGender.TabIndex = 17;
-            // 
             // txtMName
             // 
             txtMName.BackColor = Color.White;
             txtMName.Cursor = Cursors.IBeam;
-            txtMName.Location = new Point(175, 164);
+            txtMName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMName.Location = new Point(179, 136);
             txtMName.Margin = new Padding(4, 3, 4, 3);
             txtMName.MaxLength = 15;
             txtMName.Name = "txtMName";
@@ -327,9 +331,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.FromArgb(100, 199, 240);
-            label9.ForeColor = Color.DarkBlue;
-            label9.Location = new Point(4, 167);
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.Gold;
+            label9.Location = new Point(15, 140);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(167, 29);
@@ -340,7 +345,8 @@
             // 
             txtLName.BackColor = Color.White;
             txtLName.Cursor = Cursors.IBeam;
-            txtLName.Location = new Point(175, 111);
+            txtLName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtLName.Location = new Point(179, 83);
             txtLName.Margin = new Padding(4, 3, 4, 3);
             txtLName.MaxLength = 15;
             txtLName.Name = "txtLName";
@@ -351,9 +357,10 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(91, 194, 235);
-            label8.ForeColor = Color.DarkBlue;
-            label8.Location = new Point(27, 114);
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.Gold;
+            label8.Location = new Point(29, 87);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(145, 29);
@@ -364,7 +371,8 @@
             // 
             txtFName.BackColor = Color.White;
             txtFName.Cursor = Cursors.IBeam;
-            txtFName.Location = new Point(175, 57);
+            txtFName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtFName.Location = new Point(179, 32);
             txtFName.Margin = new Padding(4, 3, 4, 3);
             txtFName.MaxLength = 15;
             txtFName.Name = "txtFName";
@@ -375,18 +383,34 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(75, 190, 237);
-            label6.ForeColor = Color.DarkBlue;
-            label6.Location = new Point(25, 60);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.Gold;
+            label6.Location = new Point(25, 37);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(148, 29);
             label6.TabIndex = 2;
             label6.Text = "First name: ";
             // 
+            // pnlvalidateGender
+            // 
+            pnlvalidateGender.BackColor = Color.Transparent;
+            pnlvalidateGender.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050935;
+            pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
+            pnlvalidateGender.Controls.Add(radFemale);
+            pnlvalidateGender.Controls.Add(radMale);
+            pnlvalidateGender.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            pnlvalidateGender.Location = new Point(180, 244);
+            pnlvalidateGender.Margin = new Padding(4, 3, 4, 3);
+            pnlvalidateGender.Name = "pnlvalidateGender";
+            pnlvalidateGender.Size = new Size(140, 88);
+            pnlvalidateGender.TabIndex = 17;
+            // 
             // groupBox2
             // 
-            groupBox2.BackgroundImage = Properties.Resources.ocean;
+            groupBox2.BackColor = Color.Transparent;
+            groupBox2.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050414;
             groupBox2.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox2.Controls.Add(JobValidationText);
             groupBox2.Controls.Add(cmbJob);
@@ -395,12 +419,13 @@
             groupBox2.Controls.Add(numExperience);
             groupBox2.Controls.Add(numMonthlySalary);
             groupBox2.Controls.Add(label2);
-            groupBox2.Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(13, 234);
+            groupBox2.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.ForeColor = Color.Gold;
+            groupBox2.Location = new Point(12, 646);
             groupBox2.Margin = new Padding(4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(10);
-            groupBox2.Size = new Size(775, 135);
+            groupBox2.Size = new Size(734, 152);
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job Information";
@@ -408,12 +433,12 @@
             // JobValidationText
             // 
             JobValidationText.AutoSize = true;
-            JobValidationText.BackColor = Color.FromArgb(88, 195, 239);
-            JobValidationText.Font = new Font("David", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            JobValidationText.BackColor = Color.Transparent;
+            JobValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             JobValidationText.ForeColor = Color.Red;
-            JobValidationText.Location = new Point(128, 27);
+            JobValidationText.Location = new Point(109, 23);
             JobValidationText.Name = "JobValidationText";
-            JobValidationText.Size = new Size(151, 16);
+            JobValidationText.Size = new Size(133, 15);
             JobValidationText.TabIndex = 23;
             JobValidationText.Text = "Please select your job";
             // 
@@ -424,7 +449,7 @@
             cmbJob.ForeColor = Color.DarkBlue;
             cmbJob.FormattingEnabled = true;
             cmbJob.Items.AddRange(new object[] { "--SELECT JOB--" });
-            cmbJob.Location = new Point(128, 46);
+            cmbJob.Location = new Point(104, 43);
             cmbJob.Margin = new Padding(4, 3, 4, 3);
             cmbJob.Name = "cmbJob";
             cmbJob.Size = new Size(559, 32);
@@ -434,39 +459,40 @@
             // 
             // clbExpenses
             // 
-            clbExpenses.BackColor = Color.FromArgb(110, 204, 238);
+            clbExpenses.BackColor = Color.FromArgb(3, 68, 122);
+            clbExpenses.Dock = DockStyle.Fill;
             clbExpenses.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            clbExpenses.ForeColor = Color.DarkBlue;
+            clbExpenses.ForeColor = Color.Gold;
             clbExpenses.FormattingEnabled = true;
             clbExpenses.Items.AddRange(new object[] { "Transportation", "Clothing And Shoes", "Sports And Leisure", "Markets", "Utilities", "Rent Per Month", "Restaurants" });
             clbExpenses.Location = new Point(0, 0);
             clbExpenses.Margin = new Padding(4, 3, 4, 3);
             clbExpenses.Name = "clbExpenses";
-            clbExpenses.Size = new Size(256, 193);
+            clbExpenses.Size = new Size(250, 199);
             clbExpenses.TabIndex = 21;
             clbExpenses.ItemCheck += clbExpenses_ItemCheck;
             // 
             // groupBox4
             // 
-            groupBox4.BackColor = Color.FromArgb(240, 240, 240);
-            groupBox4.BackgroundImage = Properties.Resources.ocean;
+            groupBox4.BackColor = Color.Transparent;
+            groupBox4.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_052518;
             groupBox4.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox4.Controls.Add(splitContainer1);
             groupBox4.FlatStyle = FlatStyle.Popup;
-            groupBox4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox4.ForeColor = Color.DarkBlue;
-            groupBox4.Location = new Point(799, 288);
+            groupBox4.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.ForeColor = Color.Gold;
+            groupBox4.Location = new Point(12, 805);
             groupBox4.Margin = new Padding(4, 3, 4, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(4, 3, 4, 3);
-            groupBox4.Size = new Size(403, 233);
+            groupBox4.Size = new Size(403, 245);
             groupBox4.TabIndex = 24;
             groupBox4.TabStop = false;
             groupBox4.Text = "💸 Expenses";
             // 
             // splitContainer1
             // 
-            splitContainer1.BackColor = Color.White;
+            splitContainer1.BackColor = Color.Transparent;
             splitContainer1.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
             splitContainer1.Location = new Point(0, 34);
             splitContainer1.Name = "splitContainer1";
@@ -477,7 +503,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = Color.FromArgb(152, 218, 244);
+            splitContainer1.Panel2.BackColor = Color.Transparent;
             splitContainer1.Panel2.Controls.Add(numRestaurant);
             splitContainer1.Panel2.Controls.Add(numRent);
             splitContainer1.Panel2.Controls.Add(numMarket);
@@ -617,8 +643,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.BackColor = Color.FromArgb(240, 240, 240);
-            groupBox3.BackgroundImage = Properties.Resources.ocean;
+            groupBox3.BackColor = Color.Transparent;
+            groupBox3.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050355;
             groupBox3.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox3.Controls.Add(emailValidationText);
             groupBox3.Controls.Add(cmbCity);
@@ -631,10 +657,10 @@
             groupBox3.Controls.Add(label1);
             groupBox3.FlatStyle = FlatStyle.Flat;
             groupBox3.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.ForeColor = Color.DarkBlue;
-            groupBox3.Location = new Point(13, 375);
+            groupBox3.ForeColor = Color.Gold;
+            groupBox3.Location = new Point(12, 428);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(775, 146);
+            groupBox3.Size = new Size(795, 211);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
@@ -642,10 +668,10 @@
             // emailValidationText
             // 
             emailValidationText.AutoSize = true;
-            emailValidationText.BackColor = Color.FromArgb(115, 203, 239);
+            emailValidationText.BackColor = Color.Transparent;
             emailValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             emailValidationText.ForeColor = Color.Red;
-            emailValidationText.Location = new Point(246, 70);
+            emailValidationText.Location = new Point(144, 78);
             emailValidationText.Name = "emailValidationText";
             emailValidationText.Size = new Size(78, 15);
             emailValidationText.TabIndex = 25;
@@ -654,14 +680,14 @@
             // cmbCity
             // 
             cmbCity.BackColor = Color.White;
-            cmbCity.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbCity.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCity.ForeColor = Color.DarkBlue;
             cmbCity.FormattingEnabled = true;
             cmbCity.Items.AddRange(new object[] { "--SELECT CITY--" });
-            cmbCity.Location = new Point(449, 37);
+            cmbCity.Location = new Point(139, 152);
             cmbCity.Margin = new Padding(4, 3, 4, 3);
             cmbCity.Name = "cmbCity";
-            cmbCity.Size = new Size(297, 32);
+            cmbCity.Size = new Size(297, 37);
             cmbCity.Sorted = true;
             cmbCity.TabIndex = 6;
             cmbCity.SelectedIndexChanged += cmbCity_SelectedIndexChanged;
@@ -669,10 +695,10 @@
             // CityValidationText
             // 
             CityValidationText.AutoSize = true;
-            CityValidationText.BackColor = Color.FromArgb(124, 208, 244);
+            CityValidationText.BackColor = Color.Transparent;
             CityValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             CityValidationText.ForeColor = Color.Red;
-            CityValidationText.Location = new Point(449, 20);
+            CityValidationText.Location = new Point(141, 136);
             CityValidationText.Name = "CityValidationText";
             CityValidationText.Size = new Size(137, 15);
             CityValidationText.TabIndex = 24;
@@ -681,10 +707,10 @@
             // phoneValidationText
             // 
             phoneValidationText.AutoSize = true;
-            phoneValidationText.BackColor = Color.FromArgb(81, 192, 235);
+            phoneValidationText.BackColor = Color.Transparent;
             phoneValidationText.Font = new Font("Arial", 6F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             phoneValidationText.ForeColor = Color.Red;
-            phoneValidationText.Location = new Point(143, 17);
+            phoneValidationText.Location = new Point(146, 21);
             phoneValidationText.Name = "phoneValidationText";
             phoneValidationText.Size = new Size(110, 15);
             phoneValidationText.TabIndex = 10;
@@ -694,13 +720,13 @@
             // 
             txtEmail.BackColor = Color.White;
             txtEmail.Cursor = Cursors.IBeam;
-            txtEmail.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = Color.DarkBlue;
-            txtEmail.Location = new Point(246, 90);
+            txtEmail.Location = new Point(139, 96);
             txtEmail.MaxLength = 50;
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example123@domain.com";
-            txtEmail.Size = new Size(466, 30);
+            txtEmail.Size = new Size(629, 35);
             txtEmail.TabIndex = 9;
             txtEmail.KeyUp += txtEmail_KeyUp;
             // 
@@ -708,56 +734,55 @@
             // 
             txtPhone.BackColor = Color.White;
             txtPhone.Cursor = Cursors.IBeam;
-            txtPhone.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhone.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPhone.ForeColor = Color.DarkBlue;
-            txtPhone.Location = new Point(143, 37);
+            txtPhone.Location = new Point(139, 40);
             txtPhone.MaxLength = 12;
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "05X-XXX-XXXX";
-            txtPhone.Size = new Size(185, 30);
+            txtPhone.Size = new Size(185, 35);
             txtPhone.TabIndex = 8;
             txtPhone.KeyUp += txtPhone_KeyUp;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(122, 206, 242);
-            label4.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.DarkBlue;
-            label4.Location = new Point(361, 41);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Gold;
+            label4.Location = new Point(39, 157);
             label4.Name = "label4";
-            label4.Size = new Size(79, 24);
+            label4.Size = new Size(95, 29);
             label4.TabIndex = 7;
             label4.Text = "🏙 city:";
             // 
             // Email
             // 
             Email.AutoSize = true;
-            Email.BackColor = Color.FromArgb(114, 204, 238);
-            Email.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            Email.ForeColor = Color.DarkBlue;
-            Email.Location = new Point(133, 91);
+            Email.BackColor = Color.Transparent;
+            Email.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Email.ForeColor = Color.Gold;
+            Email.Location = new Point(15, 99);
             Email.Name = "Email";
-            Email.Size = new Size(96, 24);
+            Email.Size = new Size(118, 29);
             Email.TabIndex = 1;
             Email.Text = "📧 Email:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(74, 191, 235);
-            label1.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DarkBlue;
-            label1.Location = new Point(30, 40);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(8, 45);
             label1.Name = "label1";
-            label1.Size = new Size(105, 24);
+            label1.Size = new Size(128, 29);
             label1.TabIndex = 0;
             label1.Text = "📞 Phone:";
             // 
             // iconPictureBox
             // 
-            iconPictureBox.BackColor = SystemColors.AppWorkspace;
-            iconPictureBox.BackgroundImage = Properties.Resources.ocean;
+            iconPictureBox.BackColor = Color.Transparent;
             iconPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             iconPictureBox.Cursor = Cursors.Hand;
             iconPictureBox.Dock = DockStyle.Fill;
@@ -765,11 +790,11 @@
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             iconPictureBox.IconColor = SystemColors.ActiveCaptionText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox.IconSize = 236;
+            iconPictureBox.IconSize = 315;
             iconPictureBox.ImageLocation = "";
-            iconPictureBox.Location = new Point(3, 31);
+            iconPictureBox.Location = new Point(3, 27);
             iconPictureBox.Name = "iconPictureBox";
-            iconPictureBox.Size = new Size(257, 236);
+            iconPictureBox.Size = new Size(315, 322);
             iconPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             iconPictureBox.TabIndex = 26;
             iconPictureBox.TabStop = false;
@@ -777,17 +802,58 @@
             // 
             // groupBox5
             // 
-            groupBox5.BackgroundImage = Properties.Resources.ocean;
+            groupBox5.BackColor = Color.Transparent;
+            groupBox5.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050249;
             groupBox5.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox5.Controls.Add(iconPictureBox);
-            groupBox5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox5.ForeColor = Color.DarkBlue;
-            groupBox5.Location = new Point(939, 12);
+            groupBox5.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox5.ForeColor = Color.Gold;
+            groupBox5.Location = new Point(564, 70);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(263, 270);
+            groupBox5.Size = new Size(321, 352);
             groupBox5.TabIndex = 27;
             groupBox5.TabStop = false;
             groupBox5.Text = "📸 Upload picture";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Smaller_Network_Connection_Background_3;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1924, 1050);
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
+            // 
+            // splitContainer2
+            // 
+            splitContainer2.BackColor = SystemColors.MenuHighlight;
+            splitContainer2.Dock = DockStyle.Top;
+            splitContainer2.Location = new Point(0, 0);
+            splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel2
+            // 
+            splitContainer2.Panel2.Controls.Add(close);
+            splitContainer2.Size = new Size(1924, 50);
+            splitContainer2.SplitterDistance = 1822;
+            splitContainer2.TabIndex = 29;
+            // 
+            // close
+            // 
+            close.BackColor = Color.IndianRed;
+            close.Cursor = Cursors.Hand;
+            close.Dock = DockStyle.Fill;
+            close.ForeColor = Color.Transparent;
+            close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            close.IconColor = Color.White;
+            close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            close.Location = new Point(0, 0);
+            close.Name = "close";
+            close.Size = new Size(98, 50);
+            close.TabIndex = 0;
+            close.UseVisualStyleBackColor = false;
+            close.Click += close_Click;
             // 
             // Add_Member
             // 
@@ -795,23 +861,27 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.AppWorkspace;
-            BackgroundImage = Properties.Resources.gradient_Dark_blue;
+            BackgroundImage = Properties.Resources.ocean;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1215, 583);
+            ClientSize = new Size(1924, 1050);
+            Controls.Add(splitContainer2);
             Controls.Add(groupBox5);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnAdd);
+            Controls.Add(pictureBox1);
+            DoubleBuffered = true;
             Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Add_Member";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "Add_Member";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).EndInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).EndInit();
             groupBox1.ResumeLayout(false);
@@ -836,6 +906,10 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -888,5 +962,8 @@
         private Label JobValidationText;
         private ComboBox cmbJob;
         private Label emailValidationText;
+        private PictureBox pictureBox1;
+        private SplitContainer splitContainer2;
+        private FontAwesome.Sharp.IconButton close;
     }
 }
