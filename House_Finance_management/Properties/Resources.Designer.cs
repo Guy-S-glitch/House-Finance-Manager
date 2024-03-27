@@ -83,99 +83,69 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap satisfying_linear {
-            get {
-                object obj = ResourceManager.GetObject("satisfying-linear", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050227 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050227", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050249 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050249", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050327 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050327", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050355 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050355", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050414 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050414", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_050935 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 050935", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_0509351 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 0509351", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Screenshot_2024_03_26_052518 {
-            get {
-                object obj = ResourceManager.GetObject("Screenshot 2024-03-26 052518", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Smaller_Network_Connection_Background_3 {
             get {
                 object obj = ResourceManager.GetObject("Smaller Network Connection Background_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Space_AddMember_Contacts {
+            get {
+                object obj = ResourceManager.GetObject("Space_AddMember_Contacts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Space_AddMember_Expenses {
+            get {
+                object obj = ResourceManager.GetObject("Space_AddMember_Expenses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Space_AddMember_Gender {
+            get {
+                object obj = ResourceManager.GetObject("Space_AddMember_Gender", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Space_AddMember_JobInfo {
+            get {
+                object obj = ResourceManager.GetObject("Space_AddMember_JobInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap space_AddMember_PersonalInfo {
+            get {
+                object obj = ResourceManager.GetObject("space_AddMember_PersonalInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Space_Addmember_Photo {
+            get {
+                object obj = ResourceManager.GetObject("Space_Addmember_Photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

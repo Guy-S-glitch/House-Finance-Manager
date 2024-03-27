@@ -224,7 +224,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GrayText;
-            groupBox1.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050227;
+            groupBox1.BackgroundImage = Properties.Resources.space_AddMember_PersonalInfo;
             groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox1.Controls.Add(dtpAge);
             groupBox1.Controls.Add(MiddleNameValidationText);
@@ -259,12 +259,12 @@
             dtpAge.Format = DateTimePickerFormat.Short;
             dtpAge.Location = new Point(179, 188);
             dtpAge.Margin = new Padding(4, 3, 4, 3);
-            dtpAge.MaxDate = DateTime.Today;
+            dtpAge.MaxDate = new DateTime(2024, 3, 27, 0, 0, 0, 0);
             dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dtpAge.Name = "dtpAge";
             dtpAge.Size = new Size(224, 35);
             dtpAge.TabIndex = 9;
-            dtpAge.Value = DateTime.Today;
+            dtpAge.Value = new DateTime(2024, 3, 27, 0, 0, 0, 0);
             // 
             // MiddleNameValidationText
             // 
@@ -396,7 +396,7 @@
             // pnlvalidateGender
             // 
             pnlvalidateGender.BackColor = Color.Transparent;
-            pnlvalidateGender.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050935;
+            pnlvalidateGender.BackgroundImage = Properties.Resources.Space_AddMember_Gender;
             pnlvalidateGender.BorderStyle = BorderStyle.Fixed3D;
             pnlvalidateGender.Controls.Add(radFemale);
             pnlvalidateGender.Controls.Add(radMale);
@@ -410,7 +410,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
-            groupBox2.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050414;
+            groupBox2.BackgroundImage = Properties.Resources.Space_AddMember_JobInfo;
             groupBox2.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox2.Controls.Add(JobValidationText);
             groupBox2.Controls.Add(cmbJob);
@@ -475,7 +475,7 @@
             // groupBox4
             // 
             groupBox4.BackColor = Color.Transparent;
-            groupBox4.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_052518;
+            groupBox4.BackgroundImage = Properties.Resources.Space_AddMember_Expenses;
             groupBox4.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox4.Controls.Add(splitContainer1);
             groupBox4.FlatStyle = FlatStyle.Popup;
@@ -644,7 +644,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = Color.Transparent;
-            groupBox3.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050355;
+            groupBox3.BackgroundImage = Properties.Resources.Space_AddMember_Contacts;
             groupBox3.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox3.Controls.Add(emailValidationText);
             groupBox3.Controls.Add(cmbCity);
@@ -790,11 +790,11 @@
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             iconPictureBox.IconColor = SystemColors.ActiveCaptionText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox.IconSize = 315;
+            iconPictureBox.IconSize = 225;
             iconPictureBox.ImageLocation = "";
             iconPictureBox.Location = new Point(3, 27);
             iconPictureBox.Name = "iconPictureBox";
-            iconPictureBox.Size = new Size(315, 322);
+            iconPictureBox.Size = new Size(237, 225);
             iconPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             iconPictureBox.TabIndex = 26;
             iconPictureBox.TabStop = false;
@@ -803,14 +803,14 @@
             // groupBox5
             // 
             groupBox5.BackColor = Color.Transparent;
-            groupBox5.BackgroundImage = Properties.Resources.Screenshot_2024_03_26_050249;
+            groupBox5.BackgroundImage = Properties.Resources.Space_Addmember_Photo;
             groupBox5.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox5.Controls.Add(iconPictureBox);
             groupBox5.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox5.ForeColor = Color.Gold;
             groupBox5.Location = new Point(564, 70);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(321, 352);
+            groupBox5.Size = new Size(243, 255);
             groupBox5.TabIndex = 27;
             groupBox5.TabStop = false;
             groupBox5.Text = "📸 Upload picture";
