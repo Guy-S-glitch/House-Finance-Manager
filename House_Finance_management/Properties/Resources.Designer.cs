@@ -153,6 +153,16 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap To_unlock_this_part_of_the_pro_3_27_2024 {
+            get {
+                object obj = ResourceManager.GetObject("To-unlock-this-part-of-the-pro-3-27-2024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap user_image {
             get {
                 object obj = ResourceManager.GetObject("user_image", resourceCulture);

@@ -70,12 +70,12 @@ namespace House_Finance_management
 
         public void btnmemberRemove_Click(object sender, EventArgs e)  //called by clicking the remove member button
         {
-            btnInspectMember_Click(sender, e);  //work like the inspect member so we can call the btnInspectMember_Click
+            GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2, Properties.Resources.To_unlock_this_part_of_the_pro_3_27_2024);
         }
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
         {
-            GetBL_House.inspectMember(sender, ref _remove, btnmemberRemove, lstMembersList, ref _selectedMember, members,
+            GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members,ref MemberNotPicked,
                 ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                 ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                 ref txtPhone, ref txtEmail, ref txtCity  //contact info
@@ -88,23 +88,9 @@ namespace House_Finance_management
             close.Enabled = false;
             this.Close();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+         
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
+         
     }
 }

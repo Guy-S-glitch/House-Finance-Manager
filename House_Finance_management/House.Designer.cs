@@ -88,6 +88,7 @@
             tableLayoutPanel6 = new TableLayoutPanel();
             groupBox4 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
+            MemberNotPicked = new Panel();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
@@ -103,6 +104,7 @@
             tableLayoutPanel6.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
+            MemberNotPicked.SuspendLayout();
             SuspendLayout();
             // 
             // monthlySalary
@@ -116,7 +118,7 @@
             monthlySalary.Margin = new Padding(0);
             monthlySalary.Name = "monthlySalary";
             monthlySalary.Padding = new Padding(5);
-            monthlySalary.Size = new Size(189, 73);
+            monthlySalary.Size = new Size(189, 74);
             monthlySalary.TabIndex = 16;
             monthlySalary.Text = "Monthly Salary:";
             monthlySalary.TextAlign = ContentAlignment.MiddleRight;
@@ -128,7 +130,7 @@
             jobTitle.Dock = DockStyle.Fill;
             jobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             jobTitle.ForeColor = SystemColors.ActiveCaptionText;
-            jobTitle.Location = new Point(0, 147);
+            jobTitle.Location = new Point(0, 148);
             jobTitle.Margin = new Padding(0);
             jobTitle.Name = "jobTitle";
             jobTitle.Padding = new Padding(5);
@@ -512,7 +514,7 @@
             txtExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtExperience.ForeColor = SystemColors.ActiveCaptionText;
             txtExperience.ImageAlign = ContentAlignment.TopLeft;
-            txtExperience.Location = new Point(189, 73);
+            txtExperience.Location = new Point(189, 74);
             txtExperience.Margin = new Padding(0);
             txtExperience.Name = "txtExperience";
             txtExperience.Padding = new Padding(5);
@@ -533,7 +535,7 @@
             txtMonthlySalary.Margin = new Padding(0);
             txtMonthlySalary.Name = "txtMonthlySalary";
             txtMonthlySalary.Padding = new Padding(5);
-            txtMonthlySalary.Size = new Size(367, 73);
+            txtMonthlySalary.Size = new Size(367, 74);
             txtMonthlySalary.TabIndex = 17;
             txtMonthlySalary.Text = "...";
             txtMonthlySalary.TextAlign = ContentAlignment.MiddleLeft;
@@ -545,7 +547,7 @@
             txtJobTitle.Dock = DockStyle.Fill;
             txtJobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtJobTitle.ForeColor = SystemColors.ActiveCaptionText;
-            txtJobTitle.Location = new Point(189, 147);
+            txtJobTitle.Location = new Point(189, 148);
             txtJobTitle.Margin = new Padding(0);
             txtJobTitle.Name = "txtJobTitle";
             txtJobTitle.Padding = new Padding(5);
@@ -562,7 +564,7 @@
             yearsExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             yearsExperience.ForeColor = SystemColors.ActiveCaptionText;
             yearsExperience.ImageAlign = ContentAlignment.TopRight;
-            yearsExperience.Location = new Point(0, 73);
+            yearsExperience.Location = new Point(0, 74);
             yearsExperience.Margin = new Padding(0);
             yearsExperience.Name = "yearsExperience";
             yearsExperience.Padding = new Padding(5);
@@ -581,7 +583,7 @@
             lblUserGender.ImageAlign = ContentAlignment.TopLeft;
             lblUserGender.Location = new Point(300, 0);
             lblUserGender.Name = "lblUserGender";
-            lblUserGender.Size = new Size(379, 73);
+            lblUserGender.Size = new Size(379, 74);
             lblUserGender.TabIndex = 6;
             lblUserGender.Text = "...";
             lblUserGender.TextAlign = ContentAlignment.MiddleLeft;
@@ -594,9 +596,9 @@
             lblUserName.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserName.ForeColor = SystemColors.ActiveCaptionText;
             lblUserName.ImageAlign = ContentAlignment.TopLeft;
-            lblUserName.Location = new Point(300, 146);
+            lblUserName.Location = new Point(300, 148);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(379, 76);
+            lblUserName.Size = new Size(379, 75);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "...";
             lblUserName.TextAlign = ContentAlignment.MiddleLeft;
@@ -609,9 +611,9 @@
             lblUserAge.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserAge.ForeColor = SystemColors.ActiveCaptionText;
             lblUserAge.ImageAlign = ContentAlignment.TopLeft;
-            lblUserAge.Location = new Point(300, 73);
+            lblUserAge.Location = new Point(300, 74);
             lblUserAge.Name = "lblUserAge";
-            lblUserAge.Size = new Size(379, 73);
+            lblUserAge.Size = new Size(379, 74);
             lblUserAge.TabIndex = 7;
             lblUserAge.Text = "...";
             lblUserAge.TextAlign = ContentAlignment.MiddleLeft;
@@ -628,7 +630,7 @@
             iconPictureBox.Location = new Point(3, 3);
             iconPictureBox.Name = "iconPictureBox";
             tableLayoutPanel3.SetRowSpan(iconPictureBox, 3);
-            iconPictureBox.Size = new Size(185, 216);
+            iconPictureBox.Size = new Size(185, 217);
             iconPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             iconPictureBox.TabIndex = 1;
             iconPictureBox.TabStop = false;
@@ -641,19 +643,19 @@
             lstMembersList.FormattingEnabled = true;
             lstMembersList.HorizontalScrollbar = true;
             lstMembersList.ItemHeight = 32;
-            lstMembersList.Location = new Point(3, 125);
+            lstMembersList.Location = new Point(3, 124);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(421, 463);
+            lstMembersList.Size = new Size(421, 461);
             lstMembersList.TabIndex = 3;
             // 
             // btnUpdateMember
             // 
-            btnUpdateMember.BackColor = SystemColors.ButtonShadow;
+            btnUpdateMember.BackColor = Color.FromArgb(69, 69, 69);
             btnUpdateMember.Cursor = Cursors.Hand;
             btnUpdateMember.Dock = DockStyle.Fill;
             btnUpdateMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnUpdateMember.ForeColor = SystemColors.ButtonHighlight;
-            btnUpdateMember.Location = new Point(3, 722);
+            btnUpdateMember.Location = new Point(3, 719);
             btnUpdateMember.Name = "btnUpdateMember";
             btnUpdateMember.Size = new Size(421, 38);
             btnUpdateMember.TabIndex = 4;
@@ -663,12 +665,12 @@
             // 
             // btnInspectMember
             // 
-            btnInspectMember.BackColor = SystemColors.ButtonShadow;
+            btnInspectMember.BackColor = Color.FromArgb(69, 69, 69);
             btnInspectMember.Cursor = Cursors.Hand;
             btnInspectMember.Dock = DockStyle.Fill;
             btnInspectMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnInspectMember.ForeColor = SystemColors.ButtonHighlight;
-            btnInspectMember.Location = new Point(3, 678);
+            btnInspectMember.Location = new Point(3, 675);
             btnInspectMember.Name = "btnInspectMember";
             btnInspectMember.Size = new Size(421, 38);
             btnInspectMember.TabIndex = 3;
@@ -678,14 +680,14 @@
             // 
             // btnmemberRemove
             // 
-            btnmemberRemove.BackColor = SystemColors.ButtonShadow;
+            btnmemberRemove.BackColor = Color.FromArgb(69, 69, 69);
             btnmemberRemove.Cursor = Cursors.Hand;
             btnmemberRemove.Dock = DockStyle.Fill;
             btnmemberRemove.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberRemove.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberRemove.Location = new Point(3, 766);
+            btnmemberRemove.Location = new Point(3, 763);
             btnmemberRemove.Name = "btnmemberRemove";
-            btnmemberRemove.Size = new Size(421, 43);
+            btnmemberRemove.Size = new Size(421, 46);
             btnmemberRemove.TabIndex = 0;
             btnmemberRemove.Text = "Remove member";
             btnmemberRemove.UseVisualStyleBackColor = false;
@@ -693,12 +695,12 @@
             // 
             // btnmemberAdd
             // 
-            btnmemberAdd.BackColor = SystemColors.ButtonShadow;
+            btnmemberAdd.BackColor = Color.FromArgb(69, 69, 69);
             btnmemberAdd.Cursor = Cursors.Hand;
             btnmemberAdd.Dock = DockStyle.Fill;
             btnmemberAdd.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberAdd.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberAdd.Location = new Point(3, 634);
+            btnmemberAdd.Location = new Point(3, 631);
             btnmemberAdd.Name = "btnmemberAdd";
             btnmemberAdd.Size = new Size(421, 38);
             btnmemberAdd.TabIndex = 2;
@@ -714,7 +716,7 @@
             houseNumber.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
             houseNumber.Location = new Point(3, 0);
             houseNumber.Name = "houseNumber";
-            houseNumber.Size = new Size(1704, 122);
+            houseNumber.Size = new Size(1704, 121);
             houseNumber.TabIndex = 0;
             houseNumber.Text = "people";
             houseNumber.TextAlign = ContentAlignment.MiddleCenter;
@@ -750,7 +752,7 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(194, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 73);
+            label1.Size = new Size(100, 74);
             label1.TabIndex = 41;
             label1.Text = "Gender:";
             label1.TextAlign = ContentAlignment.MiddleRight;
@@ -762,13 +764,12 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(194, 73);
+            label2.Location = new Point(194, 74);
             label2.Name = "label2";
-            label2.Size = new Size(100, 73);
+            label2.Size = new Size(100, 74);
             label2.TabIndex = 42;
             label2.Text = "Age:";
             label2.TextAlign = ContentAlignment.MiddleRight;
-            label2.Click += label2_Click;
             // 
             // label4
             // 
@@ -777,9 +778,9 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(194, 146);
+            label4.Location = new Point(194, 148);
             label4.Name = "label4";
-            label4.Size = new Size(100, 76);
+            label4.Size = new Size(100, 75);
             label4.TabIndex = 43;
             label4.Text = "Name:";
             label4.TextAlign = ContentAlignment.MiddleRight;
@@ -793,7 +794,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1710, 50);
             panel2.TabIndex = 3;
-            panel2.Paint += panel2_Paint;
             // 
             // tableLayoutPanel1
             // 
@@ -803,13 +803,13 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
-            tableLayoutPanel1.Controls.Add(lstMembersList, 0, 1);
             tableLayoutPanel1.Controls.Add(btnmemberRemove, 0, 7);
             tableLayoutPanel1.Controls.Add(btnUpdateMember, 0, 6);
             tableLayoutPanel1.Controls.Add(btnInspectMember, 0, 5);
             tableLayoutPanel1.Controls.Add(btnmemberAdd, 0, 4);
             tableLayoutPanel1.Controls.Add(houseNumber, 0, 0);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
+            tableLayoutPanel1.Controls.Add(lstMembersList, 0, 1);
+            tableLayoutPanel1.Controls.Add(MemberNotPicked, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -836,15 +836,15 @@
             tableLayoutPanel2.Controls.Add(groupBox3, 0, 2);
             tableLayoutPanel2.Controls.Add(groupBox4, 2, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(430, 125);
+            tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel1.SetRowSpan(tableLayoutPanel2, 7);
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel2.Size = new Size(1277, 684);
+            tableLayoutPanel2.Size = new Size(1277, 685);
             tableLayoutPanel2.TabIndex = 5;
+            tableLayoutPanel2.Visible = false;
             // 
             // groupBox1
             // 
@@ -853,7 +853,7 @@
             groupBox1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(688, 261);
+            groupBox1.Size = new Size(688, 262);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal info";
@@ -878,7 +878,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.Size = new Size(682, 222);
+            tableLayoutPanel3.Size = new Size(682, 223);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox2
@@ -888,11 +888,10 @@
             groupBox2.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox2.Location = new Point(712, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(562, 261);
+            groupBox2.Size = new Size(562, 262);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job info ";
-            groupBox2.Enter += groupBox2_Enter;
             // 
             // tableLayoutPanel5
             // 
@@ -912,7 +911,7 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel5.Size = new Size(556, 222);
+            tableLayoutPanel5.Size = new Size(556, 223);
             tableLayoutPanel5.TabIndex = 0;
             // 
             // groupBox3
@@ -920,7 +919,7 @@
             groupBox3.Controls.Add(tableLayoutPanel6);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.Location = new Point(3, 285);
+            groupBox3.Location = new Point(3, 286);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(688, 396);
             groupBox3.TabIndex = 2;
@@ -973,7 +972,7 @@
             groupBox4.Controls.Add(tableLayoutPanel7);
             groupBox4.Dock = DockStyle.Fill;
             groupBox4.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox4.Location = new Point(712, 285);
+            groupBox4.Location = new Point(712, 286);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(562, 396);
             groupBox4.TabIndex = 3;
@@ -1000,6 +999,18 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.Size = new Size(556, 357);
             tableLayoutPanel7.TabIndex = 0;
+            // 
+            // MemberNotPicked
+            // 
+            MemberNotPicked.BackgroundImage = Properties.Resources.To_unlock_this_part_of_the_pro_3_27_2024;
+            MemberNotPicked.BackgroundImageLayout = ImageLayout.Stretch;
+            MemberNotPicked.Controls.Add(tableLayoutPanel2);
+            MemberNotPicked.Dock = DockStyle.Fill;
+            MemberNotPicked.Location = new Point(430, 124);
+            MemberNotPicked.Name = "MemberNotPicked";
+            tableLayoutPanel1.SetRowSpan(MemberNotPicked, 7);
+            MemberNotPicked.Size = new Size(1277, 685);
+            MemberNotPicked.TabIndex = 5;
             // 
             // InHouse
             // 
@@ -1033,6 +1044,7 @@
             groupBox4.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
+            MemberNotPicked.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1096,5 +1108,6 @@
         private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel7;
+        private Panel MemberNotPicked;
     }
 }
