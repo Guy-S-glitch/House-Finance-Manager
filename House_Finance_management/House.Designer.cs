@@ -65,12 +65,9 @@
             txtJobTitle = new Label();
             yearsExperience = new Label();
             jobPart = new Label();
-            label2 = new Label();
             lblUserGender = new Label();
             lblUserName = new Label();
             lblUserAge = new Label();
-            label5 = new Label();
-            label4 = new Label();
             iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             label3 = new Label();
             lstMembersList = new ListBox();
@@ -80,19 +77,17 @@
             btnmemberAdd = new Button();
             houseNumber = new Label();
             dataSentHandlerBindingSource = new BindingSource(components);
-            splitContainer2 = new SplitContainer();
             close = new FontAwesome.Sharp.IconButton();
             tableLayoutPanel4 = new TableLayoutPanel();
             panel1 = new Panel();
+            panel2 = new Panel();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
-            splitContainer2.Panel2.SuspendLayout();
-            splitContainer2.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // monthlySalary
@@ -103,11 +98,11 @@
             monthlySalary.Dock = DockStyle.Fill;
             monthlySalary.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             monthlySalary.ForeColor = Color.White;
-            monthlySalary.Location = new Point(1125, 212);
+            monthlySalary.Location = new Point(1103, 212);
             monthlySalary.Margin = new Padding(0);
             monthlySalary.Name = "monthlySalary";
             monthlySalary.Padding = new Padding(5);
-            monthlySalary.Size = new Size(188, 45);
+            monthlySalary.Size = new Size(197, 45);
             monthlySalary.TabIndex = 16;
             monthlySalary.Text = "Monthly Salary:";
             monthlySalary.TextAlign = ContentAlignment.MiddleRight;
@@ -120,11 +115,11 @@
             jobTitle.Dock = DockStyle.Fill;
             jobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             jobTitle.ForeColor = Color.White;
-            jobTitle.Location = new Point(1125, 302);
+            jobTitle.Location = new Point(1103, 302);
             jobTitle.Margin = new Padding(0);
             jobTitle.Name = "jobTitle";
             jobTitle.Padding = new Padding(5);
-            jobTitle.Size = new Size(188, 45);
+            jobTitle.Size = new Size(197, 45);
             jobTitle.TabIndex = 13;
             jobTitle.Text = "Job title:";
             jobTitle.TextAlign = ContentAlignment.MiddleRight;
@@ -136,9 +131,9 @@
             label17.Dock = DockStyle.Fill;
             label17.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(407, 758);
+            label17.Location = new Point(428, 758);
             label17.Name = "label17";
-            label17.Size = new Size(295, 54);
+            label17.Size = new Size(310, 54);
             label17.TabIndex = 21;
             label17.Text = "Restaurants";
             label17.TextAlign = ContentAlignment.MiddleRight;
@@ -150,9 +145,9 @@
             label16.Dock = DockStyle.Fill;
             label16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(407, 713);
+            label16.Location = new Point(428, 713);
             label16.Name = "label16";
-            label16.Size = new Size(295, 45);
+            label16.Size = new Size(310, 45);
             label16.TabIndex = 20;
             label16.Text = "Rent Per Month";
             label16.TextAlign = ContentAlignment.MiddleRight;
@@ -164,9 +159,9 @@
             label10.Dock = DockStyle.Fill;
             label10.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(253, 222, 9);
-            label10.Location = new Point(407, 392);
+            label10.Location = new Point(428, 392);
             label10.Name = "label10";
-            label10.Size = new Size(704, 96);
+            label10.Size = new Size(660, 96);
             label10.TabIndex = 13;
             label10.Text = "Total expenses";
             label10.TextAlign = ContentAlignment.MiddleCenter;
@@ -178,9 +173,9 @@
             label11.Dock = DockStyle.Fill;
             label11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(407, 488);
+            label11.Location = new Point(428, 488);
             label11.Name = "label11";
-            label11.Size = new Size(295, 45);
+            label11.Size = new Size(310, 45);
             label11.TabIndex = 15;
             label11.Text = "Transportation";
             label11.TextAlign = ContentAlignment.MiddleRight;
@@ -192,9 +187,9 @@
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(407, 533);
+            label12.Location = new Point(428, 533);
             label12.Name = "label12";
-            label12.Size = new Size(295, 45);
+            label12.Size = new Size(310, 45);
             label12.TabIndex = 16;
             label12.Text = "Clothing And Shoes";
             label12.TextAlign = ContentAlignment.MiddleRight;
@@ -206,9 +201,9 @@
             label13.Dock = DockStyle.Fill;
             label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(407, 578);
+            label13.Location = new Point(428, 578);
             label13.Name = "label13";
-            label13.Size = new Size(295, 45);
+            label13.Size = new Size(310, 45);
             label13.TabIndex = 17;
             label13.Text = "Sports And Leisure ";
             label13.TextAlign = ContentAlignment.MiddleRight;
@@ -220,9 +215,9 @@
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(407, 623);
+            label14.Location = new Point(428, 623);
             label14.Name = "label14";
-            label14.Size = new Size(295, 45);
+            label14.Size = new Size(310, 45);
             label14.TabIndex = 18;
             label14.Text = "Markets";
             label14.TextAlign = ContentAlignment.MiddleRight;
@@ -234,9 +229,9 @@
             label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(407, 668);
+            label15.Location = new Point(428, 668);
             label15.Name = "label15";
-            label15.Size = new Size(295, 45);
+            label15.Size = new Size(310, 45);
             label15.TabIndex = 19;
             label15.Text = "Utilities";
             label15.TextAlign = ContentAlignment.MiddleRight;
@@ -246,9 +241,9 @@
             pbTransportation.BackColor = Color.FromArgb(255, 192, 128);
             pbTransportation.Dock = DockStyle.Fill;
             pbTransportation.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbTransportation.Location = new Point(821, 491);
+            pbTransportation.Location = new Point(783, 491);
             pbTransportation.Name = "pbTransportation";
-            pbTransportation.Size = new Size(290, 39);
+            pbTransportation.Size = new Size(305, 39);
             pbTransportation.Step = 1;
             pbTransportation.TabIndex = 14;
             pbTransportation.Value = 100;
@@ -258,9 +253,9 @@
             pbClothes.BackColor = Color.FromArgb(255, 192, 128);
             pbClothes.Dock = DockStyle.Fill;
             pbClothes.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbClothes.Location = new Point(821, 536);
+            pbClothes.Location = new Point(783, 536);
             pbClothes.Name = "pbClothes";
-            pbClothes.Size = new Size(290, 39);
+            pbClothes.Size = new Size(305, 39);
             pbClothes.Step = 1;
             pbClothes.TabIndex = 21;
             pbClothes.Value = 100;
@@ -270,9 +265,9 @@
             pbSports.BackColor = Color.FromArgb(255, 192, 128);
             pbSports.Dock = DockStyle.Fill;
             pbSports.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbSports.Location = new Point(821, 581);
+            pbSports.Location = new Point(783, 581);
             pbSports.Name = "pbSports";
-            pbSports.Size = new Size(290, 39);
+            pbSports.Size = new Size(305, 39);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
             pbSports.Value = 100;
@@ -282,9 +277,9 @@
             pbMarkets.BackColor = Color.FromArgb(255, 192, 128);
             pbMarkets.Dock = DockStyle.Fill;
             pbMarkets.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbMarkets.Location = new Point(821, 626);
+            pbMarkets.Location = new Point(783, 626);
             pbMarkets.Name = "pbMarkets";
-            pbMarkets.Size = new Size(290, 39);
+            pbMarkets.Size = new Size(305, 39);
             pbMarkets.Step = 1;
             pbMarkets.TabIndex = 22;
             pbMarkets.Value = 100;
@@ -294,9 +289,9 @@
             pbUtilities.BackColor = Color.FromArgb(255, 192, 128);
             pbUtilities.Dock = DockStyle.Fill;
             pbUtilities.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbUtilities.Location = new Point(821, 671);
+            pbUtilities.Location = new Point(783, 671);
             pbUtilities.Name = "pbUtilities";
-            pbUtilities.Size = new Size(290, 39);
+            pbUtilities.Size = new Size(305, 39);
             pbUtilities.Step = 1;
             pbUtilities.TabIndex = 23;
             pbUtilities.Value = 100;
@@ -306,9 +301,9 @@
             pbRent.BackColor = Color.FromArgb(255, 192, 128);
             pbRent.Dock = DockStyle.Fill;
             pbRent.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRent.Location = new Point(821, 716);
+            pbRent.Location = new Point(783, 716);
             pbRent.Name = "pbRent";
-            pbRent.Size = new Size(290, 39);
+            pbRent.Size = new Size(305, 39);
             pbRent.Step = 1;
             pbRent.TabIndex = 24;
             pbRent.Value = 100;
@@ -318,9 +313,9 @@
             pbRestaurants.BackColor = Color.FromArgb(255, 192, 128);
             pbRestaurants.Dock = DockStyle.Fill;
             pbRestaurants.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRestaurants.Location = new Point(821, 761);
+            pbRestaurants.Location = new Point(783, 761);
             pbRestaurants.Name = "pbRestaurants";
-            pbRestaurants.Size = new Size(290, 48);
+            pbRestaurants.Size = new Size(305, 48);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
             pbRestaurants.Value = 100;
@@ -332,9 +327,9 @@
             pcClothes.Dock = DockStyle.Fill;
             pcClothes.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcClothes.ForeColor = Color.WhiteSmoke;
-            pcClothes.Location = new Point(708, 533);
+            pcClothes.Location = new Point(744, 533);
             pcClothes.Name = "pcClothes";
-            pcClothes.Size = new Size(107, 45);
+            pcClothes.Size = new Size(33, 45);
             pcClothes.TabIndex = 27;
             pcClothes.Text = "%";
             pcClothes.TextAlign = ContentAlignment.MiddleRight;
@@ -346,9 +341,9 @@
             pcSports.Dock = DockStyle.Fill;
             pcSports.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcSports.ForeColor = Color.White;
-            pcSports.Location = new Point(708, 578);
+            pcSports.Location = new Point(744, 578);
             pcSports.Name = "pcSports";
-            pcSports.Size = new Size(107, 45);
+            pcSports.Size = new Size(33, 45);
             pcSports.TabIndex = 28;
             pcSports.Text = "%";
             pcSports.TextAlign = ContentAlignment.MiddleRight;
@@ -360,9 +355,9 @@
             pcMarkets.Dock = DockStyle.Fill;
             pcMarkets.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcMarkets.ForeColor = Color.White;
-            pcMarkets.Location = new Point(708, 623);
+            pcMarkets.Location = new Point(744, 623);
             pcMarkets.Name = "pcMarkets";
-            pcMarkets.Size = new Size(107, 45);
+            pcMarkets.Size = new Size(33, 45);
             pcMarkets.TabIndex = 29;
             pcMarkets.Text = "%";
             pcMarkets.TextAlign = ContentAlignment.MiddleRight;
@@ -374,9 +369,9 @@
             pcUtilities.Dock = DockStyle.Fill;
             pcUtilities.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcUtilities.ForeColor = Color.White;
-            pcUtilities.Location = new Point(708, 668);
+            pcUtilities.Location = new Point(744, 668);
             pcUtilities.Name = "pcUtilities";
-            pcUtilities.Size = new Size(107, 45);
+            pcUtilities.Size = new Size(33, 45);
             pcUtilities.TabIndex = 30;
             pcUtilities.Text = "%";
             pcUtilities.TextAlign = ContentAlignment.MiddleRight;
@@ -388,9 +383,9 @@
             pcRent.Dock = DockStyle.Fill;
             pcRent.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRent.ForeColor = Color.White;
-            pcRent.Location = new Point(708, 713);
+            pcRent.Location = new Point(744, 713);
             pcRent.Name = "pcRent";
-            pcRent.Size = new Size(107, 45);
+            pcRent.Size = new Size(33, 45);
             pcRent.TabIndex = 31;
             pcRent.Text = "%";
             pcRent.TextAlign = ContentAlignment.MiddleRight;
@@ -402,9 +397,9 @@
             pcRestaurants.Dock = DockStyle.Fill;
             pcRestaurants.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRestaurants.ForeColor = Color.White;
-            pcRestaurants.Location = new Point(708, 758);
+            pcRestaurants.Location = new Point(744, 758);
             pcRestaurants.Name = "pcRestaurants";
-            pcRestaurants.Size = new Size(107, 54);
+            pcRestaurants.Size = new Size(33, 54);
             pcRestaurants.TabIndex = 32;
             pcRestaurants.Text = "%";
             pcRestaurants.TextAlign = ContentAlignment.MiddleRight;
@@ -417,9 +412,9 @@
             label25.Dock = DockStyle.Fill;
             label25.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label25.ForeColor = Color.FromArgb(253, 222, 9);
-            label25.Location = new Point(1240, 392);
+            label25.Location = new Point(1224, 392);
             label25.Name = "label25";
-            label25.Size = new Size(335, 96);
+            label25.Size = new Size(351, 96);
             label25.TabIndex = 33;
             label25.Text = "Contacts";
             label25.TextAlign = ContentAlignment.MiddleLeft;
@@ -432,9 +427,9 @@
             label26.Dock = DockStyle.Fill;
             label26.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label26.ForeColor = Color.White;
-            label26.Location = new Point(1128, 488);
+            label26.Location = new Point(1106, 488);
             label26.Name = "label26";
-            label26.Size = new Size(182, 45);
+            label26.Size = new Size(191, 45);
             label26.TabIndex = 34;
             label26.Text = "Phone number:";
             label26.TextAlign = ContentAlignment.MiddleRight;
@@ -447,9 +442,9 @@
             label28.Dock = DockStyle.Fill;
             label28.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label28.ForeColor = Color.White;
-            label28.Location = new Point(1128, 578);
+            label28.Location = new Point(1106, 578);
             label28.Name = "label28";
-            label28.Size = new Size(182, 45);
+            label28.Size = new Size(191, 45);
             label28.TabIndex = 36;
             label28.Text = "Email adress:";
             label28.TextAlign = ContentAlignment.MiddleRight;
@@ -461,10 +456,10 @@
             txtPhone.Dock = DockStyle.Fill;
             txtPhone.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPhone.ForeColor = Color.White;
-            txtPhone.Location = new Point(1313, 488);
+            txtPhone.Location = new Point(1300, 488);
             txtPhone.Margin = new Padding(0);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(265, 45);
+            txtPhone.Size = new Size(278, 45);
             txtPhone.TabIndex = 38;
             txtPhone.Text = "...";
             txtPhone.TextAlign = ContentAlignment.MiddleLeft;
@@ -476,10 +471,10 @@
             txtEmail.Dock = DockStyle.Fill;
             txtEmail.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = Color.White;
-            txtEmail.Location = new Point(1313, 578);
+            txtEmail.Location = new Point(1300, 578);
             txtEmail.Margin = new Padding(0);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(265, 45);
+            txtEmail.Size = new Size(278, 45);
             txtEmail.TabIndex = 39;
             txtEmail.Text = "...";
             txtEmail.TextAlign = ContentAlignment.MiddleLeft;
@@ -492,9 +487,9 @@
             label18.Dock = DockStyle.Fill;
             label18.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(1128, 668);
+            label18.Location = new Point(1106, 668);
             label18.Name = "label18";
-            label18.Size = new Size(182, 45);
+            label18.Size = new Size(191, 45);
             label18.TabIndex = 37;
             label18.Text = "City:";
             label18.TextAlign = ContentAlignment.MiddleRight;
@@ -506,10 +501,10 @@
             txtCity.Dock = DockStyle.Fill;
             txtCity.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCity.ForeColor = Color.White;
-            txtCity.Location = new Point(1313, 668);
+            txtCity.Location = new Point(1300, 668);
             txtCity.Margin = new Padding(0);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(265, 45);
+            txtCity.Size = new Size(278, 45);
             txtCity.TabIndex = 39;
             txtCity.Text = "...";
             txtCity.TextAlign = ContentAlignment.MiddleLeft;
@@ -522,9 +517,9 @@
             pcTransportation.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcTransportation.ForeColor = Color.White;
             pcTransportation.ImageAlign = ContentAlignment.TopLeft;
-            pcTransportation.Location = new Point(708, 488);
+            pcTransportation.Location = new Point(744, 488);
             pcTransportation.Name = "pcTransportation";
-            pcTransportation.Size = new Size(107, 45);
+            pcTransportation.Size = new Size(33, 45);
             pcTransportation.TabIndex = 26;
             pcTransportation.Text = "%";
             pcTransportation.TextAlign = ContentAlignment.MiddleRight;
@@ -536,11 +531,11 @@
             txtExperience.Dock = DockStyle.Fill;
             txtExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtExperience.ForeColor = Color.White;
-            txtExperience.Location = new Point(1313, 257);
+            txtExperience.Location = new Point(1300, 257);
             txtExperience.Margin = new Padding(0);
             txtExperience.Name = "txtExperience";
             txtExperience.Padding = new Padding(5);
-            txtExperience.Size = new Size(265, 45);
+            txtExperience.Size = new Size(278, 45);
             txtExperience.TabIndex = 15;
             txtExperience.Text = "...";
             txtExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -552,11 +547,11 @@
             txtMonthlySalary.Dock = DockStyle.Fill;
             txtMonthlySalary.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtMonthlySalary.ForeColor = Color.White;
-            txtMonthlySalary.Location = new Point(1313, 212);
+            txtMonthlySalary.Location = new Point(1300, 212);
             txtMonthlySalary.Margin = new Padding(0);
             txtMonthlySalary.Name = "txtMonthlySalary";
             txtMonthlySalary.Padding = new Padding(5);
-            txtMonthlySalary.Size = new Size(265, 45);
+            txtMonthlySalary.Size = new Size(278, 45);
             txtMonthlySalary.TabIndex = 17;
             txtMonthlySalary.Text = "...";
             txtMonthlySalary.TextAlign = ContentAlignment.MiddleLeft;
@@ -568,12 +563,12 @@
             txtJobTitle.Dock = DockStyle.Fill;
             txtJobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtJobTitle.ForeColor = Color.White;
-            txtJobTitle.Location = new Point(1313, 302);
+            txtJobTitle.Location = new Point(1300, 302);
             txtJobTitle.Margin = new Padding(0);
             txtJobTitle.Name = "txtJobTitle";
             txtJobTitle.Padding = new Padding(5);
             tableLayoutPanel4.SetRowSpan(txtJobTitle, 2);
-            txtJobTitle.Size = new Size(265, 90);
+            txtJobTitle.Size = new Size(278, 90);
             txtJobTitle.TabIndex = 14;
             txtJobTitle.Text = "...";
             // 
@@ -585,11 +580,11 @@
             yearsExperience.Dock = DockStyle.Fill;
             yearsExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             yearsExperience.ForeColor = Color.White;
-            yearsExperience.Location = new Point(1125, 257);
+            yearsExperience.Location = new Point(1103, 257);
             yearsExperience.Margin = new Padding(0);
             yearsExperience.Name = "yearsExperience";
             yearsExperience.Padding = new Padding(5);
-            yearsExperience.Size = new Size(188, 45);
+            yearsExperience.Size = new Size(197, 45);
             yearsExperience.TabIndex = 13;
             yearsExperience.Text = "Experience:";
             yearsExperience.TextAlign = ContentAlignment.MiddleRight;
@@ -601,27 +596,12 @@
             jobPart.Dock = DockStyle.Fill;
             jobPart.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             jobPart.ForeColor = Color.FromArgb(136, 3, 18);
-            jobPart.Location = new Point(1240, 116);
+            jobPart.Location = new Point(1224, 116);
             jobPart.Name = "jobPart";
-            jobPart.Size = new Size(335, 96);
+            jobPart.Size = new Size(351, 96);
             jobPart.TabIndex = 11;
             jobPart.Text = "Job Information";
             jobPart.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.ImageAlign = ContentAlignment.TopRight;
-            label2.Location = new Point(708, 302);
-            label2.Name = "label2";
-            label2.Size = new Size(107, 45);
-            label2.TabIndex = 2;
-            label2.Text = "Name: ";
-            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblUserGender
             // 
@@ -631,9 +611,9 @@
             lblUserGender.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserGender.ForeColor = Color.White;
             lblUserGender.ImageAlign = ContentAlignment.TopLeft;
-            lblUserGender.Location = new Point(821, 212);
+            lblUserGender.Location = new Point(783, 212);
             lblUserGender.Name = "lblUserGender";
-            lblUserGender.Size = new Size(290, 45);
+            lblUserGender.Size = new Size(305, 45);
             lblUserGender.TabIndex = 6;
             lblUserGender.Text = "...";
             // 
@@ -645,10 +625,10 @@
             lblUserName.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.White;
             lblUserName.ImageAlign = ContentAlignment.TopLeft;
-            lblUserName.Location = new Point(821, 302);
+            lblUserName.Location = new Point(783, 302);
             lblUserName.Name = "lblUserName";
             tableLayoutPanel4.SetRowSpan(lblUserName, 2);
-            lblUserName.Size = new Size(290, 90);
+            lblUserName.Size = new Size(305, 90);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "...";
             // 
@@ -660,41 +640,11 @@
             lblUserAge.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserAge.ForeColor = Color.White;
             lblUserAge.ImageAlign = ContentAlignment.TopLeft;
-            lblUserAge.Location = new Point(821, 257);
+            lblUserAge.Location = new Point(783, 257);
             lblUserAge.Name = "lblUserAge";
-            lblUserAge.Size = new Size(290, 45);
+            lblUserAge.Size = new Size(305, 45);
             lblUserAge.TabIndex = 7;
             lblUserAge.Text = "...";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.ImageAlign = ContentAlignment.TopRight;
-            label5.Location = new Point(708, 212);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 45);
-            label5.TabIndex = 8;
-            label5.Text = "Gender: ";
-            label5.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.ImageAlign = ContentAlignment.TopRight;
-            label4.Location = new Point(708, 257);
-            label4.Name = "label4";
-            label4.Size = new Size(107, 45);
-            label4.TabIndex = 5;
-            label4.Text = "Age: ";
-            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // iconPictureBox
             // 
@@ -705,10 +655,10 @@
             iconPictureBox.IconColor = SystemColors.ControlText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox.IconSize = 174;
-            iconPictureBox.Location = new Point(407, 215);
+            iconPictureBox.Location = new Point(428, 215);
             iconPictureBox.Name = "iconPictureBox";
             tableLayoutPanel4.SetRowSpan(iconPictureBox, 4);
-            iconPictureBox.Size = new Size(295, 174);
+            iconPictureBox.Size = new Size(310, 174);
             iconPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             iconPictureBox.TabIndex = 1;
             iconPictureBox.TabStop = false;
@@ -720,9 +670,9 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(136, 3, 18);
-            label3.Location = new Point(407, 116);
+            label3.Location = new Point(428, 116);
             label3.Name = "label3";
-            label3.Size = new Size(704, 96);
+            label3.Size = new Size(660, 96);
             label3.TabIndex = 9;
             label3.Text = "Personal Info";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -737,7 +687,7 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 0);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(393, 431);
+            lstMembersList.Size = new Size(414, 431);
             lstMembersList.TabIndex = 3;
             // 
             // btnUpdateMember
@@ -747,7 +697,7 @@
             btnUpdateMember.Dock = DockStyle.Fill;
             btnUpdateMember.Location = new Point(3, 716);
             btnUpdateMember.Name = "btnUpdateMember";
-            btnUpdateMember.Size = new Size(393, 39);
+            btnUpdateMember.Size = new Size(414, 39);
             btnUpdateMember.TabIndex = 4;
             btnUpdateMember.Text = "Update member";
             btnUpdateMember.UseVisualStyleBackColor = false;
@@ -760,7 +710,7 @@
             btnInspectMember.Dock = DockStyle.Fill;
             btnInspectMember.Location = new Point(3, 671);
             btnInspectMember.Name = "btnInspectMember";
-            btnInspectMember.Size = new Size(393, 39);
+            btnInspectMember.Size = new Size(414, 39);
             btnInspectMember.TabIndex = 3;
             btnInspectMember.Text = "Inspect member";
             btnInspectMember.UseVisualStyleBackColor = false;
@@ -773,7 +723,7 @@
             btnmemberRemove.Dock = DockStyle.Fill;
             btnmemberRemove.Location = new Point(3, 761);
             btnmemberRemove.Name = "btnmemberRemove";
-            btnmemberRemove.Size = new Size(393, 48);
+            btnmemberRemove.Size = new Size(414, 48);
             btnmemberRemove.TabIndex = 0;
             btnmemberRemove.Text = "Remove member";
             btnmemberRemove.UseVisualStyleBackColor = false;
@@ -786,7 +736,7 @@
             btnmemberAdd.Dock = DockStyle.Fill;
             btnmemberAdd.Location = new Point(3, 626);
             btnmemberAdd.Name = "btnmemberAdd";
-            btnmemberAdd.Size = new Size(393, 39);
+            btnmemberAdd.Size = new Size(414, 39);
             btnmemberAdd.TabIndex = 2;
             btnmemberAdd.Text = "Add member";
             btnmemberAdd.UseVisualStyleBackColor = false;
@@ -809,32 +759,20 @@
             // 
             dataSentHandlerBindingSource.DataSource = typeof(DataSentHandler);
             // 
-            // splitContainer2
-            // 
-            splitContainer2.BackColor = SystemColors.MenuHighlight;
-            splitContainer2.Dock = DockStyle.Top;
-            splitContainer2.FixedPanel = FixedPanel.Panel2;
-            splitContainer2.Location = new Point(0, 0);
-            splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel2
-            // 
-            splitContainer2.Panel2.Controls.Add(close);
-            splitContainer2.Size = new Size(1578, 50);
-            splitContainer2.SplitterDistance = 1473;
-            splitContainer2.TabIndex = 1;
-            // 
             // close
             // 
+            close.AutoSize = true;
             close.BackColor = Color.IndianRed;
             close.Cursor = Cursors.Hand;
-            close.Dock = DockStyle.Fill;
+            close.Dock = DockStyle.Right;
             close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             close.IconColor = Color.WhiteSmoke;
             close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            close.Location = new Point(0, 0);
+            close.Location = new Point(1478, 0);
+            close.MaximumSize = new Size(100, 50);
+            close.MinimumSize = new Size(100, 50);
             close.Name = "close";
-            close.Size = new Size(101, 50);
+            close.Size = new Size(100, 50);
             close.TabIndex = 0;
             close.UseVisualStyleBackColor = false;
             close.Click += close_Click;
@@ -886,7 +824,6 @@
             tableLayoutPanel4.Controls.Add(label3, 2, 2);
             tableLayoutPanel4.Controls.Add(jobPart, 7, 2);
             tableLayoutPanel4.Controls.Add(iconPictureBox, 2, 3);
-            tableLayoutPanel4.Controls.Add(label4, 3, 4);
             tableLayoutPanel4.Controls.Add(lblUserAge, 4, 4);
             tableLayoutPanel4.Controls.Add(yearsExperience, 6, 4);
             tableLayoutPanel4.Controls.Add(txtExperience, 8, 4);
@@ -894,9 +831,7 @@
             tableLayoutPanel4.Controls.Add(txtMonthlySalary, 8, 3);
             tableLayoutPanel4.Controls.Add(jobTitle, 6, 5);
             tableLayoutPanel4.Controls.Add(txtJobTitle, 8, 5);
-            tableLayoutPanel4.Controls.Add(label5, 3, 3);
             tableLayoutPanel4.Controls.Add(lblUserGender, 4, 3);
-            tableLayoutPanel4.Controls.Add(label2, 3, 5);
             tableLayoutPanel4.Controls.Add(lblUserName, 4, 5);
             tableLayoutPanel4.Controls.Add(panel1, 0, 1);
             tableLayoutPanel4.Controls.Add(btnmemberRemove, 0, 14);
@@ -933,8 +868,19 @@
             panel1.Location = new Point(3, 99);
             panel1.Name = "panel1";
             tableLayoutPanel4.SetRowSpan(panel1, 8);
-            panel1.Size = new Size(393, 431);
+            panel1.Size = new Size(414, 431);
             panel1.TabIndex = 40;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(close);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1578, 50);
+            panel2.TabIndex = 3;
+            panel2.Paint += panel2_Paint;
             // 
             // InHouse
             // 
@@ -942,7 +888,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1578, 862);
             Controls.Add(tableLayoutPanel4);
-            Controls.Add(splitContainer2);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -952,12 +898,11 @@
             FormClosed += inHouse_FormClosed;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).EndInit();
-            splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
-            splitContainer2.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -967,10 +912,7 @@
         private Button btnmemberRemove;
         private ListBox lstMembersList;
         private Label lblUserName;
-        private Label label2;
-        private Label label4;
         private Label lblUserGender;
-        private Label label5;
         private Label lblUserAge;
         private Label label3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox;
@@ -1013,9 +955,9 @@
         private Label txtPhone;
         private Label txtEmail;
         private Button btnUpdateMember;
-        private SplitContainer splitContainer2;
         private FontAwesome.Sharp.IconButton close;
         private TableLayoutPanel tableLayoutPanel4;
         private Panel panel1;
+        private Panel panel2;
     }
 }

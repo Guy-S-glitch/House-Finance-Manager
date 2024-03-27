@@ -63,6 +63,16 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Color_Palette_Nature {
+            get {
+                object obj = ResourceManager.GetObject("Color Palette Nature", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap gradient_Dark_blue {
             get {
                 object obj = ResourceManager.GetObject("gradient Dark blue", resourceCulture);

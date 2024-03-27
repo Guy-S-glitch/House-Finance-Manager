@@ -77,8 +77,8 @@
             iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
             groupBox5 = new GroupBox();
             pictureBox1 = new PictureBox();
-            splitContainer2 = new SplitContainer();
             close = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)numMonthlySalary).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numExperience).BeginInit();
             groupBox1.SuspendLayout();
@@ -100,9 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
-            splitContainer2.Panel2.SuspendLayout();
-            splitContainer2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -825,35 +823,33 @@
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
-            // splitContainer2
-            // 
-            splitContainer2.BackColor = SystemColors.MenuHighlight;
-            splitContainer2.Dock = DockStyle.Top;
-            splitContainer2.Location = new Point(0, 0);
-            splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel2
-            // 
-            splitContainer2.Panel2.Controls.Add(close);
-            splitContainer2.Size = new Size(1924, 50);
-            splitContainer2.SplitterDistance = 1822;
-            splitContainer2.TabIndex = 29;
-            // 
             // close
             // 
             close.BackColor = Color.IndianRed;
             close.Cursor = Cursors.Hand;
-            close.Dock = DockStyle.Fill;
+            close.Dock = DockStyle.Right;
             close.ForeColor = Color.Transparent;
             close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             close.IconColor = Color.White;
             close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            close.Location = new Point(0, 0);
+            close.Location = new Point(1824, 0);
+            close.MaximumSize = new Size(100, 50);
+            close.MinimumSize = new Size(100, 50);
             close.Name = "close";
-            close.Size = new Size(98, 50);
+            close.Size = new Size(100, 50);
             close.TabIndex = 0;
             close.UseVisualStyleBackColor = false;
             close.Click += close_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Controls.Add(close);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1924, 50);
+            panel1.TabIndex = 0;
             // 
             // Add_Member
             // 
@@ -864,7 +860,7 @@
             BackgroundImage = Properties.Resources.ocean;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(splitContainer2);
+            Controls.Add(panel1);
             Controls.Add(groupBox5);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
@@ -907,9 +903,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
-            splitContainer2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -963,7 +957,7 @@
         private ComboBox cmbJob;
         private Label emailValidationText;
         private PictureBox pictureBox1;
-        private SplitContainer splitContainer2;
         private FontAwesome.Sharp.IconButton close;
+        private Panel panel1;
     }
 }

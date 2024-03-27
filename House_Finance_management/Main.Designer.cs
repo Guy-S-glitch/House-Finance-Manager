@@ -32,19 +32,17 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             House1 = new FontAwesome.Sharp.IconButton();
             AddHouse = new Button();
-            splitContainer1 = new SplitContainer();
             close = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Controls.Add(splitContainer1);
+            panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -62,7 +60,7 @@
             tableLayoutPanel1.Controls.Add(House1, 0, 0);
             tableLayoutPanel1.Controls.Add(AddHouse, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 49);
+            tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -70,7 +68,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(1129, 542);
+            tableLayoutPanel1.Size = new Size(1129, 541);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // House1
@@ -103,39 +101,32 @@
             AddHouse.UseVisualStyleBackColor = true;
             AddHouse.Click += AddHouse_Click;
             // 
-            // splitContainer1
-            // 
-            splitContainer1.BackColor = SystemColors.MenuHighlight;
-            splitContainer1.Dock = DockStyle.Top;
-            splitContainer1.FixedPanel = FixedPanel.Panel2;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.BackColor = SystemColors.MenuHighlight;
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(close);
-            splitContainer1.Size = new Size(1129, 49);
-            splitContainer1.SplitterDistance = 1030;
-            splitContainer1.TabIndex = 4;
-            // 
             // close
             // 
             close.BackColor = Color.IndianRed;
             close.Cursor = Cursors.Hand;
-            close.Dock = DockStyle.Fill;
+            close.Dock = DockStyle.Right;
             close.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             close.IconColor = Color.WhiteSmoke;
             close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            close.Location = new Point(0, 0);
+            close.Location = new Point(1029, 0);
+            close.MaximumSize = new Size(100, 50);
+            close.MinimumSize = new Size(100, 50);
             close.Name = "close";
-            close.Size = new Size(95, 49);
+            close.Size = new Size(100, 50);
             close.TabIndex = 0;
             close.UseVisualStyleBackColor = false;
             close.Click += close_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(close);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1129, 50);
+            panel2.TabIndex = 5;
             // 
             // Main
             // 
@@ -152,9 +143,7 @@
             FormClosing += Main_FormClosing;
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -164,7 +153,7 @@
         private FontAwesome.Sharp.IconButton House1;
         private TableLayoutPanel tableLayoutPanel1;
         private Button AddHouse;
-        private SplitContainer splitContainer1;
         private FontAwesome.Sharp.IconButton close;
+        private Panel panel2;
     }
 }

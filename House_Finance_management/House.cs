@@ -87,7 +87,13 @@ namespace House_Finance_management
         {
             close.Enabled = false;
             this.Close();
-        } 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
     }
