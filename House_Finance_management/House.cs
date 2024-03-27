@@ -94,6 +94,16 @@ namespace House_Finance_management
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
     }

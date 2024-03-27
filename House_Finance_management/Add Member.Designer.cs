@@ -857,7 +857,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.AppWorkspace;
-            BackgroundImage = Properties.Resources.ocean;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1050);
             Controls.Add(panel1);

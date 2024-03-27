@@ -63,9 +63,9 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Color_Palette_Nature {
+        public static System.Drawing.Bitmap Color_Hunt_Palette_4f6f5273907286a789d2e3c8 {
             get {
-                object obj = ResourceManager.GetObject("Color Palette Nature", resourceCulture);
+                object obj = ResourceManager.GetObject("Color Hunt Palette 4f6f5273907286a789d2e3c8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,16 +76,6 @@ namespace House_Finance_management.Properties {
         public static System.Drawing.Bitmap gradient_Dark_blue {
             get {
                 object obj = ResourceManager.GetObject("gradient Dark blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ocean {
-            get {
-                object obj = ResourceManager.GetObject("ocean", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,16 +146,6 @@ namespace House_Finance_management.Properties {
         public static System.Drawing.Bitmap Space_Addmember_Photo {
             get {
                 object obj = ResourceManager.GetObject("Space_Addmember_Photo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap sunset {
-            get {
-                object obj = ResourceManager.GetObject("sunset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
