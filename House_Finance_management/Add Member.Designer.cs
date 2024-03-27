@@ -259,12 +259,12 @@
             dtpAge.Format = DateTimePickerFormat.Short;
             dtpAge.Location = new Point(179, 188);
             dtpAge.Margin = new Padding(4, 3, 4, 3);
-            dtpAge.MaxDate = new DateTime(2024, 3, 4, 0, 0, 0, 0);
+            dtpAge.MaxDate = DateTime.Today;
             dtpAge.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dtpAge.Name = "dtpAge";
             dtpAge.Size = new Size(224, 35);
             dtpAge.TabIndex = 9;
-            dtpAge.Value = new DateTime(2024, 3, 4, 0, 0, 0, 0);
+            dtpAge.Value = DateTime.Today;
             // 
             // MiddleNameValidationText
             // 
