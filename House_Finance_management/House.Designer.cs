@@ -745,7 +745,7 @@
             btnUpdateMember.BackColor = SystemColors.ButtonFace;
             btnUpdateMember.Cursor = Cursors.Hand;
             btnUpdateMember.Dock = DockStyle.Fill;
-            btnUpdateMember.Location = new Point(3, 671);
+            btnUpdateMember.Location = new Point(3, 716);
             btnUpdateMember.Name = "btnUpdateMember";
             btnUpdateMember.Size = new Size(393, 39);
             btnUpdateMember.TabIndex = 4;
@@ -758,7 +758,7 @@
             btnInspectMember.BackColor = SystemColors.ButtonFace;
             btnInspectMember.Cursor = Cursors.Hand;
             btnInspectMember.Dock = DockStyle.Fill;
-            btnInspectMember.Location = new Point(3, 716);
+            btnInspectMember.Location = new Point(3, 671);
             btnInspectMember.Name = "btnInspectMember";
             btnInspectMember.Size = new Size(393, 39);
             btnInspectMember.TabIndex = 3;
@@ -771,9 +771,9 @@
             btnmemberRemove.BackColor = SystemColors.ButtonFace;
             btnmemberRemove.Cursor = Cursors.Hand;
             btnmemberRemove.Dock = DockStyle.Fill;
-            btnmemberRemove.Location = new Point(3, 626);
+            btnmemberRemove.Location = new Point(3, 761);
             btnmemberRemove.Name = "btnmemberRemove";
-            btnmemberRemove.Size = new Size(393, 39);
+            btnmemberRemove.Size = new Size(393, 48);
             btnmemberRemove.TabIndex = 0;
             btnmemberRemove.Text = "Remove member";
             btnmemberRemove.UseVisualStyleBackColor = false;
@@ -784,9 +784,9 @@
             btnmemberAdd.BackColor = SystemColors.ButtonFace;
             btnmemberAdd.Cursor = Cursors.Hand;
             btnmemberAdd.Dock = DockStyle.Fill;
-            btnmemberAdd.Location = new Point(3, 761);
+            btnmemberAdd.Location = new Point(3, 626);
             btnmemberAdd.Name = "btnmemberAdd";
-            btnmemberAdd.Size = new Size(393, 48);
+            btnmemberAdd.Size = new Size(393, 39);
             btnmemberAdd.TabIndex = 2;
             btnmemberAdd.Text = "Add member";
             btnmemberAdd.UseVisualStyleBackColor = false;
@@ -883,10 +883,6 @@
             tableLayoutPanel4.Controls.Add(label26, 6, 8);
             tableLayoutPanel4.Controls.Add(label25, 7, 7);
             tableLayoutPanel4.Controls.Add(houseNumber, 0, 0);
-            tableLayoutPanel4.Controls.Add(btnmemberAdd, 0, 14);
-            tableLayoutPanel4.Controls.Add(btnInspectMember, 0, 13);
-            tableLayoutPanel4.Controls.Add(btnUpdateMember, 0, 12);
-            tableLayoutPanel4.Controls.Add(btnmemberRemove, 0, 11);
             tableLayoutPanel4.Controls.Add(label3, 2, 2);
             tableLayoutPanel4.Controls.Add(jobPart, 7, 2);
             tableLayoutPanel4.Controls.Add(iconPictureBox, 2, 3);
@@ -903,6 +899,10 @@
             tableLayoutPanel4.Controls.Add(label2, 3, 5);
             tableLayoutPanel4.Controls.Add(lblUserName, 4, 5);
             tableLayoutPanel4.Controls.Add(panel1, 0, 1);
+            tableLayoutPanel4.Controls.Add(btnmemberRemove, 0, 14);
+            tableLayoutPanel4.Controls.Add(btnmemberAdd, 0, 11);
+            tableLayoutPanel4.Controls.Add(btnUpdateMember, 0, 13);
+            tableLayoutPanel4.Controls.Add(btnInspectMember, 0, 12);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(0, 50);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
