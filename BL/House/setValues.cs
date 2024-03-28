@@ -8,6 +8,7 @@ namespace BL
         {
             if (showExistMembers!=null)  //if sent without members skip the adding part
             {
+                lstMembersList.Visible = true;
                 foreach (InfoToHouse addExistMember in showExistMembers) members.Add(addExistMember);
             }
              

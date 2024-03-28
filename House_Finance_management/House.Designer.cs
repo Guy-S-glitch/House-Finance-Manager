@@ -79,6 +79,7 @@
             label4 = new Label();
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            MemberNotPicked = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -88,13 +89,15 @@
             tableLayoutPanel6 = new TableLayoutPanel();
             groupBox4 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
-            MemberNotPicked = new Panel();
+            groupBox5 = new GroupBox();
+            panel1 = new Panel();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).BeginInit();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            MemberNotPicked.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -104,7 +107,8 @@
             tableLayoutPanel6.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
-            MemberNotPicked.SuspendLayout();
+            groupBox5.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // monthlySalary
@@ -146,7 +150,7 @@
             label17.Dock = DockStyle.Fill;
             label17.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label17.ForeColor = SystemColors.ActiveCaptionText;
-            label17.Location = new Point(3, 305);
+            label17.Location = new Point(3, 306);
             label17.Name = "label17";
             label17.Size = new Size(233, 52);
             label17.TabIndex = 21;
@@ -160,7 +164,7 @@
             label16.Dock = DockStyle.Fill;
             label16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label16.ForeColor = SystemColors.ActiveCaptionText;
-            label16.Location = new Point(3, 254);
+            label16.Location = new Point(3, 255);
             label16.Name = "label16";
             label16.Size = new Size(233, 51);
             label16.TabIndex = 20;
@@ -176,7 +180,7 @@
             label11.ForeColor = SystemColors.ActiveCaptionText;
             label11.Location = new Point(3, 0);
             label11.Name = "label11";
-            label11.Size = new Size(233, 50);
+            label11.Size = new Size(233, 51);
             label11.TabIndex = 15;
             label11.Text = "Transportation:";
             label11.TextAlign = ContentAlignment.MiddleRight;
@@ -188,7 +192,7 @@
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(3, 50);
+            label12.Location = new Point(3, 51);
             label12.Name = "label12";
             label12.Size = new Size(233, 51);
             label12.TabIndex = 16;
@@ -202,7 +206,7 @@
             label13.Dock = DockStyle.Fill;
             label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(3, 101);
+            label13.Location = new Point(3, 102);
             label13.Name = "label13";
             label13.Size = new Size(233, 51);
             label13.TabIndex = 17;
@@ -216,7 +220,7 @@
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ActiveCaptionText;
-            label14.Location = new Point(3, 152);
+            label14.Location = new Point(3, 153);
             label14.Name = "label14";
             label14.Size = new Size(233, 51);
             label14.TabIndex = 18;
@@ -230,7 +234,7 @@
             label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = SystemColors.ActiveCaptionText;
-            label15.Location = new Point(3, 203);
+            label15.Location = new Point(3, 204);
             label15.Name = "label15";
             label15.Size = new Size(233, 51);
             label15.TabIndex = 19;
@@ -244,7 +248,7 @@
             pbTransportation.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
             pbTransportation.Location = new Point(281, 3);
             pbTransportation.Name = "pbTransportation";
-            pbTransportation.Size = new Size(398, 44);
+            pbTransportation.Size = new Size(398, 45);
             pbTransportation.Step = 1;
             pbTransportation.TabIndex = 14;
             pbTransportation.Value = 100;
@@ -254,7 +258,7 @@
             pbClothes.BackColor = Color.FromArgb(255, 192, 128);
             pbClothes.Dock = DockStyle.Fill;
             pbClothes.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbClothes.Location = new Point(281, 53);
+            pbClothes.Location = new Point(281, 54);
             pbClothes.Name = "pbClothes";
             pbClothes.Size = new Size(398, 45);
             pbClothes.Step = 1;
@@ -266,7 +270,7 @@
             pbSports.BackColor = Color.FromArgb(255, 192, 128);
             pbSports.Dock = DockStyle.Fill;
             pbSports.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbSports.Location = new Point(281, 104);
+            pbSports.Location = new Point(281, 105);
             pbSports.Name = "pbSports";
             pbSports.Size = new Size(398, 45);
             pbSports.Step = 1;
@@ -278,7 +282,7 @@
             pbMarkets.BackColor = Color.FromArgb(255, 192, 128);
             pbMarkets.Dock = DockStyle.Fill;
             pbMarkets.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbMarkets.Location = new Point(281, 155);
+            pbMarkets.Location = new Point(281, 156);
             pbMarkets.Name = "pbMarkets";
             pbMarkets.Size = new Size(398, 45);
             pbMarkets.Step = 1;
@@ -290,7 +294,7 @@
             pbUtilities.BackColor = Color.FromArgb(255, 192, 128);
             pbUtilities.Dock = DockStyle.Fill;
             pbUtilities.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbUtilities.Location = new Point(281, 206);
+            pbUtilities.Location = new Point(281, 207);
             pbUtilities.Name = "pbUtilities";
             pbUtilities.Size = new Size(398, 45);
             pbUtilities.Step = 1;
@@ -302,7 +306,7 @@
             pbRent.BackColor = Color.FromArgb(255, 192, 128);
             pbRent.Dock = DockStyle.Fill;
             pbRent.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRent.Location = new Point(281, 257);
+            pbRent.Location = new Point(281, 258);
             pbRent.Name = "pbRent";
             pbRent.Size = new Size(398, 45);
             pbRent.Step = 1;
@@ -314,7 +318,7 @@
             pbRestaurants.BackColor = Color.FromArgb(255, 192, 128);
             pbRestaurants.Dock = DockStyle.Fill;
             pbRestaurants.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRestaurants.Location = new Point(281, 308);
+            pbRestaurants.Location = new Point(281, 309);
             pbRestaurants.Name = "pbRestaurants";
             pbRestaurants.Size = new Size(398, 46);
             pbRestaurants.Step = 1;
@@ -328,7 +332,7 @@
             pcClothes.Dock = DockStyle.Fill;
             pcClothes.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcClothes.ForeColor = SystemColors.ActiveCaptionText;
-            pcClothes.Location = new Point(242, 50);
+            pcClothes.Location = new Point(242, 51);
             pcClothes.Name = "pcClothes";
             pcClothes.Size = new Size(33, 51);
             pcClothes.TabIndex = 27;
@@ -342,7 +346,7 @@
             pcSports.Dock = DockStyle.Fill;
             pcSports.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcSports.ForeColor = SystemColors.ActiveCaptionText;
-            pcSports.Location = new Point(242, 101);
+            pcSports.Location = new Point(242, 102);
             pcSports.Name = "pcSports";
             pcSports.Size = new Size(33, 51);
             pcSports.TabIndex = 28;
@@ -356,7 +360,7 @@
             pcMarkets.Dock = DockStyle.Fill;
             pcMarkets.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcMarkets.ForeColor = SystemColors.ActiveCaptionText;
-            pcMarkets.Location = new Point(242, 152);
+            pcMarkets.Location = new Point(242, 153);
             pcMarkets.Name = "pcMarkets";
             pcMarkets.Size = new Size(33, 51);
             pcMarkets.TabIndex = 29;
@@ -370,7 +374,7 @@
             pcUtilities.Dock = DockStyle.Fill;
             pcUtilities.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcUtilities.ForeColor = SystemColors.ActiveCaptionText;
-            pcUtilities.Location = new Point(242, 203);
+            pcUtilities.Location = new Point(242, 204);
             pcUtilities.Name = "pcUtilities";
             pcUtilities.Size = new Size(33, 51);
             pcUtilities.TabIndex = 30;
@@ -384,7 +388,7 @@
             pcRent.Dock = DockStyle.Fill;
             pcRent.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRent.ForeColor = SystemColors.ActiveCaptionText;
-            pcRent.Location = new Point(242, 254);
+            pcRent.Location = new Point(242, 255);
             pcRent.Name = "pcRent";
             pcRent.Size = new Size(33, 51);
             pcRent.TabIndex = 31;
@@ -398,7 +402,7 @@
             pcRestaurants.Dock = DockStyle.Fill;
             pcRestaurants.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRestaurants.ForeColor = SystemColors.ActiveCaptionText;
-            pcRestaurants.Location = new Point(242, 305);
+            pcRestaurants.Location = new Point(242, 306);
             pcRestaurants.Name = "pcRestaurants";
             pcRestaurants.Size = new Size(33, 52);
             pcRestaurants.TabIndex = 32;
@@ -472,7 +476,7 @@
             label18.ForeColor = SystemColors.ActiveCaptionText;
             label18.Location = new Point(3, 238);
             label18.Name = "label18";
-            label18.Size = new Size(179, 119);
+            label18.Size = new Size(179, 120);
             label18.TabIndex = 37;
             label18.Text = "City:";
             label18.TextAlign = ContentAlignment.MiddleRight;
@@ -487,7 +491,7 @@
             txtCity.Location = new Point(185, 238);
             txtCity.Margin = new Padding(0);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(371, 119);
+            txtCity.Size = new Size(371, 120);
             txtCity.TabIndex = 39;
             txtCity.Text = "...";
             txtCity.TextAlign = ContentAlignment.MiddleLeft;
@@ -501,7 +505,7 @@
             pcTransportation.ForeColor = SystemColors.ActiveCaptionText;
             pcTransportation.Location = new Point(242, 0);
             pcTransportation.Name = "pcTransportation";
-            pcTransportation.Size = new Size(33, 50);
+            pcTransportation.Size = new Size(33, 51);
             pcTransportation.TabIndex = 26;
             pcTransportation.Text = "%";
             pcTransportation.TextAlign = ContentAlignment.MiddleRight;
@@ -637,16 +641,17 @@
             // 
             // lstMembersList
             // 
-            lstMembersList.BackColor = SystemColors.MenuBar;
+            lstMembersList.BackColor = SystemColors.HighlightText;
             lstMembersList.Dock = DockStyle.Fill;
             lstMembersList.Font = new Font("David", 16F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lstMembersList.FormattingEnabled = true;
             lstMembersList.HorizontalScrollbar = true;
             lstMembersList.ItemHeight = 32;
-            lstMembersList.Location = new Point(3, 124);
+            lstMembersList.Location = new Point(0, 0);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(421, 461);
+            lstMembersList.Size = new Size(415, 419);
             lstMembersList.TabIndex = 3;
+            lstMembersList.Visible = false;
             // 
             // btnUpdateMember
             // 
@@ -655,7 +660,7 @@
             btnUpdateMember.Dock = DockStyle.Fill;
             btnUpdateMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnUpdateMember.ForeColor = SystemColors.ButtonHighlight;
-            btnUpdateMember.Location = new Point(3, 719);
+            btnUpdateMember.Location = new Point(3, 715);
             btnUpdateMember.Name = "btnUpdateMember";
             btnUpdateMember.Size = new Size(421, 38);
             btnUpdateMember.TabIndex = 4;
@@ -670,7 +675,7 @@
             btnInspectMember.Dock = DockStyle.Fill;
             btnInspectMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnInspectMember.ForeColor = SystemColors.ButtonHighlight;
-            btnInspectMember.Location = new Point(3, 675);
+            btnInspectMember.Location = new Point(3, 671);
             btnInspectMember.Name = "btnInspectMember";
             btnInspectMember.Size = new Size(421, 38);
             btnInspectMember.TabIndex = 3;
@@ -685,9 +690,9 @@
             btnmemberRemove.Dock = DockStyle.Fill;
             btnmemberRemove.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberRemove.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberRemove.Location = new Point(3, 763);
+            btnmemberRemove.Location = new Point(3, 759);
             btnmemberRemove.Name = "btnmemberRemove";
-            btnmemberRemove.Size = new Size(421, 46);
+            btnmemberRemove.Size = new Size(421, 50);
             btnmemberRemove.TabIndex = 0;
             btnmemberRemove.Text = "Remove member";
             btnmemberRemove.UseVisualStyleBackColor = false;
@@ -700,7 +705,7 @@
             btnmemberAdd.Dock = DockStyle.Fill;
             btnmemberAdd.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberAdd.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberAdd.Location = new Point(3, 631);
+            btnmemberAdd.Location = new Point(3, 627);
             btnmemberAdd.Name = "btnmemberAdd";
             btnmemberAdd.Size = new Size(421, 38);
             btnmemberAdd.TabIndex = 2;
@@ -716,7 +721,7 @@
             houseNumber.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
             houseNumber.Location = new Point(3, 0);
             houseNumber.Name = "houseNumber";
-            houseNumber.Size = new Size(1704, 121);
+            houseNumber.Size = new Size(1704, 120);
             houseNumber.TabIndex = 0;
             houseNumber.Text = "people";
             houseNumber.TextAlign = ContentAlignment.MiddleCenter;
@@ -808,8 +813,8 @@
             tableLayoutPanel1.Controls.Add(btnInspectMember, 0, 5);
             tableLayoutPanel1.Controls.Add(btnmemberAdd, 0, 4);
             tableLayoutPanel1.Controls.Add(houseNumber, 0, 0);
-            tableLayoutPanel1.Controls.Add(lstMembersList, 0, 1);
             tableLayoutPanel1.Controls.Add(MemberNotPicked, 1, 1);
+            tableLayoutPanel1.Controls.Add(groupBox5, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -824,6 +829,18 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.Size = new Size(1710, 812);
             tableLayoutPanel1.TabIndex = 4;
+            // 
+            // MemberNotPicked
+            // 
+            MemberNotPicked.BackgroundImage = Properties.Resources.To_unlock_this_part_of_the_pro_3_27_2024;
+            MemberNotPicked.BackgroundImageLayout = ImageLayout.Stretch;
+            MemberNotPicked.Controls.Add(tableLayoutPanel2);
+            MemberNotPicked.Dock = DockStyle.Fill;
+            MemberNotPicked.Location = new Point(430, 123);
+            MemberNotPicked.Name = "MemberNotPicked";
+            tableLayoutPanel1.SetRowSpan(MemberNotPicked, 7);
+            MemberNotPicked.Size = new Size(1277, 686);
+            MemberNotPicked.TabIndex = 5;
             // 
             // tableLayoutPanel2
             // 
@@ -842,7 +859,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel2.Size = new Size(1277, 685);
+            tableLayoutPanel2.Size = new Size(1277, 686);
             tableLayoutPanel2.TabIndex = 5;
             tableLayoutPanel2.Visible = false;
             // 
@@ -916,12 +933,13 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox3.Controls.Add(tableLayoutPanel6);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox3.Location = new Point(3, 286);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(688, 396);
+            groupBox3.Size = new Size(688, 397);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Expenses";
@@ -964,7 +982,7 @@
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
-            tableLayoutPanel6.Size = new Size(682, 357);
+            tableLayoutPanel6.Size = new Size(682, 358);
             tableLayoutPanel6.TabIndex = 0;
             // 
             // groupBox4
@@ -974,7 +992,7 @@
             groupBox4.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox4.Location = new Point(712, 286);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(562, 396);
+            groupBox4.Size = new Size(562, 397);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "Contacts";
@@ -997,20 +1015,31 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Size = new Size(556, 357);
+            tableLayoutPanel7.Size = new Size(556, 358);
             tableLayoutPanel7.TabIndex = 0;
             // 
-            // MemberNotPicked
+            // groupBox5
             // 
-            MemberNotPicked.BackgroundImage = Properties.Resources.To_unlock_this_part_of_the_pro_3_27_2024;
-            MemberNotPicked.BackgroundImageLayout = ImageLayout.Stretch;
-            MemberNotPicked.Controls.Add(tableLayoutPanel2);
-            MemberNotPicked.Dock = DockStyle.Fill;
-            MemberNotPicked.Location = new Point(430, 124);
-            MemberNotPicked.Name = "MemberNotPicked";
-            tableLayoutPanel1.SetRowSpan(MemberNotPicked, 7);
-            MemberNotPicked.Size = new Size(1277, 685);
-            MemberNotPicked.TabIndex = 5;
+            groupBox5.Controls.Add(panel1);
+            groupBox5.Dock = DockStyle.Fill;
+            groupBox5.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox5.Location = new Point(3, 123);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(421, 458);
+            groupBox5.TabIndex = 6;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "House members";
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources.Spongebob_squarepants_says_to_3_28_2024;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(lstMembersList);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 36);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(415, 419);
+            panel1.TabIndex = 1;
             // 
             // InHouse
             // 
@@ -1031,6 +1060,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
+            MemberNotPicked.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
@@ -1044,7 +1074,8 @@
             groupBox4.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
-            MemberNotPicked.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1109,5 +1140,7 @@
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel7;
         private Panel MemberNotPicked;
+        private Panel panel1;
+        private GroupBox groupBox5;
     }
 }

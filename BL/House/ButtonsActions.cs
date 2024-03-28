@@ -90,6 +90,7 @@ namespace BL
                 lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
                 MemberNotPicked.BackgroundImage = Pic;
                 tableLayoutPanel2.Visible = false;
+                lstMembersList.Visible = lstMembersList.Items.Count != 0;
             }
             else MessageBox.Show(_unselected);
         }

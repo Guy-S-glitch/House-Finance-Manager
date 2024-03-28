@@ -152,7 +152,7 @@
             // 
             radMale.AutoSize = true;
             radMale.Checked = true;
-            radMale.ForeColor = SystemColors.ActiveCaptionText;
+            radMale.ForeColor = Color.White;
             radMale.Location = new Point(4, 3);
             radMale.Margin = new Padding(4, 3, 4, 3);
             radMale.Name = "radMale";
@@ -166,7 +166,7 @@
             // 
             radFemale.AutoSize = true;
             radFemale.BackColor = Color.Transparent;
-            radFemale.ForeColor = SystemColors.ActiveCaptionText;
+            radFemale.ForeColor = Color.White;
             radFemale.Location = new Point(163, 3);
             radFemale.Margin = new Padding(4, 3, 4, 3);
             radFemale.Name = "radFemale";
