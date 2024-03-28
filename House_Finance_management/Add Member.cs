@@ -120,6 +120,7 @@ namespace House_Finance_management
                     numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);  //create a member with the wanted data
 
                 this.DataSent(new InfoToHouse(memberInformation));  //send the member to the house
+                MessageBox.Show($"{memberInformation.Name} been added to the house");
             }
         }
 

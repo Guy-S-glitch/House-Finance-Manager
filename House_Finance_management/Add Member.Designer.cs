@@ -87,7 +87,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             Ready2BeSent = new Label();
-            SentMessage = new Label();
             groupBox1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -1053,7 +1052,6 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.Controls.Add(btnAdd, 1, 1);
             tableLayoutPanel2.Controls.Add(Ready2BeSent, 0, 0);
-            tableLayoutPanel2.Controls.Add(SentMessage, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(519, 752);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1076,19 +1074,6 @@
             Ready2BeSent.TabIndex = 13;
             Ready2BeSent.Text = "Make sure all of the data is validated";
             Ready2BeSent.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // SentMessage
-            // 
-            SentMessage.AutoSize = true;
-            tableLayoutPanel2.SetColumnSpan(SentMessage, 3);
-            SentMessage.Dock = DockStyle.Fill;
-            SentMessage.ForeColor = SystemColors.HighlightText;
-            SentMessage.Location = new Point(3, 162);
-            SentMessage.Name = "SentMessage";
-            SentMessage.Size = new Size(257, 83);
-            SentMessage.TabIndex = 14;
-            SentMessage.TextAlign = ContentAlignment.MiddleCenter;
-            SentMessage.Visible = false;
             // 
             // Add_Member
             // 
@@ -1209,6 +1194,5 @@
         private TableLayoutPanel tableLayoutPanel8;
         private TableLayoutPanel tableLayoutPanel9;
         private Label Ready2BeSent;
-        private Label SentMessage;
     }
 }
