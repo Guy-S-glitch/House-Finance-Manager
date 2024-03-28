@@ -118,37 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="space_AddMember_PersonalInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\space_AddMember_PersonalInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddMember_photo_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddMember_photo_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Space_AddMember_Contacts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Space_AddMember_Contacts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gradient Dark blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gradient Dark blue.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Color Hunt Palette 4f6f5273907286a789d2e3c8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Color Hunt Palette 4f6f5273907286a789d2e3c8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Space_AddMember_Gender" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Space_AddMember_Gender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="To-unlock-this-part-of-the-pro-3-27-2024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\To-unlock-this-part-of-the-pro-3-27-2024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Space_Addmember_Photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Space_Addmember_Photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Space_AddMember_Expenses" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Space_AddMember_Expenses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NonSend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NonSend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Smaller Network Connection Background_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Smaller Network Connection Background_3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Space_AddMember_JobInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Space_AddMember_JobInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="To-unlock-this-part-of-the-pro-3-27-2024" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\To-unlock-this-part-of-the-pro-3-27-2024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

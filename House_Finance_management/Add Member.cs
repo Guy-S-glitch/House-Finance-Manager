@@ -24,10 +24,10 @@ namespace House_Finance_management
         private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
         { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private Label[] _GetValidationTexts()
-        { return new Label[] { FirstNameValidationText, LastNameValidationText,MiddleNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText }; }
+        { return new Label[] { FirstNameValidationText, LastNameValidationText, MiddleNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText }; }
         private void addTextChangeValidation()
         { foreach (Label textValidate in _GetValidationTexts()) { textValidate.TextChanged += (sender, e) => addAvailable(sender, e); } }
-        private void addAvailable(object sender, EventArgs e) { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts()); }
+        private void addAvailable(object sender, EventArgs e) { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts(),Properties.Resources.Send,Properties.Resources.NonSend,Ready2BeSent); }
 
         private static string[] _validateEmail = new string[3];  //used to store 3 parts of an email: prefix,domain before the dot and the domain after the dot
 
@@ -44,7 +44,7 @@ namespace House_Finance_management
         public Add_Member(InfoToHouse update, string houseNum)  //the form called by the update member button 
         {
             InitializeComponent();
-            addTextChangeValidation(); 
+            addTextChangeValidation();
             GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
 
             NumericUpDown[] UpdateExpense = _GetExpenses();
@@ -132,9 +132,12 @@ namespace House_Finance_management
         {
             close.Enabled = false;
             this.Close();
-        }  
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
 
