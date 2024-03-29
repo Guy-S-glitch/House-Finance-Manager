@@ -23,7 +23,7 @@ namespace House_Finance_management
         public List<InfoToHouse> members = new List<InfoToHouse>();  //contain the members of the current house
 
         private static short _memberID;  //used to write the members in order: 1. memberX, 2. memberY, 3. memberZ
-
+        private static readonly string _unselected = "Please select a member to update";
         private static bool _remove;  //if true meaning the remove member was clicked 
 
         private static InfoToHouse _selectedMember;
@@ -61,7 +61,7 @@ namespace House_Finance_management
                 Add_Member updateMember = new Add_Member(members[lstMembersList.SelectedIndex], houseNumber.Text);  //act like the add member button and call the AddMember form but with initial values about the member which the user want to change
                 updateMember.DataSent += UpdateMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
                 updateMember.ShowDialog();
-            }
+            }else { MessageBox.Show(_unselected); }
         }
         public void UpdateMember_DataSent(InfoToHouse updateMember)  //after clicking the update member button data from child will be sent to this function
         {

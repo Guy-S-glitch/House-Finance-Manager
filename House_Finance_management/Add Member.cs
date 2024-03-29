@@ -38,14 +38,14 @@ namespace House_Finance_management
         {
             InitializeComponent();
             addTextChangeValidation();
-            GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
+            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity,ref dtpAge);  //set our initial data
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)  //the form called by the update member button 
         {
             InitializeComponent();
             addTextChangeValidation();
-            GetBL_AddMember.GetEnums(ref cmbJob, ref cmbCity);  //fill the comboboxes with the enum data
+            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity,ref dtpAge);  //set our initial data
 
             NumericUpDown[] UpdateExpense = _GetExpenses();
             GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary, //we recieved meember data to show to the user
@@ -120,7 +120,7 @@ namespace House_Finance_management
                     numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);  //create a member with the wanted data
 
                 this.DataSent(new InfoToHouse(memberInformation));  //send the member to the house
-                MessageBox.Show($"{memberInformation.Name} been added to the house");
+                MessageBox.Show($"{memberInformation.Name} added to the house");
             }
         }
 

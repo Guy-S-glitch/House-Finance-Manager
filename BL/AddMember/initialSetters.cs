@@ -6,8 +6,9 @@ namespace BL
     public partial class BL_AddMember
     {
          
-        public void GetEnums(ref ComboBox cmbJob, ref ComboBox cmbCity)  
+        public void setInitialValues(ref ComboBox cmbJob, ref ComboBox cmbCity,ref DateTimePicker dateTimePicker)  
         {
+            dateTimePicker.MaxDate = DateTime.Today;
             SetJobsNames(ref cmbJob);
             SetCitiesNames(ref cmbCity);
         }

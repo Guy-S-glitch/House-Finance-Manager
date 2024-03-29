@@ -31,9 +31,9 @@
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             House1 = new FontAwesome.Sharp.IconButton();
-            AddHouse = new Button();
-            close = new FontAwesome.Sharp.IconButton();
+            addHouse = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            close = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -58,7 +58,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Controls.Add(House1, 0, 0);
-            tableLayoutPanel1.Controls.Add(AddHouse, 1, 0);
+            tableLayoutPanel1.Controls.Add(addHouse, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 50);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,17 +89,30 @@
             House1.UseVisualStyleBackColor = true;
             House1.Click += House1_Click;
             // 
-            // AddHouse
+            // addHouse
             // 
-            AddHouse.Cursor = Cursors.Hand;
-            AddHouse.Dock = DockStyle.Fill;
-            AddHouse.Location = new Point(228, 3);
-            AddHouse.Name = "AddHouse";
-            AddHouse.Size = new Size(219, 102);
-            AddHouse.TabIndex = 2;
-            AddHouse.Text = "Add house";
-            AddHouse.UseVisualStyleBackColor = true;
-            AddHouse.Click += AddHouse_Click;
+            addHouse.Cursor = Cursors.Hand;
+            addHouse.Dock = DockStyle.Fill;
+            addHouse.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            addHouse.IconColor = Color.Black;
+            addHouse.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            addHouse.IconSize = 78;
+            addHouse.Location = new Point(228, 3);
+            addHouse.Name = "addHouse";
+            addHouse.Size = new Size(219, 102);
+            addHouse.TabIndex = 2;
+            addHouse.UseVisualStyleBackColor = true;
+            addHouse.Click += AddHouse_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(close);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1129, 50);
+            panel2.TabIndex = 5;
             // 
             // close
             // 
@@ -117,16 +130,6 @@
             close.TabIndex = 0;
             close.UseVisualStyleBackColor = false;
             close.Click += close_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.MenuHighlight;
-            panel2.Controls.Add(close);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1129, 50);
-            panel2.TabIndex = 5;
             // 
             // Main
             // 
@@ -155,5 +158,6 @@
         private Button AddHouse;
         private FontAwesome.Sharp.IconButton close;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton addHouse;
     }
 }

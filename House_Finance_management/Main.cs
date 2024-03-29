@@ -61,6 +61,7 @@ namespace WinFormsApp2
         public Main()
         {
             InitializeComponent();
+            GetBL_Main.setToolTips(ref House1, ref addHouse);
             try
             {
                 GetBL_Main.requestConnection(ref Connection, ref Select, _connectionString);  //connect to the sql server. also used at the end when we write to the sql 
@@ -80,7 +81,7 @@ namespace WinFormsApp2
 
         private void AddHouse_Click(object sender, EventArgs e)  //clicking on the add house will move that button and will add an house button in the place where the add house button was with the same properties of every house button
         {
-            GetBL_Main.ReplaceAddButtonWithHouse(ref tableLayoutPanel1, AddHouse, _column, _row);  //replacing the add House button with an House button
+            GetBL_Main.ReplaceAddButtonWithHouse(ref tableLayoutPanel1, addHouse, _column, _row);  //replacing the add House button with an House button
             IconButton AddedHouse = GetBL_Main.ClonePropeties(House1, _column, _row, _addHouseNumber, ref tableLayoutPanel1);  //giving the added house the same properties of the first house
             AddedHouse.Click += House1_Click;  //giving the added house the ability to call the House form like the first house
             GetBL_Main.ValuesForNextReplace(ref _column, ref _row, ref _addHouseNumber);// moving the add house button

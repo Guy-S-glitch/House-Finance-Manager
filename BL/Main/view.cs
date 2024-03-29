@@ -23,12 +23,14 @@ namespace BL
                 TextAlign = Source.TextAlign,
                 Cursor = Cursors.Hand,
                 UseVisualStyleBackColor = true
-            }; 
+            };
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(Target, $"View details of {Target.Name}");
         tableLayoutPanel1.Controls.Add(Target, _column, _row);
             return Target;
         }
 
-        public void ReplaceAddButtonWithHouse(ref TableLayoutPanel tableLayoutPanel1, Button AddHouse, int _column, int _row)
+        public void ReplaceAddButtonWithHouse(ref TableLayoutPanel tableLayoutPanel1, IconButton AddHouse, int _column, int _row)
         {
             tableLayoutPanel1.Controls.Add(AddHouse, (_column + 1) % 5, (_column + 1) % 5 == 0 ? _row + 1 : _row);
         }
@@ -52,6 +54,14 @@ namespace BL
             }
             AddHouse2Hashtable(_clickedHouse.Name, _showHouseMembers, ref _neighberhood);
             _showHouseMembers = new List<InfoToHouse>();
+        }
+
+        public void setToolTips(ref IconButton House1,ref IconButton addHouse)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(House1, "View details of House1");
+            ToolTip toolTip2 = new ToolTip();
+            toolTip2.SetToolTip(addHouse, "Add a new house");
         }
     }
 }
