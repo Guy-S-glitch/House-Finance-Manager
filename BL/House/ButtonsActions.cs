@@ -82,7 +82,7 @@ namespace BL
             iconPictureBox.IconColor = Color.Black;
             iconPictureBox.Dock = DockStyle.Fill;
         }
-        public void removeMember(ref ListBox lstMembersList,ref List<InfoToHouse> members,ref Panel MemberNotPicked,ref TableLayoutPanel tableLayoutPanel2,Bitmap Pic)
+        public void removeMember(ref ListBox lstMembersList,ref List<InfoToHouse> members,ref Panel MemberNotPicked,ref TableLayoutPanel tableLayoutPanel2,Bitmap Pic,ref Panel panel,Bitmap pic2)
         {
             if (lstMembersList.SelectedIndex != -1)
             {
@@ -91,6 +91,7 @@ namespace BL
                 MemberNotPicked.BackgroundImage = Pic;
                 tableLayoutPanel2.Visible = false;
                 lstMembersList.Visible = lstMembersList.Items.Count != 0;
+                panel.BackgroundImage = lstMembersList.Visible ? null : pic2;
             }
             else MessageBox.Show(_unselected);
         }

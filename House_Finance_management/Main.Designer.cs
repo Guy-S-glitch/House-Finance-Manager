@@ -27,7 +27,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        { 
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             House1 = new FontAwesome.Sharp.IconButton();
@@ -40,7 +40,7 @@
             SuspendLayout();
             // 
             // panel1
-            // 
+            //  
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -48,6 +48,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1129, 591);
             panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(240, 240, 240); // Light gray background
             // 
             // tableLayoutPanel1
             // 
@@ -70,6 +71,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Size = new Size(1129, 541);
             tableLayoutPanel1.TabIndex = 2;
+            tableLayoutPanel1.BackColor = Color.FromArgb(245, 245, 245); // Slightly lighter gray
             // 
             // House1
             // 
@@ -87,7 +89,11 @@
             House1.Text = "house 1";
             House1.TextAlign = ContentAlignment.TopLeft;
             House1.UseVisualStyleBackColor = true;
-            House1.Click += House1_Click;
+            House1.Click += House1_Click; 
+            House1.FlatStyle = FlatStyle.Flat;
+            House1.FlatAppearance.BorderSize = 0; 
+            House1.BackColor = Color.FromArgb(52, 152, 219); // Example blue color
+            House1.ForeColor = Color.White; 
             // 
             // addHouse
             // 
@@ -103,6 +109,7 @@
             addHouse.TabIndex = 2;
             addHouse.UseVisualStyleBackColor = true;
             addHouse.Click += AddHouse_Click;
+            addHouse.BackColor = Color.FromArgb(220, 220, 220); // Button background
             // 
             // panel2
             // 

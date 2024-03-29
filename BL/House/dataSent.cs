@@ -8,9 +8,10 @@ namespace BL
 {
     public partial class BL_House
     {
-        public void addDataSent(InfoToHouse addMember, ref short _memberID, ref ListBox lstMembersList, ref List<InfoToHouse> members)
+        public void addDataSent(InfoToHouse addMember, ref short _memberID, ref ListBox lstMembersList, ref List<InfoToHouse> members,ref Panel panel )
         {
             lstMembersList.Visible = true;
+            panel.BackgroundImage = null;
             _memberID++;
             lstMembersList.Items.Add($"{_memberID}. {addMember.GetName()}");
             members.Add(addMember);

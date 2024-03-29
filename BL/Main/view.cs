@@ -22,8 +22,10 @@ namespace BL
                 Text =$"house{_houseNumber}",
                 TextAlign = Source.TextAlign,
                 Cursor = Cursors.Hand,
-                UseVisualStyleBackColor = true
-            };
+                UseVisualStyleBackColor = true, 
+                BackColor = Color.FromArgb(52, 152, 219), // Example blue color
+                ForeColor = Color.White
+        };
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(Target, $"View details of {Target.Name}");
         tableLayoutPanel1.Controls.Add(Target, _column, _row);
