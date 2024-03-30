@@ -78,7 +78,7 @@
             label2 = new Label();
             label4 = new Label();
             panel2 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            MainPanel = new TableLayoutPanel();
             MemberNotPicked = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
@@ -91,12 +91,13 @@
             tableLayoutPanel7 = new TableLayoutPanel();
             groupBox5 = new GroupBox();
             panel1 = new Panel();
+            Loader = new PictureBox();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).BeginInit();
             panel2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
+            MainPanel.SuspendLayout();
             MemberNotPicked.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -109,6 +110,7 @@
             tableLayoutPanel7.SuspendLayout();
             groupBox5.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Loader).BeginInit();
             SuspendLayout();
             // 
             // monthlySalary
@@ -626,9 +628,9 @@
             // 
             iconPictureBox.BackColor = Color.Transparent;
             iconPictureBox.Dock = DockStyle.Fill;
-            iconPictureBox.ForeColor = SystemColors.ControlText;
+            iconPictureBox.ForeColor = SystemColors.ActiveCaptionText;
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            iconPictureBox.IconColor = SystemColors.ControlText;
+            iconPictureBox.IconColor = SystemColors.ActiveCaptionText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox.IconSize = 185;
             iconPictureBox.Location = new Point(3, 3);
@@ -716,7 +718,7 @@
             // houseNumber
             // 
             houseNumber.BackColor = Color.Transparent;
-            tableLayoutPanel1.SetColumnSpan(houseNumber, 2);
+            MainPanel.SetColumnSpan(houseNumber, 2);
             houseNumber.Dock = DockStyle.Fill;
             houseNumber.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
             houseNumber.Location = new Point(3, 0);
@@ -800,35 +802,36 @@
             panel2.Size = new Size(1710, 50);
             panel2.TabIndex = 3;
             // 
-            // tableLayoutPanel1
+            // MainPanel
             // 
-            tableLayoutPanel1.BackColor = Color.Transparent;
-            tableLayoutPanel1.BackgroundImage = Properties.Resources.Color_Hunt_Palette_f8f6e397e7e16ad4dd7aa2e3;
-            tableLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
-            tableLayoutPanel1.Controls.Add(btnmemberRemove, 0, 6);
-            tableLayoutPanel1.Controls.Add(btnUpdateMember, 0, 5);
-            tableLayoutPanel1.Controls.Add(btnInspectMember, 0, 4);
-            tableLayoutPanel1.Controls.Add(btnmemberAdd, 0, 3);
-            tableLayoutPanel1.Controls.Add(houseNumber, 0, 0);
-            tableLayoutPanel1.Controls.Add(MemberNotPicked, 1, 1);
-            tableLayoutPanel1.Controls.Add(groupBox5, 0, 1);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 50);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5756092F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.2138634F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel1.Size = new Size(1710, 812);
-            tableLayoutPanel1.TabIndex = 4;
+            MainPanel.BackColor = Color.Transparent;
+            MainPanel.BackgroundImage = Properties.Resources.Color_Hunt_Palette_f8f6e397e7e16ad4dd7aa2e3;
+            MainPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            MainPanel.ColumnCount = 2;
+            MainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            MainPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
+            MainPanel.Controls.Add(btnmemberRemove, 0, 6);
+            MainPanel.Controls.Add(btnUpdateMember, 0, 5);
+            MainPanel.Controls.Add(btnInspectMember, 0, 4);
+            MainPanel.Controls.Add(btnmemberAdd, 0, 3);
+            MainPanel.Controls.Add(houseNumber, 0, 0);
+            MainPanel.Controls.Add(MemberNotPicked, 1, 1);
+            MainPanel.Controls.Add(groupBox5, 0, 1);
+            MainPanel.Dock = DockStyle.Fill;
+            MainPanel.ForeColor = SystemColors.ActiveCaptionText;
+            MainPanel.Location = new Point(0, 50);
+            MainPanel.Name = "MainPanel";
+            MainPanel.RowCount = 8;
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5756092F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 52.2138634F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            MainPanel.Size = new Size(1710, 812);
+            MainPanel.TabIndex = 4;
             // 
             // MemberNotPicked
             // 
@@ -838,7 +841,7 @@
             MemberNotPicked.Dock = DockStyle.Fill;
             MemberNotPicked.Location = new Point(430, 109);
             MemberNotPicked.Name = "MemberNotPicked";
-            tableLayoutPanel1.SetRowSpan(MemberNotPicked, 6);
+            MainPanel.SetRowSpan(MemberNotPicked, 6);
             MemberNotPicked.Size = new Size(1277, 686);
             MemberNotPicked.TabIndex = 5;
             // 
@@ -1041,12 +1044,24 @@
             panel1.Size = new Size(415, 363);
             panel1.TabIndex = 1;
             // 
+            // Loader
+            // 
+            Loader.BackgroundImageLayout = ImageLayout.Stretch;
+            Loader.Dock = DockStyle.Fill;
+            Loader.Image = Properties.Resources.LoaderHouse;
+            Loader.Location = new Point(0, 50);
+            Loader.Name = "Loader";
+            Loader.Size = new Size(1710, 812);
+            Loader.TabIndex = 7;
+            Loader.TabStop = false;
+            // 
             // InHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1710, 862);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(Loader);
+            Controls.Add(MainPanel);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -1055,11 +1070,12 @@
             Text = "inHouse";
             WindowState = FormWindowState.Maximized;
             FormClosed += inHouse_FormClosed;
+            Load += InHouse_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
+            MainPanel.ResumeLayout(false);
             MemberNotPicked.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -1076,6 +1092,7 @@
             tableLayoutPanel7.PerformLayout();
             groupBox5.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Loader).EndInit();
             ResumeLayout(false);
         }
 
@@ -1129,7 +1146,7 @@
         private Label label1;
         private Label label2;
         private Label label4;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel MainPanel;
         private TableLayoutPanel tableLayoutPanel2;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
@@ -1142,5 +1159,6 @@
         private Panel MemberNotPicked;
         private Panel panel1;
         private GroupBox groupBox5;
+        private PictureBox Loader;
     }
 }

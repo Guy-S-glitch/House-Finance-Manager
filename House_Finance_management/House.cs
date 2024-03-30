@@ -32,11 +32,11 @@ namespace House_Finance_management
         private Label[] percentLabels;
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)  //if there is already exist members in that house, add them. otherwise it'll start normally
         {
-            InitializeComponent(); 
+            InitializeComponent();
             progressBars = new ProgressBar[] { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
             percentLabels = new Label[] { pcTransportation, pcClothes, pcSports, pcMarkets, pcUtilities, pcRent, pcRestaurants };
             GetBL_House.roundProgressBars(ref progressBars);
-            GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList,ref panel1);
+            GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList, ref panel1);
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
         {
@@ -52,7 +52,7 @@ namespace House_Finance_management
 
         public void AddMember_DataSent(InfoToHouse addMember)  //after clicking the add member button data from child will be sent to this function
         {
-            GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members,ref panel1);  //after geting the data about the added member, add him to a list and when the user close this form, the list will be sent to the main form
+            GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members, ref panel1);  //after geting the data about the added member, add him to a list and when the user close this form, the list will be sent to the main form
         }
         private void btnUpdateMember_Click(object sender, EventArgs e)  //called by clicking the update member button
         {
@@ -61,7 +61,8 @@ namespace House_Finance_management
                 Add_Member updateMember = new Add_Member(members[lstMembersList.SelectedIndex], houseNumber.Text);  //act like the add member button and call the AddMember form but with initial values about the member which the user want to change
                 updateMember.DataSent += UpdateMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
                 updateMember.ShowDialog();
-            }else { MessageBox.Show(_unselected); }
+            }
+            else { MessageBox.Show(_unselected); }
         }
         public void UpdateMember_DataSent(InfoToHouse updateMember)  //after clicking the update member button data from child will be sent to this function
         {
@@ -70,7 +71,7 @@ namespace House_Finance_management
 
         public void btnmemberRemove_Click(object sender, EventArgs e)  //called by clicking the remove member button
         {
-            GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2, Properties.Resources.To_unlock_this_part_of_the_pro_3_27_2024,ref panel1,Properties.Resources.emptyHouse1);
+            GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2, Properties.Resources.ChooseMemberToInspect, ref panel1, Properties.Resources.emptyHouse1);
         }
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
@@ -88,6 +89,8 @@ namespace House_Finance_management
             close.Enabled = false;
             this.Close();
         }
+
+        private void InHouse_Load(object sender, EventArgs e) { Loader.Visible = false; }
 
 
         // the code below isn't relevant to the project but to the diagram  
