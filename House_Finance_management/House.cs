@@ -1,5 +1,6 @@
 ﻿using BL;
 using Common;
+using System.Diagnostics;
 using System.Drawing.Drawing2D;
 
 namespace House_Finance_management
@@ -25,7 +26,9 @@ namespace House_Finance_management
         private static short _memberID;  //used to write the members in order: 1. memberX, 2. memberY, 3. memberZ
         private static readonly string _unselected = "Please select a member to update";
         private static bool _remove;  //if true meaning the remove member was clicked 
-
+        
+        private static string callLoader;
+        private static readonly string CallFromInitializeComponent = "InitializeComponent", CallFromInspectMember = "InspectMember"; 
         private static InfoToHouse _selectedMember;
 
         private ProgressBar[] progressBars;
@@ -33,13 +36,14 @@ namespace House_Finance_management
         public InHouse(List<InfoToHouse>? showExistMembers, string houseName)  //if there is already exist members in that house, add them. otherwise it'll start normally
         {
             InitializeComponent();
+            StartBackgroundWork(CallFromInitializeComponent);
             progressBars = new ProgressBar[] { pbTransportation, pbClothes, pbSports, pbMarkets, pbUtilities, pbRent, pbRestaurants };
             percentLabels = new Label[] { pcTransportation, pcClothes, pcSports, pcMarkets, pcUtilities, pcRent, pcRestaurants };
             GetBL_House.roundProgressBars(ref progressBars);
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList, ref panel1);
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
-        {
+        { 
             this.returnDataToHouse(members);  //send data to parent
         }
 
@@ -75,13 +79,9 @@ namespace House_Finance_management
         }
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
-        {
-            GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,
-                ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
-                ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
-                ref txtPhone, ref txtEmail, ref txtCity  //contact info
-                , ref percentLabels, ref progressBars  //expense info
-                );
+        {  
+            StartBackgroundWork(CallFromInspectMember);
+            
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -90,11 +90,53 @@ namespace House_Finance_management
             this.Close();
         }
 
-        private void InHouse_Load(object sender, EventArgs e) { Loader.Visible = false; }
+        private void InHouse_Load(object sender, EventArgs e) {  }
 
 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
 
+        private void StartBackgroundWork(string CalledBy)
+        { 
+            // Show the loader before starting the background work
+            Loader.Visible = true;
+            callLoader = CalledBy;
+            // Start the background worker
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            // Perform your background operation here
+            System.Threading.Thread.Sleep(3000); // Simulating a long-running task
+            
+            // Do not attempt to access UI elements like Loader here
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        { 
+            // Optionally, handle any results of the background operation
+            // For example, if your operation encountered an error:
+            if (e.Error != null)
+            {
+                MessageBox.Show($"An error occurred: {e.Error.Message}");
+            }
+            else if (!e.Cancelled)
+            {
+                // Operation completed successfully 
+                
+                if (callLoader == CallFromInspectMember)
+                {
+                    GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,
+                    ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
+                    ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
+                    ref txtPhone, ref txtEmail, ref txtCity  //contact info
+                    , ref percentLabels, ref progressBars  //expense info
+                    ); 
+                }
+                System.Threading.Thread.Sleep(200);
+                Loader.Visible = false;
+            }
+        }
     }
 }

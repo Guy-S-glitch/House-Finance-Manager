@@ -92,6 +92,7 @@
             groupBox5 = new GroupBox();
             panel1 = new Panel();
             Loader = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
@@ -1046,14 +1047,20 @@
             // 
             // Loader
             // 
-            Loader.BackgroundImageLayout = ImageLayout.Stretch;
+            Loader.BackgroundImageLayout = ImageLayout.Zoom;
             Loader.Dock = DockStyle.Fill;
-            Loader.Image = Properties.Resources.LoaderHouse;
+            Loader.Image = Properties.Resources.LoadingHouse;
             Loader.Location = new Point(0, 50);
             Loader.Name = "Loader";
             Loader.Size = new Size(1710, 812);
+            Loader.SizeMode = PictureBoxSizeMode.StretchImage;
             Loader.TabIndex = 7;
             Loader.TabStop = false;
+            // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
             // 
             // InHouse
             // 
@@ -1160,5 +1167,6 @@
         private Panel panel1;
         private GroupBox groupBox5;
         private PictureBox Loader;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

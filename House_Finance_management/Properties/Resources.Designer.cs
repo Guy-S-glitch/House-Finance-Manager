@@ -103,9 +103,9 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap LoaderHouse {
+        public static System.Drawing.Bitmap LoadingHouse {
             get {
-                object obj = ResourceManager.GetObject("LoaderHouse", resourceCulture);
+                object obj = ResourceManager.GetObject("LoadingHouse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
