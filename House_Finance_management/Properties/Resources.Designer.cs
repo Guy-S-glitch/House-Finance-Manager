@@ -63,9 +63,19 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap AddMember_photo_Background {
+        public static System.Drawing.Bitmap AddMember_Background {
             get {
-                object obj = ResourceManager.GetObject("AddMember_photo_Background", resourceCulture);
+                object obj = ResourceManager.GetObject("AddMember_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddMemberBack {
+            get {
+                object obj = ResourceManager.GetObject("AddMemberBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +123,9 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap NonSend {
+        public static System.Drawing.Bitmap NonSendToHouse1 {
             get {
-                object obj = ResourceManager.GetObject("NonSend", resourceCulture);
+                object obj = ResourceManager.GetObject("NonSendToHouse1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,19 +133,9 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Send {
+        public static System.Drawing.Bitmap SendToHouse1 {
             get {
-                object obj = ResourceManager.GetObject("Send", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Smaller_Network_Connection_Background_3 {
-            get {
-                object obj = ResourceManager.GetObject("Smaller Network Connection Background_3", resourceCulture);
+                object obj = ResourceManager.GetObject("SendToHouse1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

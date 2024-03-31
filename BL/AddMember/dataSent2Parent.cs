@@ -5,19 +5,22 @@ namespace BL
 {
     public partial class BL_AddMember
     {
-        public bool validateAllData(Label FirstName, Label LastName, Label MiddleName, Label Job, Label Phone, Label Email, Label City) 
-        {  //validate all the recieve data before creating a member from it
-            return _validateEmail(Email.Text)
-                && _validateName(FirstName.Text + LastName.Text + MiddleName.Text)
-                && _validateJob(Job.Text)
-                && _validatePhone(Phone.Text)
-                && _validateCity(City.Text);
+        public string GetWrongInput(string BadInput, Label[] ValidateAll)
+        { 
+            BadInput = "the following input are wrong:"+"\n";
+            if (!string.IsNullOrEmpty(ValidateAll[5].Text)) BadInput += "Email" + "\n";
+            if (!string.IsNullOrEmpty(ValidateAll[0].Text + ValidateAll[1].Text + ValidateAll[2].Text)) BadInput += "Name" + "\n";
+            if (!string.IsNullOrEmpty(ValidateAll[3].Text)) BadInput += "Job" + "\n";
+            if (!string.IsNullOrEmpty(ValidateAll[4].Text)) BadInput += "Phone" + "\n";
+            if (!string.IsNullOrEmpty(ValidateAll[6].Text)) BadInput += "City";
+            return BadInput;
         }
-        private bool _validateName(string FullName) { return string.IsNullOrEmpty(FullName); }
-        private bool _validateJob(string Job) { return string.IsNullOrEmpty(Job); }
-        private bool _validatePhone(string Phone) { return string.IsNullOrEmpty(Phone); }
-        private bool _validateEmail(string Email) { return string.IsNullOrEmpty(Email); }
-        private bool _validateCity(string City) { return string.IsNullOrEmpty(City); }
+        public bool validateAllData(Label[] ValidateAll) 
+        {                            
+            //validate all the recieve data before creating a member from it 
+            return string.IsNullOrEmpty(ValidateAll[5].Text) && string.IsNullOrEmpty(ValidateAll[0].Text + ValidateAll[1].Text + ValidateAll[2].Text)
+                && string.IsNullOrEmpty(ValidateAll[3].Text) && string.IsNullOrEmpty(ValidateAll[4].Text) && string.IsNullOrEmpty(ValidateAll[6].Text);
+        } 
 
         //after the data was validated we can create a member
         public MemberInformation createMember(TextBox txtFName, TextBox txtLName, TextBox txtMName, RadioButton radMale,

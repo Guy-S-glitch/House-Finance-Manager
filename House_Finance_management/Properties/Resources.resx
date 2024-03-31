@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AddMember_photo_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddMember_photo_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Color Hunt Palette f8f6e397e7e16ad4dd7aa2e3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Color Hunt Palette f8f6e397e7e16ad4dd7aa2e3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChooseMemberToInspect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChooseMemberToInspect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Smaller Network Connection Background_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Smaller Network Connection Background_3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emptyHouse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emptyHouse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Color Hunt Palette f8f6e397e7e16ad4dd7aa2e3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Color Hunt Palette f8f6e397e7e16ad4dd7aa2e3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LoadingHouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingHouse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Send" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddMember_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddMember_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emptyHouse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emptyHouse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddMemberBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddMemberBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NonSend" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NonSend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SendToHouse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SendToHouse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LoadingHouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingHouse.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NonSendToHouse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NonSendToHouse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

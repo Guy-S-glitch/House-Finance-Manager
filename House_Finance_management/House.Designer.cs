@@ -93,6 +93,7 @@
             panel1 = new Panel();
             Loader = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            tableLayoutPanel1 = new TableLayoutPanel();
             monthlySalary = new Label();
             jobTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).BeginInit();
@@ -112,6 +113,7 @@
             groupBox5.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Loader).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // monthlySalary
@@ -796,12 +798,14 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.BackgroundImageLayout = ImageLayout.None;
             panel2.Controls.Add(close);
-            panel2.Dock = DockStyle.Top;
+            panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1710, 50);
-            panel2.TabIndex = 3;
+            panel2.TabIndex = 0;
             // 
             // MainPanel
             // 
@@ -821,6 +825,7 @@
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.ForeColor = SystemColors.ActiveCaptionText;
             MainPanel.Location = new Point(0, 50);
+            MainPanel.Margin = new Padding(0);
             MainPanel.Name = "MainPanel";
             MainPanel.RowCount = 8;
             MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5756092F));
@@ -832,7 +837,7 @@
             MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
             MainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             MainPanel.Size = new Size(1710, 812);
-            MainPanel.TabIndex = 4;
+            MainPanel.TabIndex = 0;
             // 
             // MemberNotPicked
             // 
@@ -1050,9 +1055,10 @@
             Loader.BackgroundImageLayout = ImageLayout.Zoom;
             Loader.Dock = DockStyle.Fill;
             Loader.Image = Properties.Resources.LoadingHouse;
-            Loader.Location = new Point(0, 50);
+            Loader.Location = new Point(0, 0);
+            Loader.Margin = new Padding(0);
             Loader.Name = "Loader";
-            Loader.Size = new Size(1710, 812);
+            Loader.Size = new Size(1710, 862);
             Loader.SizeMode = PictureBoxSizeMode.StretchImage;
             Loader.TabIndex = 7;
             Loader.TabStop = false;
@@ -1062,14 +1068,30 @@
             backgroundWorker1.DoWork += backgroundWorker1_DoWork;
             backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(panel2, 0, 0);
+            tableLayoutPanel1.Controls.Add(MainPanel, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1710, 862);
+            tableLayoutPanel1.TabIndex = 8;
+            // 
             // InHouse
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1710, 862);
             Controls.Add(Loader);
-            Controls.Add(MainPanel);
-            Controls.Add(panel2);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -1100,6 +1122,7 @@
             groupBox5.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Loader).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1168,5 +1191,6 @@
         private GroupBox groupBox5;
         private PictureBox Loader;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -24,7 +24,7 @@ namespace House_Finance_management
         public List<InfoToHouse> members = new List<InfoToHouse>();  //contain the members of the current house
 
         private static short _memberID;  //used to write the members in order: 1. memberX, 2. memberY, 3. memberZ
-        private static readonly string _unselected = "Please select a member to update";
+        private static readonly string _unselected = "Please select a member";
         private static bool _remove;  //if true meaning the remove member was clicked 
         
         private static string callLoader;
@@ -105,38 +105,24 @@ namespace House_Finance_management
             backgroundWorker1.RunWorkerAsync();
         }
 
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            // Perform your background operation here
-            System.Threading.Thread.Sleep(3000); // Simulating a long-running task
-            
-            // Do not attempt to access UI elements like Loader here
-        }
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { Thread.Sleep(3000); } // Simulating a long-running task
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-        { 
-            // Optionally, handle any results of the background operation
-            // For example, if your operation encountered an error:
-            if (e.Error != null)
+        {
+            if (callLoader == CallFromInspectMember)
             {
-                MessageBox.Show($"An error occurred: {e.Error.Message}");
-            }
-            else if (!e.Cancelled)
-            {
-                // Operation completed successfully 
-                
-                if (callLoader == CallFromInspectMember)
-                {
+                if (lstMembersList.SelectedIndex != -1)
                     GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,
                     ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                     ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                     ref txtPhone, ref txtEmail, ref txtCity  //contact info
                     , ref percentLabels, ref progressBars  //expense info
-                    ); 
-                }
-                System.Threading.Thread.Sleep(200);
-                Loader.Visible = false;
+                    );
+                else { MessageBox.Show(_unselected); }
             }
+            System.Threading.Thread.Sleep(200);
+            Loader.Visible = false;
+
         }
     }
 }

@@ -27,7 +27,7 @@ namespace House_Finance_management
         { return new Label[] { FirstNameValidationText, LastNameValidationText, MiddleNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText }; }
         private void addTextChangeValidation()
         { foreach (Label textValidate in _GetValidationTexts()) { textValidate.TextChanged += (sender, e) => addAvailable(sender, e); } }
-        private void addAvailable(object sender, EventArgs e) { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts(),Properties.Resources.Send,Properties.Resources.NonSend,Ready2BeSent); }
+        private void addAvailable(object sender, EventArgs e) { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts(), Properties.Resources.SendToHouse1, Properties.Resources.NonSendToHouse1, Ready2BeSent); }
 
         private static string[] _validateEmail = new string[3];  //used to store 3 parts of an email: prefix,domain before the dot and the domain after the dot
 
@@ -37,15 +37,17 @@ namespace House_Finance_management
         public Add_Member(string houseNum)  //the form called by the add member button
         {
             InitializeComponent();
+            StartBackgroundWork(); 
             addTextChangeValidation();
-            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity,ref dtpAge);  //set our initial data
+            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity, ref dtpAge);  //set our initial data
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)  //the form called by the update member button 
         {
             InitializeComponent();
+            StartBackgroundWork();
             addTextChangeValidation();
-            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity,ref dtpAge);  //set our initial data
+            GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity, ref dtpAge);  //set our initial data
 
             NumericUpDown[] UpdateExpense = _GetExpenses();
             GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary, //we recieved meember data to show to the user
@@ -113,14 +115,17 @@ namespace House_Finance_management
 
         private void btnAdd_Click(object sender, EventArgs e)  //user is done with filling the data and want to add the member to the house
         {
-            if (GetBL_AddMember.validateAllData(FirstNameValidationText, LastNameValidationText, MiddleNameValidationText,
-                JobValidationText, phoneValidationText, emailValidationText, CityValidationText))  //validate all of the member's data 
+            if (GetBL_AddMember.validateAllData(_GetValidationTexts()))  //validate all of the member's data 
             {
                 MemberInformation memberInformation = GetBL_AddMember.createMember(txtFName, txtLName, txtMName, radMale, dtpAge, numMonthlySalary,
                     numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);  //create a member with the wanted data
 
                 this.DataSent(new InfoToHouse(memberInformation));  //send the member to the house
                 MessageBox.Show($"{memberInformation.Name} added to the house");
+            }
+            else
+            {
+                Ready2BeSent.Text= GetBL_AddMember.GetWrongInput(Ready2BeSent.Text, _GetValidationTexts());
             }
         }
 
@@ -139,6 +144,11 @@ namespace House_Finance_management
         {
 
         }
+
+        private void StartBackgroundWork() { backgroundWorker1.RunWorkerAsync(); }
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { Thread.Sleep(3000); }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e) { Loader.Visible = false; }
     }
 
 

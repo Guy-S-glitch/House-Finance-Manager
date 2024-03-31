@@ -5,36 +5,23 @@ namespace BL
     public partial class BL_House
     {
         private static Structs.Gender GetGender = new Structs.Gender();
-        private static readonly string _unselected = "please select a member first";  
-        private static InfoToHouse _selectedMemberRead;  //save the value of _selectedMember instead of sending it every time 
-        private static readonly string[] _expenseNames = new string[]  
-        {
-            "Transportation",
-            "Clothes",
-            "Sports",
-            "Markets",
-            "Utilities",
-            "Rent",
-            "Restaurants"
-        };
-        public void inspectMember(ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members,ref Panel panel
+        private static readonly string _unselected = "please select a member";  
+        private static InfoToHouse _selectedMemberRead;  //save the value of _selectedMember instead of sending it every time  
+        public void inspectMember(ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members, ref Panel panel
             , ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary
             , ref Label txtPhone, ref Label txtEmail, ref Label txtCity
             , ref Label[] pclabels, ref ProgressBar[] progressBars)
         {
-            if (lstMembersList.SelectedIndex != -1)
-            {
-                panel.BackgroundImage = null;
-                panel.Controls.Find("tableLayoutPanel2", true).FirstOrDefault().Visible = true;
-                _selectedMember = members[lstMembersList.SelectedIndex];
-                _selectedMemberRead = _selectedMember;
-                SetPersonalInfo(ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender);
-                SetJobInfo(ref txtJobTitle, ref txtExperience, ref txtMonthlySalary);
-                SetExpenses(ref pclabels, ref progressBars);
-                SetContacts(ref txtPhone, ref txtEmail, ref txtCity); 
-            }
-            else MessageBox.Show(_unselected);
+            panel.BackgroundImage = null;
+            panel.Controls.Find("tableLayoutPanel2", true).FirstOrDefault().Visible = true;
+            _selectedMember = members[lstMembersList.SelectedIndex];
+            _selectedMemberRead = _selectedMember;
+            SetPersonalInfo(ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender);
+            SetJobInfo(ref txtJobTitle, ref txtExperience, ref txtMonthlySalary);
+            SetExpenses(ref pclabels, ref progressBars);
+            SetContacts(ref txtPhone, ref txtEmail, ref txtCity);
+        
         }
 
         //the setting format is similar: data is (the remove value) if the remove member clicked, else the data is the selected member's data
