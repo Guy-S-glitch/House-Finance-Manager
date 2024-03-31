@@ -21,7 +21,9 @@ namespace House_Finance_management
         public event DataSentHandler DataSent;
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
         private readonly Structs.InputErrors inputErrors = new Structs.InputErrors();
-        private NumericUpDown[] _GetExpenses() //store all of the expenses insttead of calling them one by one
+        private CheckBox[] _GetCheckBoxExpenses() 
+        { return new CheckBox[] { CBTransportation, CBClothes, CBSport, CBMarkets, CBUtilities, CBRent, CBRestaurant }; }
+        private NumericUpDown[] _GetNumericExpenses() //store all of the expenses insttead of calling them one by one
         { return new NumericUpDown[] { numTransport, numClothes, numSport, numMarket, numUtilities, numRent, numRestaurant }; }
         private Label[] _GetValidationTexts()
         { return new Label[] { FirstNameValidationText, LastNameValidationText, MiddleNameValidationText, JobValidationText, phoneValidationText, emailValidationText, CityValidationText }; }
@@ -37,7 +39,7 @@ namespace House_Finance_management
         public Add_Member(string houseNum)  //the form called by the add member button
         {
             InitializeComponent();
-            StartBackgroundWork(); 
+            StartBackgroundWork();
             addTextChangeValidation();
             GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity, ref dtpAge);  //set our initial data
             _houseNumber = houseNum;
@@ -49,20 +51,16 @@ namespace House_Finance_management
             addTextChangeValidation();
             GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity, ref dtpAge);  //set our initial data
 
-            NumericUpDown[] UpdateExpense = _GetExpenses();
+            NumericUpDown[] UpdateNumeric = _GetNumericExpenses();
+            CheckBox[] UpdateCheckBox = _GetCheckBoxExpenses();
             GetBL_AddMember.UpdateInfo(update, ref txtPhone, ref cmbCity, ref txtEmail, ref numExperience, ref numMonthlySalary, //we recieved meember data to show to the user
-            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox, ref UpdateExpense, ref clbExpenses);
+            ref cmbJob, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox, ref UpdateNumeric, ref UpdateCheckBox);
 
             Label[] ignoreInitialValidations = _GetValidationTexts();
             GetBL_AddMember.ignoreValidationText(ref ignoreInitialValidations);  //since the data is from exist member there is no need to show the validation text at the start
             _houseNumber = houseNum;
         }
-
-        private void clbExpenses_ItemCheck(object sender, ItemCheckEventArgs e)  //reveal the relative NumericUpDown to the checked listbox item
-        {
-            _GetExpenses()[e.Index].Visible = e.NewValue == CheckState.Checked;
-        }
-
+         
         private void iconPictureBox1_Click(object sender, EventArgs e)  //once the picturebox clicked open the user's files and let him choose his wanted photo
         {
             GetBL_AddMember.selectPhoto(ref iconPictureBox, ref _picturePath);
@@ -118,14 +116,14 @@ namespace House_Finance_management
             if (GetBL_AddMember.validateAllData(_GetValidationTexts()))  //validate all of the member's data 
             {
                 MemberInformation memberInformation = GetBL_AddMember.createMember(txtFName, txtLName, txtMName, radMale, dtpAge, numMonthlySalary,
-                    numExperience, cmbJob, _GetExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);  //create a member with the wanted data
+                    numExperience, cmbJob, _GetNumericExpenses(), txtPhone, txtEmail, cmbCity, iconPictureBox, _picturePath, _houseNumber);  //create a member with the wanted data
 
                 this.DataSent(new InfoToHouse(memberInformation));  //send the member to the house
-                MessageBox.Show($"{memberInformation.Name} added to the house");
+                this.Close();
             }
             else
             {
-                Ready2BeSent.Text= GetBL_AddMember.GetWrongInput(Ready2BeSent.Text, _GetValidationTexts());
+                Ready2BeSent.Text = GetBL_AddMember.GetWrongInput(Ready2BeSent.Text, _GetValidationTexts());
             }
         }
 
@@ -149,6 +147,22 @@ namespace House_Finance_management
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { Thread.Sleep(3000); }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e) { Loader.Visible = false; }
+
+        private void CheckedChangeNumVisibility(object sender,EventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+
+            switch (checkBox.Name)
+            {
+                case ("CBTransportation"): numTransport.Visible = CBTransportation.Checked; break;
+                case ("CBClothes"):numClothes.Visible = CBClothes.Checked; break;
+                case ("CBSport"):numSport.Visible = CBSport.Checked; break;
+                case ("CBMarkets"):numMarket.Visible = CBMarkets.Checked; break;
+                case ("CBUtilities"):numUtilities.Visible = CBUtilities.Checked; break;
+                case ("CBRent"): numRent.Visible = CBRent.Checked; break;
+                default: numRestaurant.Visible = CBRestaurant.Checked; break; 
+            }
+        } 
     }
 
 

@@ -34,6 +34,6 @@ namespace BL
         public void changeAddButton(ref PictureBox btnAdd, Label[] validateText,Bitmap DataIsGood,Bitmap DataIsBad,Label Message)
         { 
             btnAdd.Image = validateAllData(validateText) ? DataIsGood : DataIsBad; 
-        }
+        } 
     }
 }

@@ -63,13 +63,13 @@ namespace WinFormsApp2
             InitializeComponent();
             GetBL_Main.setToolTips(ref House1, ref addHouse);
             try
-            {
+            { 
                 GetBL_Main.requestConnection(ref Connection, ref Select, _connectionString);  //connect to the sql server. also used at the end when we write to the sql 
                 Connection.Open();
-                GetSqlTable(Select);
-                Connection.Close();
+                GetSqlTable(Select); 
             }
             catch (Exception er) { System.Windows.MessageBox.Show(er.Message); }
+            finally { Connection.Close(); }
         }
         private void House1_Click(object sender, EventArgs e)  //house button clicked
         {
@@ -99,9 +99,10 @@ namespace WinFormsApp2
                 Connection.Open();
                 GetBL_Main.requestCleanSqlTable(Connection);  //cleaning previous data  
                 GetBL_Main.requestUploadLatestValues(Connection, _neighberhood);  //add updated version of the data
-                Connection.Close();
+                
             }
-            catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); } 
+            catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); }
+            finally { Connection.Close(); }
         }
 
         private void close_Click(object sender, EventArgs e)

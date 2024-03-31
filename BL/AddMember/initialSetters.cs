@@ -33,13 +33,13 @@ namespace BL
             , ref NumericUpDown numExperience, ref NumericUpDown numMonthlySalary, ref ComboBox cmbJob
             , ref TextBox txtFName, ref TextBox txtLName, ref TextBox txtMName, ref DateTimePicker dtpAge
             ,ref RadioButton radMale, ref RadioButton radFemale, ref IconPictureBox iconPictureBox
-            ,ref NumericUpDown[] Expenses, ref CheckedListBox checkedListBox
+            ,ref NumericUpDown[] Expenses, ref CheckBox[] checkBox
             )
         {  //fill the data with the data of the chosen member we want to update
             UpdateContacts(update, ref txtPhone, ref cmbCity, ref txtEmail);
             UpdateJobInfo(update, ref numExperience, ref numMonthlySalary, ref cmbJob);
             UpdatePersonalInfo(update, ref txtFName, ref txtLName, ref txtMName, ref dtpAge, ref radMale, ref radFemale, ref iconPictureBox);
-            UpdateExpenses(update, ref Expenses, ref checkedListBox);
+            UpdateExpenses(update, ref Expenses, ref checkBox);
         }
         private void UpdateContacts(InfoToHouse update, ref TextBox txtPhone, ref ComboBox cmbCity, ref TextBox txtEmail)
         {
@@ -76,14 +76,14 @@ namespace BL
             }
             else { iconPictureBox.Image = update.GetPicture(); }
         }
-        private void UpdateExpenses(InfoToHouse update,ref NumericUpDown[] Expenses,ref CheckedListBox checkedListBox)
+        private void UpdateExpenses(InfoToHouse update,ref NumericUpDown[] Expenses,ref CheckBox[] checkBox)
         {
             for(int expense = 0; expense < 7; expense++)
             {
                 Expenses[expense].Value = update.GetExpenses()[expense].Value;
                 Expenses[expense].Visible = Expenses[expense].Value != 1;
-                checkedListBox.CheckOnClick = true;
-                checkedListBox.SetItemChecked(expense, Expenses[expense].Value != 1);
+                checkBox[expense].Checked = Expenses[expense].Visible ;
+                 
             }
         }
     }

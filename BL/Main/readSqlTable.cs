@@ -48,6 +48,7 @@ namespace BL
             for (int expenseOrder = 11; expenseOrder < 18; expenseOrder++)
             {
                 SqlNumeric[expenseOrder - 11] = new NumericUpDown();
+                SqlNumeric[expenseOrder - 11].Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
                 SqlNumeric[expenseOrder - 11].Value = reader.GetInt32(expenseOrder);
             }
 
