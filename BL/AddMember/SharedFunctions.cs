@@ -1,6 +1,6 @@
 ﻿using Common;
 using Common.Models;
-
+using static Common.Enums;
 namespace BL
 {
     partial class BL_AddMember
@@ -24,28 +24,28 @@ namespace BL
             switch ((sender as TextBox).Name)
             {
                 case ("txtFName"):
-                    labels[0].Text = ValidateFirstName(textBoxes[0]); break;
+                    labels[(int)UserInput.FirstName].Text = ValidateFirstName(textBoxes[(int)UserInput.FirstName]); break;
                 case ("txtMName"):
-                    labels[1].Text = ValidateMiddleName(textBoxes[1]); break;
+                    labels[(int)UserInput.MiddleName].Text = ValidateMiddleName(textBoxes[(int)UserInput.MiddleName]); break;
                 case ("txtLName"):
-                    labels[2].Text = ValidateLastName(textBoxes[2]); break;
+                    labels[(int)UserInput.LastName].Text = ValidateLastName(textBoxes[(int)UserInput.LastName]); break;
                 case ("txtPhone"):
-                    labels[3].Text = ValidatePhoneNumber(textBoxes[3]); break;
+                    labels[(int)UserInput.Phone].Text = ValidatePhoneNumber(textBoxes[(int)UserInput.Phone]); break;
                 case ("txtEmail"):
-                    labels[4].Text = ValidateEmail(textBoxes[4]); break; 
+                    labels[(int)UserInput.Email].Text = ValidateEmail(textBoxes[(int)UserInput.Email]); break; 
             }
         }
         public void ChangeNumVisibility(object sender,ref NumericUpDown[] numerics, CheckBox[] checkBoxes)
         {
             switch ((sender as CheckBox).Name)
             {
-                case ("CBTransportation"): numerics[0].Visible = checkBoxes[0].Checked; break;
-                case ("CBClothes"): numerics[1].Visible = checkBoxes[1].Checked; break;
-                case ("CBSport"): numerics[2].Visible = checkBoxes[2].Checked; break;
-                case ("CBMarkets"): numerics[3].Visible = checkBoxes[3].Checked; break;
-                case ("CBUtilities"): numerics[4].Visible = checkBoxes[4].Checked; break;
-                case ("CBRent"): numerics[5].Visible = checkBoxes[5].Checked; break;
-                default: numerics[6].Visible = checkBoxes[6].Checked; break;
+                case ("CBTransportation"): numerics[(int)Expenses.Transportation].Visible = checkBoxes[(int)Expenses.Transportation].Checked; break;
+                case ("CBClothes"):        numerics[(int)Expenses.Clothes].Visible        = checkBoxes[(int)Expenses.Clothes].Checked; break;
+                case ("CBSport"):          numerics[(int)Expenses.Sport].Visible          = checkBoxes[(int)Expenses.Sport].Checked; break;
+                case ("CBMarkets"):        numerics[(int)Expenses.Markets].Visible        = checkBoxes[(int)Expenses.Markets].Checked; break;
+                case ("CBUtilities"):      numerics[(int)Expenses.Utilities].Visible      = checkBoxes[(int)Expenses.Utilities].Checked; break;
+                case ("CBRent"):           numerics[(int)Expenses.Rent].Visible           = checkBoxes[(int)Expenses.Rent].Checked; break;
+                default:                   numerics[(int)Expenses.Restaurant].Visible     = checkBoxes[(int)Expenses.Restaurant].Checked; break;
             }
         }
         public void SelectedIndexChanged(object sender,ComboBox[] comboBoxes,ref Label[] labels)
@@ -53,9 +53,9 @@ namespace BL
             switch ((sender as ComboBox).Name)
             {
                 case ("cmbJob"):
-                    labels[5].Text = ValidateJob(comboBoxes[0]); break;
+                    labels[(int)UserInput.Job].Text = ValidateJob(comboBoxes[(int)Comboboxes.Job]); break;
                 default:
-                    labels[6].Text = ValidateCity(comboBoxes[1]); break;
+                    labels[(int)UserInput.City].Text = ValidateCity(comboBoxes[(int)Comboboxes.City]]); break;
             }
         }
     }

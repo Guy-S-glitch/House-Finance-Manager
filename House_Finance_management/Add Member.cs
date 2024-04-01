@@ -1,9 +1,6 @@
 ﻿using Common;
 using BL;
-using static Common.Member;
-using Microsoft.IdentityModel.Tokens;
-using System.Text.RegularExpressions;
-using System.Windows.Input;
+using static Common.Member; 
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 using Common.Models;
 
