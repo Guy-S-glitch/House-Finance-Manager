@@ -49,6 +49,7 @@ namespace BL
             {
                 SqlNumeric[expenseOrder - 11] = new NumericUpDown();
                 SqlNumeric[expenseOrder - 11].Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
+                SqlNumeric[expenseOrder - 11].Minimum = new decimal(new int[] { 0, 0, 0, 0 });
                 SqlNumeric[expenseOrder - 11].Value = reader.GetInt32(expenseOrder);
             }
 

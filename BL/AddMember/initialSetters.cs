@@ -81,7 +81,7 @@ namespace BL
             for(int expense = 0; expense < 7; expense++)
             {
                 Expenses[expense].Value = update.GetExpenses()[expense].Value;
-                Expenses[expense].Visible = Expenses[expense].Value != 1;
+                Expenses[expense].Visible = Expenses[expense].Value != 0;
                 checkBox[expense].Checked = Expenses[expense].Visible ;
                  
             }

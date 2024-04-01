@@ -15,8 +15,8 @@ namespace BL
                 case ("txtLName"): acceptions.LastNameAcceptions(ref e); break;
                 case ("txtPhone"): acceptions.PhoneAcceptions(ref e); break;
                 case ("txtEmail"): acceptions.EmailAcceptions(ref e); break;
-                case ("cmbCity"): acceptions.CityAcceptions(ref e);break;
-                default: acceptions.JobAcceptions(ref e); break;
+                case ("cmbCity"):  acceptions.CityAcceptions(ref e);break;
+                default:           acceptions.JobAcceptions(ref e); break;
             }
         } 
         public void ShowValidations(object sender, TextBox[] textBoxes, ref Label[] labels)

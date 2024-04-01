@@ -98,9 +98,7 @@ namespace House_Finance_management
          
         private void close_Click(object sender, EventArgs e)
         { this.Close(); }
- 
-        
-
+  
         private void CheckedChangeNumVisibility(object sender, EventArgs e)
         { GetBL_AddMember.ChangeNumVisibility(sender, ref AddMemberNumerics, _GetCheckBoxExpenses()); }
 
