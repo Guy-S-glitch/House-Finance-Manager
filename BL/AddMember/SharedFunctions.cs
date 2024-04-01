@@ -55,7 +55,7 @@ namespace BL
                 case ("cmbJob"):
                     labels[(int)UserInput.Job].Text = ValidateJob(comboBoxes[(int)Comboboxes.Job]); break;
                 default:
-                    labels[(int)UserInput.City].Text = ValidateCity(comboBoxes[(int)Comboboxes.City]]); break;
+                    labels[(int)UserInput.City].Text = ValidateCity(comboBoxes[(int)Comboboxes.City]); break;
             }
         }
     }
