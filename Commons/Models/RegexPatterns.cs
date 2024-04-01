@@ -22,9 +22,7 @@ namespace Common
 
         [GeneratedRegex("^([a-zA-Z]+)$")]
         public static partial Regex OnlyAlphabeticCharacters();
-
-        [GeneratedRegex("(.+){1,}@(.+){1,}\\.(.+){2,}")]
-        public static partial Regex ValidEmailFormat();
+         
 
         [GeneratedRegex("\\.|\\+|_|-")]
         public static partial Regex SpecialCharacters();
@@ -32,11 +30,9 @@ namespace Common
         [GeneratedRegex("\\W")]
         public static partial Regex NonWordCharacters();
 
-        [GeneratedRegex("(^\\W|\\W$)|((\\.|\\+|_|-)\\W)|(\\W(\\.|\\+|_|-))|(\\W{2})")]
-        public static partial Regex ValidEmailPrefix();
+        [GeneratedRegex("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")]
+        public static partial Regex ValidEmail(); 
 
-        [GeneratedRegex("(^\\W|\\W$)|(-\\W|\\W-)")]
-        public static partial Regex ValidEmailDomain();
         [GeneratedRegex("(^[a-zA-Z]+(( [a-zA-Z]+)?)+)$")]
         public static partial Regex MiddleNameWithSpaces();
     }

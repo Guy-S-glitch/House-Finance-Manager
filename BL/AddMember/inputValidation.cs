@@ -1,4 +1,5 @@
-﻿using Common; 
+﻿using Common;
+using System.Windows.Input;
 
 namespace BL
 {
@@ -39,41 +40,27 @@ namespace BL
         public string ValidatePhoneNumber(TextBox txtPhone)
         {
             string input = txtPhone.Text;
-
-            if (RegexPatterns.PhoneNumberFormat().IsMatch(input)) { return _inputErrors.Valid; }
+            if (RegexPatterns.PhoneNumberFormat().IsMatch(input)) { return _inputErrors.Valid; } 
             if (RegexPatterns.NonDigitCharacters().IsMatch(input.Replace("-", ""))) { return _inputErrors.NumbersOnly; }
             if (RegexPatterns.StartsWith05().IsMatch(input) == false) { return _inputErrors.PhoneStart; }
             if (RegexPatterns.AtLeastElevenDigits().IsMatch(input.Replace("-", ""))) { return _inputErrors.PhoneMaxNumbers; }
-         
+            
             return _inputErrors.PhoneFormat;
         }
         public string ValidateJob(ComboBox cmbJob)
         {
-            if (cmbJob.SelectedIndex < 1) { return _inputErrors.InvalidJob; }
-       
+            if (cmbJob.SelectedIndex < 1) { return _inputErrors.InvalidJob; } 
             return _inputErrors.Valid;
         }
         public string ValidateCity(ComboBox cmbCity)
         {
-            if (cmbCity.SelectedIndex < 1) { return _inputErrors.InvalidCity; }
-     
+            if (cmbCity.SelectedIndex < 1) { return _inputErrors.InvalidCity; } 
             return _inputErrors.Valid;
         }
-        public bool CheckEmail(string[] _validateEmail)
+        public string ValidateEmail(TextBox txtEmail)
         {
-            if (RegexPatterns.ValidEmailPrefix().IsMatch(_validateEmail[0])
-             || RegexPatterns.NonWordCharacters().IsMatch(RegexPatterns.SpecialCharacters().Replace(_validateEmail[0], "")))
-            { return true; }
-
-            if (RegexPatterns.ValidEmailDomain().IsMatch(_validateEmail[1])
-             || RegexPatterns.NonWordCharacters().IsMatch(_validateEmail[1].Replace("-", "")))
-            { return true; }
-
-            if (!RegexPatterns.OnlyAlphabeticCharacters().IsMatch(_validateEmail[2]))
-            { return true; }
-
-            return false;
-
+            if (RegexPatterns.ValidEmail().IsMatch(txtEmail.Text)){ return _inputErrors.Valid; }
+            return _inputErrors.InvalidEmail; 
         }
     }
 }
