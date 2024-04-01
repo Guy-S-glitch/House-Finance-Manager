@@ -35,18 +35,11 @@ namespace BL
                     labels[(int)UserInput.Email].Text = ValidateEmail(textBoxes[(int)UserInput.Email]); break; 
             }
         }
-        public void ChangeNumVisibility(object sender,ref NumericUpDown[] numerics, CheckBox[] checkBoxes)
+        public void ChangeNumVisibility(object sender,ref TableLayoutPanel tableLayoutPanel)
         {
-            switch ((sender as CheckBox).Name)
-            {
-                case ("CBTransportation"): numerics[(int)Expenses.Transportation].Visible = checkBoxes[(int)Expenses.Transportation].Checked; break;
-                case ("CBClothes"):        numerics[(int)Expenses.Clothes].Visible        = checkBoxes[(int)Expenses.Clothes].Checked; break;
-                case ("CBSport"):          numerics[(int)Expenses.Sport].Visible          = checkBoxes[(int)Expenses.Sport].Checked; break;
-                case ("CBMarkets"):        numerics[(int)Expenses.Markets].Visible        = checkBoxes[(int)Expenses.Markets].Checked; break;
-                case ("CBUtilities"):      numerics[(int)Expenses.Utilities].Visible      = checkBoxes[(int)Expenses.Utilities].Checked; break;
-                case ("CBRent"):           numerics[(int)Expenses.Rent].Visible           = checkBoxes[(int)Expenses.Rent].Checked; break;
-                default:                   numerics[(int)Expenses.Restaurant].Visible     = checkBoxes[(int)Expenses.Restaurant].Checked; break;
-            }
+            string expense ="num" + (sender as CheckBox).Name.Split("cb")[1]; 
+            tableLayoutPanel.Controls.Find(expense, true).First().Visible = (sender as CheckBox).Checked;
+            if (!(sender as CheckBox).Checked) (tableLayoutPanel.Controls.Find(expense, true).First() as NumericUpDown).Value = 0; 
         }
         public void SelectedIndexChanged(object sender,ComboBox[] comboBoxes,ref Label[] labels)
         {

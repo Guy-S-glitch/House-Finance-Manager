@@ -9,6 +9,7 @@ namespace BL
         public void setInitialValues(ref ComboBox cmbJob, ref ComboBox cmbCity,ref DateTimePicker dateTimePicker)  
         {
             dateTimePicker.MaxDate = DateTime.Today;
+            dateTimePicker.Value = DateTime.Today;
             SetJobsNames(ref cmbJob);
             SetCitiesNames(ref cmbCity);
         }
@@ -82,7 +83,7 @@ namespace BL
             {
                 Expenses[expense].Value = update.GetExpenses()[expense].Value;
                 Expenses[expense].Visible = Expenses[expense].Value != 0;
-                checkBox[expense].Checked = Expenses[expense].Visible ;
+                checkBox[expense].Checked = Expenses[expense].Value != 0;
                  
             }
         }

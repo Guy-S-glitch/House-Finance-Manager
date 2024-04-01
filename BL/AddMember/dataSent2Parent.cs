@@ -32,7 +32,7 @@ namespace BL
             string lastName = txtLName.Text;
             string middleName = txtMName.Text;
 
-            string fullName = $"{firstName} {lastName} {middleName}";
+            string fullName = $"{firstName} {middleName} {lastName}";
 
             return new MemberInformation()  //filling every data in his relative spot
             {

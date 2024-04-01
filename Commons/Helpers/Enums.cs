@@ -112,16 +112,6 @@
         {
             Job,
             City
-        }
-        public enum Expenses
-        {
-            Transportation,
-            Clothes,
-            Sport,
-            Markets,
-            Utilities,
-            Rent,
-            Restaurant
-        }
+        } 
     }
 }

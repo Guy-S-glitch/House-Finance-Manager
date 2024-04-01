@@ -28,7 +28,7 @@ namespace House_Finance_management
         private BL_AddMember GetBL_AddMember = new BL_AddMember();
 
         private CheckBox[] _GetCheckBoxExpenses()
-        { return new CheckBox[] { CBTransportation, CBClothes, CBSport, CBMarkets, CBUtilities, CBRent, CBRestaurant }; }
+        { return new CheckBox[] { cbTransport, cbClothes, cbSport, cbMarket, cbUtilities, cbRent, cbRestaurant }; }
         private CheckBox[] AddMemberCheckBoxes;
 
         private NumericUpDown[] _GetNumericExpenses() //store all of the expenses insttead of calling them one by one
@@ -100,7 +100,7 @@ namespace House_Finance_management
         { this.Close(); }
   
         private void CheckedChangeNumVisibility(object sender, EventArgs e)
-        { GetBL_AddMember.ChangeNumVisibility(sender, ref AddMemberNumerics, _GetCheckBoxExpenses()); }
+        { GetBL_AddMember.ChangeNumVisibility(sender, ref ExpenseTable); }
 
         private void addAvailable(object sender, EventArgs e)
         { GetBL_AddMember.changeAddButton(ref btnAdd, _GetValidationTexts(), 
