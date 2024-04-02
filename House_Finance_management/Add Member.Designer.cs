@@ -138,7 +138,7 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Arial", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Gold;
-            label2.Location = new Point(495, 0);
+            label2.Location = new Point(482, 0);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(223, 46);
@@ -212,13 +212,13 @@
             groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Font = new Font("David", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.Gold;
             groupBox1.Location = new Point(4, 3);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(573, 306);
+            groupBox1.Size = new Size(564, 311);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Person";
@@ -242,7 +242,7 @@
             tableLayoutPanel3.Controls.Add(dtpAge, 1, 6);
             tableLayoutPanel3.Controls.Add(label7, 0, 7);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(4, 23);
+            tableLayoutPanel3.Location = new Point(4, 31);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 8;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
@@ -254,7 +254,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(565, 280);
+            tableLayoutPanel3.Size = new Size(556, 277);
             tableLayoutPanel3.TabIndex = 25;
             // 
             // tableLayoutPanel4
@@ -270,7 +270,7 @@
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(405, 49);
+            tableLayoutPanel4.Size = new Size(396, 49);
             tableLayoutPanel4.TabIndex = 0;
             // 
             // FirstNameValidationText
@@ -282,7 +282,7 @@
             FirstNameValidationText.ForeColor = Color.Red;
             FirstNameValidationText.Location = new Point(157, 0);
             FirstNameValidationText.Name = "FirstNameValidationText";
-            FirstNameValidationText.Size = new Size(405, 24);
+            FirstNameValidationText.Size = new Size(396, 24);
             FirstNameValidationText.TabIndex = 23;
             FirstNameValidationText.Text = "Name can't be empty";
             FirstNameValidationText.TextAlign = ContentAlignment.BottomLeft;
@@ -313,7 +313,7 @@
             txtFName.Margin = new Padding(4, 3, 4, 3);
             txtFName.MaxLength = 15;
             txtFName.Name = "txtFName";
-            txtFName.Size = new Size(403, 30);
+            txtFName.Size = new Size(394, 30);
             txtFName.TabIndex = 0;
             txtFName.KeyPress += txt_KeyPress;
             txtFName.KeyUp += txt_KeyUp;
@@ -327,7 +327,7 @@
             MiddleNameValidationText.ForeColor = Color.Red;
             MiddleNameValidationText.Location = new Point(157, 123);
             MiddleNameValidationText.Name = "MiddleNameValidationText";
-            MiddleNameValidationText.Size = new Size(405, 24);
+            MiddleNameValidationText.Size = new Size(396, 24);
             MiddleNameValidationText.TabIndex = 24;
             MiddleNameValidationText.TextAlign = ContentAlignment.BottomLeft;
             MiddleNameValidationText.TextChanged += addAvailable;
@@ -341,7 +341,7 @@
             LastNameValidationText.ForeColor = Color.Red;
             LastNameValidationText.Location = new Point(157, 60);
             LastNameValidationText.Name = "LastNameValidationText";
-            LastNameValidationText.Size = new Size(405, 24);
+            LastNameValidationText.Size = new Size(396, 24);
             LastNameValidationText.TabIndex = 22;
             LastNameValidationText.Text = "Name can't be empty";
             LastNameValidationText.TextAlign = ContentAlignment.BottomLeft;
@@ -358,7 +358,7 @@
             txtMName.MaxLength = 30;
             txtMName.Name = "txtMName";
             txtMName.PlaceholderText = "Optional";
-            txtMName.Size = new Size(403, 33);
+            txtMName.Size = new Size(394, 33);
             txtMName.TabIndex = 2;
             txtMName.KeyPress += txt_KeyPress;
             txtMName.KeyUp += txt_KeyUp;
@@ -403,7 +403,7 @@
             txtLName.Margin = new Padding(4, 3, 4, 3);
             txtLName.MaxLength = 15;
             txtLName.Name = "txtLName";
-            txtLName.Size = new Size(403, 33);
+            txtLName.Size = new Size(394, 33);
             txtLName.TabIndex = 1;
             txtLName.KeyPress += txt_KeyPress;
             txtLName.KeyUp += txt_KeyUp;
@@ -447,13 +447,13 @@
             tableLayoutPanel1.SetColumnSpan(groupBox2, 2);
             groupBox2.Controls.Add(tableLayoutPanel11);
             groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Font = new Font("David", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox2.ForeColor = Color.Gold;
-            groupBox2.Location = new Point(4, 473);
+            groupBox2.Location = new Point(4, 504);
             groupBox2.Margin = new Padding(4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(10);
-            groupBox2.Size = new Size(863, 149);
+            groupBox2.Size = new Size(850, 174);
             groupBox2.TabIndex = 20;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job Information";
@@ -465,13 +465,13 @@
             tableLayoutPanel11.Controls.Add(tableLayoutPanel8, 0, 2);
             tableLayoutPanel11.Controls.Add(tableLayoutPanel9, 0, 0);
             tableLayoutPanel11.Dock = DockStyle.Fill;
-            tableLayoutPanel11.Location = new Point(10, 30);
+            tableLayoutPanel11.Location = new Point(10, 38);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
             tableLayoutPanel11.RowCount = 3;
             tableLayoutPanel11.RowStyles.Add(new RowStyle());
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel11.RowStyles.Add(new RowStyle());
-            tableLayoutPanel11.Size = new Size(843, 109);
+            tableLayoutPanel11.Size = new Size(830, 126);
             tableLayoutPanel11.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -483,12 +483,12 @@
             tableLayoutPanel8.Controls.Add(cmbJob, 1, 1);
             tableLayoutPanel8.Controls.Add(label3, 0, 1);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(3, 39);
+            tableLayoutPanel8.Location = new Point(3, 56);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 2;
             tableLayoutPanel8.RowStyles.Add(new RowStyle());
             tableLayoutPanel8.RowStyles.Add(new RowStyle());
-            tableLayoutPanel8.Size = new Size(837, 67);
+            tableLayoutPanel8.Size = new Size(824, 67);
             tableLayoutPanel8.TabIndex = 0;
             // 
             // JobValidationText
@@ -500,7 +500,7 @@
             JobValidationText.ForeColor = Color.Red;
             JobValidationText.Location = new Point(100, 0);
             JobValidationText.Name = "JobValidationText";
-            JobValidationText.Size = new Size(734, 24);
+            JobValidationText.Size = new Size(721, 24);
             JobValidationText.TabIndex = 23;
             JobValidationText.Text = "Please select your job";
             JobValidationText.TextChanged += addAvailable;
@@ -516,7 +516,7 @@
             cmbJob.Location = new Point(101, 27);
             cmbJob.Margin = new Padding(4, 3, 4, 3);
             cmbJob.Name = "cmbJob";
-            cmbJob.Size = new Size(732, 29);
+            cmbJob.Size = new Size(719, 29);
             cmbJob.Sorted = true;
             cmbJob.TabIndex = 8;
             cmbJob.SelectedIndexChanged += cmb_SelectedIndexChanged;
@@ -553,7 +553,7 @@
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 1;
             tableLayoutPanel9.RowStyles.Add(new RowStyle());
-            tableLayoutPanel9.Size = new Size(837, 46);
+            tableLayoutPanel9.Size = new Size(824, 46);
             tableLayoutPanel9.TabIndex = 1;
             // 
             // numMonthlySalary
@@ -565,7 +565,7 @@
             numMonthlySalary.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numMonthlySalary.ForeColor = Color.DarkBlue;
             numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numMonthlySalary.Location = new Point(725, 3);
+            numMonthlySalary.Location = new Point(712, 3);
             numMonthlySalary.Maximum = new decimal(new int[] { 200000, 0, 0, 0 });
             numMonthlySalary.Name = "numMonthlySalary";
             numMonthlySalary.Size = new Size(109, 37);
@@ -591,13 +591,13 @@
             groupBox4.Controls.Add(ExpenseTable);
             groupBox4.Dock = DockStyle.Fill;
             groupBox4.FlatStyle = FlatStyle.Popup;
-            groupBox4.Font = new Font("David", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox4.ForeColor = Color.Gold;
             groupBox4.Location = new Point(4, 3);
             groupBox4.Margin = new Padding(4, 3, 4, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(4, 3, 4, 3);
-            groupBox4.Size = new Size(402, 362);
+            groupBox4.Size = new Size(402, 310);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "💸 Expenses";
@@ -623,7 +623,7 @@
             ExpenseTable.Controls.Add(cbRent, 0, 5);
             ExpenseTable.Controls.Add(cbRestaurant, 0, 6);
             ExpenseTable.Dock = DockStyle.Right;
-            ExpenseTable.Location = new Point(4, 23);
+            ExpenseTable.Location = new Point(4, 31);
             ExpenseTable.Name = "ExpenseTable";
             ExpenseTable.RowCount = 7;
             ExpenseTable.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
@@ -633,7 +633,7 @@
             ExpenseTable.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
             ExpenseTable.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
             ExpenseTable.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
-            ExpenseTable.Size = new Size(394, 336);
+            ExpenseTable.Size = new Size(394, 276);
             ExpenseTable.TabIndex = 15;
             // 
             // numRestaurant
@@ -645,7 +645,7 @@
             numRestaurant.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numRestaurant.ForeColor = Color.DarkBlue;
             numRestaurant.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numRestaurant.Location = new Point(295, 291);
+            numRestaurant.Location = new Point(295, 237);
             numRestaurant.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRestaurant.Name = "numRestaurant";
             numRestaurant.Size = new Size(96, 33);
@@ -661,7 +661,7 @@
             numClothes.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numClothes.ForeColor = Color.DarkBlue;
             numClothes.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numClothes.Location = new Point(295, 51);
+            numClothes.Location = new Point(295, 42);
             numClothes.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numClothes.Name = "numClothes";
             numClothes.Size = new Size(96, 33);
@@ -677,7 +677,7 @@
             numRent.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numRent.ForeColor = Color.DarkBlue;
             numRent.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numRent.Location = new Point(295, 243);
+            numRent.Location = new Point(295, 198);
             numRent.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRent.Name = "numRent";
             numRent.Size = new Size(96, 33);
@@ -709,7 +709,7 @@
             numUtilities.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numUtilities.ForeColor = Color.DarkBlue;
             numUtilities.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numUtilities.Location = new Point(295, 195);
+            numUtilities.Location = new Point(295, 159);
             numUtilities.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numUtilities.Name = "numUtilities";
             numUtilities.Size = new Size(96, 33);
@@ -725,7 +725,7 @@
             numMarket.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numMarket.ForeColor = Color.DarkBlue;
             numMarket.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numMarket.Location = new Point(295, 147);
+            numMarket.Location = new Point(295, 120);
             numMarket.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numMarket.Name = "numMarket";
             numMarket.Size = new Size(96, 33);
@@ -741,7 +741,7 @@
             numSport.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point);
             numSport.ForeColor = Color.DarkBlue;
             numSport.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            numSport.Location = new Point(295, 99);
+            numSport.Location = new Point(295, 81);
             numSport.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numSport.Name = "numSport";
             numSport.Size = new Size(96, 33);
@@ -756,7 +756,7 @@
             cbTransport.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
             cbTransport.Location = new Point(3, 3);
             cbTransport.Name = "cbTransport";
-            cbTransport.Size = new Size(286, 42);
+            cbTransport.Size = new Size(286, 33);
             cbTransport.TabIndex = 35;
             cbTransport.Text = "Transportation";
             cbTransport.UseVisualStyleBackColor = true;
@@ -768,9 +768,9 @@
             ExpenseTable.SetColumnSpan(cbClothes, 2);
             cbClothes.Dock = DockStyle.Fill;
             cbClothes.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbClothes.Location = new Point(3, 51);
+            cbClothes.Location = new Point(3, 42);
             cbClothes.Name = "cbClothes";
-            cbClothes.Size = new Size(286, 42);
+            cbClothes.Size = new Size(286, 33);
             cbClothes.TabIndex = 36;
             cbClothes.Text = "Clothing and shoes";
             cbClothes.UseVisualStyleBackColor = true;
@@ -782,9 +782,9 @@
             ExpenseTable.SetColumnSpan(cbSport, 2);
             cbSport.Dock = DockStyle.Fill;
             cbSport.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbSport.Location = new Point(3, 99);
+            cbSport.Location = new Point(3, 81);
             cbSport.Name = "cbSport";
-            cbSport.Size = new Size(286, 42);
+            cbSport.Size = new Size(286, 33);
             cbSport.TabIndex = 37;
             cbSport.Text = "Sports and leisure";
             cbSport.UseVisualStyleBackColor = true;
@@ -796,9 +796,9 @@
             ExpenseTable.SetColumnSpan(cbMarket, 2);
             cbMarket.Dock = DockStyle.Fill;
             cbMarket.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbMarket.Location = new Point(3, 147);
+            cbMarket.Location = new Point(3, 120);
             cbMarket.Name = "cbMarket";
-            cbMarket.Size = new Size(286, 42);
+            cbMarket.Size = new Size(286, 33);
             cbMarket.TabIndex = 38;
             cbMarket.Text = "Markets";
             cbMarket.UseVisualStyleBackColor = true;
@@ -810,9 +810,9 @@
             ExpenseTable.SetColumnSpan(cbUtilities, 2);
             cbUtilities.Dock = DockStyle.Fill;
             cbUtilities.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbUtilities.Location = new Point(3, 195);
+            cbUtilities.Location = new Point(3, 159);
             cbUtilities.Name = "cbUtilities";
-            cbUtilities.Size = new Size(286, 42);
+            cbUtilities.Size = new Size(286, 33);
             cbUtilities.TabIndex = 39;
             cbUtilities.Text = "Utilities";
             cbUtilities.UseVisualStyleBackColor = true;
@@ -824,9 +824,9 @@
             ExpenseTable.SetColumnSpan(cbRent, 2);
             cbRent.Dock = DockStyle.Fill;
             cbRent.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbRent.Location = new Point(3, 243);
+            cbRent.Location = new Point(3, 198);
             cbRent.Name = "cbRent";
-            cbRent.Size = new Size(286, 42);
+            cbRent.Size = new Size(286, 33);
             cbRent.TabIndex = 40;
             cbRent.Text = "Rent";
             cbRent.UseVisualStyleBackColor = true;
@@ -836,11 +836,10 @@
             // 
             cbRestaurant.AutoSize = true;
             ExpenseTable.SetColumnSpan(cbRestaurant, 2);
-            cbRestaurant.Dock = DockStyle.Fill;
             cbRestaurant.Font = new Font("David", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            cbRestaurant.Location = new Point(3, 291);
+            cbRestaurant.Location = new Point(3, 237);
             cbRestaurant.Name = "cbRestaurant";
-            cbRestaurant.Size = new Size(286, 42);
+            cbRestaurant.Size = new Size(150, 25);
             cbRestaurant.TabIndex = 41;
             cbRestaurant.Text = "Restaurants";
             cbRestaurant.UseVisualStyleBackColor = true;
@@ -854,11 +853,11 @@
             groupBox3.Controls.Add(tableLayoutPanel5);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.FlatStyle = FlatStyle.Flat;
-            groupBox3.Font = new Font("David", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox3.Font = new Font("David", 14F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox3.ForeColor = Color.Gold;
-            groupBox3.Location = new Point(3, 315);
+            groupBox3.Location = new Point(3, 316);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(865, 151);
+            groupBox3.Size = new Size(852, 184);
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Contact";
@@ -870,16 +869,16 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel5.Controls.Add(tableLayoutPanel7, 0, 0);
-            tableLayoutPanel5.Controls.Add(tableLayoutPanel13, 0, 1);
+            tableLayoutPanel5.Controls.Add(tableLayoutPanel13, 0, 2);
             tableLayoutPanel5.Controls.Add(tableLayoutPanel12, 2, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 23);
+            tableLayoutPanel5.Location = new Point(3, 31);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 2;
+            tableLayoutPanel5.RowCount = 3;
             tableLayoutPanel5.RowStyles.Add(new RowStyle());
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle());
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(859, 125);
+            tableLayoutPanel5.Size = new Size(846, 150);
             tableLayoutPanel5.TabIndex = 30;
             // 
             // tableLayoutPanel7
@@ -954,12 +953,13 @@
             tableLayoutPanel13.Controls.Add(txtEmail, 1, 1);
             tableLayoutPanel13.Controls.Add(Email, 0, 1);
             tableLayoutPanel13.Dock = DockStyle.Fill;
-            tableLayoutPanel13.Location = new Point(3, 76);
+            tableLayoutPanel13.Location = new Point(3, 79);
             tableLayoutPanel13.Name = "tableLayoutPanel13";
             tableLayoutPanel13.RowCount = 2;
             tableLayoutPanel13.RowStyles.Add(new RowStyle());
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel13.Size = new Size(853, 68);
+            tableLayoutPanel13.RowStyles.Add(new RowStyle());
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel13.Size = new Size(840, 68);
             tableLayoutPanel13.TabIndex = 29;
             // 
             // emailValidationText
@@ -971,7 +971,7 @@
             emailValidationText.ForeColor = Color.Red;
             emailValidationText.Location = new Point(116, 0);
             emailValidationText.Name = "emailValidationText";
-            emailValidationText.Size = new Size(734, 24);
+            emailValidationText.Size = new Size(721, 24);
             emailValidationText.TabIndex = 25;
             emailValidationText.Text = "Invalid email";
             emailValidationText.TextAlign = ContentAlignment.BottomLeft;
@@ -988,7 +988,7 @@
             txtEmail.MaxLength = 50;
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "example123@domain.com";
-            txtEmail.Size = new Size(734, 33);
+            txtEmail.Size = new Size(721, 33);
             txtEmail.TabIndex = 6;
             txtEmail.KeyPress += txt_KeyPress;
             txtEmail.KeyUp += txt_KeyUp;
@@ -1005,7 +1005,7 @@
             Email.Size = new Size(107, 44);
             Email.TabIndex = 1;
             Email.Text = "📧 Email:";
-            Email.TextAlign = ContentAlignment.MiddleRight;
+            Email.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel12
             // 
@@ -1015,7 +1015,8 @@
             tableLayoutPanel12.Controls.Add(CityValidationText, 1, 0);
             tableLayoutPanel12.Controls.Add(cmbCity, 1, 1);
             tableLayoutPanel12.Controls.Add(label4, 0, 1);
-            tableLayoutPanel12.Location = new Point(432, 3);
+            tableLayoutPanel12.Dock = DockStyle.Fill;
+            tableLayoutPanel12.Location = new Point(419, 3);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.RowCount = 2;
             tableLayoutPanel12.RowStyles.Add(new RowStyle());
@@ -1079,11 +1080,11 @@
             iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             iconPictureBox.IconColor = SystemColors.ActiveCaptionText;
             iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox.IconSize = 225;
+            iconPictureBox.IconSize = 207;
             iconPictureBox.ImageLocation = "";
             iconPictureBox.Location = new Point(3, 27);
             iconPictureBox.Name = "iconPictureBox";
-            iconPictureBox.Size = new Size(278, 225);
+            iconPictureBox.Size = new Size(274, 207);
             iconPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             iconPictureBox.TabIndex = 26;
             iconPictureBox.TabStop = false;
@@ -1097,9 +1098,9 @@
             groupBox5.Dock = DockStyle.Bottom;
             groupBox5.Font = new Font("David", 12F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox5.ForeColor = Color.Gold;
-            groupBox5.Location = new Point(584, 54);
+            groupBox5.Location = new Point(575, 77);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(284, 255);
+            groupBox5.Size = new Size(280, 237);
             groupBox5.TabIndex = 27;
             groupBox5.TabStop = false;
             groupBox5.Text = "📸 Upload picture";
@@ -1138,9 +1139,9 @@
             tableLayoutPanel1.BackgroundImage = Properties.Resources.AddMember_Background;
             tableLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.21978F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.10989F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54.67033F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.75617F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.8780842F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55.36574F));
             tableLayoutPanel1.Controls.Add(groupBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(groupBox5, 1, 0);
             tableLayoutPanel1.Controls.Add(groupBox3, 0, 2);
@@ -1152,13 +1153,13 @@
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 7;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 317F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 42.85347F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.5732651F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 182F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.5732651F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 322F));
             tableLayoutPanel1.Size = new Size(1924, 1000);
             tableLayoutPanel1.TabIndex = 26;
             // 
@@ -1175,11 +1176,11 @@
             tableLayoutPanel6.Controls.Add(groupBox4, 0, 0);
             tableLayoutPanel6.Controls.Add(btnAdd, 3, 0);
             tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(3, 629);
+            tableLayoutPanel6.Location = new Point(3, 682);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 1;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Size = new Size(865, 368);
+            tableLayoutPanel6.Size = new Size(852, 316);
             tableLayoutPanel6.TabIndex = 28;
             // 
             // Ready2BeSent
@@ -1188,9 +1189,9 @@
             Ready2BeSent.Dock = DockStyle.Fill;
             Ready2BeSent.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Ready2BeSent.ForeColor = Color.Red;
-            Ready2BeSent.Location = new Point(456, 0);
+            Ready2BeSent.Location = new Point(452, 0);
             Ready2BeSent.Name = "Ready2BeSent";
-            Ready2BeSent.Size = new Size(209, 368);
+            Ready2BeSent.Size = new Size(194, 316);
             Ready2BeSent.TabIndex = 13;
             Ready2BeSent.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -1199,9 +1200,9 @@
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.Dock = DockStyle.Bottom;
             btnAdd.Image = Properties.Resources.NonSendToHouse1;
-            btnAdd.Location = new Point(671, 199);
+            btnAdd.Location = new Point(652, 147);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(191, 166);
+            btnAdd.Size = new Size(197, 166);
             btnAdd.SizeMode = PictureBoxSizeMode.StretchImage;
             btnAdd.TabIndex = 14;
             btnAdd.TabStop = false;
@@ -1211,10 +1212,10 @@
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = Properties.Resources.AddMemberBack;
-            pictureBox1.Location = new Point(874, 3);
+            pictureBox1.Location = new Point(861, 3);
             pictureBox1.Name = "pictureBox1";
             tableLayoutPanel1.SetRowSpan(pictureBox1, 7);
-            pictureBox1.Size = new Size(1047, 994);
+            pictureBox1.Size = new Size(1060, 995);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 29;
             pictureBox1.TabStop = false;
@@ -1373,7 +1374,6 @@
         private PictureBox btnAdd;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel ExpenseTable;
-        private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel10;
         private TableLayoutPanel tableLayoutPanel11;
         private TableLayoutPanel tableLayoutPanel7;
@@ -1387,5 +1387,6 @@
         private CheckBox cbUtilities;
         private CheckBox cbRent;
         private CheckBox cbRestaurant;
+        private PictureBox pictureBox1;
     }
 }
