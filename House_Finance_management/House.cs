@@ -26,9 +26,10 @@ namespace House_Finance_management
         private static short _memberID;  //used to write the members in order: 1. memberX, 2. memberY, 3. memberZ
         private static readonly string _unselected = "Please select a member";
         private static bool _remove;  //if true meaning the remove member was clicked 
-        
+
         private static string callLoader;
-        private static readonly string CallFromInitializeComponent = "InitializeComponent", CallFromInspectMember = "InspectMember"; 
+        private static readonly string CallFromInitializeComponent = "InitializeComponent", 
+            CallFromInspectMember = "InspectMember" , CallFromRemoveMember = "RemoveMember";
         private static InfoToHouse _selectedMember;
 
         private ProgressBar[] progressBars;
@@ -43,7 +44,7 @@ namespace House_Finance_management
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList, ref panel1);
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
-        { 
+        {
             this.returnDataToHouse(members);  //send data to parent
         }
 
@@ -75,13 +76,16 @@ namespace House_Finance_management
 
         public void btnmemberRemove_Click(object sender, EventArgs e)  //called by clicking the remove member button
         {
-            GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2, Properties.Resources.ChooseMemberToInspect, ref panel1, Properties.Resources.emptyHouse1);
+            if (lstMembersList.SelectedIndex != -1)
+                StartBackgroundWork(CallFromRemoveMember);
+                
+            else MessageBox.Show(_unselected);
         }
 
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
-        {  
-            StartBackgroundWork(CallFromInspectMember);
-            
+        {
+            if (lstMembersList.SelectedIndex != -1) StartBackgroundWork(CallFromInspectMember);
+            else MessageBox.Show(_unselected);
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -90,14 +94,14 @@ namespace House_Finance_management
             this.Close();
         }
 
-        private void InHouse_Load(object sender, EventArgs e) {  }
+        private void InHouse_Load(object sender, EventArgs e) { }
 
 
         // the code below isn't relevant to the project but to the diagram  
         public Add_Member Add_Member { get => default; set { } }
 
         private void StartBackgroundWork(string CalledBy)
-        { 
+        {
             // Show the loader before starting the background work
             Loader.Visible = true;
             callLoader = CalledBy;
@@ -109,20 +113,24 @@ namespace House_Finance_management
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            if (callLoader == CallFromInspectMember)
+            switch (callLoader)
             {
-                if (lstMembersList.SelectedIndex != -1)
-                    GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,
+                case ("InspectMember"):
+                    GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,Properties.Resources.InspectMemberPhoto,
                     ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                     ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                     ref txtPhone, ref txtEmail, ref txtCity  //contact info
-                    , ref percentLabels, ref progressBars  //expense info
-                    );
-                else { MessageBox.Show(_unselected); }
-            }
+                    , ref percentLabels, ref progressBars);  //expense info
+                    break;
+                case ("RemoveMember"):
+                    GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2,
+                        Properties.Resources.ChooseMemberToInspect, ref panel1, Properties.Resources.emptyHouse1);
+                    break;
+            } 
             System.Threading.Thread.Sleep(200);
             Loader.Visible = false;
 
         }
+          
     }
 }

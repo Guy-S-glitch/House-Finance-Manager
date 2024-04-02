@@ -7,13 +7,13 @@ namespace BL
         private static Structs.Gender GetGender = new Structs.Gender();
         private static readonly string _unselected = "please select a member";  
         private static InfoToHouse _selectedMemberRead;  //save the value of _selectedMember instead of sending it every time  
-        public void inspectMember(ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members, ref Panel panel
+        public void inspectMember(ListBox lstMembersList, ref InfoToHouse _selectedMember, List<InfoToHouse> members, ref Panel panel, Bitmap InspectPhoto
             , ref IconPictureBox iconPictureBox, ref Label lblUserName, ref Label lblUserAge, ref Label lblUserGender
             , ref Label txtJobTitle, ref Label txtExperience, ref Label txtMonthlySalary
             , ref Label txtPhone, ref Label txtEmail, ref Label txtCity
             , ref Label[] pclabels, ref ProgressBar[] progressBars)
         {
-            panel.BackgroundImage = null;
+            panel.BackgroundImage = InspectPhoto;
             panel.Controls.Find("tableLayoutPanel2", true).FirstOrDefault().Visible = true;
             _selectedMember = members[lstMembersList.SelectedIndex];
             _selectedMemberRead = _selectedMember;
@@ -69,18 +69,14 @@ namespace BL
             iconPictureBox.IconColor = Color.Black;
             iconPictureBox.Dock = DockStyle.Fill;
         }
-        public void removeMember(ref ListBox lstMembersList,ref List<InfoToHouse> members,ref Panel MemberNotPicked,ref TableLayoutPanel tableLayoutPanel2,Bitmap Pic,ref Panel panel,Bitmap pic2)
+        public void removeMember(ref ListBox lstMembersList, ref List<InfoToHouse> members, ref Panel MemberNotPicked, ref TableLayoutPanel tableLayoutPanel2, Bitmap Pic, ref Panel panel, Bitmap pic2)
         {
-            if (lstMembersList.SelectedIndex != -1)
-            {
-                members.RemoveAt(lstMembersList.SelectedIndex);
-                lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
-                MemberNotPicked.BackgroundImage = Pic;
-                tableLayoutPanel2.Visible = false;
-                lstMembersList.Visible = lstMembersList.Items.Count != 0;
-                panel.BackgroundImage = lstMembersList.Visible ? null : pic2;
-            }
-            else MessageBox.Show(_unselected);
+            members.RemoveAt(lstMembersList.SelectedIndex);
+            lstMembersList.Items.RemoveAt(lstMembersList.SelectedIndex);
+            MemberNotPicked.BackgroundImage = Pic;
+            tableLayoutPanel2.Visible = false;
+            lstMembersList.Visible = lstMembersList.Items.Count != 0;
+            panel.BackgroundImage = lstMembersList.Visible ? null : pic2;
         }
     }
 }

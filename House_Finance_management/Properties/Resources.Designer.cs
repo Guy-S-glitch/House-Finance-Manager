@@ -113,6 +113,16 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap InspectMemberPhoto {
+            get {
+                object obj = ResourceManager.GetObject("InspectMemberPhoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LoadingHouse {
             get {
                 object obj = ResourceManager.GetObject("LoadingHouse", resourceCulture);
