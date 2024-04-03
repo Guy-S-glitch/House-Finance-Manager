@@ -1191,9 +1191,9 @@
             Ready2BeSent.Dock = DockStyle.Fill;
             Ready2BeSent.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Ready2BeSent.ForeColor = Color.Red;
-            Ready2BeSent.Location = new Point(449, 0);
+            Ready2BeSent.Location = new Point(446, 0);
             Ready2BeSent.Name = "Ready2BeSent";
-            Ready2BeSent.Size = new Size(179, 316);
+            Ready2BeSent.Size = new Size(162, 316);
             Ready2BeSent.TabIndex = 13;
             Ready2BeSent.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -1202,9 +1202,9 @@
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.Dock = DockStyle.Bottom;
             btnAdd.Image = Properties.Resources.NonSendToHouse1;
-            btnAdd.Location = new Point(634, 147);
+            btnAdd.Location = new Point(614, 147);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(215, 166);
+            btnAdd.Size = new Size(235, 166);
             btnAdd.SizeMode = PictureBoxSizeMode.StretchImage;
             btnAdd.TabIndex = 14;
             btnAdd.TabStop = false;
@@ -1263,8 +1263,8 @@
             BackColor = SystemColors.AppWorkspace;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(tableLayoutPanel10);
             Controls.Add(Loader);
+            Controls.Add(tableLayoutPanel10);
             DoubleBuffered = true;
             Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
