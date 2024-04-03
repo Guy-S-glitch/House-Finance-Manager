@@ -80,6 +80,40 @@
             panel2 = new Panel();
             MainPanel = new TableLayoutPanel();
             MemberNotPicked = new Panel();
+            CompareView = new TableLayoutPanel();
+            JobName = new GroupBox();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            tableLayoutPanel10 = new TableLayoutPanel();
+            progressBar1 = new ProgressBar();
+            tableLayoutPanel11 = new TableLayoutPanel();
+            tableLayoutPanel12 = new TableLayoutPanel();
+            HighWagePeople = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            LowWagePeople = new Label();
+            CompareToAverage = new TableLayoutPanel();
+            flowLayoutPanel5 = new FlowLayoutPanel();
+            ImproveSatisfyExcellent = new Label();
+            GrossPercent = new Label();
+            label10 = new Label();
+            tableLayoutPanel13 = new TableLayoutPanel();
+            label21 = new Label();
+            tableLayoutPanel17 = new TableLayoutPanel();
+            YearsTilTM4 = new Label();
+            tableLayoutPanel14 = new TableLayoutPanel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            label3 = new Label();
+            AverageIncome = new Label();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            label6 = new Label();
+            MemberIncome = new Label();
+            tableLayoutPanel15 = new TableLayoutPanel();
+            label22 = new Label();
+            difference = new Label();
+            groupBox6 = new GroupBox();
+            tableLayoutPanel9 = new TableLayoutPanel();
+            label5 = new Label();
+            label7 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -91,6 +125,7 @@
             tableLayoutPanel7 = new TableLayoutPanel();
             groupBox5 = new GroupBox();
             panel1 = new Panel();
+            btnCompareMember = new Button();
             Loader = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -101,6 +136,22 @@
             panel2.SuspendLayout();
             MainPanel.SuspendLayout();
             MemberNotPicked.SuspendLayout();
+            CompareView.SuspendLayout();
+            JobName.SuspendLayout();
+            tableLayoutPanel8.SuspendLayout();
+            tableLayoutPanel10.SuspendLayout();
+            tableLayoutPanel11.SuspendLayout();
+            tableLayoutPanel12.SuspendLayout();
+            CompareToAverage.SuspendLayout();
+            flowLayoutPanel5.SuspendLayout();
+            tableLayoutPanel13.SuspendLayout();
+            tableLayoutPanel17.SuspendLayout();
+            tableLayoutPanel14.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            flowLayoutPanel4.SuspendLayout();
+            tableLayoutPanel15.SuspendLayout();
+            groupBox6.SuspendLayout();
+            tableLayoutPanel9.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -127,7 +178,7 @@
             monthlySalary.Margin = new Padding(0);
             monthlySalary.Name = "monthlySalary";
             monthlySalary.Padding = new Padding(5);
-            monthlySalary.Size = new Size(189, 74);
+            monthlySalary.Size = new Size(189, 64);
             monthlySalary.TabIndex = 16;
             monthlySalary.Text = "Monthly Salary:";
             monthlySalary.TextAlign = ContentAlignment.MiddleRight;
@@ -139,11 +190,11 @@
             jobTitle.Dock = DockStyle.Fill;
             jobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             jobTitle.ForeColor = SystemColors.ActiveCaptionText;
-            jobTitle.Location = new Point(399, 148);
+            jobTitle.Location = new Point(399, 128);
             jobTitle.Margin = new Padding(0);
             jobTitle.Name = "jobTitle";
             jobTitle.Padding = new Padding(5);
-            jobTitle.Size = new Size(189, 75);
+            jobTitle.Size = new Size(189, 65);
             jobTitle.TabIndex = 13;
             jobTitle.Text = "Job title:";
             jobTitle.TextAlign = ContentAlignment.MiddleRight;
@@ -155,9 +206,9 @@
             label17.Dock = DockStyle.Fill;
             label17.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label17.ForeColor = SystemColors.ActiveCaptionText;
-            label17.Location = new Point(3, 306);
+            label17.Location = new Point(3, 270);
             label17.Name = "label17";
-            label17.Size = new Size(238, 52);
+            label17.Size = new Size(238, 48);
             label17.TabIndex = 21;
             label17.Text = "Restaurants:";
             label17.TextAlign = ContentAlignment.TopRight;
@@ -169,9 +220,9 @@
             label16.Dock = DockStyle.Fill;
             label16.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label16.ForeColor = SystemColors.ActiveCaptionText;
-            label16.Location = new Point(3, 255);
+            label16.Location = new Point(3, 225);
             label16.Name = "label16";
-            label16.Size = new Size(238, 51);
+            label16.Size = new Size(238, 45);
             label16.TabIndex = 20;
             label16.Text = "Rent Per Month:";
             label16.TextAlign = ContentAlignment.TopRight;
@@ -185,7 +236,7 @@
             label11.ForeColor = SystemColors.ActiveCaptionText;
             label11.Location = new Point(3, 0);
             label11.Name = "label11";
-            label11.Size = new Size(238, 51);
+            label11.Size = new Size(238, 45);
             label11.TabIndex = 15;
             label11.Text = "Transportation:";
             label11.TextAlign = ContentAlignment.TopRight;
@@ -197,9 +248,9 @@
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(3, 51);
+            label12.Location = new Point(3, 45);
             label12.Name = "label12";
-            label12.Size = new Size(238, 51);
+            label12.Size = new Size(238, 45);
             label12.TabIndex = 16;
             label12.Text = "Clothing And Shoes:";
             label12.TextAlign = ContentAlignment.TopRight;
@@ -211,9 +262,9 @@
             label13.Dock = DockStyle.Fill;
             label13.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(3, 102);
+            label13.Location = new Point(3, 90);
             label13.Name = "label13";
-            label13.Size = new Size(238, 51);
+            label13.Size = new Size(238, 45);
             label13.TabIndex = 17;
             label13.Text = "Sports And Leisure :";
             label13.TextAlign = ContentAlignment.TopRight;
@@ -225,9 +276,9 @@
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = SystemColors.ActiveCaptionText;
-            label14.Location = new Point(3, 153);
+            label14.Location = new Point(3, 135);
             label14.Name = "label14";
-            label14.Size = new Size(238, 51);
+            label14.Size = new Size(238, 45);
             label14.TabIndex = 18;
             label14.Text = "Markets:";
             label14.TextAlign = ContentAlignment.TopRight;
@@ -239,9 +290,9 @@
             label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = SystemColors.ActiveCaptionText;
-            label15.Location = new Point(3, 204);
+            label15.Location = new Point(3, 180);
             label15.Name = "label15";
-            label15.Size = new Size(238, 51);
+            label15.Size = new Size(238, 45);
             label15.TabIndex = 19;
             label15.Text = "Utilities:";
             label15.TextAlign = ContentAlignment.TopRight;
@@ -254,7 +305,7 @@
             pbTransportation.ForeColor = Color.Transparent;
             pbTransportation.Location = new Point(286, 3);
             pbTransportation.Name = "pbTransportation";
-            pbTransportation.Size = new Size(361, 45);
+            pbTransportation.Size = new Size(361, 39);
             pbTransportation.Step = 1;
             pbTransportation.TabIndex = 14;
             pbTransportation.Value = 100;
@@ -264,9 +315,9 @@
             pbClothes.BackColor = Color.FromArgb(255, 192, 128);
             pbClothes.Dock = DockStyle.Fill;
             pbClothes.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbClothes.Location = new Point(286, 54);
+            pbClothes.Location = new Point(286, 48);
             pbClothes.Name = "pbClothes";
-            pbClothes.Size = new Size(361, 45);
+            pbClothes.Size = new Size(361, 39);
             pbClothes.Step = 1;
             pbClothes.TabIndex = 21;
             pbClothes.Value = 100;
@@ -276,9 +327,9 @@
             pbSports.BackColor = Color.FromArgb(255, 192, 128);
             pbSports.Dock = DockStyle.Fill;
             pbSports.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbSports.Location = new Point(286, 105);
+            pbSports.Location = new Point(286, 93);
             pbSports.Name = "pbSports";
-            pbSports.Size = new Size(361, 45);
+            pbSports.Size = new Size(361, 39);
             pbSports.Step = 1;
             pbSports.TabIndex = 15;
             pbSports.Value = 100;
@@ -288,9 +339,9 @@
             pbMarkets.BackColor = Color.FromArgb(255, 192, 128);
             pbMarkets.Dock = DockStyle.Fill;
             pbMarkets.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbMarkets.Location = new Point(286, 156);
+            pbMarkets.Location = new Point(286, 138);
             pbMarkets.Name = "pbMarkets";
-            pbMarkets.Size = new Size(361, 45);
+            pbMarkets.Size = new Size(361, 39);
             pbMarkets.Step = 1;
             pbMarkets.TabIndex = 22;
             pbMarkets.Value = 100;
@@ -300,9 +351,9 @@
             pbUtilities.BackColor = Color.FromArgb(255, 192, 128);
             pbUtilities.Dock = DockStyle.Fill;
             pbUtilities.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbUtilities.Location = new Point(286, 207);
+            pbUtilities.Location = new Point(286, 183);
             pbUtilities.Name = "pbUtilities";
-            pbUtilities.Size = new Size(361, 45);
+            pbUtilities.Size = new Size(361, 39);
             pbUtilities.Step = 1;
             pbUtilities.TabIndex = 23;
             pbUtilities.Value = 100;
@@ -312,9 +363,9 @@
             pbRent.BackColor = Color.FromArgb(255, 192, 128);
             pbRent.Dock = DockStyle.Fill;
             pbRent.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRent.Location = new Point(286, 258);
+            pbRent.Location = new Point(286, 228);
             pbRent.Name = "pbRent";
-            pbRent.Size = new Size(361, 45);
+            pbRent.Size = new Size(361, 39);
             pbRent.Step = 1;
             pbRent.TabIndex = 24;
             pbRent.Value = 100;
@@ -324,9 +375,9 @@
             pbRestaurants.BackColor = Color.FromArgb(255, 192, 128);
             pbRestaurants.Dock = DockStyle.Fill;
             pbRestaurants.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            pbRestaurants.Location = new Point(286, 309);
+            pbRestaurants.Location = new Point(286, 273);
             pbRestaurants.Name = "pbRestaurants";
-            pbRestaurants.Size = new Size(361, 46);
+            pbRestaurants.Size = new Size(361, 42);
             pbRestaurants.Step = 1;
             pbRestaurants.TabIndex = 25;
             pbRestaurants.Value = 100;
@@ -338,9 +389,9 @@
             pcClothes.Dock = DockStyle.Fill;
             pcClothes.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcClothes.ForeColor = SystemColors.ActiveCaptionText;
-            pcClothes.Location = new Point(247, 51);
+            pcClothes.Location = new Point(247, 45);
             pcClothes.Name = "pcClothes";
-            pcClothes.Size = new Size(33, 51);
+            pcClothes.Size = new Size(33, 45);
             pcClothes.TabIndex = 27;
             pcClothes.Text = "%";
             pcClothes.TextAlign = ContentAlignment.TopCenter;
@@ -352,9 +403,9 @@
             pcSports.Dock = DockStyle.Fill;
             pcSports.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcSports.ForeColor = SystemColors.ActiveCaptionText;
-            pcSports.Location = new Point(247, 102);
+            pcSports.Location = new Point(247, 90);
             pcSports.Name = "pcSports";
-            pcSports.Size = new Size(33, 51);
+            pcSports.Size = new Size(33, 45);
             pcSports.TabIndex = 28;
             pcSports.Text = "%";
             pcSports.TextAlign = ContentAlignment.TopCenter;
@@ -366,9 +417,9 @@
             pcMarkets.Dock = DockStyle.Fill;
             pcMarkets.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcMarkets.ForeColor = SystemColors.ActiveCaptionText;
-            pcMarkets.Location = new Point(247, 153);
+            pcMarkets.Location = new Point(247, 135);
             pcMarkets.Name = "pcMarkets";
-            pcMarkets.Size = new Size(33, 51);
+            pcMarkets.Size = new Size(33, 45);
             pcMarkets.TabIndex = 29;
             pcMarkets.Text = "%";
             pcMarkets.TextAlign = ContentAlignment.TopCenter;
@@ -380,9 +431,9 @@
             pcUtilities.Dock = DockStyle.Fill;
             pcUtilities.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcUtilities.ForeColor = SystemColors.ActiveCaptionText;
-            pcUtilities.Location = new Point(247, 204);
+            pcUtilities.Location = new Point(247, 180);
             pcUtilities.Name = "pcUtilities";
-            pcUtilities.Size = new Size(33, 51);
+            pcUtilities.Size = new Size(33, 45);
             pcUtilities.TabIndex = 30;
             pcUtilities.Text = "%";
             pcUtilities.TextAlign = ContentAlignment.TopCenter;
@@ -394,9 +445,9 @@
             pcRent.Dock = DockStyle.Fill;
             pcRent.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRent.ForeColor = SystemColors.ActiveCaptionText;
-            pcRent.Location = new Point(247, 255);
+            pcRent.Location = new Point(247, 225);
             pcRent.Name = "pcRent";
-            pcRent.Size = new Size(33, 51);
+            pcRent.Size = new Size(33, 45);
             pcRent.TabIndex = 31;
             pcRent.Text = "%";
             pcRent.TextAlign = ContentAlignment.TopCenter;
@@ -408,9 +459,9 @@
             pcRestaurants.Dock = DockStyle.Fill;
             pcRestaurants.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             pcRestaurants.ForeColor = SystemColors.ActiveCaptionText;
-            pcRestaurants.Location = new Point(247, 306);
+            pcRestaurants.Location = new Point(247, 270);
             pcRestaurants.Name = "pcRestaurants";
-            pcRestaurants.Size = new Size(33, 52);
+            pcRestaurants.Size = new Size(33, 48);
             pcRestaurants.TabIndex = 32;
             pcRestaurants.Text = "%";
             pcRestaurants.TextAlign = ContentAlignment.TopCenter;
@@ -424,7 +475,7 @@
             label26.ForeColor = SystemColors.ActiveCaptionText;
             label26.Location = new Point(406, 0);
             label26.Name = "label26";
-            label26.Size = new Size(179, 119);
+            label26.Size = new Size(179, 106);
             label26.TabIndex = 34;
             label26.Text = "Phone number:";
             label26.TextAlign = ContentAlignment.MiddleRight;
@@ -436,9 +487,9 @@
             label28.Dock = DockStyle.Fill;
             label28.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label28.ForeColor = SystemColors.ActiveCaptionText;
-            label28.Location = new Point(406, 119);
+            label28.Location = new Point(406, 106);
             label28.Name = "label28";
-            label28.Size = new Size(179, 119);
+            label28.Size = new Size(179, 106);
             label28.TabIndex = 36;
             label28.Text = "Email adress:";
             label28.TextAlign = ContentAlignment.MiddleRight;
@@ -453,7 +504,7 @@
             txtPhone.Location = new Point(0, 0);
             txtPhone.Margin = new Padding(0);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(403, 119);
+            txtPhone.Size = new Size(403, 106);
             txtPhone.TabIndex = 38;
             txtPhone.Text = "...";
             txtPhone.TextAlign = ContentAlignment.MiddleLeft;
@@ -465,10 +516,10 @@
             txtEmail.Dock = DockStyle.Fill;
             txtEmail.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = SystemColors.ActiveCaptionText;
-            txtEmail.Location = new Point(0, 119);
+            txtEmail.Location = new Point(0, 106);
             txtEmail.Margin = new Padding(0);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(403, 119);
+            txtEmail.Size = new Size(403, 106);
             txtEmail.TabIndex = 39;
             txtEmail.Text = "...";
             txtEmail.TextAlign = ContentAlignment.MiddleLeft;
@@ -480,9 +531,9 @@
             label18.Dock = DockStyle.Fill;
             label18.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label18.ForeColor = SystemColors.ActiveCaptionText;
-            label18.Location = new Point(406, 238);
+            label18.Location = new Point(406, 212);
             label18.Name = "label18";
-            label18.Size = new Size(179, 120);
+            label18.Size = new Size(179, 106);
             label18.TabIndex = 37;
             label18.Text = "City:";
             label18.TextAlign = ContentAlignment.MiddleRight;
@@ -494,10 +545,10 @@
             txtCity.Dock = DockStyle.Fill;
             txtCity.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCity.ForeColor = SystemColors.ActiveCaptionText;
-            txtCity.Location = new Point(0, 238);
+            txtCity.Location = new Point(0, 212);
             txtCity.Margin = new Padding(0);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(403, 120);
+            txtCity.Size = new Size(403, 106);
             txtCity.TabIndex = 39;
             txtCity.Text = "...";
             txtCity.TextAlign = ContentAlignment.MiddleLeft;
@@ -511,7 +562,7 @@
             pcTransportation.ForeColor = SystemColors.ActiveCaptionText;
             pcTransportation.Location = new Point(247, 0);
             pcTransportation.Name = "pcTransportation";
-            pcTransportation.Size = new Size(33, 51);
+            pcTransportation.Size = new Size(33, 45);
             pcTransportation.TabIndex = 26;
             pcTransportation.Text = "%";
             pcTransportation.TextAlign = ContentAlignment.TopCenter;
@@ -524,11 +575,11 @@
             txtExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtExperience.ForeColor = SystemColors.ActiveCaptionText;
             txtExperience.ImageAlign = ContentAlignment.TopLeft;
-            txtExperience.Location = new Point(0, 74);
+            txtExperience.Location = new Point(0, 64);
             txtExperience.Margin = new Padding(0);
             txtExperience.Name = "txtExperience";
             txtExperience.Padding = new Padding(5);
-            txtExperience.Size = new Size(399, 74);
+            txtExperience.Size = new Size(399, 64);
             txtExperience.TabIndex = 15;
             txtExperience.Text = "...";
             txtExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -545,7 +596,7 @@
             txtMonthlySalary.Margin = new Padding(0);
             txtMonthlySalary.Name = "txtMonthlySalary";
             txtMonthlySalary.Padding = new Padding(5);
-            txtMonthlySalary.Size = new Size(399, 74);
+            txtMonthlySalary.Size = new Size(399, 64);
             txtMonthlySalary.TabIndex = 17;
             txtMonthlySalary.Text = "...";
             txtMonthlySalary.TextAlign = ContentAlignment.MiddleLeft;
@@ -557,11 +608,11 @@
             txtJobTitle.Dock = DockStyle.Fill;
             txtJobTitle.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtJobTitle.ForeColor = SystemColors.ActiveCaptionText;
-            txtJobTitle.Location = new Point(0, 148);
+            txtJobTitle.Location = new Point(0, 128);
             txtJobTitle.Margin = new Padding(0);
             txtJobTitle.Name = "txtJobTitle";
             txtJobTitle.Padding = new Padding(5);
-            txtJobTitle.Size = new Size(399, 75);
+            txtJobTitle.Size = new Size(399, 65);
             txtJobTitle.TabIndex = 14;
             txtJobTitle.Text = "...";
             txtJobTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -574,11 +625,11 @@
             yearsExperience.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             yearsExperience.ForeColor = SystemColors.ActiveCaptionText;
             yearsExperience.ImageAlign = ContentAlignment.TopRight;
-            yearsExperience.Location = new Point(399, 74);
+            yearsExperience.Location = new Point(399, 64);
             yearsExperience.Margin = new Padding(0);
             yearsExperience.Name = "yearsExperience";
             yearsExperience.Padding = new Padding(5);
-            yearsExperience.Size = new Size(189, 74);
+            yearsExperience.Size = new Size(189, 64);
             yearsExperience.TabIndex = 13;
             yearsExperience.Text = "Experience:";
             yearsExperience.TextAlign = ContentAlignment.MiddleRight;
@@ -593,7 +644,7 @@
             lblUserGender.ImageAlign = ContentAlignment.TopLeft;
             lblUserGender.Location = new Point(290, 0);
             lblUserGender.Name = "lblUserGender";
-            lblUserGender.Size = new Size(357, 74);
+            lblUserGender.Size = new Size(357, 64);
             lblUserGender.TabIndex = 6;
             lblUserGender.Text = "...";
             lblUserGender.TextAlign = ContentAlignment.MiddleLeft;
@@ -606,9 +657,9 @@
             lblUserName.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserName.ForeColor = SystemColors.ActiveCaptionText;
             lblUserName.ImageAlign = ContentAlignment.TopLeft;
-            lblUserName.Location = new Point(290, 148);
+            lblUserName.Location = new Point(290, 128);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(357, 75);
+            lblUserName.Size = new Size(357, 65);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "...";
             lblUserName.TextAlign = ContentAlignment.MiddleLeft;
@@ -621,9 +672,9 @@
             lblUserAge.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserAge.ForeColor = SystemColors.ActiveCaptionText;
             lblUserAge.ImageAlign = ContentAlignment.TopLeft;
-            lblUserAge.Location = new Point(290, 74);
+            lblUserAge.Location = new Point(290, 64);
             lblUserAge.Name = "lblUserAge";
-            lblUserAge.Size = new Size(357, 74);
+            lblUserAge.Size = new Size(357, 64);
             lblUserAge.TabIndex = 7;
             lblUserAge.Text = "...";
             lblUserAge.TextAlign = ContentAlignment.MiddleLeft;
@@ -640,7 +691,7 @@
             iconPictureBox.Location = new Point(3, 3);
             iconPictureBox.Name = "iconPictureBox";
             tableLayoutPanel3.SetRowSpan(iconPictureBox, 3);
-            iconPictureBox.Size = new Size(175, 217);
+            iconPictureBox.Size = new Size(175, 187);
             iconPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             iconPictureBox.TabIndex = 1;
             iconPictureBox.TabStop = false;
@@ -655,7 +706,7 @@
             lstMembersList.ItemHeight = 32;
             lstMembersList.Location = new Point(0, 0);
             lstMembersList.Name = "lstMembersList";
-            lstMembersList.Size = new Size(415, 363);
+            lstMembersList.Size = new Size(415, 331);
             lstMembersList.TabIndex = 3;
             lstMembersList.Visible = false;
             // 
@@ -666,9 +717,9 @@
             btnUpdateMember.Dock = DockStyle.Fill;
             btnUpdateMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnUpdateMember.ForeColor = SystemColors.ButtonHighlight;
-            btnUpdateMember.Location = new Point(3, 669);
+            btnUpdateMember.Location = new Point(3, 618);
             btnUpdateMember.Name = "btnUpdateMember";
-            btnUpdateMember.Size = new Size(421, 60);
+            btnUpdateMember.Size = new Size(421, 55);
             btnUpdateMember.TabIndex = 4;
             btnUpdateMember.Text = "Update member";
             btnUpdateMember.UseVisualStyleBackColor = false;
@@ -681,9 +732,9 @@
             btnInspectMember.Dock = DockStyle.Fill;
             btnInspectMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnInspectMember.ForeColor = SystemColors.ButtonHighlight;
-            btnInspectMember.Location = new Point(3, 603);
+            btnInspectMember.Location = new Point(3, 557);
             btnInspectMember.Name = "btnInspectMember";
-            btnInspectMember.Size = new Size(421, 60);
+            btnInspectMember.Size = new Size(421, 55);
             btnInspectMember.TabIndex = 3;
             btnInspectMember.Text = "Inspect member";
             btnInspectMember.UseVisualStyleBackColor = false;
@@ -696,9 +747,9 @@
             btnmemberRemove.Dock = DockStyle.Fill;
             btnmemberRemove.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberRemove.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberRemove.Location = new Point(3, 735);
+            btnmemberRemove.Location = new Point(3, 679);
             btnmemberRemove.Name = "btnmemberRemove";
-            btnmemberRemove.Size = new Size(421, 60);
+            btnmemberRemove.Size = new Size(421, 55);
             btnmemberRemove.TabIndex = 0;
             btnmemberRemove.Text = "Remove member";
             btnmemberRemove.UseVisualStyleBackColor = false;
@@ -711,9 +762,9 @@
             btnmemberAdd.Dock = DockStyle.Fill;
             btnmemberAdd.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnmemberAdd.ForeColor = SystemColors.ButtonHighlight;
-            btnmemberAdd.Location = new Point(3, 537);
+            btnmemberAdd.Location = new Point(3, 496);
             btnmemberAdd.Name = "btnmemberAdd";
-            btnmemberAdd.Size = new Size(421, 60);
+            btnmemberAdd.Size = new Size(421, 55);
             btnmemberAdd.TabIndex = 2;
             btnmemberAdd.Text = "Add member";
             btnmemberAdd.UseVisualStyleBackColor = false;
@@ -727,7 +778,7 @@
             houseNumber.Font = new Font("Stencil", 24F, FontStyle.Italic, GraphicsUnit.Point);
             houseNumber.Location = new Point(3, 0);
             houseNumber.Name = "houseNumber";
-            houseNumber.Size = new Size(1704, 106);
+            houseNumber.Size = new Size(1704, 97);
             houseNumber.TabIndex = 0;
             houseNumber.Text = "people";
             houseNumber.TextAlign = ContentAlignment.MiddleCenter;
@@ -763,7 +814,7 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(184, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 74);
+            label1.Size = new Size(100, 64);
             label1.TabIndex = 41;
             label1.Text = "Gender:";
             label1.TextAlign = ContentAlignment.MiddleRight;
@@ -775,9 +826,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(184, 74);
+            label2.Location = new Point(184, 64);
             label2.Name = "label2";
-            label2.Size = new Size(100, 74);
+            label2.Size = new Size(100, 64);
             label2.TabIndex = 42;
             label2.Text = "Age:";
             label2.TextAlign = ContentAlignment.MiddleRight;
@@ -789,9 +840,9 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(184, 148);
+            label4.Location = new Point(184, 128);
             label4.Name = "label4";
-            label4.Size = new Size(100, 75);
+            label4.Size = new Size(100, 65);
             label4.TabIndex = 43;
             label4.Text = "Name:";
             label4.TextAlign = ContentAlignment.MiddleRight;
@@ -822,19 +873,21 @@
             MainPanel.Controls.Add(houseNumber, 0, 0);
             MainPanel.Controls.Add(MemberNotPicked, 1, 1);
             MainPanel.Controls.Add(groupBox5, 0, 1);
+            MainPanel.Controls.Add(btnCompareMember, 0, 7);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.ForeColor = SystemColors.ActiveCaptionText;
             MainPanel.Location = new Point(0, 50);
             MainPanel.Margin = new Padding(0);
             MainPanel.Name = "MainPanel";
-            MainPanel.RowCount = 8;
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 13.5756092F));
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 52.2138634F));
+            MainPanel.RowCount = 9;
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5063219F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 48.10121F));
             MainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
-            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 8.552631F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.878979F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.878979F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.878979F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.878979F));
+            MainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.876556F));
             MainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             MainPanel.Size = new Size(1710, 812);
             MainPanel.TabIndex = 0;
@@ -843,13 +896,476 @@
             // 
             MemberNotPicked.BackgroundImage = Properties.Resources.ChooseMemberToInspect;
             MemberNotPicked.BackgroundImageLayout = ImageLayout.Stretch;
+            MemberNotPicked.Controls.Add(CompareView);
             MemberNotPicked.Controls.Add(tableLayoutPanel2);
             MemberNotPicked.Dock = DockStyle.Fill;
-            MemberNotPicked.Location = new Point(430, 109);
+            MemberNotPicked.Location = new Point(430, 100);
             MemberNotPicked.Name = "MemberNotPicked";
             MainPanel.SetRowSpan(MemberNotPicked, 6);
-            MemberNotPicked.Size = new Size(1277, 686);
+            MemberNotPicked.Size = new Size(1277, 634);
             MemberNotPicked.TabIndex = 5;
+            // 
+            // CompareView
+            // 
+            CompareView.BackColor = Color.White;
+            CompareView.ColumnCount = 6;
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            CompareView.Controls.Add(JobName, 1, 1);
+            CompareView.Controls.Add(groupBox6, 1, 2);
+            CompareView.Dock = DockStyle.Fill;
+            CompareView.Location = new Point(0, 0);
+            CompareView.Name = "CompareView";
+            CompareView.RowCount = 4;
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle());
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            CompareView.Size = new Size(1277, 634);
+            CompareView.TabIndex = 6;
+            CompareView.Visible = false;
+            // 
+            // JobName
+            // 
+            CompareView.SetColumnSpan(JobName, 4);
+            JobName.Controls.Add(tableLayoutPanel8);
+            JobName.Dock = DockStyle.Fill;
+            JobName.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            JobName.Location = new Point(23, 23);
+            JobName.Name = "JobName";
+            JobName.Size = new Size(1230, 329);
+            JobName.TabIndex = 6;
+            JobName.TabStop = false;
+            JobName.Text = "Job";
+            // 
+            // tableLayoutPanel8
+            // 
+            tableLayoutPanel8.ColumnCount = 3;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel8.Controls.Add(tableLayoutPanel10, 1, 1);
+            tableLayoutPanel8.Controls.Add(tableLayoutPanel13, 2, 1);
+            tableLayoutPanel8.Controls.Add(tableLayoutPanel14, 0, 1);
+            tableLayoutPanel8.Controls.Add(tableLayoutPanel15, 0, 4);
+            tableLayoutPanel8.Dock = DockStyle.Fill;
+            tableLayoutPanel8.Location = new Point(3, 31);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 5;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle());
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.Size = new Size(1224, 295);
+            tableLayoutPanel8.TabIndex = 0;
+            // 
+            // tableLayoutPanel10
+            // 
+            tableLayoutPanel10.ColumnCount = 2;
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.Controls.Add(progressBar1, 0, 1);
+            tableLayoutPanel10.Controls.Add(tableLayoutPanel11, 0, 2);
+            tableLayoutPanel10.Controls.Add(label10, 0, 0);
+            tableLayoutPanel10.Dock = DockStyle.Fill;
+            tableLayoutPanel10.Location = new Point(309, 3);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 3;
+            tableLayoutPanel8.SetRowSpan(tableLayoutPanel10, 4);
+            tableLayoutPanel10.RowStyles.Add(new RowStyle());
+            tableLayoutPanel10.RowStyles.Add(new RowStyle());
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel10.Size = new Size(606, 289);
+            tableLayoutPanel10.TabIndex = 4;
+            // 
+            // progressBar1
+            // 
+            tableLayoutPanel10.SetColumnSpan(progressBar1, 2);
+            progressBar1.Dock = DockStyle.Fill;
+            progressBar1.Location = new Point(3, 32);
+            progressBar1.MarqueeAnimationSpeed = 200;
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(600, 34);
+            progressBar1.Step = 100;
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.TabIndex = 0;
+            progressBar1.Value = 100;
+            // 
+            // tableLayoutPanel11
+            // 
+            tableLayoutPanel11.ColumnCount = 2;
+            tableLayoutPanel10.SetColumnSpan(tableLayoutPanel11, 2);
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel11.Controls.Add(tableLayoutPanel12, 0, 1);
+            tableLayoutPanel11.Dock = DockStyle.Fill;
+            tableLayoutPanel11.Location = new Point(3, 72);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 2;
+            tableLayoutPanel11.RowStyles.Add(new RowStyle());
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel11.Size = new Size(600, 214);
+            tableLayoutPanel11.TabIndex = 1;
+            // 
+            // tableLayoutPanel12
+            // 
+            tableLayoutPanel12.ColumnCount = 3;
+            tableLayoutPanel11.SetColumnSpan(tableLayoutPanel12, 2);
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel12.Controls.Add(HighWagePeople, 2, 1);
+            tableLayoutPanel12.Controls.Add(label9, 2, 0);
+            tableLayoutPanel12.Controls.Add(label8, 0, 0);
+            tableLayoutPanel12.Controls.Add(LowWagePeople, 0, 1);
+            tableLayoutPanel12.Controls.Add(CompareToAverage, 0, 3);
+            tableLayoutPanel12.Dock = DockStyle.Fill;
+            tableLayoutPanel12.Location = new Point(3, 3);
+            tableLayoutPanel12.Name = "tableLayoutPanel12";
+            tableLayoutPanel12.RowCount = 4;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel12.Size = new Size(594, 208);
+            tableLayoutPanel12.TabIndex = 6;
+            // 
+            // HighWagePeople
+            // 
+            HighWagePeople.AutoSize = true;
+            HighWagePeople.Dock = DockStyle.Fill;
+            HighWagePeople.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            HighWagePeople.Location = new Point(426, 24);
+            HighWagePeople.Name = "HighWagePeople";
+            HighWagePeople.RightToLeft = RightToLeft.Yes;
+            HighWagePeople.Size = new Size(165, 24);
+            HighWagePeople.TabIndex = 2;
+            HighWagePeople.Text = "label10";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Dock = DockStyle.Fill;
+            label9.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(426, 0);
+            label9.Name = "label9";
+            label9.RightToLeft = RightToLeft.Yes;
+            label9.Size = new Size(165, 24);
+            label9.TabIndex = 1;
+            label9.Text = "Higher 10% earn";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Dock = DockStyle.Fill;
+            label8.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(3, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(161, 24);
+            label8.TabIndex = 0;
+            label8.Text = "Lower 10% earn";
+            // 
+            // LowWagePeople
+            // 
+            LowWagePeople.AutoSize = true;
+            LowWagePeople.Dock = DockStyle.Fill;
+            LowWagePeople.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            LowWagePeople.Location = new Point(3, 24);
+            LowWagePeople.Name = "LowWagePeople";
+            LowWagePeople.Size = new Size(161, 24);
+            LowWagePeople.TabIndex = 1;
+            LowWagePeople.Text = "label10";
+            // 
+            // CompareToAverage
+            // 
+            CompareToAverage.ColumnCount = 1;
+            tableLayoutPanel12.SetColumnSpan(CompareToAverage, 3);
+            CompareToAverage.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            CompareToAverage.Controls.Add(flowLayoutPanel5, 0, 1);
+            CompareToAverage.Controls.Add(GrossPercent, 0, 0);
+            CompareToAverage.Dock = DockStyle.Fill;
+            CompareToAverage.Location = new Point(3, 71);
+            CompareToAverage.Name = "CompareToAverage";
+            CompareToAverage.RowCount = 2;
+            CompareToAverage.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            CompareToAverage.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            CompareToAverage.Size = new Size(588, 134);
+            CompareToAverage.TabIndex = 0;
+            // 
+            // flowLayoutPanel5
+            // 
+            flowLayoutPanel5.Controls.Add(ImproveSatisfyExcellent);
+            flowLayoutPanel5.Dock = DockStyle.Fill;
+            flowLayoutPanel5.Location = new Point(3, 70);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            flowLayoutPanel5.Size = new Size(582, 61);
+            flowLayoutPanel5.TabIndex = 5;
+            // 
+            // ImproveSatisfyExcellent
+            // 
+            ImproveSatisfyExcellent.AutoSize = true;
+            ImproveSatisfyExcellent.Dock = DockStyle.Fill;
+            ImproveSatisfyExcellent.Location = new Point(3, 0);
+            ImproveSatisfyExcellent.Name = "ImproveSatisfyExcellent";
+            ImproveSatisfyExcellent.Size = new Size(112, 29);
+            ImproveSatisfyExcellent.TabIndex = 1;
+            ImproveSatisfyExcellent.Text = "changed";
+            ImproveSatisfyExcellent.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // GrossPercent
+            // 
+            GrossPercent.AutoSize = true;
+            GrossPercent.Dock = DockStyle.Fill;
+            GrossPercent.Location = new Point(3, 0);
+            GrossPercent.Name = "GrossPercent";
+            GrossPercent.Size = new Size(582, 67);
+            GrossPercent.TabIndex = 4;
+            GrossPercent.Text = "X%";
+            GrossPercent.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            tableLayoutPanel10.SetColumnSpan(label10, 2);
+            label10.Dock = DockStyle.Fill;
+            label10.Location = new Point(3, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(600, 29);
+            label10.TabIndex = 5;
+            label10.Text = "Gross salary in israel is";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel13
+            // 
+            tableLayoutPanel13.ColumnCount = 1;
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel13.Controls.Add(label21, 0, 0);
+            tableLayoutPanel13.Controls.Add(tableLayoutPanel17, 0, 1);
+            tableLayoutPanel13.Dock = DockStyle.Fill;
+            tableLayoutPanel13.Location = new Point(921, 3);
+            tableLayoutPanel13.Name = "tableLayoutPanel13";
+            tableLayoutPanel13.RowCount = 2;
+            tableLayoutPanel8.SetRowSpan(tableLayoutPanel13, 4);
+            tableLayoutPanel13.RowStyles.Add(new RowStyle());
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel13.Size = new Size(300, 289);
+            tableLayoutPanel13.TabIndex = 6;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.Location = new Point(3, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(292, 48);
+            label21.TabIndex = 5;
+            label21.Text = "your purchasing power based on your gross monthly pay";
+            // 
+            // tableLayoutPanel17
+            // 
+            tableLayoutPanel17.BackgroundImage = Properties.Resources.TankMekava4;
+            tableLayoutPanel17.BackgroundImageLayout = ImageLayout.Stretch;
+            tableLayoutPanel17.ColumnCount = 3;
+            tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel17.Controls.Add(YearsTilTM4, 1, 1);
+            tableLayoutPanel17.Dock = DockStyle.Fill;
+            tableLayoutPanel17.Location = new Point(3, 51);
+            tableLayoutPanel17.Name = "tableLayoutPanel17";
+            tableLayoutPanel17.RowCount = 3;
+            tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
+            tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel17.Size = new Size(294, 235);
+            tableLayoutPanel17.TabIndex = 6;
+            // 
+            // YearsTilTM4
+            // 
+            YearsTilTM4.AutoSize = true;
+            YearsTilTM4.BackColor = Color.Transparent;
+            YearsTilTM4.Dock = DockStyle.Fill;
+            YearsTilTM4.Location = new Point(47, 35);
+            YearsTilTM4.Name = "YearsTilTM4";
+            YearsTilTM4.Size = new Size(199, 164);
+            YearsTilTM4.TabIndex = 1;
+            YearsTilTM4.Text = "years";
+            // 
+            // tableLayoutPanel14
+            // 
+            tableLayoutPanel14.ColumnCount = 1;
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel14.Controls.Add(flowLayoutPanel3, 0, 0);
+            tableLayoutPanel14.Controls.Add(flowLayoutPanel4, 0, 1);
+            tableLayoutPanel14.Dock = DockStyle.Fill;
+            tableLayoutPanel14.Location = new Point(3, 3);
+            tableLayoutPanel14.Name = "tableLayoutPanel14";
+            tableLayoutPanel14.RowCount = 2;
+            tableLayoutPanel8.SetRowSpan(tableLayoutPanel14, 3);
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel14.Size = new Size(300, 213);
+            tableLayoutPanel14.TabIndex = 8;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Controls.Add(label3);
+            flowLayoutPanel3.Controls.Add(AverageIncome);
+            flowLayoutPanel3.Dock = DockStyle.Fill;
+            flowLayoutPanel3.Location = new Point(3, 3);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(294, 100);
+            flowLayoutPanel3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(242, 24);
+            label3.TabIndex = 0;
+            label3.Text = "Average gross income is";
+            // 
+            // AverageIncome
+            // 
+            AverageIncome.AutoSize = true;
+            AverageIncome.Location = new Point(3, 24);
+            AverageIncome.Name = "AverageIncome";
+            AverageIncome.Size = new Size(176, 29);
+            AverageIncome.TabIndex = 1;
+            AverageIncome.Text = "12,521,532 ILS";
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Controls.Add(label6);
+            flowLayoutPanel4.Controls.Add(MemberIncome);
+            flowLayoutPanel4.Dock = DockStyle.Fill;
+            flowLayoutPanel4.Location = new Point(3, 109);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(294, 101);
+            flowLayoutPanel4.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(3, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(262, 24);
+            label6.TabIndex = 2;
+            label6.Text = "Member's Gross Income is";
+            // 
+            // MemberIncome
+            // 
+            MemberIncome.AutoSize = true;
+            MemberIncome.Location = new Point(3, 24);
+            MemberIncome.Name = "MemberIncome";
+            MemberIncome.Size = new Size(189, 29);
+            MemberIncome.TabIndex = 3;
+            MemberIncome.Text = "123,123,123 ILS";
+            // 
+            // tableLayoutPanel15
+            // 
+            tableLayoutPanel15.ColumnCount = 2;
+            tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel15.Controls.Add(label22, 0, 0);
+            tableLayoutPanel15.Controls.Add(difference, 1, 1);
+            tableLayoutPanel15.Location = new Point(3, 222);
+            tableLayoutPanel15.Name = "tableLayoutPanel15";
+            tableLayoutPanel15.RowCount = 2;
+            tableLayoutPanel15.RowStyles.Add(new RowStyle());
+            tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel15.Size = new Size(300, 70);
+            tableLayoutPanel15.TabIndex = 9;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Dock = DockStyle.Fill;
+            label22.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label22.Location = new Point(3, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(105, 24);
+            label22.TabIndex = 0;
+            label22.Text = "difference";
+            // 
+            // difference
+            // 
+            difference.AutoSize = true;
+            difference.Dock = DockStyle.Fill;
+            difference.Location = new Point(114, 24);
+            difference.Name = "difference";
+            difference.Size = new Size(183, 46);
+            difference.TabIndex = 1;
+            difference.Text = "+-money ILS";
+            // 
+            // groupBox6
+            // 
+            CompareView.SetColumnSpan(groupBox6, 4);
+            groupBox6.Controls.Add(tableLayoutPanel9);
+            groupBox6.Location = new Point(23, 358);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(1230, 253);
+            groupBox6.TabIndex = 7;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "groupBox6";
+            // 
+            // tableLayoutPanel9
+            // 
+            tableLayoutPanel9.ColumnCount = 5;
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel9.Controls.Add(label5, 1, 0);
+            tableLayoutPanel9.Controls.Add(label7, 2, 0);
+            tableLayoutPanel9.Dock = DockStyle.Fill;
+            tableLayoutPanel9.Location = new Point(3, 27);
+            tableLayoutPanel9.Name = "tableLayoutPanel9";
+            tableLayoutPanel9.RowCount = 7;
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel9.Size = new Size(1224, 223);
+            tableLayoutPanel9.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(247, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(188, 25);
+            label5.TabIndex = 0;
+            label5.Text = "Average person in city";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(491, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(79, 25);
+            label7.TabIndex = 1;
+            label7.Text = "Member";
             // 
             // tableLayoutPanel2
             // 
@@ -870,7 +1386,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel2.Size = new Size(1277, 686);
+            tableLayoutPanel2.Size = new Size(1277, 634);
             tableLayoutPanel2.TabIndex = 5;
             tableLayoutPanel2.Visible = false;
             // 
@@ -878,10 +1394,10 @@
             // 
             groupBox1.Controls.Add(tableLayoutPanel3);
             groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(656, 262);
+            groupBox1.Size = new Size(656, 241);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Personal info";
@@ -900,24 +1416,24 @@
             tableLayoutPanel3.Controls.Add(lblUserAge, 2, 1);
             tableLayoutPanel3.Controls.Add(lblUserName, 2, 2);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(3, 36);
+            tableLayoutPanel3.Location = new Point(3, 45);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.Size = new Size(650, 223);
+            tableLayoutPanel3.Size = new Size(650, 193);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(tableLayoutPanel5);
             groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox2.Location = new Point(680, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.RightToLeft = RightToLeft.Yes;
-            groupBox2.Size = new Size(594, 262);
+            groupBox2.Size = new Size(594, 241);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Job info ";
@@ -934,13 +1450,13 @@
             tableLayoutPanel5.Controls.Add(jobTitle, 0, 2);
             tableLayoutPanel5.Controls.Add(txtJobTitle, 1, 2);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 36);
+            tableLayoutPanel5.Location = new Point(3, 45);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 3;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel5.Size = new Size(588, 223);
+            tableLayoutPanel5.Size = new Size(588, 193);
             tableLayoutPanel5.TabIndex = 0;
             // 
             // groupBox3
@@ -948,10 +1464,10 @@
             groupBox3.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox3.Controls.Add(tableLayoutPanel6);
             groupBox3.Dock = DockStyle.Fill;
-            groupBox3.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.Location = new Point(3, 286);
+            groupBox3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox3.Location = new Point(3, 265);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(656, 397);
+            groupBox3.Size = new Size(656, 366);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Expenses";
@@ -984,7 +1500,7 @@
             tableLayoutPanel6.Controls.Add(label15, 0, 4);
             tableLayoutPanel6.Controls.Add(label16, 0, 5);
             tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(3, 36);
+            tableLayoutPanel6.Location = new Point(3, 45);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 7;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857132F));
@@ -994,18 +1510,18 @@
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857161F));
-            tableLayoutPanel6.Size = new Size(650, 358);
+            tableLayoutPanel6.Size = new Size(650, 318);
             tableLayoutPanel6.TabIndex = 0;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(tableLayoutPanel7);
             groupBox4.Dock = DockStyle.Fill;
-            groupBox4.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox4.Location = new Point(680, 286);
+            groupBox4.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.Location = new Point(680, 265);
             groupBox4.Name = "groupBox4";
             groupBox4.RightToLeft = RightToLeft.Yes;
-            groupBox4.Size = new Size(594, 397);
+            groupBox4.Size = new Size(594, 366);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "Contacts";
@@ -1022,13 +1538,13 @@
             tableLayoutPanel7.Controls.Add(txtEmail, 1, 1);
             tableLayoutPanel7.Controls.Add(label28, 0, 1);
             tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(3, 36);
+            tableLayoutPanel7.Location = new Point(3, 45);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 3;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Size = new Size(588, 358);
+            tableLayoutPanel7.Size = new Size(588, 318);
             tableLayoutPanel7.TabIndex = 0;
             // 
             // groupBox5
@@ -1036,9 +1552,9 @@
             groupBox5.Controls.Add(panel1);
             groupBox5.Dock = DockStyle.Fill;
             groupBox5.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox5.Location = new Point(3, 109);
+            groupBox5.Location = new Point(3, 100);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(421, 402);
+            groupBox5.Size = new Size(421, 370);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "House members";
@@ -1051,8 +1567,23 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 36);
             panel1.Name = "panel1";
-            panel1.Size = new Size(415, 363);
+            panel1.Size = new Size(415, 331);
             panel1.TabIndex = 1;
+            // 
+            // btnCompareMember
+            // 
+            btnCompareMember.BackColor = Color.FromArgb(69, 69, 69);
+            btnCompareMember.Cursor = Cursors.Hand;
+            btnCompareMember.Dock = DockStyle.Fill;
+            btnCompareMember.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCompareMember.ForeColor = SystemColors.ButtonHighlight;
+            btnCompareMember.Location = new Point(3, 740);
+            btnCompareMember.Name = "btnCompareMember";
+            btnCompareMember.Size = new Size(421, 55);
+            btnCompareMember.TabIndex = 7;
+            btnCompareMember.Text = "Compare member";
+            btnCompareMember.UseVisualStyleBackColor = false;
+            btnCompareMember.Click += btnCompareMember_Click;
             // 
             // Loader
             // 
@@ -1104,13 +1635,38 @@
             Text = "inHouse";
             WindowState = FormWindowState.Maximized;
             FormClosed += inHouse_FormClosed;
-            Load += InHouse_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSentHandlerBindingSource).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             MainPanel.ResumeLayout(false);
             MemberNotPicked.ResumeLayout(false);
+            CompareView.ResumeLayout(false);
+            JobName.ResumeLayout(false);
+            tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel10.ResumeLayout(false);
+            tableLayoutPanel10.PerformLayout();
+            tableLayoutPanel11.ResumeLayout(false);
+            tableLayoutPanel12.ResumeLayout(false);
+            tableLayoutPanel12.PerformLayout();
+            CompareToAverage.ResumeLayout(false);
+            CompareToAverage.PerformLayout();
+            flowLayoutPanel5.ResumeLayout(false);
+            flowLayoutPanel5.PerformLayout();
+            tableLayoutPanel13.ResumeLayout(false);
+            tableLayoutPanel13.PerformLayout();
+            tableLayoutPanel17.ResumeLayout(false);
+            tableLayoutPanel17.PerformLayout();
+            tableLayoutPanel14.ResumeLayout(false);
+            flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel3.PerformLayout();
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            tableLayoutPanel15.ResumeLayout(false);
+            tableLayoutPanel15.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            tableLayoutPanel9.ResumeLayout(false);
+            tableLayoutPanel9.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
@@ -1197,5 +1753,40 @@
         private PictureBox Loader;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button btnCompareMember;
+        private TableLayoutPanel CompareView;
+        private Label label3;
+        private Label AverageIncome;
+        private Label label6;
+        private Label MemberIncome;
+        private GroupBox JobName;
+        private TableLayoutPanel tableLayoutPanel8;
+        private GroupBox groupBox6;
+        private TableLayoutPanel tableLayoutPanel9;
+        private Label label5;
+        private Label label7;
+        private TableLayoutPanel tableLayoutPanel10;
+        private ProgressBar progressBar1;
+        private TableLayoutPanel tableLayoutPanel11;
+        private Label label8;
+        private Label label9;
+        private Label LowWagePeople;
+        private Label HighWagePeople;
+        private TableLayoutPanel tableLayoutPanel12;
+        private Label label10;
+        private TableLayoutPanel tableLayoutPanel13;
+        private Label label21;
+        private TableLayoutPanel tableLayoutPanel14;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private TableLayoutPanel tableLayoutPanel15;
+        private Label label22;
+        private Label difference;
+        private TableLayoutPanel CompareToAverage;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private Label ImproveSatisfyExcellent;
+        private Label YearsTilTM4;
+        private Label GrossPercent;
+        private TableLayoutPanel tableLayoutPanel17;
     }
 }

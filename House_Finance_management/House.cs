@@ -28,8 +28,8 @@ namespace House_Finance_management
         private static bool _remove;  //if true meaning the remove member was clicked 
 
         private static string callLoader;
-        private static readonly string CallFromInitializeComponent = "InitializeComponent", 
-            CallFromInspectMember = "InspectMember" , CallFromRemoveMember = "RemoveMember";
+        private static readonly string CallFromInitializeComponent = "InitializeComponent",
+            CallFromInspectMember = "InspectMember", CallFromRemoveMember = "RemoveMember";
         private static InfoToHouse _selectedMember;
 
         private ProgressBar[] progressBars;
@@ -44,25 +44,23 @@ namespace House_Finance_management
             GetBL_House.SetValuesFromParent(showExistMembers, houseName, ref members, ref _memberID, ref houseNumber, ref lstMembersList, ref panel1);
         }
         private void inHouse_FormClosed(object sender, FormClosedEventArgs e)  //called by closing the form
-        {
-            this.returnDataToHouse(members);  //send data to parent
-        }
+        { this.returnDataToHouse(members); } //send data to parent
+
 
         private void btnmemberAdd_Click(object sender, EventArgs e)  //called by clicking the add member button
-        {
+        { 
             Add_Member addMember = new Add_Member(houseNumber.Text);  //call the AddMember form and send the name of the current house
             addMember.DataSent += AddMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
             addMember.ShowDialog();
         }
 
         public void AddMember_DataSent(InfoToHouse addMember)  //after clicking the add member button data from child will be sent to this function
-        {
-            GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members, ref panel1);  //after geting the data about the added member, add him to a list and when the user close this form, the list will be sent to the main form
-        }
+        { GetBL_House.addDataSent(addMember, ref _memberID, ref lstMembersList, ref members, ref panel1); }  //after geting the data about the added member, add him to a list and when the user close this form, the list will be sent to the main form
+
         private void btnUpdateMember_Click(object sender, EventArgs e)  //called by clicking the update member button
         {
             if (lstMembersList.SelectedIndex != -1)
-            {
+            { 
                 Add_Member updateMember = new Add_Member(members[lstMembersList.SelectedIndex], houseNumber.Text);  //act like the add member button and call the AddMember form but with initial values about the member which the user want to change
                 updateMember.DataSent += UpdateMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
                 updateMember.ShowDialog();
@@ -70,36 +68,68 @@ namespace House_Finance_management
             else { MessageBox.Show(_unselected); }
         }
         public void UpdateMember_DataSent(InfoToHouse updateMember)  //after clicking the update member button data from child will be sent to this function
-        {
-            GetBL_House.updateDataSent(updateMember, ref lstMembersList, ref members);  //the same like AddMember_DataSent but instead of adding member we changing exist member values
-        }
+        { 
+            GetBL_House.updateDataSent(updateMember, ref lstMembersList, ref members); }  //the same like AddMember_DataSent but instead of adding member we changing exist member values
 
         public void btnmemberRemove_Click(object sender, EventArgs e)  //called by clicking the remove member button
         {
-            if (lstMembersList.SelectedIndex != -1)
-                StartBackgroundWork(CallFromRemoveMember);
-                
+            CompareView.Visible = false;
+            if (lstMembersList.SelectedIndex != -1) StartBackgroundWork(CallFromRemoveMember);
             else MessageBox.Show(_unselected);
         }
 
+        private void btnCompareMember_Click(object sender, EventArgs e)
+        { 
+            if (lstMembersList.SelectedIndex != -1)
+            {
+                CompareView.Visible = true;
+                InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
+                string job = currentMember.GetJob().Replace(" ", "_");
+                JobName.Text = job.Replace("_", " ");
+                int salary = currentMember.GetMonthlySalary();
+                int exp = currentMember.GetExperience();
+                float fexp = exp == 0 ? 0.0f : exp < 3 ? 1.0f : exp < 6 ? 3.5f : exp < 10 ? 8.5f : 11.0f;
+                float age = currentMember.GetAge();
+                NumericUpDown[] expenses = currentMember.GetExpenses();
+                int avgRent = 3600;
+                int avgIncome;
+                int baseIncome = age < 14 ? 0 : age < 19 ? 24000 : age < 30 ? 120000 : age < 65 ? 150000 : 60000;
+                int expCoefficient = age < 14 ? 0 : age < 19 ? 400 : age < 30 ? 3500 : age < 65 ? 4000 : 1000;
+                Enums.Jobs enumValue;
+                if (Enum.TryParse(job, out enumValue))
+                {
+                    avgIncome = (int)enumValue;
+                    AverageIncome.Text =((int)(baseIncome + (expCoefficient * fexp) + (0.34 * avgIncome * 12)) / 12).ToString();
+                    MemberIncome.Text =salary.ToString();
+                    HighWagePeople.Text =((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+                    LowWagePeople.Text=((int)((24000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString(); 
+                    difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
+                    difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Gray;
+                    bool isZero = MemberIncome.Text == "0";
+                    GrossPercent.Text =difference.ForeColor==Color.Red? isZero? 
+                        "Since the member's salary is 0, the percentage comparison cannot be determined." :
+                        "Your gross salary is" + (int.Parse(difference.Text) * -100 / int.Parse(MemberIncome.Text)).ToString() + "less than the average.":
+                        GrossPercent.Text = "Your gross salary is " + (int.Parse(difference.Text) * 100 / avgIncome).ToString() + "% more than the average.";
+                    ImproveSatisfyExcellent.Text =
+                        Math.Abs(int.Parse(difference.Text)) < avgIncome * 0.03 ? "Your gross salary is at the average level. " :
+                        difference.ForeColor == Color.Red ? "you can improve yourself in the given position!" :
+                        "You earn excellently in the given position!";
+                    YearsTilTM4.Text = salary!=0?$"You could buy TANK MERKAVA 4 in {2500000 / (salary * 12)} years":
+                        "You would never be able to purchase TANK MERKAVA 4 ";
+                }
+                else
+                {
+                    Console.WriteLine("String does not match any enum value.");
+                }
+            }
+            else { MessageBox.Show(_unselected); }
+        }
         public void btnInspectMember_Click(object sender, EventArgs e)  //show the data of a selected member on the form
         {
+            CompareView.Visible = false; 
             if (lstMembersList.SelectedIndex != -1) StartBackgroundWork(CallFromInspectMember);
             else MessageBox.Show(_unselected);
         }
-
-        private void close_Click(object sender, EventArgs e)
-        {
-            close.Enabled = false;
-            this.Close();
-        }
-
-        private void InHouse_Load(object sender, EventArgs e) { }
-
-
-        // the code below isn't relevant to the project but to the diagram  
-        public Add_Member Add_Member { get => default; set { } }
-
         private void StartBackgroundWork(string CalledBy)
         {
             // Show the loader before starting the background work
@@ -109,14 +139,15 @@ namespace House_Finance_management
             backgroundWorker1.RunWorkerAsync();
         }
 
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { Thread.Sleep(3000); } // Simulating a long-running task
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        { Thread.Sleep(3000); } // Simulating a long-running task
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             switch (callLoader)
             {
                 case ("InspectMember"):
-                    GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked,Properties.Resources.InspectMemberPhoto,
+                    GetBL_House.inspectMember(lstMembersList, ref _selectedMember, members, ref MemberNotPicked, Properties.Resources.InspectMemberPhoto,
                     ref iconPictureBox, ref lblUserName, ref lblUserAge, ref lblUserGender,  //personal info
                     ref txtJobTitle, ref txtExperience, ref txtMonthlySalary,  //job info
                     ref txtPhone, ref txtEmail, ref txtCity  //contact info
@@ -126,11 +157,16 @@ namespace House_Finance_management
                     GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2,
                         Properties.Resources.ChooseMemberToInspect, ref panel1, Properties.Resources.emptyHouse1);
                     break;
-            } 
+            }
             System.Threading.Thread.Sleep(200);
             Loader.Visible = false;
-
         }
-          
+        private void close_Click(object sender, EventArgs e) { this.Close(); }
+ 
+
+        // the code below isn't relevant to the project but to the diagram  
+        public Add_Member Add_Member { get => default; set { } }
+
+
     }
 }

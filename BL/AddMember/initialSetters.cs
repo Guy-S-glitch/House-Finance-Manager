@@ -57,9 +57,9 @@ namespace BL
         private void UpdatePersonalInfo(InfoToHouse update, ref TextBox txtFName, ref TextBox txtLName, ref TextBox txtMName, ref DateTimePicker dtpAge,
            ref RadioButton radMale, ref RadioButton radFemale, ref IconPictureBox iconPictureBox)
         {
-            txtFName.Text = update.GetName().Split(' ')[0];
-            txtLName.Text = update.GetName().Split(' ')[1];
-            txtMName.Text = update.GetName().Split(txtLName.Text)[1].Remove(0,1);
+            txtFName.Text = update.GetName().Split(' ')[0]; 
+            txtLName.Text = update.GetName().Split(' ')[update.GetName().Split(' ').Length-1];
+            txtMName.Text = update.GetName().Split(txtFName.Text)[1].Split(txtLName.Text)[0].Trim();
             dtpAge.Value = update.GetDate();
             radMale.Checked = update.GetIsMale();
             radFemale.Checked = !radMale.Checked;
