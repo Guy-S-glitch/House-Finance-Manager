@@ -86,7 +86,7 @@ namespace House_Finance_management
                 CompareView.Visible = true;
                 InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
                 string job = currentMember.GetJob();
-                JobName.Text = job.Replace("_", " ");
+                JobName.Text = job;
                 int salary = currentMember.GetMonthlySalary();
                 int exp = currentMember.GetExperience();
                 float fexp = exp == 0 ? 0.0f : exp < 3 ? 1.0f : exp < 6 ? 3.5f : exp < 10 ? 8.5f : 11.0f;
@@ -94,9 +94,9 @@ namespace House_Finance_management
                 int avgIncome;
                 int baseIncome = age < 14 ? 0 : age < 19 ? 24000 : age < 30 ? 120000 : age < 65 ? 150000 : 60000;
                 int expCoefficient = age < 14 ? 0 : age < 19 ? 400 : age < 30 ? 3500 : age < 65 ? 4000 : 1000;
-                Enums.Jobs enumValue;
-                if (Enum.TryParse(job, out enumValue))
-                {
+                //  Enums.Jobs enumValue;
+                Enums.Jobs enumValue = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
+                 
                     avgIncome = (int)enumValue;
                     AverageIncome.Text = ((int)(baseIncome + (expCoefficient * fexp) + (0.34 * avgIncome * 12)) / 12).ToString();
                     MemberIncome.Text = salary.ToString();
@@ -113,8 +113,8 @@ namespace House_Finance_management
                         "You earn excellently in the given position!";
                     YearsTilTM4.Text = salary != 0 ? $"You could buy TANK MERKAVA 4 in {2500000 / (salary * 12)} years" :
                         "You would never be able to purchase TANK MERKAVA 4 ";
-                }
-                else { Console.WriteLine("String does not match any enum value."); }
+                
+               // else { Console.WriteLine("String does not match any enum value."); }
                 int[] avgExpenses = { 1800, 400, 800, 4400, 900, 4600, 2600 };
                 string city = currentMember.GetCity().Replace(" ","_");
                 Enums.Cities enumCity;
