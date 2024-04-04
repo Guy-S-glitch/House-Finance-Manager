@@ -6,7 +6,41 @@ namespace BL
 {
     public partial class BL_Main
     {
-        public IconButton ClonePropeties(IconButton Source, int _column, int _row, int _houseNumber, ref TableLayoutPanel tableLayoutPanel1)
+        public void CloneTablePropeties(ref TableLayoutPanel MainForm, Button ClonedButton, IconButton ClonedIconButton, int row, int column, int _houseNumber,ref TableLayoutPanel Target)
+        {
+            Target.Location = new Point(3, 3);
+            Target.ColumnCount = 1;
+            Target.Dock = DockStyle.Fill;
+            Target.Name = $"HouseT{_houseNumber}";
+            Target.RowCount = 2;
+
+            // Set the first row to take 100% of the height
+            Target.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            // Set the second row to autosize
+            Target.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+            Target.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+
+            Target.Controls.Add(ClonedIconButton, 0, 0); // Add IconButton to the first row
+            Target.Controls.Add(ClonedButton, 0, 1); // Add Button to the second row
+
+            MainForm.Controls.Add(Target, column, row);
+        }
+        public Button CloneComparePropeties(Button Source,int _houseNumber)
+        {
+            return new Button()
+            {
+                Size = Source.Size,
+                Font = Source.Font,
+                Dock = Source.Dock,
+                Name = $"HouseC{_houseNumber}",
+                Text = "Compare house", 
+                UseVisualStyleBackColor = true,
+                TextAlign = Source.TextAlign,
+                AutoSize = true
+            };
+        }
+        public IconButton CloneHousePropeties(IconButton Source,int _houseNumber)
         {   //all of the house buttons will have the same propeties but different names and text
             IconButton Target = new IconButton()
             {
@@ -16,10 +50,10 @@ namespace BL
                 IconColor = Source.IconColor,
                 IconFont = Source.IconFont,
                 ImageAlign = Source.ImageAlign,
-                Name = $"house{_houseNumber}",
+                Name = $"House{_houseNumber}",
                 Size = Source.Size,
                 TabIndex = Source.TabIndex + 1,
-                Text =$"house{_houseNumber}",
+                Text =$"House{_houseNumber}",
                 TextAlign = Source.TextAlign,
                 Cursor = Cursors.Hand,
                 UseVisualStyleBackColor = true, 
@@ -27,8 +61,7 @@ namespace BL
                 ForeColor = Color.White
         };
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(Target, $"View details of {Target.Name}");
-        tableLayoutPanel1.Controls.Add(Target, _column, _row);
+            toolTip.SetToolTip(Target, $"View details of {Target.Name}"); 
             return Target;
         }
 

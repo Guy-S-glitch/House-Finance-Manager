@@ -22,7 +22,7 @@ namespace BL
 
         public void UpdateMembers2House(ref List<InfoToHouse> SqlHousesMember, ref TableLayoutPanel tableLayoutPanel1, string _lastHouseNumber, ref Hashtable _neighberhood)
         {
-            IconButton SqlBut = tableLayoutPanel1.Controls.Find(_lastHouseNumber, true).First() as IconButton;  //find the button with the name of the current house checked 
+            IconButton SqlBut = (tableLayoutPanel1.Controls.Find(_lastHouseNumber.Replace("e","eT"), true).First().Controls.Find(_lastHouseNumber,true).First())as IconButton;  //find the button with the name of the current house checked 
             SqlBut.Text = _lastHouseNumber + "\n";
             short _memberID = 1;
             foreach (InfoToHouse writeNames in SqlHousesMember)  //add the members one by one to the house button 

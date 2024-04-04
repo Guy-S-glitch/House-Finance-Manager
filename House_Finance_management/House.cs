@@ -101,7 +101,7 @@ namespace House_Finance_management
                     AverageIncome.Text = ((int)(baseIncome + (expCoefficient * fexp) + (0.34 * avgIncome * 12)) / 12).ToString();
                     MemberIncome.Text = salary.ToString();
                     HighWagePeople.Text = ((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
-                    LowWagePeople.Text = ((int)((24000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+                    LowWagePeople.Text = ((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
                     difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
                     difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Blue;
                     GrossPercent.Text = difference.ForeColor == Color.Red ?

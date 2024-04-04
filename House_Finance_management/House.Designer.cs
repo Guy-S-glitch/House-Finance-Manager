@@ -1937,8 +1937,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 226, 197);
             ClientSize = new Size(1710, 862);
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(Loader);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;

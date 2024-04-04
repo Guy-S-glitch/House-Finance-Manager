@@ -5,8 +5,7 @@ using Common;
 using Microsoft.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
-
-
+ 
 namespace WinFormsApp2
 {
     /// <summary>
@@ -63,10 +62,10 @@ namespace WinFormsApp2
             InitializeComponent();
             GetBL_Main.setToolTips(ref House1, ref addHouse);
             try
-            { 
+            {
                 GetBL_Main.requestConnection(ref Connection, ref Select, _connectionString);  //connect to the sql server. also used at the end when we write to the sql 
                 Connection.Open();
-                GetSqlTable(Select); 
+                GetSqlTable(Select);
             }
             catch (Exception er) { System.Windows.MessageBox.Show(er.Message); }
             finally { Connection.Close(); }
@@ -82,8 +81,12 @@ namespace WinFormsApp2
         private void AddHouse_Click(object sender, EventArgs e)  //clicking on the add house will move that button and will add an house button in the place where the add house button was with the same properties of every house button
         {
             GetBL_Main.ReplaceAddButtonWithHouse(ref tableLayoutPanel1, addHouse, _column, _row);  //replacing the add House button with an House button
-            IconButton AddedHouse = GetBL_Main.ClonePropeties(House1, _column, _row, _addHouseNumber, ref tableLayoutPanel1);  //giving the added house the same properties of the first house
-            AddedHouse.Click += House1_Click;  //giving the added house the ability to call the House form like the first house
+            IconButton TargetHouse = GetBL_Main.CloneHousePropeties(House1, _addHouseNumber);  //giving the added house the same properties of the first house
+            Button TargetCHouse = GetBL_Main.CloneComparePropeties(HouseC1, _addHouseNumber);
+            TableLayoutPanel TargetTHouse = new TableLayoutPanel();
+            GetBL_Main.CloneTablePropeties(ref tableLayoutPanel1, TargetCHouse, TargetHouse, _row, _column, _addHouseNumber,ref TargetTHouse);
+            TargetHouse.Click += House1_Click;  //giving the added house the ability to call the House form like the first house
+            TargetCHouse.Click += HouseCompare_Click;
             GetBL_Main.ValuesForNextReplace(ref _column, ref _row, ref _addHouseNumber);// moving the add house button
         }
 
@@ -99,7 +102,7 @@ namespace WinFormsApp2
                 Connection.Open();
                 GetBL_Main.requestCleanSqlTable(Connection);  //cleaning previous data  
                 GetBL_Main.requestUploadLatestValues(Connection, _neighberhood);  //add updated version of the data
-                
+
             }
             catch (Exception errorMessage) { System.Windows.MessageBox.Show("error: " + errorMessage.Message); }
             finally { Connection.Close(); }
@@ -109,6 +112,48 @@ namespace WinFormsApp2
         {
             close.Enabled = false;
             this.Close();
+        }
+
+        private void HouseCompare_Click(object sender, EventArgs e)
+        {
+            CompareView.Visible=true;
+            ShowCompare((sender as Button).Name);
+        }
+
+        private void ShowCompare(string parent)
+        {
+            int ID = 1, Income = 0, Outcome = 0;
+            dataGridViewComparison.Columns.Clear();
+            dataGridViewComparison.Rows.Clear();
+
+            dataGridViewComparison.Columns.Add("MemberID", "Member number");
+            dataGridViewComparison.Columns.Add("MemberName", "Name");
+            dataGridViewComparison.Columns.Add("Income", "Income");
+            dataGridViewComparison.Columns.Add("Expenses", "Total expenses");
+            string houseName = parent.Remove(5,1); 
+            try
+            {
+                foreach (InfoToHouse infoToHouse in (List<InfoToHouse>)_neighberhood?[houseName])
+                {
+                    foreach (NumericUpDown numericUp in infoToHouse.GetExpenses()) Outcome += (int)numericUp.Value;
+                    dataGridViewComparison.Rows.Add(ID, infoToHouse.GetName(), infoToHouse.GetMonthlySalary(), Outcome);
+                    Outcome = 0;
+                }
+            }
+            catch { MessageBox.Show("house is empty"); }
+
+            // Styling
+            dataGridViewComparison.Columns["MemberID"].DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridViewComparison.Columns["MemberName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewComparison.Columns["Income"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewComparison.Columns["Expenses"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridViewComparison.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CompareView.Visible = false ;
         }
 
         // the code below isn't relevant to the project but to the diagram 

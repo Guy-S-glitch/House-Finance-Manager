@@ -1261,8 +1261,8 @@
             BackColor = SystemColors.AppWorkspace;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(tableLayoutPanel10);
             Controls.Add(Loader);
+            Controls.Add(tableLayoutPanel10);
             DoubleBuffered = true;
             Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
