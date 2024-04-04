@@ -49,7 +49,8 @@ namespace House_Finance_management
 
         private void btnmemberAdd_Click(object sender, EventArgs e)  //called by clicking the add member button
         { 
-            Add_Member addMember = new Add_Member(houseNumber.Text);  //call the AddMember form and send the name of the current house
+
+            Add_Member addMember = new Add_Member(houseNumber.Text, members.Count == 0 ? null : members[0].GetCity());  //call the AddMember form and send the name of the current house
             addMember.DataSent += AddMember_DataSent;  //going in to the AddHouse form and make an event to subscribe to a function in the current form to enable data transfer from child to parent
             addMember.ShowDialog();
         }
@@ -84,7 +85,7 @@ namespace House_Finance_management
             {
                 CompareView.Visible = true;
                 InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
-                string job = currentMember.GetJob().Replace(" ", "_");
+                string job = currentMember.GetJob();
                 JobName.Text = job.Replace("_", " ");
                 int salary = currentMember.GetMonthlySalary();
                 int exp = currentMember.GetExperience();
@@ -102,9 +103,9 @@ namespace House_Finance_management
                     HighWagePeople.Text = ((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
                     LowWagePeople.Text = ((int)((24000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
                     difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
-                    difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Gray;
+                    difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Blue;
                     GrossPercent.Text = difference.ForeColor == Color.Red ?
-                        "Your gross salary is " + (int.Parse(MemberIncome.Text) * 100 / (int.Parse(MemberIncome.Text) + int.Parse(AverageIncome.Text))).ToString() + "% less than the average." :
+                        "Your gross salary is " + (100-(int.Parse(MemberIncome.Text) * 100 / (int.Parse(AverageIncome.Text)))).ToString() + "% less than the average." :
                         GrossPercent.Text = "Your gross salary is " + (int.Parse(difference.Text) * 100 / avgIncome).ToString() + "% more than the average.";
                     ImproveSatisfyExcellent.Text =
                         Math.Abs(int.Parse(difference.Text)) < avgIncome * 0.03 ? "Your gross salary is at the average level. " :
@@ -115,17 +116,24 @@ namespace House_Finance_management
                 }
                 else { Console.WriteLine("String does not match any enum value."); }
                 int[] avgExpenses = { 1800, 400, 800, 4400, 900, 4600, 2600 };
+                string city = currentMember.GetCity().Replace(" ","_");
+                Enums.Cities enumCity;
+                float ratio=-1.0f;
+                if(Enum.TryParse(city,out enumCity))
+                {
+                    int avgRent = (int)enumCity;
+                    ratio = avgRent / 4600.0f;
+                }
                 string[] ExpenseName = { "Tra", "Clo", "Spo", "Mar", "Uti", "Ren", "Res" };
                 for (int expense = 0; expense < currentMember.GetExpenses().Length; expense++)
                 { 
-                    ExpensesDistribution.Controls.Find("avg" + ExpenseName[expense], true).First().Text = avgExpenses[expense].ToString();
+                    ExpensesDistribution.Controls.Find("avg" + ExpenseName[expense], true).First().Text = ((int)(avgExpenses[expense]*ratio)).ToString();
                     ExpensesDistribution.Controls.Find("mem" + ExpenseName[expense], true).First().Text = currentMember.GetExpenses()[expense].Value.ToString();
                     ExpensesDistribution.Controls.Find("per" + ExpenseName[expense], true).First().Text = 
-                        Math.Abs(avgExpenses[expense] - currentMember.GetExpenses()[expense].Value) < avgExpenses[expense] * 3 / 100 ? "You spend like the average people" :
+                        Math.Abs(avgExpenses[expense] - currentMember.GetExpenses()[expense].Value) < avgExpenses[expense] * 3 / 100 ? "You spend like the average" :
                         avgExpenses[expense] > currentMember.GetExpenses()[expense].Value ?
-                        $"You spend {100-(int)(currentMember.GetExpenses()[expense].Value*100 / (avgExpenses[expense]+ currentMember.GetExpenses()[expense].Value))}% less than the average" :
+                        $"You spend {100-(int)(currentMember.GetExpenses()[expense].Value*100 / avgExpenses[expense])}% less than the average" :
                         $"You spend {(int)((currentMember.GetExpenses()[expense].Value-avgExpenses[expense])*100/ avgExpenses[expense])}% more than the average";
-                        
                 } 
             }
             else { MessageBox.Show(_unselected); }
@@ -146,7 +154,7 @@ namespace House_Finance_management
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        { Thread.Sleep(3000); } // Simulating a long-running task
+        { Thread.Sleep(300); } // Simulating a long-running task
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {

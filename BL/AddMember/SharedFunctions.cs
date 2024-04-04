@@ -8,17 +8,18 @@ namespace BL
         private InputAcceptions acceptions =new InputAcceptions();
         public void IsAccepted(object sender, ref KeyPressEventArgs e)
         {
-            switch ((sender as TextBox).Name)
-            {
-                case ("txtFName"): acceptions.FirstNameAcceptions(ref e); break;
-                case ("txtMName"): acceptions.MiddleNameAcceptions(ref e); break;
-                case ("txtLName"): acceptions.LastNameAcceptions(ref e); break;
-                case ("txtPhone"): acceptions.PhoneAcceptions(ref e); break;
-                case ("txtEmail"): acceptions.EmailAcceptions(ref e); break;
-                case ("cmbCity"):  acceptions.CityAcceptions(ref e);break;
-                default:           acceptions.JobAcceptions(ref e); break;
-            }
-        } 
+            try { switch ((sender as TextBox).Name) {
+                    case ("txtFName"): acceptions.FirstNameAcceptions(ref e); break;
+                    case ("txtMName"): acceptions.MiddleNameAcceptions(ref e); break;
+                    case ("txtLName"): acceptions.LastNameAcceptions(ref e); break;
+                    case ("txtPhone"): acceptions.PhoneAcceptions(ref e); break;
+                    default: acceptions.EmailAcceptions(ref e); break;
+                } }  
+            catch { switch ((sender as ComboBox).Name) {
+                    case ("cmbCity"): acceptions.CityAcceptions(ref e); break;
+                    default: acceptions.JobAcceptions(ref e); break;
+                } }  
+        }
         public void ShowValidations(object sender, TextBox[] textBoxes, ref Label[] labels)
         {
             switch ((sender as TextBox).Name)

@@ -567,11 +567,9 @@
             numMonthlySalary.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numMonthlySalary.Location = new Point(712, 3);
             numMonthlySalary.Maximum = new decimal(new int[] { 200000, 0, 0, 0 });
-            numMonthlySalary.Minimum = new decimal(new int[] { 1000, 0, 0, 0 });
             numMonthlySalary.Name = "numMonthlySalary";
             numMonthlySalary.Size = new Size(109, 37);
             numMonthlySalary.TabIndex = 10;
-            numMonthlySalary.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
             // numExperience
             // 
@@ -1191,9 +1189,9 @@
             Ready2BeSent.Dock = DockStyle.Fill;
             Ready2BeSent.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Ready2BeSent.ForeColor = Color.Red;
-            Ready2BeSent.Location = new Point(446, 0);
+            Ready2BeSent.Location = new Point(445, 0);
             Ready2BeSent.Name = "Ready2BeSent";
-            Ready2BeSent.Size = new Size(162, 316);
+            Ready2BeSent.Size = new Size(154, 316);
             Ready2BeSent.TabIndex = 13;
             Ready2BeSent.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -1202,9 +1200,9 @@
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.Dock = DockStyle.Bottom;
             btnAdd.Image = Properties.Resources.NonSendToHouse1;
-            btnAdd.Location = new Point(614, 147);
+            btnAdd.Location = new Point(605, 147);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(235, 166);
+            btnAdd.Size = new Size(244, 166);
             btnAdd.SizeMode = PictureBoxSizeMode.StretchImage;
             btnAdd.TabIndex = 14;
             btnAdd.TabStop = false;
@@ -1263,8 +1261,8 @@
             BackColor = SystemColors.AppWorkspace;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(Loader);
             Controls.Add(tableLayoutPanel10);
+            Controls.Add(Loader);
             DoubleBuffered = true;
             Font = new Font("David", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;

@@ -54,12 +54,17 @@ namespace House_Finance_management
         private string _picturePath;  //store the file name of the photo the user uploading
         private string _houseNumber;  //store the name of the current house
 
-        public Add_Member(string houseNum)  //the form called by the add member button
+        public Add_Member(string houseNum,string? houseCity)  //the form called by the add member button
         {
             InitializeComponent();
             StartBackgroundWork();
             ActivateArrays();
             GetBL_AddMember.setInitialValues(ref cmbJob, ref cmbCity, ref dtpAge);  //set our initial data
+            if(!(houseCity is null))
+            {
+                cmbCity.Text = houseCity;
+                cmbCity.Enabled = false; 
+            } 
             _houseNumber = houseNum;
         }
         public Add_Member(InfoToHouse update, string houseNum)  //the form called by the update member button 
