@@ -1339,6 +1339,7 @@
             CompareView.SetColumnSpan(groupBox6, 4);
             groupBox6.Controls.Add(ExpensesDistribution);
             groupBox6.Dock = DockStyle.Fill;
+            groupBox6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox6.Location = new Point(23, 358);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(1230, 314);
@@ -1385,7 +1386,7 @@
             ExpensesDistribution.Controls.Add(perRen, 3, 6);
             ExpensesDistribution.Controls.Add(perRes, 3, 7);
             ExpensesDistribution.Dock = DockStyle.Fill;
-            ExpensesDistribution.Location = new Point(3, 27);
+            ExpensesDistribution.Location = new Point(3, 31);
             ExpensesDistribution.Name = "ExpensesDistribution";
             ExpensesDistribution.RowCount = 8;
             ExpensesDistribution.RowStyles.Add(new RowStyle(SizeType.Percent, 12.4995289F));
@@ -1396,287 +1397,381 @@
             ExpensesDistribution.RowStyles.Add(new RowStyle(SizeType.Percent, 12.4995317F));
             ExpensesDistribution.RowStyles.Add(new RowStyle(SizeType.Percent, 12.4995317F));
             ExpensesDistribution.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5032816F));
-            ExpensesDistribution.Size = new Size(1224, 284);
+            ExpensesDistribution.Size = new Size(1224, 280);
             ExpensesDistribution.TabIndex = 0;
+            ExpensesDistribution.CellPaint += ExpensesDistribution_CellPaint;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Dock = DockStyle.Fill;
             label5.Location = new Point(247, 0);
             label5.Name = "label5";
-            label5.Size = new Size(128, 25);
+            label5.Size = new Size(238, 34);
             label5.TabIndex = 0;
             label5.Text = "Average in city";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Dock = DockStyle.Fill;
             label7.Location = new Point(491, 0);
             label7.Name = "label7";
-            label7.Size = new Size(79, 25);
+            label7.Size = new Size(238, 34);
             label7.TabIndex = 1;
             label7.Text = "Member";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(3, 35);
+            label19.BackColor = Color.Transparent;
+            label19.Dock = DockStyle.Fill;
+            label19.Location = new Point(3, 34);
             label19.Name = "label19";
-            label19.Size = new Size(126, 25);
+            label19.Size = new Size(238, 34);
             label19.TabIndex = 2;
             label19.Text = "Transportation";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(3, 70);
+            label20.BackColor = Color.Transparent;
+            label20.Dock = DockStyle.Fill;
+            label20.Location = new Point(3, 68);
             label20.Name = "label20";
-            label20.Size = new Size(170, 25);
+            label20.Size = new Size(238, 34);
             label20.TabIndex = 3;
             label20.Text = "Clothing And Shoes";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(3, 105);
+            label23.BackColor = Color.Transparent;
+            label23.Dock = DockStyle.Fill;
+            label23.Location = new Point(3, 102);
             label23.Name = "label23";
-            label23.Size = new Size(161, 25);
+            label23.Size = new Size(238, 34);
             label23.TabIndex = 4;
             label23.Text = "Sports And Leisure";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(3, 140);
+            label24.BackColor = Color.Transparent;
+            label24.Dock = DockStyle.Fill;
+            label24.Location = new Point(3, 136);
             label24.Name = "label24";
-            label24.Size = new Size(75, 25);
+            label24.Size = new Size(238, 34);
             label24.TabIndex = 5;
             label24.Text = "Markets";
+            label24.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(3, 175);
+            label25.BackColor = Color.Transparent;
+            label25.Dock = DockStyle.Fill;
+            label25.Location = new Point(3, 170);
             label25.Name = "label25";
-            label25.Size = new Size(74, 25);
+            label25.Size = new Size(238, 34);
             label25.TabIndex = 6;
             label25.Text = "Utilities ";
+            label25.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(3, 210);
+            label27.BackColor = Color.Transparent;
+            label27.Dock = DockStyle.Fill;
+            label27.Location = new Point(3, 204);
             label27.Name = "label27";
-            label27.Size = new Size(52, 25);
+            label27.Size = new Size(238, 34);
             label27.TabIndex = 7;
             label27.Text = "Rent ";
+            label27.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
             label29.AutoSize = true;
-            label29.Location = new Point(3, 245);
+            label29.BackColor = Color.Transparent;
+            label29.Dock = DockStyle.Fill;
+            label29.Location = new Point(3, 238);
             label29.Name = "label29";
-            label29.Size = new Size(103, 25);
+            label29.Size = new Size(238, 42);
             label29.TabIndex = 8;
             label29.Text = "Restaurants";
+            label29.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgTra
             // 
             avgTra.AutoSize = true;
-            avgTra.Location = new Point(247, 35);
+            avgTra.BackColor = Color.Transparent;
+            avgTra.Dock = DockStyle.Fill;
+            avgTra.Location = new Point(247, 34);
             avgTra.Name = "avgTra";
-            avgTra.Size = new Size(69, 25);
+            avgTra.Size = new Size(238, 34);
             avgTra.TabIndex = 9;
             avgTra.Text = "label30";
+            avgTra.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgClo
             // 
             avgClo.AutoSize = true;
-            avgClo.Location = new Point(247, 70);
+            avgClo.BackColor = Color.Transparent;
+            avgClo.Dock = DockStyle.Fill;
+            avgClo.Location = new Point(247, 68);
             avgClo.Name = "avgClo";
-            avgClo.Size = new Size(69, 25);
+            avgClo.Size = new Size(238, 34);
             avgClo.TabIndex = 10;
             avgClo.Text = "label31";
+            avgClo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgSpo
             // 
             avgSpo.AutoSize = true;
-            avgSpo.Location = new Point(247, 105);
+            avgSpo.BackColor = Color.Transparent;
+            avgSpo.Dock = DockStyle.Fill;
+            avgSpo.Location = new Point(247, 102);
             avgSpo.Name = "avgSpo";
-            avgSpo.Size = new Size(69, 25);
+            avgSpo.Size = new Size(238, 34);
             avgSpo.TabIndex = 11;
             avgSpo.Text = "label32";
+            avgSpo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgMar
             // 
             avgMar.AutoSize = true;
-            avgMar.Location = new Point(247, 140);
+            avgMar.BackColor = Color.Transparent;
+            avgMar.Dock = DockStyle.Fill;
+            avgMar.Location = new Point(247, 136);
             avgMar.Name = "avgMar";
-            avgMar.Size = new Size(69, 25);
+            avgMar.Size = new Size(238, 34);
             avgMar.TabIndex = 12;
             avgMar.Text = "label33";
+            avgMar.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgUti
             // 
             avgUti.AutoSize = true;
-            avgUti.Location = new Point(247, 175);
+            avgUti.BackColor = Color.Transparent;
+            avgUti.Dock = DockStyle.Fill;
+            avgUti.Location = new Point(247, 170);
             avgUti.Name = "avgUti";
-            avgUti.Size = new Size(69, 25);
+            avgUti.Size = new Size(238, 34);
             avgUti.TabIndex = 13;
             avgUti.Text = "label34";
+            avgUti.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgRen
             // 
             avgRen.AutoSize = true;
-            avgRen.Location = new Point(247, 210);
+            avgRen.BackColor = Color.Transparent;
+            avgRen.Dock = DockStyle.Fill;
+            avgRen.Location = new Point(247, 204);
             avgRen.Name = "avgRen";
-            avgRen.Size = new Size(69, 25);
+            avgRen.Size = new Size(238, 34);
             avgRen.TabIndex = 14;
             avgRen.Text = "label35";
+            avgRen.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // avgRes
             // 
             avgRes.AutoSize = true;
-            avgRes.Location = new Point(247, 245);
+            avgRes.BackColor = Color.Transparent;
+            avgRes.Dock = DockStyle.Fill;
+            avgRes.Location = new Point(247, 238);
             avgRes.Name = "avgRes";
-            avgRes.Size = new Size(69, 25);
+            avgRes.Size = new Size(238, 42);
             avgRes.TabIndex = 15;
             avgRes.Text = "label36";
+            avgRes.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memTra
             // 
             memTra.AutoSize = true;
-            memTra.Location = new Point(491, 35);
+            memTra.BackColor = Color.Transparent;
+            memTra.Dock = DockStyle.Fill;
+            memTra.Location = new Point(491, 34);
             memTra.Name = "memTra";
-            memTra.Size = new Size(69, 25);
+            memTra.Size = new Size(238, 34);
             memTra.TabIndex = 16;
             memTra.Text = "label37";
+            memTra.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memClo
             // 
             memClo.AutoSize = true;
-            memClo.Location = new Point(491, 70);
+            memClo.BackColor = Color.Transparent;
+            memClo.Dock = DockStyle.Fill;
+            memClo.Location = new Point(491, 68);
             memClo.Name = "memClo";
-            memClo.Size = new Size(69, 25);
+            memClo.Size = new Size(238, 34);
             memClo.TabIndex = 17;
             memClo.Text = "label38";
+            memClo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memSpo
             // 
             memSpo.AutoSize = true;
-            memSpo.Location = new Point(491, 105);
+            memSpo.BackColor = Color.Transparent;
+            memSpo.Dock = DockStyle.Fill;
+            memSpo.Location = new Point(491, 102);
             memSpo.Name = "memSpo";
-            memSpo.Size = new Size(69, 25);
+            memSpo.Size = new Size(238, 34);
             memSpo.TabIndex = 18;
             memSpo.Text = "label39";
+            memSpo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memMar
             // 
             memMar.AutoSize = true;
-            memMar.Location = new Point(491, 140);
+            memMar.BackColor = Color.Transparent;
+            memMar.Dock = DockStyle.Fill;
+            memMar.Location = new Point(491, 136);
             memMar.Name = "memMar";
-            memMar.Size = new Size(69, 25);
+            memMar.Size = new Size(238, 34);
             memMar.TabIndex = 19;
             memMar.Text = "label40";
+            memMar.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memUti
             // 
             memUti.AutoSize = true;
-            memUti.Location = new Point(491, 175);
+            memUti.BackColor = Color.Transparent;
+            memUti.Dock = DockStyle.Fill;
+            memUti.Location = new Point(491, 170);
             memUti.Name = "memUti";
-            memUti.Size = new Size(69, 25);
+            memUti.Size = new Size(238, 34);
             memUti.TabIndex = 20;
             memUti.Text = "label41";
+            memUti.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memRen
             // 
             memRen.AutoSize = true;
-            memRen.Location = new Point(491, 210);
+            memRen.BackColor = Color.Transparent;
+            memRen.Dock = DockStyle.Fill;
+            memRen.Location = new Point(491, 204);
             memRen.Name = "memRen";
-            memRen.Size = new Size(69, 25);
+            memRen.Size = new Size(238, 34);
             memRen.TabIndex = 21;
             memRen.Text = "label42";
+            memRen.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // memRes
             // 
             memRes.AutoSize = true;
-            memRes.Location = new Point(491, 245);
+            memRes.BackColor = Color.Transparent;
+            memRes.Dock = DockStyle.Fill;
+            memRes.Location = new Point(491, 238);
             memRes.Name = "memRes";
-            memRes.Size = new Size(69, 25);
+            memRes.Size = new Size(238, 42);
             memRes.TabIndex = 22;
             memRes.Text = "label43";
+            memRes.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label30
             // 
             label30.AutoSize = true;
+            label30.BackColor = Color.Transparent;
+            label30.Dock = DockStyle.Fill;
             label30.Location = new Point(735, 0);
             label30.Name = "label30";
-            label30.Size = new Size(92, 25);
+            label30.Size = new Size(486, 34);
             label30.TabIndex = 23;
             label30.Text = "Difference";
+            label30.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perTra
             // 
             perTra.AutoSize = true;
-            perTra.Location = new Point(735, 35);
+            perTra.BackColor = Color.Transparent;
+            perTra.Dock = DockStyle.Fill;
+            perTra.Location = new Point(735, 34);
             perTra.Name = "perTra";
-            perTra.Size = new Size(69, 25);
+            perTra.Size = new Size(486, 34);
             perTra.TabIndex = 24;
             perTra.Text = "label31";
+            perTra.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perClo
             // 
             perClo.AutoSize = true;
-            perClo.Location = new Point(735, 70);
+            perClo.BackColor = Color.Transparent;
+            perClo.Dock = DockStyle.Fill;
+            perClo.Location = new Point(735, 68);
             perClo.Name = "perClo";
-            perClo.Size = new Size(69, 25);
+            perClo.Size = new Size(486, 34);
             perClo.TabIndex = 25;
             perClo.Text = "label32";
+            perClo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perSpo
             // 
             perSpo.AutoSize = true;
-            perSpo.Location = new Point(735, 105);
+            perSpo.BackColor = Color.Transparent;
+            perSpo.Dock = DockStyle.Fill;
+            perSpo.Location = new Point(735, 102);
             perSpo.Name = "perSpo";
-            perSpo.Size = new Size(69, 25);
+            perSpo.Size = new Size(486, 34);
             perSpo.TabIndex = 26;
             perSpo.Text = "label33";
+            perSpo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perMar
             // 
             perMar.AutoSize = true;
-            perMar.Location = new Point(735, 140);
+            perMar.BackColor = Color.Transparent;
+            perMar.Dock = DockStyle.Fill;
+            perMar.Location = new Point(735, 136);
             perMar.Name = "perMar";
-            perMar.Size = new Size(69, 25);
+            perMar.Size = new Size(486, 34);
             perMar.TabIndex = 27;
             perMar.Text = "label34";
+            perMar.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perUti
             // 
             perUti.AutoSize = true;
-            perUti.Location = new Point(735, 175);
+            perUti.BackColor = Color.Transparent;
+            perUti.Dock = DockStyle.Fill;
+            perUti.Location = new Point(735, 170);
             perUti.Name = "perUti";
-            perUti.Size = new Size(69, 25);
+            perUti.Size = new Size(486, 34);
             perUti.TabIndex = 28;
             perUti.Text = "label35";
+            perUti.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perRen
             // 
             perRen.AutoSize = true;
-            perRen.Location = new Point(735, 210);
+            perRen.BackColor = Color.Transparent;
+            perRen.Dock = DockStyle.Fill;
+            perRen.Location = new Point(735, 204);
             perRen.Name = "perRen";
-            perRen.Size = new Size(69, 25);
+            perRen.Size = new Size(486, 34);
             perRen.TabIndex = 29;
             perRen.Text = "label36";
+            perRen.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // perRes
             // 
             perRes.AutoSize = true;
-            perRes.Location = new Point(735, 245);
+            perRes.BackColor = Color.Transparent;
+            perRes.Dock = DockStyle.Fill;
+            perRes.Location = new Point(735, 238);
             perRes.Name = "perRes";
-            perRes.Size = new Size(69, 25);
+            perRes.Size = new Size(486, 42);
             perRes.TabIndex = 30;
             perRes.Text = "label37";
+            perRes.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -1937,8 +2032,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 226, 197);
             ClientSize = new Size(1710, 862);
-            Controls.Add(Loader);
             Controls.Add(tableLayoutPanel1);
+            Controls.Add(Loader);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
