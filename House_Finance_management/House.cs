@@ -96,10 +96,10 @@ namespace House_Finance_management
                 int baseIncome = age < 14 ? 0 : age < 19 ? 24000 : age < 30 ? 120000 : age < 65 ? 150000 : 60000;
                 int expCoefficient = age < 14 ? 0 : age < 19 ? 400 : age < 30 ? 3500 : age < 65 ? 4000 : 1000;
                 //  Enums.Jobs enumValue;
-                Enums.Jobs enumValue = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
+                Enums.Jobs enumJob = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
 
-                avgIncome = (int)enumValue;
-                AverageIncome.Text = ((int)(baseIncome + (expCoefficient * fexp) + (0.34 * avgIncome * 12)) / 12).ToString();
+                avgIncome = (int)enumJob;
+                AverageIncome.Text = avgIncome.ToString();
                 MemberIncome.Text = salary.ToString();
                 HighWagePeople.Text = ((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
                 LowWagePeople.Text = ((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
@@ -118,13 +118,12 @@ namespace House_Finance_management
                 // else { Console.WriteLine("String does not match any enum value."); }
                 int[] avgExpenses = { 1800, 400, 800, 4400, 900, 4600, 2600 };
                 string city = currentMember.GetCity().Replace(" ", "_");
-                Enums.Cities enumCity;
                 float ratio = -1.0f;
-                if (Enum.TryParse(city, out enumCity))
-                {
-                    int avgRent = (int)enumCity;
-                    ratio = avgRent / 4600.0f;
-                }
+
+                Enums.Cities enumCity = (Enums.Cities)Enum.Parse(typeof(Enums.Cities), city);
+                int avgRent = (int)enumCity;
+                ratio = avgRent / 4600.0f;
+            
                 string[] ExpenseName = { "Tra", "Clo", "Spo", "Mar", "Uti", "Ren", "Res" };
                 for (int expense = 0; expense < currentMember.GetExpenses().Length; expense++)
                 {

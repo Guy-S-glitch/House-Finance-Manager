@@ -116,40 +116,15 @@ namespace WinFormsApp2
 
         private void HouseCompare_Click(object sender, EventArgs e)
         {
-            CompareView.Visible=true;
-            ShowCompare((sender as Button).Name);
-        }
-
-        private void ShowCompare(string parent)
-        {
-            int ID = 1, Income = 0, Outcome = 0;
-            dataGridViewComparison.Columns.Clear();
-            dataGridViewComparison.Rows.Clear();
-
-            dataGridViewComparison.Columns.Add("MemberID", "Member number");
-            dataGridViewComparison.Columns.Add("MemberName", "Name");
-            dataGridViewComparison.Columns.Add("Income", "Income");
-            dataGridViewComparison.Columns.Add("Expenses", "Total expenses");
-            string houseName = parent.Remove(5,1); 
+            string SelectedHouseName = (sender as Button).Name.Remove(5, 1);
             try
             {
-                foreach (InfoToHouse infoToHouse in (List<InfoToHouse>)_neighberhood?[houseName])
-                {
-                    foreach (NumericUpDown numericUp in infoToHouse.GetExpenses()) Outcome += (int)numericUp.Value;
-                    dataGridViewComparison.Rows.Add(ID, infoToHouse.GetName(), infoToHouse.GetMonthlySalary(), Outcome);
-                    Outcome = 0;
-                }
+                List<InfoToHouse> SelectedHouse = (List<InfoToHouse>)_neighberhood[SelectedHouseName];
+                new Compare_House(SelectedHouse).ShowDialog(); 
             }
             catch { MessageBox.Show("house is empty"); }
-
-            // Styling
-            dataGridViewComparison.Columns["MemberID"].DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            dataGridViewComparison.Columns["MemberName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewComparison.Columns["Income"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewComparison.Columns["Expenses"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            dataGridViewComparison.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
