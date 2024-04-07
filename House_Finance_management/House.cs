@@ -99,16 +99,17 @@ namespace House_Finance_management
                 Enums.Jobs enumJob = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
 
                 avgIncome = (int)enumJob;
+                if(avgIncome is 0) { }
                 AverageIncome.Text = avgIncome.ToString();
                 MemberIncome.Text = salary.ToString();
-                HighWagePeople.Text = ((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
-                LowWagePeople.Text = ((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+                HighWagePeople.Text = avgIncome is 0?"0":((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+                LowWagePeople.Text = avgIncome is 0?"0":((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
                 difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
                 difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Blue;
-                GrossPercent.Text = difference.ForeColor == Color.Red ?
+                GrossPercent.Text = avgIncome is 0?"": difference.ForeColor == Color.Red ?
                     "Your gross salary is " + (100 - (int.Parse(MemberIncome.Text) * 100 / (int.Parse(AverageIncome.Text)))).ToString() + "% less than the average." :
                     GrossPercent.Text = "Your gross salary is " + (int.Parse(difference.Text) * 100 / avgIncome).ToString() + "% more than the average.";
-                ImproveSatisfyExcellent.Text =
+                ImproveSatisfyExcellent.Text = avgIncome is 0?"You should land a job.":
                     Math.Abs(int.Parse(difference.Text)) < avgIncome * 0.03 ? "Your gross salary is at the average level. " :
                     difference.ForeColor == Color.Red ? "you can improve yourself in the given position!" :
                     "You earn excellently in the given position!";
