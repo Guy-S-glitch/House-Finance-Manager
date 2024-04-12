@@ -79,63 +79,93 @@ namespace House_Finance_management
             if (lstMembersList.SelectedIndex != -1) StartBackgroundWork(CallFromRemoveMember);
             else MessageBox.Show(_unselected);
         }
+        private void initialJobValues(InfoToHouse currentMember)
+        {
+            job = currentMember.GetJob();
+            JobName.Text = job;
+            salary = currentMember.GetMonthlySalary();
+            exp = currentMember.GetExperience(); float age = currentMember.GetAge(); 
+            Enums.Jobs enumJob = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
+            {
+                //fexp = exp == 0 ? 0.0f : exp < 3 ? 1.0f : exp < 6 ? 3.5f : exp < 10 ? 8.5f : 11.0f;
+                //baseIncome = age < 14 ? 0 : age < 19 ? 24000 : age < 30 ? 120000 : age < 65 ? 150000 : 60000;
+                //expCoefficient = age < 14 ? 0 : age < 19 ? 400 : age < 30 ? 3500 : age < 65 ? 4000 : 1000;
+            }
+            avgIncome = (int)enumJob;
+        }
+        private int salary, exp, avgIncome, baseIncome, expCoefficient;
+        private float fexp;
+        private string job;
+        private void viewJobValues()
+        {
+            AverageIncome.Text = avgIncome.ToString();
+            MemberIncome.Text = salary.ToString();
+            HighWagePeople.Text = 
+                avgIncome is 0 ? "0" : 
+                ((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+            LowWagePeople.Text = 
+                avgIncome is 0 ? "0" : 
+                ((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
+            difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
+            difference.ForeColor = 
+                int.Parse(difference.Text) > 0 ? Color.Green :
+                int.Parse(difference.Text) < 0 ? Color.Red :
+                Color.Blue;
+            GrossPercent.Text = 
+                avgIncome is 0 ? "" : difference.ForeColor == Color.Red ?
+                "Your gross salary is " + (100 - (int.Parse(MemberIncome.Text) * 100 / (int.Parse(AverageIncome.Text)))).ToString() + "% less than the average." :
+                "Your gross salary is " + (int.Parse(difference.Text) * 100 / avgIncome).ToString() + "% more than the average.";
+            ImproveSatisfyExcellent.Text = 
+                avgIncome is 0 ? "You should land a job." :
+                Math.Abs(int.Parse(difference.Text)) < avgIncome * 0.03 ? "Your gross salary is at the average level. " :
+                difference.ForeColor == Color.Red ? "you can improve yourself in the given position!" :
+                "You earn excellently in the given position!";
+            YearsTilTM4.Text = 
+                salary != 0 ? $"You could buy TANK MERKAVA 4 in {2500000 / (salary * 12)} years" :
+                "You would never be able to purchase TANK MERKAVA 4 ";
+        }
+        private int[] avgExpenses= { 1800, 400, 800, 4400, 900, 4600, 2600 };
+        private int avgRent;
+        private float ratio;
+        private string city;
+        private string[] ExpenseName = { "Tra", "Clo", "Spo", "Mar", "Uti", "Ren", "Res" };
 
+        private void initialExpensesValues(InfoToHouse currentMember)
+        {
+            city = currentMember.GetCity().Replace(" ", "_");
+            Enums.Cities enumCity = (Enums.Cities)Enum.Parse(typeof(Enums.Cities), city);
+            avgRent = (int)enumCity;
+            ratio = avgRent / 4600.0f;
+        }
+
+        private void viewExpensesValues(InfoToHouse currentMember)
+        {
+            for (int expense = 0; expense < currentMember.GetExpenses().Length; expense++)
+            {
+                ExpensesDistribution.Controls.Find("avg" + ExpenseName[expense], true).First().Text =
+                    ((int)(avgExpenses[expense] * ratio)).ToString();
+                
+                ExpensesDistribution.Controls.Find("mem" + ExpenseName[expense], true).First().Text =
+                    currentMember.GetExpenses()[expense].Value.ToString();
+               
+                ExpensesDistribution.Controls.Find("per" + ExpenseName[expense], true).First().Text =
+                    Math.Abs(avgExpenses[expense] - currentMember.GetExpenses()[expense].Value) < avgExpenses[expense] * 3 / 100? 
+                        "You spend like the average" :
+                    avgExpenses[expense] > currentMember.GetExpenses()[expense].Value ?
+                        $"You spend {100 - (int)(currentMember.GetExpenses()[expense].Value * 100 / avgExpenses[expense])}% less than the average" :
+                        $"You spend {(int)((currentMember.GetExpenses()[expense].Value - avgExpenses[expense]) * 100 / avgExpenses[expense])}% more than the average";
+            }
+        }
         private void btnCompareMember_Click(object sender, EventArgs e)
         {
             if (lstMembersList.SelectedIndex != -1)
             {
                 CompareView.Visible = true;
                 InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
-                string job = currentMember.GetJob();
-                JobName.Text = job;
-                int salary = currentMember.GetMonthlySalary();
-                int exp = currentMember.GetExperience();
-                float fexp = exp == 0 ? 0.0f : exp < 3 ? 1.0f : exp < 6 ? 3.5f : exp < 10 ? 8.5f : 11.0f;
-                float age = currentMember.GetAge();
-                int avgIncome;
-                int baseIncome = age < 14 ? 0 : age < 19 ? 24000 : age < 30 ? 120000 : age < 65 ? 150000 : 60000;
-                int expCoefficient = age < 14 ? 0 : age < 19 ? 400 : age < 30 ? 3500 : age < 65 ? 4000 : 1000;
-                //  Enums.Jobs enumValue;
-                Enums.Jobs enumJob = (Enums.Jobs)Enum.Parse(typeof(Enums.Jobs), job.Replace(" ", "_"));
-
-                avgIncome = (int)enumJob;
-                if(avgIncome is 0) { }
-                AverageIncome.Text = avgIncome.ToString();
-                MemberIncome.Text = salary.ToString();
-                HighWagePeople.Text = avgIncome is 0?"0":((int)((150000 + (4000 * 10.0) + (0.34 * avgIncome * 12)) / 12)).ToString();
-                LowWagePeople.Text = avgIncome is 0?"0":((int)((70000 + (400 * 0) + (0.34 * avgIncome * 12)) / 12)).ToString();
-                difference.Text = (int.Parse(MemberIncome.Text) - int.Parse(AverageIncome.Text)).ToString();
-                difference.ForeColor = int.Parse(difference.Text) > 0 ? Color.Green : int.Parse(difference.Text) < 0 ? Color.Red : Color.Blue;
-                GrossPercent.Text = avgIncome is 0?"": difference.ForeColor == Color.Red ?
-                    "Your gross salary is " + (100 - (int.Parse(MemberIncome.Text) * 100 / (int.Parse(AverageIncome.Text)))).ToString() + "% less than the average." :
-                    GrossPercent.Text = "Your gross salary is " + (int.Parse(difference.Text) * 100 / avgIncome).ToString() + "% more than the average.";
-                ImproveSatisfyExcellent.Text = avgIncome is 0?"You should land a job.":
-                    Math.Abs(int.Parse(difference.Text)) < avgIncome * 0.03 ? "Your gross salary is at the average level. " :
-                    difference.ForeColor == Color.Red ? "you can improve yourself in the given position!" :
-                    "You earn excellently in the given position!";
-                YearsTilTM4.Text = salary != 0 ? $"You could buy TANK MERKAVA 4 in {2500000 / (salary * 12)} years" :
-                    "You would never be able to purchase TANK MERKAVA 4 ";
-
-                // else { Console.WriteLine("String does not match any enum value."); }
-                int[] avgExpenses = { 1800, 400, 800, 4400, 900, 4600, 2600 };
-                string city = currentMember.GetCity().Replace(" ", "_");
-                float ratio = -1.0f;
-
-                Enums.Cities enumCity = (Enums.Cities)Enum.Parse(typeof(Enums.Cities), city);
-                int avgRent = (int)enumCity;
-                ratio = avgRent / 4600.0f;
-            
-                string[] ExpenseName = { "Tra", "Clo", "Spo", "Mar", "Uti", "Ren", "Res" };
-                for (int expense = 0; expense < currentMember.GetExpenses().Length; expense++)
-                {
-                    ExpensesDistribution.Controls.Find("avg" + ExpenseName[expense], true).First().Text = ((int)(avgExpenses[expense] * ratio)).ToString();
-                    ExpensesDistribution.Controls.Find("mem" + ExpenseName[expense], true).First().Text = currentMember.GetExpenses()[expense].Value.ToString();
-                    ExpensesDistribution.Controls.Find("per" + ExpenseName[expense], true).First().Text =
-                        Math.Abs(avgExpenses[expense] - currentMember.GetExpenses()[expense].Value) < avgExpenses[expense] * 3 / 100 ? "You spend like the average" :
-                        avgExpenses[expense] > currentMember.GetExpenses()[expense].Value ?
-                        $"You spend {100 - (int)(currentMember.GetExpenses()[expense].Value * 100 / avgExpenses[expense])}% less than the average" :
-                        $"You spend {(int)((currentMember.GetExpenses()[expense].Value - avgExpenses[expense]) * 100 / avgExpenses[expense])}% more than the average";
-                }
+                initialJobValues(currentMember);
+                viewJobValues();
+                initialExpensesValues(currentMember);
+                viewExpensesValues(currentMember); 
             }
             else { MessageBox.Show(_unselected); }
         }
