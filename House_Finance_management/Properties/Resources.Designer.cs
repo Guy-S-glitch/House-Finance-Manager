@@ -103,6 +103,16 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CompareBackground {
+            get {
+                object obj = ResourceManager.GetObject("CompareBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap emptyHouse1 {
             get {
                 object obj = ResourceManager.GetObject("emptyHouse1", resourceCulture);
@@ -153,9 +163,29 @@ namespace House_Finance_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap TANK_MERKAVA_4 {
+            get {
+                object obj = ResourceManager.GetObject("TANK MERKAVA 4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap TankMekava4 {
             get {
                 object obj = ResourceManager.GetObject("TankMekava4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TankMekava41 {
+            get {
+                object obj = ResourceManager.GetObject("TankMekava41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

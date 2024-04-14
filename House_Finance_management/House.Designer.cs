@@ -935,6 +935,7 @@
             // CompareView
             // 
             CompareView.BackColor = Color.White;
+            CompareView.BackgroundImage = Properties.Resources.CompareBackground;
             CompareView.ColumnCount = 6;
             CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             CompareView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
@@ -964,6 +965,7 @@
             // 
             // JobName
             // 
+            JobName.BackColor = Color.Transparent;
             CompareView.SetColumnSpan(JobName, 4);
             JobName.Controls.Add(tableLayoutPanel8);
             JobName.Dock = DockStyle.Fill;
@@ -1195,8 +1197,8 @@
             // 
             // tableLayoutPanel17
             // 
-            tableLayoutPanel17.BackgroundImage = Properties.Resources.TankMekava4;
-            tableLayoutPanel17.BackgroundImageLayout = ImageLayout.Stretch;
+            tableLayoutPanel17.BackgroundImage = Properties.Resources.TANK_MERKAVA_4;
+            tableLayoutPanel17.BackgroundImageLayout = ImageLayout.Center;
             tableLayoutPanel17.ColumnCount = 3;
             tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
             tableLayoutPanel17.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
@@ -1336,6 +1338,7 @@
             // 
             // groupBox6
             // 
+            groupBox6.BackColor = Color.Transparent;
             CompareView.SetColumnSpan(groupBox6, 4);
             groupBox6.Controls.Add(ExpensesDistribution);
             groupBox6.Dock = DockStyle.Fill;
@@ -1399,7 +1402,6 @@
             ExpensesDistribution.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5032816F));
             ExpensesDistribution.Size = new Size(1224, 280);
             ExpensesDistribution.TabIndex = 0;
-            ExpensesDistribution.CellPaint += ExpensesDistribution_CellPaint;
             // 
             // label5
             // 
@@ -2032,8 +2034,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(250, 226, 197);
             ClientSize = new Size(1710, 862);
-            Controls.Add(tableLayoutPanel1);
             Controls.Add(Loader);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;

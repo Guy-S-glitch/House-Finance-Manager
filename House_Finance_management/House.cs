@@ -29,7 +29,7 @@ namespace House_Finance_management
 
         private static string callLoader;
         private static readonly string CallFromInitializeComponent = "InitializeComponent",
-            CallFromInspectMember = "InspectMember", CallFromRemoveMember = "RemoveMember";
+            CallFromInspectMember = "InspectMember", CallFromRemoveMember = "RemoveMember",CallFromCompareMember="CompareMember";
         private static InfoToHouse _selectedMember;
 
         private ProgressBar[] progressBars;
@@ -160,12 +160,7 @@ namespace House_Finance_management
         {
             if (lstMembersList.SelectedIndex != -1)
             {
-                CompareView.Visible = true;
-                InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
-                initialJobValues(currentMember);
-                viewJobValues();
-                initialExpensesValues(currentMember);
-                viewExpensesValues(currentMember); 
+                StartBackgroundWork(CallFromCompareMember);
             }
             else { MessageBox.Show(_unselected); }
         }
@@ -202,28 +197,21 @@ namespace House_Finance_management
                     GetBL_House.removeMember(ref lstMembersList, ref members, ref MemberNotPicked, ref tableLayoutPanel2,
                         Properties.Resources.ChooseMemberToInspect, ref panel1, Properties.Resources.emptyHouse1);
                     break;
+                case ("CompareMember"):
+                    CompareView.Visible = true;
+                    InfoToHouse currentMember = members[lstMembersList.SelectedIndex];
+                    initialJobValues(currentMember);
+                    viewJobValues();
+                    initialExpensesValues(currentMember);
+                    viewExpensesValues(currentMember);
+                    break; 
             }
             System.Threading.Thread.Sleep(200);
             Loader.Visible = false;
         }
         private void close_Click(object sender, EventArgs e) { this.Close(); }
 
-        private void ExpensesDistribution_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
-            Color rowBackColor;
-            switch (e.Row)
-            {
-                case 1: rowBackColor = Color.Blue; break;
-                case 2: rowBackColor = Color.Red; break;
-                case 3: rowBackColor = Color.Orange; break;
-                case 4: rowBackColor = Color.Green; break;
-                case 5: rowBackColor = Color.Purple; break;
-                case 6: rowBackColor = Color.Cyan; break;
-                case 7: rowBackColor = Color.Pink; break;
-                default: rowBackColor = Color.White; break;
-            }
-            using (SolidBrush brush = new SolidBrush(rowBackColor)) { e.Graphics.FillRectangle(brush, e.CellBounds); }
-        }
+ 
 
 
         // the code below isn't relevant to the project but to the diagram  
