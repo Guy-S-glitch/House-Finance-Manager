@@ -1,3 +1,6 @@
+#MUST
+to run the code right click on House_Finance_Management and set as startup project
+
 # House Finance Manager
 
 this is my first project using WINFORMS in c#, about managing a family's finance. the project's main idea is to build a virtual house that will illustrate a real-life house, you will be able to create the people in the house, insert needed information and the project will give the user relative output like income, expenses, useful diagrams etc.
